@@ -6,6 +6,9 @@ if ($_POST) {
 		case 'login':
 			require('core/bin/ajax/goLogin.php');
 			break;
+		case 'lostpass':
+			require('core/bin/ajax/goLostPass.php');
+			break;			
 		default:
 				header('location: index.php');
 			break;

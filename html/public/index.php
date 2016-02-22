@@ -9,7 +9,9 @@
     <script src="views/js/login.js"></script>
     <link rel="stylesheet" href="views/css/style.css"/>
     <link href="views/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
+    <style type="text/css">
+        body{ background-color: #300404}
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,8 +20,9 @@
     </div>
      <div class="row">
         <div class="col-md-3" ></div>
-        <div class="col-md-6 formularioSesion" >            
-                 <h1 class="" id="">INICIAR SESION</h1>               
+        <div class="col-md-6 formularioSesion">            
+                 <!--<h1 class="" id="">INICIAR SESION</h1>  -->
+                 <img src="views/img/Asoft.png" width="200px">             
                 <div  onkeypress="return runScriptLogin(event)">
                         <table width="100%" border="1" align="center">
                             <tr>
@@ -38,6 +41,12 @@
                             </tr>
                         </table>                      
                         <button class="btn btn-default" onclick="goLogin();" >  Iniciar Sesión </button>
+                             <div style="text-align: right">
+                                 <br><a href="?view=lostpass">¿Olvidaste tu contraseña?</a>   
+                             </div>
+
+
+
                 </div>   
                 <div id="_AJAX_LOGIN_" style="padding-top:10px;"></div>        
         </div> 

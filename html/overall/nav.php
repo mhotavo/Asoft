@@ -25,7 +25,7 @@
                     <li><a href="#"><i class="fa fa-user fa-lg"></i> <?php echo $users[$_SESSION['app_id']]['NOM_COMPLETO']  ?>, <?php echo $users[$_SESSION['app_id']]['DOC']  ?></a>
                         <ul style="width:100%;">
                             <li><a href="?view=perfil&id=<?php echo $_SESSION['app_id']; ?>"><i class="fa fa-gear fa-lg"></i> Mi perfil</a>
-                            <li><a href="#"><i class="fa fa-sign-in fa-lg"></i> Cerrar Sesión</a>
+                            <li><a href="?view=logout"><i class="fa fa-sign-in fa-lg"></i> Cerrar Sesión</a>
 
                         </ul>
                     </li>

@@ -57,7 +57,7 @@ table {
 --------------------------------------------------------------------*/
 
 body {
-	background: url('../img/denim.png');
+	background-color: #300404;
 	font-family: 'Droid Sans', sans-serif;;
 }
 
@@ -281,6 +281,9 @@ input#contrasena{
     border-radius: 6px;
     text-align: center;
     padding: 20px;
+-webkit-box-shadow: -1px 1px 5px 0px rgba(23,23,23,1);
+-moz-box-shadow: -1px 1px 5px 0px rgba(23,23,23,1);
+box-shadow: -1px 1px 5px 0px rgba(23,23,23,1);
 }
 
 /*  ESTILO MENU DESPLAZADO */

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ingresar Ayudas Recibidas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+       
+        <link rel="stylesheet" href="../../css/style.css"/>
+        <script type="text/javascript" src="../../js/funciones.js"></script>
+        
+    </head>
+    <body>
+        <!-- MENU PRINCIPAL -->       
+        <header>
+            <div class="wrap" > 
+                <nav>
+                    <ul class="menu">
+                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
+                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
+                            <ul>
+                                <li><a href="../menuDesplazados.html">Desplazados</a></li>
+                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
+                            <ul>
+                                <li><a href="#">Informe Parcial</a></li>
+                                <li><a href="#">Informe Total</a></li>                  
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Directions</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
+                        </li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
+        </header> 
+        
+        <!-- MENU SECUNDARIO --> 
+        <aside>
+            <div class="wrap" id='menuOtrasVictimas'> 
+                <nav class="navMenuOtrasVictimas">
+                    <ul class="menu" id="MD">
+                        <li id="MD"><a href="ingresarDatosOtra.html"><span></span>Datos</a></li>
+                        <li id="MD"><a href="#"><span></span>Familiares</a>
+                            <ul>
+                                <li ><a href="ingresarFamiliarOtra.html">Agregar</a></li>
+                                <li ><a href="#">Listar</a></li>
+                            </ul>
+                        </li>
+                        <li id="MD"><a href="ingresarVictimizacionOtra.html"><span></span>Victimización</a></li>
+                        <li id="MD"><a href="ingresarViviendaOtra.html"><span></span>Vivienda</a></li>
+                        <li id="MD"><a href="ingresarEconomiaFamiliarOtra.html"><span></span>Economia</a></li>
+                        <li id="MD"><a href="ingresarProteccionOtra.html"><span></span>Protección</a></li>
+                        <li id="MD"><a href="ingresarAyudasRecibidasOtra.html"><span></span>Ayudas</a></li>
+                        <li id="MD"><a href="ingresarDiscapacidadOtra.html"><span></span>Discapacidad</a></li>
+                        <li id="MD"><a href="ingresarEspecialProteccionOtra.html"><span></span>Protección Especial</a></li>
+                        <li id="MD"><a href="ingresarReparacionOtra.html"><span></span>Reparacion</a></li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>            
+        </aside>
+        
+        <!-- TITULO IDENTIFICADOR DE POSICION --> 
+        <footer>
+            <div class="idMenus">
+                <h1>POBLACION VICTIMA</h1>                                   
+            </div>
+        </footer>
+        
+        <!-- FORMULARIO AGREGAR AYUDAS RECIBIDAS -->
+            <div class="formulario"  id="formularioAyudasRecibidas">
+                
+                <h1 class="titulo1">Agregar Ayudas Recibidas</h1>            
+                
+                <form id="formularioAyudasRecibidas" action="AgregarAyudasRecibidasServlet" method="post">         
+                    
+                    <a id="prograMenor">Los menores que no estan al cuidado de un adulto asisten a programa de</a><br/>
+                    Atencion al Menor: <select id="selectAyudas" name="cboPrograMenor">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>   
+                    
+                    Niños y jovenes estan en programa de cuidado infantil: <select id="selectAyudas" name="cboPrograCuInfantil">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                    
+                    Niños y jovenes asisten a programas de alimentacion: <select id="selectAyudas" name="cboPrograAlimenta">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Los miembros del hogar han padecido Hambre o falta de Alimento: <select id="selectAyudas" name="cboHambre">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                    
+                    Si estuvieron en retorno contaron con programa de seguridad AI: <select id="selectAyudas" name="cboRetorno">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Los Adultos Mayores cuentan con complemento alimenticio: <select id="selectAyudas" name="cboCompleAlimen">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Los niños del Hogar que estudian son beneficiarios con desayunos: <select id="selectAyudas" name="cboDesayunos">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                      
+                    <a id="reciAyuda">En el momento de los desplazamientos su nucleo familiar recibio ayuda de:</a><br/>
+                    
+                    <a id="muniAyuda">Por parte del Municipio Urgencia en:</a> 
+                                                <ul id="muniAyuda"> 
+                                                    <li id="muniAyuda"><a><input type="checkbox" name="checkboxMuniAyuda" value="Salud">Salud</a></li>
+                                                    <li id="muniAyuda" ><a><input type="checkbox" name="checkboxMuniAyuda" value="Alojamiento">Alojamiento</a></li>
+                                                    <li id="muniAyuda"><a><input type="checkbox" name="checkboxMuniAyuda" value="Racion Alimentaria">Racion Alimentaria</a></li>                                                    
+                                                    <li id="muniAyuda"><a><input type="checkbox" name="checkboxMuniAyuda" value="Agua Potable">Agua Potable</a></li>                                                    
+                                                </ul>
+                                            
+                    
+                    <input id="agregarAyudas" type="submit" value="Agregar Ayudas">
+                    <br/><br/> 
+                    
+                </form>            
+            </div>           
+    </body>
+</html>
+
+
+

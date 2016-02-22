@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ingresar Proteccion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+       
+        <link rel="stylesheet" href="../../css/style.css"/>
+        <script type="text/javascript" src="../../js/funciones.js"></script>
+        
+    </head>
+    <body>
+        <!-- MENU PRINCIPAL -->       
+        <header>
+            <div class="wrap" > 
+                <nav>
+                    <ul class="menu">
+                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
+                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
+                            <ul>
+                                <li><a href="../menuDesplazados.html">Desplazados</a></li>
+                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
+                            <ul>
+                                <li><a href="#">Informe Parcial</a></li>
+                                <li><a href="#">Informe Total</a></li>                  
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Directions</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
+                        </li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
+        </header> 
+        
+        <!-- MENU SECUNDARIO --> 
+        <aside>
+            <div class="wrap" id='menuOtrasVictimas'> 
+                <nav class="navMenuOtrasVictimas">
+                    <ul class="menu" id="MD">
+                        <li id="MD"><a href="ingresarDatosOtra.html"><span></span>Datos</a></li>
+                        <li id="MD"><a href="#"><span></span>Familiares</a>
+                            <ul>
+                                <li ><a href="ingresarFamiliarOtra.html">Agregar</a></li>
+                                <li ><a href="#">Listar</a></li>
+                            </ul>
+                        </li>
+                        <li id="MD"><a href="ingresarVictimizacionOtra.html"><span></span>Victimización</a></li>
+                        <li id="MD"><a href="ingresarViviendaOtra.html"><span></span>Vivienda</a></li>
+                        <li id="MD"><a href="ingresarEconomiaFamiliarOtra.html"><span></span>Economia</a></li>
+                        <li id="MD"><a href="ingresarProteccionOtra.html"><span></span>Protección</a></li>
+                        <li id="MD"><a href="ingresarAyudasRecibidasOtra.html"><span></span>Ayudas</a></li>
+                        <li id="MD"><a href="ingresarDiscapacidadOtra.html"><span></span>Discapacidad</a></li>
+                        <li id="MD"><a href="ingresarEspecialProteccionOtra.html"><span></span>Protección Especial</a></li>
+                        <li id="MD"><a href="ingresarReparacionOtra.html"><span></span>Reparacion</a></li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>            
+        </aside>
+        
+        <!-- TITULO IDENTIFICADOR DE POSICION --> 
+        <footer>
+            <div class="idMenus">
+                <h1>POBLACION VICTIMA</h1>                                   
+            </div>
+        </footer>
+        
+        <!-- FORMULARIO AGREGAR PROTECCION -->
+            <div class="formulario"  id="formularioProteccion">
+                
+                <h1 class="titulo1">Agregar Proteccion</h1>            
+                
+                <form id="formularioProteccion" action="AgregarProteccionServlet" method="post">                    
+                                        
+                    <a id="solicitudProte">Ha Acudido a alguna para solicitar </a><br/>
+                    <a id="solicitudProte" >Proteccion: </a><br/> 
+                                                <ul id="solicitudProte"> 
+                                                    <li id="solicitudProte" ><a><input type="checkbox" name="checkboxSolicitudProte" value="Fiscalia">Fiscalia</a></li>
+                                                    <li id="solicitudProte"><a><input type="checkbox" name="checkboxSolicitudProte" value="Emabajadas">Emabajadas</a></li>
+                                                    <li id="solicitudProte"><a><input type="checkbox" name="checkboxSolicitudProte" value="Fuerzas Armadas">Fuerzas Armadas</a></li>
+                                                    <li id="solicitudProte"><a><input type="checkbox" name="checkboxSolicitudProte" value="Ministerio del Interior">Ministerio del Interior</a></li>
+                                                    <li id="solicitudProte" ><a><input type="checkbox" name="checkboxSolicitudProte" value="Defensoria O Procuraduria">Defensoria O Procuraduria</a></li>
+                                                    <li id="solicitudProte" ><a><input type="checkbox" name="checkboxSolicitudProte" value="Organismo Nacional de Derechos Humanos">Organismo Nacional de Derechos Humanos</a></li>                                 
+                                                    <li id="solicitudProte"><a><input type="checkbox" name="checkboxSolicitudProte" value="Ninguno">Ninguno</a></li>
+                                                </ul>
+                                                Otra: <input id="otraSolicitudProte" type="text" name="txtSolicitudProte"><br/>
+                    
+                    <a id="ayudaEstado">Conoce sobre la ayuda que presta el estado a la</a><br/>
+                    poblacion desplazada: <select id="ayudaEstado" name="cboAyudaEstado">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                    
+                    <a id="programas1">Usted o Algunos miembros de su hogar estan</a><br/>
+                    <a id="programas2">Inscritos en porgramas especificos para: </a><br/>
+                    Mujer: <select id="selectProteccion" name="cboMujer">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                        
+                    Adulto Mayor: <select id="selectProteccion" name="cboAdultoMayor">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                        
+                    Jovenes: <select id="selectProteccion" name="cboJovenes">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Discapacidad: <select id="selectProteccion" name="cboDiscapacidad">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Algun miembro de la familia esta afiliado a OPD: <select id="selectProteccion" name="cboAfiliadoOPD">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                    Cual OPD: <input id="inputProteccion" type="text" name="txtCualOPD"><br/>
+                    
+                    Participan en Evaluacion de politica publica: <select id="selectProteccion" name="cboEvaPoliPubli">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Cual: <input id="inputProteccion" type="text" name="txtCualPoliPubli"><br/>
+                    Ayuda Humanitaria: <input id="inputProteccion" type="text" name="txtAyudaHumanitaria"><br/>
+                    Salud: <input id="inputProteccion" type="text" name="txtSalud"><br/>
+                    Generacion de Ingresos: <input id="inputProteccion" type="text" name="txtGeneIngresos"><br/>
+                    Atencion Vivienda: <input id="inputProteccion" type="text" name="txtAtenVivienda"><br/>
+                    Educacion: <input id="inputProteccion" type="text" name="txtEducacion"><br/>
+                    
+                    <a id="clasifique1">Clasifique el componente de atencion que</a><br/>
+                    <a id="clasifique2">considera Prioritario recibir en este momento: </a><br/>
+                    
+                    Prioridad 1: <select id="prioridad" name="cboPrioridad1">
+                                             <option value=""></option>
+                                            <option value="Salud">Salud</option>
+                                            <option value="Empleo">Empleo</option>
+                                            <option value="Vivienda">Vivienda</option>
+                                            <option value="Educacion">Educacion</option>
+                                            <option value="Capacitacion">Capacitacion</option>                                            
+                                            <option value="Asesorias Juridicas">Asesorias Juridicas</option>
+                                            <option value="Consec. Docuemntos">Consec. Docuemntos</option>
+                                            <option value="Atencion Humanitaria">Atencion Humanitaria</option>
+                                            <option value="Generacion de Ingresos">Generacion de Ingresos</option>
+                                         </SELECT><br/>                                         
+                    Prioridad 2: <select id="prioridad" name="cboPrioridad2">
+                                             <option value=""></option>
+                                            <option value="Salud">Salud</option>
+                                            <option value="Empleo">Empleo</option>
+                                            <option value="Vivienda">Vivienda</option>
+                                            <option value="Educacion">Educacion</option>
+                                            <option value="Capacitacion">Capacitacion</option>                                            
+                                            <option value="Asesorias Juridicas">Asesorias Juridicas</option>
+                                            <option value="Consec. Docuemntos">Consec. Docuemntos</option>
+                                            <option value="Atencion Humanitaria">Atencion Humanitaria</option>
+                                            <option value="Generacion de Ingresos">Generacion de Ingresos</option>
+                                         </SELECT><br/>                                     
+                    Prioridad 3: <select id="prioridad" name="cboPrioridad3">
+                                             <option value=""></option>
+                                            <option value="Salud">Salud</option>
+                                            <option value="Empleo">Empleo</option>
+                                            <option value="Vivienda">Vivienda</option>
+                                            <option value="Educacion">Educacion</option>
+                                            <option value="Capacitacion">Capacitacion</option>                                            
+                                            <option value="Asesorias Juridicas">Asesorias Juridicas</option>
+                                            <option value="Consec. Docuemntos">Consec. Docuemntos</option>
+                                            <option value="Atencion Humanitaria">Atencion Humanitaria</option>
+                                            <option value="Generacion de Ingresos">Generacion de Ingresos</option>
+                                         </SELECT><br/>
+                    Prioridad 4: <select id="prioridad" name="cboPrioridad4">
+                                             <option value=""></option>
+                                            <option value="Salud">Salud</option>
+                                            <option value="Empleo">Empleo</option>
+                                            <option value="Vivienda">Vivienda</option>
+                                            <option value="Educacion">Educacion</option>
+                                            <option value="Capacitacion">Capacitacion</option>                                            
+                                            <option value="Asesorias Juridicas">Asesorias Juridicas</option>
+                                            <option value="Consec. Docuemntos">Consec. Docuemntos</option>
+                                            <option value="Atencion Humanitaria">Atencion Humanitaria</option>
+                                            <option value="Generacion de Ingresos">Generacion de Ingresos</option>
+                                         </SELECT><br/>
+                    Prioridad 5: <select id="prioridad" name="cboPrioridad5">
+                                             <option value=""></option>
+                                            <option value="Salud">Salud</option>
+                                            <option value="Empleo">Empleo</option>
+                                            <option value="Vivienda">Vivienda</option>
+                                            <option value="Educacion">Educacion</option>
+                                            <option value="Capacitacion">Capacitacion</option>                                            
+                                            <option value="Asesorias Juridicas">Asesorias Juridicas</option>
+                                            <option value="Consec. Docuemntos">Consec. Docuemntos</option>
+                                            <option value="Atencion Humanitaria">Atencion Humanitaria</option>
+                                            <option value="Generacion de Ingresos">Generacion de Ingresos</option>
+                                         </SELECT><br/>                    
+                    <input id="agregarProteccion" type="submit" value="Agregar Proteccion">
+                    <br/><br/> 
+                    
+                </form>            
+            </div>           
+    </body>
+</html>
+
+

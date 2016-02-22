@@ -1,0 +1,880 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9/02/2016, 09:57:32 AM
+    Author     : MAURICIO R
+*/
+
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+        text-align: center;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Default Styles 
+--------------------------------------------------------------------*/
+
+body {
+	background: url('../img/denim.png');
+	font-family: 'Droid Sans', sans-serif;;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.wrap {
+	width: 940px;
+	margin: 2em auto;
+}
+
+nav {
+	background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#ccc));
+	background-image: linear-gradient(#fff, #ccc);
+	border-radius: 6px;
+	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
+	padding: 0 10px;
+	position: relative;
+}
+
+.menu li {
+	float: left;
+	position: relative;
+}
+
+.menu li a {
+	color: #444;
+	display: block;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 6px 12px;
+	margin: 8px 8px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+.menu li a:hover {
+	background: -webkit-gradient(linear, center top, center bottom, from(#ededed), to(#fff));
+	background-image: linear-gradient(#ededed, #fff);
+	border-radius: 12px;
+	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+	color: #222;
+}
+
+/* Dropdown styles */
+
+.menu ul {
+	position: absolute;
+	left: -9999px;
+	list-style: none;
+	opacity: 0;
+	transition: opacity 1s ease;
+}
+
+.menu ul li {
+	float: none;
+}
+
+.menu ul a {
+	white-space: nowrap;
+}
+
+/* Displays the dropdown on hover and moves back into position */
+.menu li:hover ul {
+	background: rgba(255,255,255,0.7);
+	border-radius: 0 0 6px 6px;
+	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+	left: 5px;
+	opacity: 1;
+}
+
+/* Persistant Hover State */
+.menu li:hover a {
+	background: -webkit-gradient(linear, center top, center bottom, from(#ccc), to(#ededed));
+	background-image: linear-gradient(#ccc, #ededed);
+	border-radius: 12px;
+	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+	color: #222;
+}
+
+.menu li:hover ul a {
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.menu li:hover ul li a:hover {
+	background: -webkit-gradient(linear, center top, center bottom, from(#eee), to(#fff));
+	background-image: linear-gradient(#ededed, #fff);
+	border-radius: 12px;
+	box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.3);
+}
+
+/* ICONOS */
+
+@font-face {
+  font-family: 'IconicStroke';
+    src: url("../fonts/iconic/iconic_stroke.eot");
+    src: local('IconicStroke'),
+       url("../fonts/iconic/iconic_stroke.svg#iconic") format('svg'),
+	   url("../fonts/iconic/iconic_stroke.otf") format('opentype');
+}
+
+.iconic {
+	color:inherit;
+	font-family: "IconicStroke";
+	font-size: 38px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+
+a.iconic:hover {
+	color:inherit;
+}
+
+.iconic.home:before { content: '!'; }
+.iconic.at:before { content: "@"; }
+.iconic.quote:before { content: '"'; }
+.iconic.quote-alt:before { content: "'"; }
+.iconic.arrow-up:before { content: "3"; }
+.iconic.arrow-right:before { content: "4"; }
+.iconic.arrow-bottom:before { content: "5"; }
+.iconic.arrow-left:before { content: "6"; }
+.iconic.arrow-up-alt:before { content: "#"; }
+.iconic.arrow-right-alt:before { content: "$"; }
+.iconic.arrow-bottom-alt:before { content: "%"; }
+.iconic.arrow-left-alt:before { content: "^"; }
+.iconic.move:before { content: "9"; }
+.iconic.move-vertical:before { content: "8"; }
+.iconic.move-horizontal:before { content: "7"; }
+.iconic.move-alt:before { content: "("; }
+.iconic.move-vertical-alt:before { content: "*"; }
+.iconic.move-horizontal-alt:before { content: "&"; }
+.iconic.cursor:before { content: ")"; }
+.iconic.plus:before { content: "+"; }
+.iconic.plus-alt:before { content: "="; }
+.iconic.minus:before { content: "-"; }
+.iconic.minus-alt:before { content: "_"; }
+.iconic.new-window:before { content: "1"; }
+.iconic.dial:before { content: "2"; }
+.iconic.lightbulb:before { content: "0"; }
+.iconic.link:before { content: "/"; }
+.iconic.image:before { content: "?"; }
+.iconic.article:before { content: ">"; }
+.iconic.read-more:before { content: "."; }
+.iconic.headphones:before { content: ","; }
+.iconic.equalizer:before { content: "<"; }
+.iconic.fullscreen:before { content: ":"; }
+.iconic.exit-fullscreen:before { content: ";"; }
+.iconic.spin:before { content: "["; }
+.iconic.spin-alt:before { content: "{"; }
+.iconic.moon:before { content: "]"; }
+.iconic.sun:before { content: "}"; }
+.iconic.map-pin:before { content: ".."; }
+.iconic.pin:before { content: "|"; }
+.iconic.eyedropper:before { content: "~"; }
+.iconic.denied:before { content: "`"; }
+.iconic.calendar:before { content: "a"; }
+.iconic.calendar-alt:before { content: "A"; }
+.iconic.bolt:before { content: "b"; }
+.iconic.clock:before { content: "c"; }
+.iconic.document:before { content: "d"; }
+.iconic.book:before { content: "e"; }
+.iconic.book-alt:before { content: "E"; }
+.iconic.magnifying-glass:before { content: "f"; }
+.iconic.tag:before { content: "g"; }
+.iconic.heart:before { content: "h"; }
+.iconic.info:before { content: "i"; }
+.iconic.chat:before { content: "j"; }
+.iconic.chat-alt:before { content: "J"; }
+.iconic.key:before { content: "k"; }
+.iconic.unlocked:before { content: "l"; }
+.iconic.locked:before { content: "L"; }
+.iconic.mail:before { content: "m"; }
+.iconic.mail-alt:before { content: "M"; }
+.iconic.phone:before { content: "n"; }
+.iconic.box:before { content: "o"; }
+.iconic.pencil:before { content: "p"; }
+.iconic.pencil-alt:before { content: "P"; }
+.iconic.comment:before { content: "q"; }
+.iconic.comment-alt:before { content: "Q"; }
+.iconic.rss:before { content: "r"; }
+.iconic.star:before { content: "s"; }
+.iconic.trash:before { content: "t"; }
+.iconic.user:before { content: "u"; }
+.iconic.volume:before { content: "v"; }
+.iconic.mute:before { content: "V"; }
+.iconic.cog:before { content: "w"; }
+.iconic.cog-alt:before { content: "W"; }
+.iconic.x:before { content: "x"; }
+.iconic.x-alt:before { content: "X"; }
+.iconic.check:before { content: "y"; }
+.iconic.check-alt:before { content: "Y"; }
+.iconic.beaker:before { content: "z"; }
+.iconic.beaker-alt:before { content: "Z"; }
+
+/*ESTILO form INICIO DE SESION */
+
+h1#inicioSesion{
+	margin: 5.5em auto;
+
+}
+
+input#usuario{
+	margin-right: -40px;
+	margin-top: 16px;
+}
+
+input#contrasena{
+	margin-top: 13px;
+}
+
+#iniciarSesion{
+	 
+    width: 160px;
+    height: 30px;
+}
+.formularioSesion{
+    background: url('../img/light_alu.png');
+    border-radius: 6px;
+    text-align: center;
+    padding: 20px;
+}
+
+/*  ESTILO MENU DESPLAZADO */
+
+div#menuDesplazado{
+	margin-top: 90px;
+    width: 1176px;
+}
+li#MD{
+    margin-left: -14px;
+}
+nav.navMenuDesplazado{	
+	margin-left: 40px;
+    width: 1090px;
+    padding-right: 0px;
+    padding-left: 13px;
+}
+
+/*  ESTILO MENU OTRAS VICTIAMS */
+
+div#menuOtrasVictimas{
+	margin-top: 90px;
+    width: 1176px;
+}
+li#MD{
+    margin-left: -14px;
+}
+nav.navMenuOtrasVictimas{	
+	margin-left: 102px;
+    width: 959px;
+    padding-right: 0px;
+    padding-left: 13px;
+}
+
+/* IDENTIFICADOR CARAACTERIZACION */
+
+footer{
+	margin-top: -10px;
+}
+
+/*  VALIDACION DE DOCUMENTO OTRA */
+
+h1#validarDocumentoOtra{
+	margin: 6em auto;
+}
+form.formularioValidacionOtra{
+    background: url('../img/light_alu.png');
+    border-radius: 6px;
+    width: 406px;
+    height: 127px;
+    margin: -13em auto;
+    padding-top: 103px;
+    text-align: center;
+}
+
+/*  VALIDACION DE DOCUMENTO DESPLAZADOS */
+
+h1#validarDocumentoDesplazados{
+	margin: 6em auto;
+}
+form.formularioValidacionDesplazados{
+    background: url('../img/light_alu.png');
+    border-radius: 6px;
+    width: 406px;
+    height: 127px;
+    margin: -13em auto;
+    padding-top: 103px;
+    text-align: center;
+}
+
+/* ESTILO div INGRESAR OTRA VICTIMA */
+
+.formulario{    
+    background: url('../img/light_alu.png');
+    border-radius: 6px;
+    width: 694px;
+    margin: 0em auto 2em;
+}
+form{
+	margin-right: 200px;
+	text-align: right;
+	margin-top: 20px;
+}
+select {
+	text-align: left;
+	margin-right: 87px;
+	margin-top: 2px;
+}
+input{
+	margin-top: 2px;
+}
+.titulo1{
+	text-align: center;
+	padding-top: 20px;
+}
+
+
+/* FORMULARIO DATOS */
+
+input#nombreComp{
+	margin-right: -70px;
+}
+select#tipoDocumento{
+	margin-right: -133px;
+}
+select#jdh{
+	margin-right: 129px;
+}
+select#depa{
+	margin-right: 1px;
+}
+select#muni{
+	margin-right: 25px;
+}
+select#zona{
+	margin-right: 104px;
+}
+select#Parentesco{
+	margin-right: 40px;
+}
+input#agregar{
+	margin-top: 17px;
+    margin-right: 91px;
+    width: 160px;
+    height: 30px;
+}
+select#estaCivil{
+	margin-right: 25px;
+}
+
+
+/* FORMULARIO FAMILIAR */
+select#ED{
+	margin-right: 27px;
+}
+select#TI{
+	margin-right: -133px;
+}
+select#separado{
+	margin-right: 129px;
+}
+select#discapacitado{
+	margin-right: -83px;
+}
+select#discapacidad{
+	margin-right: -332px;
+}
+input#otraDiscapacidad{
+	margin-right: -350px;
+}
+select#mina-Antipersonal{
+	margin-right: -46px;
+}
+a#auxilioTransporte{
+	margin-right: 97px;
+}
+select#auxilioTransporte{
+	margin-right: 53px;
+}
+a#ayudaMedica{
+	margin-right: 76px;
+}
+li#ayudaMedica{
+	text-align: left;
+}
+ul#ayudaMedica{
+	margin-top: -14px;
+    margin-left: 320px;
+}
+input#otraAyuda{
+	margin-right: -289px;
+}
+a#indemnizacion{
+	margin-right: 79px;
+}
+a#indemnizacion1{
+	margin-right: 72px;
+}
+a#indemnizacion2{
+	margin-right: 85px;
+}
+li#indemnizacion{
+	margin-right: -173px;
+    text-align: left;
+    margin-left: 1px;
+}
+ul#indemnizacion{
+	margin-top: -14px;
+    margin-left: 320px;
+}
+select#afiliadoSalud{
+	margin-right: -72px;
+}
+select#regimen{
+	margin-right: -173px;
+}
+input#cualRegimen{
+	margin-right: -280px;;
+}
+select#comboboxDesicion{
+	margin-right: 129px;
+}
+select#vacunas{
+	margin-right: -121px;
+}
+
+input#cualesVacunas{
+	margin-right: -266px;
+}
+a#diagnostico{
+	margin-right: 54px;
+}
+select#enfCronica{
+	margin-right: -37px;
+}
+input#cualEnfCronica{
+	margin-right: -258px;
+}
+input#califEstadoSalud{
+	margin-right: 126px;
+}
+select#estudiaA{
+	margin-right: -37px;
+}
+select#proEscolar{
+	margin-right: 96px;
+}
+select#costoEdu{
+	margin-right: 41px;
+}
+select#nivelAlcanzado{
+	margin-right: 73px;
+}
+select#compeLaboral{
+	margin-right: -58px;
+}
+select#capacitacion{
+	margin-right: -58px;
+}
+select#horaCapacitacion{
+	margin-right: 93px;
+}
+select#actiLaboral{
+	margin-right: 41px;
+}
+select#capacitarse{
+	margin-right: -58px;
+}
+select#ramaActual{
+	margin-right: -58px;
+}
+select#jornada{
+	margin-right: 111px;
+}
+
+/* FORMULARIO VICTIMIZACION */
+
+div#formularioVictimizacion{
+	width: 720px;
+}
+a#vecesVictimizado{
+	margin-right: 68px;
+}
+select#victimizado{
+	margin-right: -32px;
+}
+div#victimizado1, div#victimizado2, div#victimizado3{
+	margin-right: -194px;
+}
+a#causasVic1{
+	margin-right: 140px;
+}
+a#causasVic2{
+	margin-right: 136px;
+}
+div#infVictimizacion{
+	text-align: right;
+    margin-right: 22px;
+}
+input#nPersonas{
+	margin-right: -118px;
+}
+select#selectVicti{
+	margin-right: -115px;
+}
+a#declaroAnte{
+	margin-right: -67px;
+}
+
+/* FORMULARIO VIVIENDA */
+
+div#formularioVivienda{
+	width: 740px;
+}
+select#actualVivienda{
+	margin-right: -55px;
+}
+select#tenencia{
+	margin-right: -35px;
+}
+select#tipoContra{
+	margin-right: -45px;
+}
+select#zonaVivienda{
+	margin-right: 32px;
+}
+select#zonaAltoR{
+	margin-right: 57px;
+}
+select#paredes{
+	margin-right: 12px;
+}
+select#piso{
+	margin-right: 21px;
+}
+select#techo{
+	margin-right: -67px;
+}
+select#acueducto{
+	margin-right: 57px;
+}
+select#telefono{
+	margin-right: 57px;
+}
+select#eElectrica{
+	margin-right: 57px;
+}
+select#alcantarillado{
+	margin-right: 57px;
+}
+select#gasDomiciliario{
+	margin-right: 57px;
+}
+select#reBasuras{
+	margin-right: 57px;
+}
+input#nHabiAnte{
+	margin-right: 54px;
+}
+input#nHabiActu{
+	margin-right: 54px;
+}
+input#nFamilias{	
+	margin-right: -100px;
+}
+select#subsVivienda{
+	margin-right: -97px;
+}
+
+/* FORMULARIO ECONOMIA ALIMENTARIA */
+
+div#formularioEconomiaFamiliar{
+	width: 694px;
+}
+select#ingreMensuales{
+	margin-right: -128px;
+}
+select#gastosMensuales{
+	margin-right: -128px;
+}
+a#ordenGastos{
+	margin-right: 130px;
+}
+select#ordenGastos{
+	margin-right: -10px;
+}
+a#comidasDia{
+	margin-right: 129px;
+}
+select#comidasDia{
+	margin-right: 16px;
+}
+a#alimConsumen{
+    margin-right: -67px;
+}
+select#alimConsumen{
+	margin-right: -66px;
+}
+a#alimAcorde{
+	margin-right: 132px;
+}
+select#alimAcorde{
+	margin-right: 80px;
+}
+select#alimAdecuada{
+	margin-right: 80px;
+}
+select#fuente{
+	margin-right: -60px;
+}
+
+/* FORMULARIO PROTECCION */
+
+form#formularioProteccion
+{
+	margin-right: 100px;
+}
+
+div#formularioProteccion{
+	width: 694px;
+}
+a#solicitudProte{
+	margin-right: 217px;
+}
+li#solicitudProte{
+	text-align: left;
+    margin-left: 373px;
+}
+ul#solicitudProte{
+	margin-top: -15px;
+}
+input#otraSolicitudProte{
+	margin-right: 44px;
+}
+a#ayudaEstado{
+	margin-right: 225px;
+}
+select#ayudaEstado{
+	margin-right: 173px;
+}
+a#programas1{
+	margin-right: 225px;
+}
+a#programas2{
+	margin-right: 217px;
+}
+select#selectProteccion{
+	margin-right: 173px;
+}
+input#inputProteccion{
+	margin-right: 44px;
+}
+a#clasifique1{
+	margin-right: 226px;
+}
+a#clasifique2{
+	margin-right: 216px;
+}
+select#prioridad{
+	margin-right: 50px;
+}
+input#agregarProteccion{
+	margin-top: 17px;
+    margin-right: 147px;
+    width: 150px;
+    height: 30px;
+}
+
+/* FORMULARIO AYUDAS RECIBIDAS */
+
+form#formularioAyudasRecibidas
+{
+	margin-right: 10px;
+}
+a#prograMenor{
+	margin-right: 135px;
+}
+select#selectAyudas{
+	margin-right: 80px;
+}
+a#reciAyuda{
+	margin-right: 78px;
+}
+a#muniAyuda{
+	margin-right: 260px
+}
+li#muniAyuda{
+	text-align: left;
+    margin-left: 423px;
+}
+ul#muniAyuda{
+	margin-top: -14px;
+}
+input#agregarAyudas{
+	margin-top: 17px;
+    margin-right: 250px;
+    width: 150px;
+    height: 30px;
+}
+
+/* FORMULARIO DISCAPACIDAD */
+
+form#formularioDiscapacidad
+{
+	margin-right: 10px;
+    width: 700px;
+}
+select#selectDiscapacidad{
+	margin-right: 60px
+}
+select#selectReha{
+	margin-right: 73px;
+}
+input#agregarDiscapacidad{
+	margin-top: 17px;
+    margin-right: 250px;
+    width: 150px;
+    height: 30px;
+}
+/* FORMULARIO ESPECIAL PROTECCION */
+
+form#formularioEsProteccion
+{
+	margin-right: 10px;
+    width: 700px;
+}
+div#formularioEsProteccion{
+	width: 	730px;
+}
+select#selectEsProteccion{
+	margin-right: 110px;
+}
+select#selectEsProteccion2{
+	margin-right: -18px;
+}
+select#selectEsProteccion3{
+	margin-right: 60px;
+}
+input#cualEntidad{
+margin-right: -19px;
+}
+input#agregarEspProteccion{
+	margin-top: 17px;
+    margin-right: 250px;
+    width: 150px;
+    height: 30px;
+}
+
+/* FORMULARIO REPARACION */
+
+form#formularioReparacion
+{
+	margin-right: 10px;
+    width: 700px;
+}
+div#formularioReparacion{
+	width: 767px;
+}
+select#selectReparacion{
+	margin-right: -53px;
+}
+
+
+input#agregarReparacion{
+	margin-top: 17px;
+    margin-right: 250px;
+    width: 150px;
+    height: 30px;
+}
+
+input#selectReparacion{
+	margin-right: -53px;
+}
+
+/* FORMULARIO ESTABILIZACION */
+
+form#formularioEstabilizacion{
+	margin-right: 10px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+a#razones{
+	margin-right: 320px;
+}
+li#razones{
+	text-align: left;	
+	margin-left: 365px;
+}
+ul#razones{
+	margin-top: -14px;
+}
+a#retorno{
+	margin-right: 323px;
+}
+select#selectEstabilizacion{
+	margin-right: 270px;
+}
+a#desearia{
+	margin-right: 320px;
+}
+select#selectDesearia{
+	margin-right: 211px;
+}
+input#dondeRetornar{
+	margin-right: 141px;
+}
+
+select#zonaRetorno{
+	margin-right: 245px;
+}
+input#agregarEstabilizacion{
+	margin-top: 17px;
+    margin-right: 250px;
+    width: 150px;
+    height: 30px;
+}

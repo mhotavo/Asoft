@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ingresar Especial Proteccion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+       
+        <link rel="stylesheet" href="../../css/style.css"/>
+        <script type="text/javascript" src="../../js/funciones.js"></script>
+        
+    </head>
+    <body>
+        <!-- MENU PRINCIPAL -->       
+        <header>
+            <div class="wrap" > 
+                <nav>
+                    <ul class="menu">
+                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
+                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
+                            <ul>
+                                <li><a href="../menuDesplazados.html">Desplazados</a></li>
+                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
+                            <ul>
+                                <li><a href="#">Informe Parcial</a></li>
+                                <li><a href="#">Informe Total</a></li>                  
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Directions</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
+                        </li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
+        </header> 
+        
+        <!-- MENU SECUNDARIO --> 
+        <aside>
+            <div class="wrap" id='menuOtrasVictimas'> 
+                <nav class="navMenuOtrasVictimas">
+                    <ul class="menu" id="MD">
+                        <li id="MD"><a href="ingresarDatosOtra.html"><span></span>Datos</a></li>
+                        <li id="MD"><a href="#"><span></span>Familiares</a>
+                            <ul>
+                                <li ><a href="ingresarFamiliarOtra.html">Agregar</a></li>
+                                <li ><a href="#">Listar</a></li>
+                            </ul>
+                        </li>
+                        <li id="MD"><a href="ingresarVictimizacionOtra.html"><span></span>Victimización</a></li>
+                        <li id="MD"><a href="ingresarViviendaOtra.html"><span></span>Vivienda</a></li>
+                        <li id="MD"><a href="ingresarEconomiaFamiliarOtra.html"><span></span>Economia</a></li>
+                        <li id="MD"><a href="ingresarProteccionOtra.html"><span></span>Protección</a></li>
+                        <li id="MD"><a href="ingresarAyudasRecibidasOtra.html"><span></span>Ayudas</a></li>
+                        <li id="MD"><a href="ingresarDiscapacidadOtra.html"><span></span>Discapacidad</a></li>
+                        <li id="MD"><a href="ingresarEspecialProteccionOtra.html"><span></span>Protección Especial</a></li>
+                        <li id="MD"><a href="ingresarReparacionOtra.html"><span></span>Reparacion</a></li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>            
+        </aside>
+        
+        <!-- TITULO IDENTIFICADOR DE POSICION --> 
+        <footer>
+            <div class="idMenus">
+                <h1>POBLACION VICTIMA</h1>                                   
+            </div>
+        </footer>
+        
+        <!-- FORMULARIO AGREGAR AYUDAS RECIBIDAS -->
+            <div class="formulario"  id="formularioEsProteccion">
+                
+                <h1 class="titulo1">Agregar Especial Proteccion</h1>            
+                
+                <form id="formularioEsProteccion" action="AgregarEsProteccionServlet" method="post">         
+                    
+                    La ayuda humanitaria recibida corresponde a su cultura: <select id="selectEsProteccion" name="cboEsProteccion">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/> 
+                    La Educacion recibida por menores de 18 años es apropiada a su cultura <select id="selectEsProteccion" name="cboEducaCultura">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                    Los funcionarios publicos les dan un trato digno y respetuoso: <select id="selectEsProteccion" name="cboTrato">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                    Seleccione el nombre del pueblo indigena al que pertenece: <select id="selectEsProteccion2" name="cboPuebloIndi">
+                                            <option value=""></option>
+                                            <option value="Achagua">Achagua</option>
+                                            <option value="Andaquí">Andaquí</option>
+                                            <option value="Andoque">Andoque</option>
+                                            <option value="Arhuaco">Arhuaco</option>
+                                            <option value="Awá">Awá</option>
+                                            <option value="Bara (indígenas)">Bara (indígenas)</option>
+                                            <option value="Barasana">Barasana</option>
+                                            <option value="Betoye">Betoye</option>
+                                            <option value="Cacique Bitagüí">Cacique Bitagüí</option>
+                                            <option value="Camsá">Camsá</option>
+                                            <option value="Carijona">Carijona</option>
+                                            <option value="Catíos">Catíos</option>
+                                            <option value="Cañamomo">Cañamomo</option>
+                                            <option value="Chamíes">Chamíes</option>
+                                            <option value="Chimila">Chimila</option>
+                                            <option value="Chitareros">Chitareros</option>
+                                            <option value="Cocama">Cocama</option>
+                                            <option value="Cocamilla">Cocamilla</option>
+                                            <option value="Cofán">Cofán</option>
+                                            <option value="Coreguaje">Coreguaje</option>
+                                            <option value="Cubeo">Cubeo</option>
+                                            <option value="Cuiba">Cuiba</option>
+                                            <option value="Desano">Desano</option>
+                                            <option value="Dujo">Dujo</option>
+                                            <option value="Emberá">Emberá</option>
+                                            <option value="Emberá-Katio">Emberá-Katio</option>
+                                            <option value="Emberá-Chami">Emberá-Chami</option>
+                                            <option value="Emberá-Dobida">Emberá-Dobida</option>
+                                            <option value="Guahibo">Guahibo</option>
+                                            <option value="Guambiano">Guambiano</option>
+                                            <option value="Guanano">Guanano</option>
+                                            <option value="Guando">Guando</option>
+                                            <option value="Guanes">Guanes</option>
+                                            <option value="Guayabero">Guayabero</option>
+                                            <option value="Guayupe">Guayupe</option>
+                                            <option value="Hitnü">Hitnü</option>
+                                            <option value="Huitoto">Huitoto</option>
+                                            <option value="Inga (etnia)">Inga (etnia)</option>
+                                            <option value="Jupda">Jupda</option>
+                                            <option value="Kabiyarí">Kabiyarí</option>
+                                            <option value="Kamentza">Kamentza</option>
+                                            <option value="Kankuamos">Kankuamos</option>
+                                            <option value="Karapana">Karapana</option>
+                                            <option value="Kichwa">Kichwa</option>
+                                            <option value="Kogui">Kogui</option>
+                                            <option value="Kofan">Kofan</option>
+                                            <option value="Koreguaje">Koreguaje</option>
+                                            <option value="Kuiva">Kuiva</option>
+                                            <option value="Kuna (etnia)">Kuna (etnia)</option>
+                                            <option value="Macuna">Macuna</option>
+                                            <option value="Matapí">Matapí</option>
+                                            <option value="Mirañas">Mirañas</option>
+                                            <option value="Misak">Misak</option>
+                                            <option value="Mochila arhuaca">Mochila arhuaca</option>
+                                            <option value="Mokaná">Mokaná</option>
+                                            <option value="Múcura">Múcura</option>
+                                            <option value="Nasa">Nasa</option>
+                                            <option value="Nonuyas">Nonuyas</option>
+                                            <option value="Nukak-Makú">Nukak-Makú</option>
+                                            <option value="Nutabes">Nutabes</option>
+                                            <option value="Panche">Panche</option>
+                                            <option value="Pastos">Pastos</option>
+                                            <option value="Pijaos">Pijaos</option>
+                                            <option value="Piratapuyo">Piratapuyo</option>
+                                            <option value="Población indígena de Colombia">Población indígena de Colombia</option>
+                                            <option value="Pubenenses">Pubenenses</option>
+                                            <option value="Pueblo barí">Pueblo barí</option>
+                                            <option value="Pueblo bora">Pueblo bora</option>
+                                            <option value="Pueblo kurripako">Pueblo kurripako</option>
+                                            <option value="Pueblo nasa">Pueblo nasa</option>
+                                            <option value="Pueblo sáliba">Pueblo sáliba</option>
+                                            <option value="Pueblo wenaiwika">Pueblo wenaiwika</option>
+                                            <option value="Pueblo Yanacona">Pueblo Yanacona</option>
+                                            <option value="Pueblo yukpa">Pueblo yukpa</option>
+                                            <option value="Pueblo puinave">Pueblo puinave</option>
+                                            <option value="Raizal">Raizal</option>
+                                            <option value="Siona">Siona</option>
+                                            <option value="Sikuani">Sikuani</option>
+                                            <option value="Siriano">Siriano</option>
+                                            <option value="Sutagaos">Sutagaos</option>
+                                            <option value="Tahamíes">Tahamíes</option>
+                                            <option value="Taironas">Taironas</option>
+                                            <option value="Taiwano">Taiwano</option>
+                                            <option value="Tamas (tribu)">Tamas (tribu)</option>
+                                            <option value="Tanimuca">Tanimuca</option>
+                                            <option value="Tatuyo">Tatuyo</option>
+                                            <option value="Tikuna">Tikuna</option>
+                                            <option value="Timanaes">Timanaes</option>
+                                            <option value="Tinigua">Tinigua</option>
+                                            <option value="Totoro">Totoro</option>
+                                            <option value="Tucano">Tucano</option>
+                                            <option value="Tupe">Tupe</option>
+                                            <option value="Tuyuca">Tuyuca</option>
+                                            <option value="U'wa">U'wa</option>
+                                            <option value="Uitoto">Uitoto</option>
+                                            <option value="Umbrá">Umbrá</option>
+                                            <option value="Waunana">Waunana</option>
+                                            <option value="Wayuu">Wayuu</option>
+                                            <option value="Wiwa">Wiwa</option>
+                                            <option value="Yagua (pueblo)">Yagua (pueblo)</option>
+                                            <option value="Yalcón">Yalcón</option>
+                                            <option value="Yariguies">Yariguies</option>
+                                            <option value="Yucuna">Yucuna</option>
+                                            <option value="Yukpa de Colombia y Venezuela">Yukpa de Colombia y Venezuela</option>
+                                            <option value="Yuri (etnia)">Yuri (etnia)</option>
+                                            <option value="Zenú">Zenú</option>
+                                            </SELECT><br/>
+                        
+                    Las mujeres indigenas o afrodescendientes reciben violencia intrafamiliar: <select id="selectEsProteccion" name="cboViolencia">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Ha denunciado: <select id="selectEsProteccion" name="cboDenunciado">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>
+                                         
+                    Ante Cual Entidad: <input id="cualEntidad" type="text" name="txtCualEntidad"><br/>
+                    
+                    Que tipo de Violencia han padecido: <select id="selectEsProteccion3" name="cboTipoViolencia">
+                                             <option value=""></option>
+                                            <option value="Psicologica">Psicologica</option>
+                                            <option value="Fisica">Fisica</option>
+                                            <option value="Sexual">Sexual</option>
+                                            <option value="Otra">Otra</option>
+                                         </SELECT><br/>
+                                         
+                    Son parte de una organizacion donde promueven sus derechos: <select id="selectEsProteccion" name="cboPromuevenDere">
+                                             <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                         </SELECT><br/>                                
+                                                                                    
+                    
+                    <input id="agregarEspProteccion" type="submit" value="Agregar Esp.Proteccion">
+                    <br/><br/> 
+                    
+                </form>            
+            </div>           
+    </body>
+</html>
+
+
+

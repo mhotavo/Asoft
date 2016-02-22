@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ingresar Reparacion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+       
+        <link rel="stylesheet" href="../../css/style.css"/>
+        <script type="text/javascript" src="../../js/funciones.js"></script>
+        
+    </head>
+    <body>
+        <!-- MENU PRINCIPAL -->       
+        <header>
+            <div class="wrap" > 
+                <nav>
+                    <ul class="menu">
+                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
+                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
+                            <ul>
+                                <li><a href="../menuDesplazados.html">Desplazados</a></li>
+                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
+                            <ul>
+                                <li><a href="#">Informe Parcial</a></li>
+                                <li><a href="#">Informe Total</a></li>                  
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Directions</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
+                        </li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
+        </header> 
+        
+        <!-- MENU SECUNDARIO --> 
+        <aside>
+            <div class="wrap" id='menuOtrasVictimas'> 
+                <nav class="navMenuOtrasVictimas">
+                    <ul class="menu" id="MD">
+                        <li id="MD"><a href="ingresarDatosOtra.html"><span></span>Datos</a></li>
+                        <li id="MD"><a href="#"><span></span>Familiares</a>
+                            <ul>
+                                <li ><a href="ingresarFamiliarOtra.html">Agregar</a></li>
+                                <li ><a href="#">Listar</a></li>
+                            </ul>
+                        </li>
+                        <li id="MD"><a href="ingresarVictimizacionOtra.html"><span></span>Victimización</a></li>
+                        <li id="MD"><a href="ingresarViviendaOtra.html"><span></span>Vivienda</a></li>
+                        <li id="MD"><a href="ingresarEconomiaFamiliarOtra.html"><span></span>Economia</a></li>
+                        <li id="MD"><a href="ingresarProteccionOtra.html"><span></span>Protección</a></li>
+                        <li id="MD"><a href="ingresarAyudasRecibidasOtra.html"><span></span>Ayudas</a></li>
+                        <li id="MD"><a href="ingresarDiscapacidadOtra.html"><span></span>Discapacidad</a></li>
+                        <li id="MD"><a href="ingresarEspecialProteccionOtra.html"><span></span>Protección Especial</a></li>
+                        <li id="MD"><a href="ingresarReparacionOtra.html"><span></span>Reparacion</a></li>
+                    </ul>
+                    
+                    <div class="clearfix"></div>
+                </nav>
+            </div>            
+        </aside>
+        
+        <!-- TITULO IDENTIFICADOR DE POSICION --> 
+        <footer>
+            <div class="idMenus">
+                <h1>POBLACION VICTIMA</h1>                                   
+            </div>
+        </footer>
+        
+        <!-- FORMULARIO AGREGAR AYUDAS RECIBIDAS -->
+            <div class="formulario"  id="formularioReparacion">
+                
+                <h1 class="titulo1">Agregar Reparacion</h1>            
+                
+                <form id="formularioReparacion" action="AgregarReparacionServlet" method="post">         
+                    
+                    <a id="violaDH">El estado le ha informado sobre la verdad de la violacion de los D.H y del D.I.H cometidos contra</a><br/> 
+                    el (ella), y/o los miembros de su hogaren relacion a los hechos ocurridos con su Victimizacion?: 
+                                        <select id="selectReparacion" name="cboViolaDH">
+                                            <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </SELECT><br/>
+                                        
+                    Algun miembro del hogar ha sido reparado o indemnizado por el estado por la victimizacion?:  
+                                        <select id="selectReparacion" name="cboRepaIndemnizado">
+                                            <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </SELECT><br/>
+                                        
+                    El estado le ha brindado garantias para que no se vuelva a repetir una nueva victimizacion?:  
+                                        <select id="selectReparacion" name="cboGarantias">
+                                            <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </SELECT><br/>
+                    
+                    Algun miembro de su familia solicito al estado indemnizacion monetaria para la victimizacion?:  
+                                        <select id="selectReparacion" name="cboSoliEstado">
+                                            <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </SELECT><br/>
+                            
+                    Algun miembro de su familia recibio del estado indemnizacion monetaria para la victimizacion?:  
+                                        <select id="selectReparacion" name="cboReciEstado">
+                                            <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </SELECT><br/>
+                                    
+                    Usted y toda su familia han recibido rehabilitacion despues de la victimizacion para enfrentar el daño?:  
+                                        <select id="selectReparacion" name="cboRehabilitacion">
+                                            <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </SELECT><br/>
+                                        
+                    <a id="violaDH">Algun miembro de su hogar ha sido beneficiario de medidas de satisfaccion por parte del estado</a><br/> 
+                    consistentes en la investigacion, juzgamiento y sancion de los responsables de la victimizacion?: 
+                                        <select id="selectReparacion" name="cboSancion">
+                                            <option value=""></option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </SELECT><br/>                                                                     
+                    
+                    <input id="agregarReparacion" type="submit" value="Agregar Reparacion">
+                    <br/><br/> 
+                    
+                </form>            
+            </div>           
+    </body>
+</html>
+
+
+

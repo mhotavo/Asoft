@@ -37,22 +37,18 @@
 		if(!$mail->send()) {
 		    $HTML = '<div class="alert alert-dismissible alert-danger">
 		    <button type="button" class="close" data-dismiss="alert">x</button>
-		    <strong>ERROR:</strong> ' . $mail->ErrorInfo . ' </div>';
+		    <strong>Error:</strong> ' . $mail->ErrorInfo . ' </div>';
 		} else {
 		
 			$db -> query("UPDATE usuarios SET KEYPASS='$keypass', NEWPASS='$newpass' WHERE ID='$id';   ");
 			$HTML=1;
 		  }
 
-
-
-		
-	
-
 	} else {
+
 		$HTML='<div class="alert alert-dismissible alert-danger">
 				  <button type="button" class="close" data-dismiss="alert">x</button>
-				  <h4>ERROR:</h4> <p> El email solicitado no existe en el sistema. </p>
+				  <strong>Error:</strong> <p> El email solicitado no existe en el sistema. </p>
 			  </div>';
 
 	}
@@ -61,5 +57,5 @@
 	$db -> liberar($sql);
 	$db -> close();
 
-
+     echo $HTML;
  ?>

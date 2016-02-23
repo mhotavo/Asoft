@@ -57,8 +57,10 @@ table {
 --------------------------------------------------------------------*/
 
 body {
-	background-color: #751919;
-	font-family: 'Droid Sans', sans-serif;;
+	background-color: #15b0b0;
+	font-family: 'Droid Sans', sans-serif;
+	color:white;
+	 
 }
 
 .clearfix {
@@ -289,8 +291,8 @@ box-shadow: -1px 1px 5px 0px rgba(23,23,23,1);
 /*  ESTILO MENU DESPLAZADO */
 
 div#menuDesplazado{
-	margin-top: 90px;
-    width: 1176px;
+ 
+    width: 85%;
 }
 li#MD{
     margin-left: -14px;

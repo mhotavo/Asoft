@@ -3,8 +3,8 @@
                     <li><a href="?view=home"><span class="iconic home"></span></a></li>
                     <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
                         <ul>
-                            <li><a href="validarDocumentoDesplazados.html">Desplazados</a></li>
-                            <li><a href="validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
+                            <li><a href="?view=desplazados">Desplazados</a></li>
+                            <li><a href="?view=victimas">Otras Victimas</a></li>
                         </ul>
                     </li>
 

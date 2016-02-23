@@ -30,6 +30,9 @@
                   </div>
                   <button type="submit" class="btn btn-default" onclick="goLostpass();">Recuperar</button>
                 </div>   
+                 <div style="text-align: right">
+                                 <br><a href="?view=index">Iniciar Sesión</a>   
+                </div>
                 <div id="_AJAX_LOSTPASS_" style="padding-top:10px;"></div>        
         </div> 
 

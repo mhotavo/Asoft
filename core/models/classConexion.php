@@ -19,6 +19,10 @@ class Conexion extends mysqli{
 	public function recorrer($query){
 		return mysqli_fetch_array($query);
 	}
+
+	/*public function __destruct(){
+		$his->close();
+	}*/
 }
 
  

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="views/css/style.css"/>
     <link href="views/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-        body{ background-color: #300404}
+        body{ background-color: #751919;}
     </style>
 </head>
 <body>
@@ -42,7 +42,7 @@
                         </table>                      
                         <button class="btn btn-default" onclick="goLogin();" >  Iniciar Sesión </button>
                              <div style="text-align: right">
-                                 <br><a href="?view=lostpass">¿Olvidaste tu contraseña?</a>   
+                                 <br><a href="?view=recovery">¿Olvidaste tu contraseña?</a>   
                              </div>
 
 

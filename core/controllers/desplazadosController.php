@@ -6,9 +6,27 @@ if (isset($_SESSION['app_id'])) {
 		case 'datos':
 			include('html/app/desplazados/ingresarDatosDesplazados.php');
 			break;
+		case 'familiares':
+			include('html/app/desplazados/ingresarDatosDesplazados.php');
+			break;	
+		case 'datos':
+			include('html/app/desplazados/ingresarDatosDesplazados.php');
+			break;	
+		case 'datos':
+			include('html/app/desplazados/ingresarDatosDesplazados.php');
+			break;	
+		case 'datos':
+			include('html/app/desplazados/ingresarDatosDesplazados.php');
+			break;	
+		case 'datos':
+			include('html/app/desplazados/ingresarDatosDesplazados.php');
+			break;	
+		case 'datos':
+			include('html/app/desplazados/ingresarDatosDesplazados.php');
+			break;		
 		
 		default:
-			include('html/app/desplazados.php');
+			include('html/app/validarDesplazado.php');
 			break;
 	}
 

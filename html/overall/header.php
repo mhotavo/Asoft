@@ -6,5 +6,11 @@
     <link rel="stylesheet" href="views/css/style.css"/>
     <link rel="stylesheet" href="views/fontawesome/css/font-awesome.min.css"/>
 
-    
+    <style type="text/css">
+/*table {border-collapse:collapse}
+td {
+	border:1px solid black;
+}*/
+
+</style>
 </head>

@@ -1,12 +1,13 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 9/02/2016, 09:57:32 AM
-    Author     : MAURICIO R
-*/
+
+
+@font-face {
+ 
+  font-family: 'museo-slab';
+  src:url('../fonts/Museo700-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
 
 html, body, div, span, applet, object, iframe,
 h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -22,10 +23,9 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
-	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+ 
 	vertical-align: baseline;
         text-align: center;
 }
@@ -57,10 +57,10 @@ table {
 --------------------------------------------------------------------*/
 
 body {
-	background-color: #15b0b0;
-	font-family: 'Droid Sans', sans-serif;
-	 
-	 
+	/*background-color: #15b0b0;*/
+	background: url('../img/denim.png');
+	font-size: 12px;
+ 
 }
 
 .clearfix {
@@ -68,15 +68,14 @@ body {
 }
 
 .wrap {
-	width: 940px;
-	margin: 2em auto;
+	width: 98%;
+	margin: 0em auto;
 }
 
 nav {
-	background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#ccc));
+	background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#fafafa));
 	background-image: linear-gradient(#fff, #ccc);
-	border-radius: 6px;
-	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.4);
 	padding: 6px;
 	position: relative;
 }
@@ -89,9 +88,9 @@ nav {
 .menu li a {
 	color: #444;
 	display: block;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 20px;
-	padding: 6px 12px;
+	padding: 2px 12px;
 	margin: 8px 8px;
 	vertical-align: middle;
 	text-decoration: none;
@@ -125,10 +124,10 @@ nav {
 
 /* Displays the dropdown on hover and moves back into position */
 .menu li:hover ul {
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.9);
 	border-radius: 0 0 6px 6px;
 	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
-	left: 5px;
+	left: 1px;
 	opacity: 1;
 }
 
@@ -290,10 +289,7 @@ box-shadow: -1px 1px 5px 0px rgba(23,23,23,1);
 
 /*  ESTILO MENU DESPLAZADO */
 
-div#menuDesplazado{
  
-    width: 85%;
-}
 li#MD{
     margin-left: -14px;
 }
@@ -321,18 +317,36 @@ nav.navMenuOtrasVictimas{
 }
 
 .formulario{
+ 
+	/*background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#e5e5e5));*/
+	background: url('../img/light_alu.png');
+	border-radius: 0px 0px 7px 7px;
+	font-size:13px; 
 
-	background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#e5e5e5));
-	border-radius: 10px;
-	margin-right: 20px; 
-	margin-left: 20px;
-	padding: 10px 70px 70px 70px;
+
+}
+
+.right{
+	text-align: right;
+	padding-right: 20px;
+	width: 30%;
+	vertical-align: middle;
+}
+.left{
+	text-align: left;
+	vertical-align: middle;
+	padding: 5px;
+
 }
 
 footer{
 	padding: 50px;
 	color: white;
 	font-weight: bold;
+}
+h1{
+
+	font-family:museo-slab, Georgia, "Times New Roman", Times, serif;
 }
 
 /* IDENTIFICADOR CARAACTERIZACION 

@@ -1,62 +1,140 @@
 <html lang="en">
 <?php include(HTML_DIR.'/overall/header.php') ?>
     <body>
-        <header>
-            <div class="wrap" > 
-               <?php include(HTML_DIR.'/overall/nav.php') ?> 
+
+            <div class=" " > 
+            <?php include(HTML_DIR.'/overall/nav.php') ?> 
+             <h1 style="color:white;">POBLACION DESPLAZADA</h1>  
+           
             </div>
-        </header> 
-         <div >
-                <h1>POBLACION DESPLAZADA</h1>                                   
-            </div>
-        <aside>
-            <?php include(HTML_DIR.'/overall/navDesplazados.php') ?> 
-        </aside>
+          
         
 
         <div class="container" >
         <!-- FORMULARIO AGREGAR DATOS -->
-      
+                <?php include(HTML_DIR.'/overall/navDesplazados.php') ?> 
                 <div class="row formulario" >
 
-                <div class="col-md-12">
-                    <h1 class="titulo1">Agregar Datos</h1>            
+                <div >
+                    <h1> Agregar Datos</h1> 
                     <form action="AgregarDatosDesplazadosServlet" method="post" class="form-horizontal">
- Nombre Completo: <input type="text" id="nombreComp" name="txtNombreCompD" size="30"><br/>
-                    Tipo de Documento: <select id="tipoDocumento" name="cboTipoDocumentoD">
-                                <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                                <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                                <option value="Libreta Militar">Libreta Militar</option>
-                                <option value="Registro Civil">Registro Civil</option>
-                                <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                                <option value="NUIP">Numero Unico de Identificacion Personal(NUIP)</option>
-                                <option value="No Tiene">No Tiene</option>
-                                </select><br/>
-                    Fecha de Victimización: <input type="text" name="txtFechaVictimizacionD"><br/>
-                    Codigo RUPV: <input type="text" name="txtCodigoRUPVD"><br/>
-                    Departamento: <select id="depa" name="cboDepartamentoD">
+                    <table width="100%">
+                        <tr>
+                            <td class="right">Nombre Completo: </td>
+                            <td class="left">
+                              <div class="col-md-8">
+                                 <input type="text" id="nombreComp" class="form-control" name="txtNombreCompD" >
+                             </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Tipo de Documento: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                                <select id="tipoDocumento" name="cboTipoDocumentoD" class="form-control">
+                                    <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                                    <option value="Libreta Militar">Libreta Militar</option>
+                                    <option value="Registro Civil">Registro Civil</option>
+                                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                                    <option value="NUIP">Numero Unico de Identificacion Personal(NUIP)</option>
+                                    <option value="No Tiene">No Tiene</option>
+                                </select>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Fecha de Victimización: </td>
+                            <td class="left">
+                             <div class="col-md-8"> 
+                                <input type="text" class="form-control" name="txtFechaVictimizacionD">
+                            </div>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Codigo RUPV: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                                <input type="text" class="form-control"  name="txtCodigoRUPVD">
+                            </div>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="right"> Departamento: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                                <select id="depa" name="cboDepartamentoD" class="form-control">
                                     <option value="#">IngresarBDdepartamento</option>                               
-                                 </select><br/>
-                    Municipio: <select id="muni" name="cboMunicipioD">
+                                </select>   
+                            </div>                             
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Municipio: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                                 <select id="muni" name="cboMunicipioD" class="form-control">
                                     <option value="#">IngresarBDmunicipio</option>                               
-                                 </select><br/>
-                    Zona: <select id="zona" name="cboZonaD">
+                                 </select>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Zona: </td>
+                            <td class="left">
+                             <div class="col-md-8">                                
+                                <select id="zona" name="cboZonaD" class="form-control">
                                     <option value=""></option>
                                     <option value="Rural">Rural</option>
                                     <option value="Urbana">Urbana</option> 
-                                 </select><br/>
-                    Localidad: <input type="text" name="txtLocalidadD"><br/>
-                    Direccion: <input type="text" name="txtDireccionD"><br/>
-                    Telefono: <input type="text" name="txtTelefonoD"><br/>
-                    Estado Civil: <select id="estaCivil" name="cboEstadoCivilD">
+                                 </select>
+                            </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <td class="right">Localidad: </td>
+                            <td class="left">
+                             <div class="col-md-8"> 
+                                <input type="text" name="txtLocalidadD" class="form-control">
+                            </div>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Direccion: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                                <input type="text" name="txtDireccionD" class="form-control">
+                            </div>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Telefono: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                                <input type="text" name="txtTelefonoD" class="form-control">
+                            </div>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Estado Civil: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                            <select id="estaCivil" name="cboEstadoCivilD" class="form-control">
                                 <option value=""></option>
                                 <option value="Soltero">Soltero</option>
                                 <option value="Casado">Casado</option>
                                 <option value="Union Libre">Union Libre</option>
                                 <option value="Viudo">Viudo</option>
                                 <option value="Separado/Divorciado">Separado/Divorciado</option>                                                               
-                            </select><br/>
-                    Parentesco: <select id="Parentesco" name="cboParentescoD">
+                            </select>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Parentesco: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                            <select id="Parentesco" name="cboParentescoD" class="form-control">
                                 <option value=""></option>
                                 <option value="Padre/Padrastro">Padre/Padrastro</option>
                                 <option value="Madre/Madrastra">Madre/Madrastra</option>
@@ -66,27 +144,47 @@
                                 <option value="Suegro(a)">Suegro(a)</option>
                                 <option value="Otro">Otro</option>
                                 <option value="No Parientes">No Parientes</option>                                
-                            </select><br/>
-                    Es Jefe de Hogar: <select id="jdh" name="cboJdhD">
+                            </select>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Es Jefe de Hogar: </td>
+                            <td class="left">
+                             <div class="col-md-8" >
+                                <select id="jdh" name="cboJdhD" class="form-control">
                                     <option value=""></option>
                                     <option value="Si">Si</option>
                                     <option value="NO">No</option> 
-                                 </select><br/>
-                    Territorio: <input type="text" name="txtTerritorioD"><br/><br/>
+                                 </select>
+                             </div>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Territorio: </td>
+                            <td class="left">
+                             <div class="col-md-8">
+                                <input type="text" name="txtTerritorioD" class="form-control">
+                            </div>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                            <br><br>
 
-                    <br/><br/>               
-                            <button type="submit" class="btn btn-default">Agregar Victima</button>
-                        
-                    
-                    
-                    
-                     
+                                <button type="submit" class="btn btn-default">Agregar Desplazado</button>
+ 
+                            </td>
+                        </tr>
+
+
+                    </table>   
                     </form> 
                     </div>         
                  </div>  
             
             </div>
-        </div>            
+             
     </body>
     <footer>
         <?php include(HTML_DIR.'/overall/footer.php') ?> 

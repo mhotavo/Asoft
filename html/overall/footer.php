@@ -1,7 +1,7 @@
 <div>
 
 <?php 
-echo "Asoft &copy;" . date("Y");
+echo "Asoft &copy; " . date("Y");
  ?>
 
 </div>

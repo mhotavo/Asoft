@@ -18,7 +18,7 @@ session_start();
 #Constantes de la APP
 	define('HTML_DIR', 'html/');
 	define('APP_TITLE', 'Asoft');
-	define('APP_URL', 'http://localhost/GitHub/Asoft/');
+	define('APP_URL', 'http://localhost/Asoft/');
 	define('APPCOPY', 'Copyright &copy; '.date("Y", time()).' Asoft.' );
 
 require('vendor/autoload.php');

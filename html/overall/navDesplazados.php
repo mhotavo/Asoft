@@ -1,5 +1,5 @@
-            <div class="wrap" id='menuDesplazado'> 
-                <nav class="">
+            <div class="" id='menuDesplazado'> 
+                <nav style="border-radius: 6px 6px  0px 0px;">
                     <ul class="menu" id="MD">
                         <li id="MD"><a href="?view=desplazados&tab=datos"><span></span>Datos</a></li>
                         <li id="MD"><a href="#"><span></span>Familiares</a>

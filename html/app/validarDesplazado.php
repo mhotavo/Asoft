@@ -26,12 +26,32 @@
                              </div>
                             </td>
                         </tr>
-                               <tr>
+                        <tr>
                             <td colspan="2">
                             <br><br>
-
                                 <button type="submit" class="btn btn-default">Validar Desplazado</button>
  
+                            </td>
+                        </tr>  
+                        <tr>
+                            <td colspan="2">&nbsp;</td>
+                            
+                        </tr>                                              
+                        <tr> 
+                            <td colspan="2">
+                            <!-- Mensajes  Registrar-->
+                            <div class="col-lg-2"></div>
+                            <div class="alert alert-warning col-lg-8">
+                                La persona identificada con ese documento no se encuentra registrada en el sistema ¿Desea Registrarla?
+                                <button type="button" class="btn btn-warning">Registrar</button>
+                            </div>
+                            <!-- Mensajes  Ya existe-->
+                            <div class="col-lg-2"></div>
+                            <div class="alert alert-success col-lg-8" style="display:none; ">
+                                La persona identificada con ese documento ya se encuentra registrada en el sistema ¿Desea Editarla?
+                                <button type="button" class="btn btn-success">Editar</button>
+                            </div>
+
                             </td>
                         </tr>
 

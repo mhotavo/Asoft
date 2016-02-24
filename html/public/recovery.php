@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="views/css/style.css"/>
     <link href="views/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-        body{ background-color: #751919}
+        body{ background-color: #15b0b0}
     </style>
 </head>
 <body>

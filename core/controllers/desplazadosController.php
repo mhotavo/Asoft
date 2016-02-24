@@ -1,14 +1,14 @@
 <?php 
 if (isset($_SESSION['app_id'])) {
 
-	include('html/app/desplazados.php');
+	
 	switch (isset($_GET['tab'])) {
-		case '1':
-			header('location: ?view=datos');
+		case 'datos':
+			include('html/app/desplazados/ingresarDatosDesplazados.php');
 			break;
 		
 		default:
-			# code...
+			include('html/app/desplazados.php');
 			break;
 	}
 

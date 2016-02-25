@@ -16,13 +16,15 @@
 
                 <div class="col-md-12">
                     <h1>Validar Documento</h1> 
-                    <form class="formularioValidacionDesplazados"  action="menuDesplazados.html">
+                     <form class="form-horizontal" action="?view=validardesplazados&mode=buscar" method="POST" enctype="application/x-www-form-urlencoded">
+   
+              <div class="form-group">
                     <table width="100%" border="1">
                         <tr>
                             <td class="right">DOCUMENTO: </td>
                             <td class="left">
                               <div class="col-md-8">
-                                 <input type="text" id="txtDocumentoDesplazado" class="form-control" name="documentoDesplazados" >
+                                 <input type="text" name="numDocumento" class="form-control" >
                              </div>
                             </td>
                         </tr>
@@ -30,7 +32,6 @@
                             <td colspan="2">
                             <br><br>
                                 <button type="submit" class="btn btn-default">Validar Desplazado</button>
- 
                             </td>
                         </tr>  
                         <tr>
@@ -40,18 +41,22 @@
                         <tr> 
                             <td colspan="2">
                             <!-- Mensajes  Registrar-->
+                            <?php if (isset($_GET['success']) && $_GET['success']=='false') {  ?>
                             <div class="col-lg-2"></div>
                             <div class="alert alert-warning col-lg-8">
                                 La persona identificada con ese documento no se encuentra registrada en el sistema ¿Desea Registrarla?
                                 <button type="button" class="btn btn-warning">Registrar</button>
                             </div>
+                            <?php 
+                            } elseif(isset($_GET['success']) && $_GET['success']=='true') {
+                             ?>
                             <!-- Mensajes  Ya existe-->
                             <div class="col-lg-2"></div>
-                            <div class="alert alert-success col-lg-8" style="display:none; ">
+                            <div class="alert alert-success col-lg-8">
                                 La persona identificada con ese documento ya se encuentra registrada en el sistema ¿Desea Editarla?
                                 <button type="button" class="btn btn-success">Editar</button>
                             </div>
-
+                            <?php } ?>
                             </td>
                         </tr>
 

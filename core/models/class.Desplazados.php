@@ -10,20 +10,18 @@ class Desplazados {
 		$this->db = new Conexion();
 	}
 
-	public function Errors($url){
-		try {
-			if (empty($_POST['nombre']) ) {
-				throw new Exception(1);
-			} else {
-				$this->nombre = $this->db->real_escape_string($_POST['nombre']);
-			}
-
-		} catch (Exception $error) {
-			header('location: '.$url->getMessage());
-			exit();
-		}
-
-	}
+  private function Errors($url) {
+    try {
+      if(empty($_POST['nombre'])) {
+        throw new Exception(1);
+      } else {
+        $this->nombre = $this->db->real_escape_string($_POST['nombre']);
+      }
+    } catch(Exception $error) {
+      header('location: '.$url .$error->getMessage());
+      exit;
+    }
+  }
 
 	public function Add(){
 		$this->db->query("");
@@ -43,6 +41,18 @@ class Desplazados {
 		$this->id = intval($_GET['id']);
 		$this->Errors('?view=desplazados&mode=add&id='.$this->id.'&error=');
 	}
+
+  public function Buscar() {
+    $this->id = intval($_POST['numDocumento']);
+   // $this->Errors('?view=validar&id='.$this->id.'&error=');
+    $sql= $this->db->query("SELECT * FROM  desplazados_datos  WHERE Documento='$this->id';");
+    if ($this->db->rows($sql)>0) {
+    	header('location: ?view=validardesplazados&success=true');
+    } else {
+    	header('location: ?view=validardesplazados&success=false');
+    }
+    
+  }
 
 	public function __destruct (){
 		$this->db->close();

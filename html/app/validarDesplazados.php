@@ -7,9 +7,6 @@
              <h1 style="color:white;">POBLACION DESPLAZADA</h1>  
            
             </div>
-          
-        
-
   <div class="container" >
         <!-- FORMULARIO AGREGAR DATOS -->
                 <div class="row formulario" style="border-radius: 7px;">
@@ -24,7 +21,7 @@
                             <td class="right">DOCUMENTO: </td>
                             <td class="left">
                               <div class="col-md-8">
-                                 <input type="text" name="numDocumento" class="form-control" >
+                                 <input type="text" name="numDocumento" class="form-control" required>
                              </div>
                             </td>
                         </tr>
@@ -44,7 +41,8 @@
                             <?php if (isset($_GET['success']) && $_GET['success']=='false') {  ?>
                             <div class="col-lg-2"></div>
                             <div class="alert alert-warning col-lg-8">
-                                La persona identificada con ese documento no se encuentra registrada en el sistema ¿Desea Registrarla?
+                            <button type="button" class="close" data-dismiss="alert">x</button>
+                                La persona identificada con ese documento no se encuentra registrada en el sistema.
                                 <button type="button" class="btn btn-warning">Registrar</button>
                             </div>
                             <?php 
@@ -53,8 +51,9 @@
                             <!-- Mensajes  Ya existe-->
                             <div class="col-lg-2"></div>
                             <div class="alert alert-success col-lg-8">
-                                La persona identificada con ese documento ya se encuentra registrada en el sistema ¿Desea Editarla?
-                                <button type="button" class="btn btn-success">Editar</button>
+                            <button type="button" class="close" data-dismiss="alert">x</button>
+                               <b><?php echo  $_desplazados[$_GET['id']]['Nombre_Completo']; ?></b> ya se encuentra registrado(a) en el sistema.
+                                <button type="button" class="btn btn-success" href="?view=home">Editar</button>
                             </div>
                             <?php } ?>
                             </td>

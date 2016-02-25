@@ -1,7 +1,7 @@
  <nav style="border-radius: 0px 0px 6px 6px;">
                 <ul class="menu">
                     <li><a href="?view=home"><span class="iconic home"></span></a></li>
-                    <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
+                    <li><a href=""><span class="iconic plus-alt"></span>Ingresar</a>                    
                         <ul>
                             <li><a href="?view=validardesplazados">Desplazados</a></li>
                             <li><a href="?view=validarvictimas">Otras Victimas</a></li>

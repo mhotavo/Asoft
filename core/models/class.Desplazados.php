@@ -47,9 +47,9 @@ class Desplazados {
    // $this->Errors('?view=validar&id='.$this->id.'&error=');
     $sql= $this->db->query("SELECT * FROM  desplazados_datos  WHERE Documento='$this->id';");
     if ($this->db->rows($sql)>0) {
-    	header('location: ?view=validardesplazados&success=true');
+    	header('location: ?view=validardesplazados&id='.$this->id.'&success=true');
     } else {
-    	header('location: ?view=validardesplazados&success=false');
+    	header('location: ?view=validardesplazados&id='.$this->id.'&success=false');
     }
     
   }

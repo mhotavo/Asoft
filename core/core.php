@@ -1,3 +1,4 @@
+
 <?php 
 
 session_start();
@@ -25,7 +26,8 @@ require('vendor/autoload.php');
 require('core/models/classConexion.php');
 require('core/bin/functions/Encrypt.php');
 require('core/bin/functions/Users.php');
+require('core/bin/functions/Desplazados.php');
 require('core/bin/functions/lostpassTemplate.php');
 $users=users();
-
+$_desplazados=desplazados();
  ?>

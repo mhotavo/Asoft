@@ -15,8 +15,9 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 		break;	
 	case 'edit':
 		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0) {
+
 				$desplazados->Edit();
-				include('html/app/desplazados/ingresarDatosDesplazados.php');
+				include(HTML_DIR.'app/desplazados/ingresarDatosDesplazados.php');
 		}
 		else{
 			header('location: ?view=validardesplazados');
@@ -25,8 +26,14 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 
 	case 'view':
 		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0) {
-				include('html/app/desplazados/ingresarDatosDesplazados.php');
-		}
+			if ($_POST) {
+				$desplazados->edit();
+			} else {
+				include(HTML_DIR.'app/desplazados/ingresarDatosDesplazados.php');
+			}
+				
+			}
+		
 		else{
 			header('location: ?view=validardesplazados');
 		}
@@ -40,6 +47,7 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 		break;
 	
 	default:
+		
 		header('location: ?view=validardesplazados');
 		break;
 }

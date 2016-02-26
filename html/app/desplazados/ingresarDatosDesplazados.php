@@ -22,10 +22,26 @@
                             <td class="right">Nombre Completo: </td>
                             <td class="left">
                               <div class="col-md-8">
-                                 <input type="text" value="<?php echo $_desplazados[$_GET['id']]['Nombre_Completo'] ?>" class="form-control" name="txtNombreCompD" >
+                                 <input type="text" value="<?php echo $_desplazados[$_GET['id']]['Nombre_Completo'] ?>" class="form-control" name="txtNombre" id="txtNombre" >
                              </div>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="right">Primer Apellido: </td>
+                            <td class="left">
+                              <div class="col-md-8">
+                                 <input type="text" value="<?php echo $_desplazados[$_GET['id']]['Primer_Apellido'] ?>" class="form-control" name="txtPrimerApellido"  >
+                             </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Segundo Apellido: </td>
+                            <td class="left">
+                              <div class="col-md-8">
+                                 <input type="text" value="<?php echo $_desplazados[$_GET['id']]['Segundo_Apellido'] ?>" class="form-control" name="txtSegundoApellido" id="" >
+                             </div>
+                            </td>
+                        </tr>                                                
                         <tr>
                             <td class="right">Tipo de Documento: </td>
                             <td class="left">

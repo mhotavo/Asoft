@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 22-02-2016 a las 03:49:30
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 26-02-2016 a las 23:53:08
 -- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -46,6 +46,8 @@ CREATE TABLE `desplazados_ayudasrecibidas` (
 CREATE TABLE `desplazados_datos` (
   `Documento` int(11) NOT NULL,
   `Nombre_Completo` varchar(60) NOT NULL,
+  `Primer_Apellido` varchar(50) NOT NULL,
+  `Segundo_Apellido` varchar(50) NOT NULL,
   `Tipo_de_Documento` varchar(50) NOT NULL,
   `Fecha_de_Victimizacion` date NOT NULL,
   `Codigo_RUPV` varchar(25) NOT NULL,
@@ -60,6 +62,13 @@ CREATE TABLE `desplazados_datos` (
   `Es_Jefe_de_Hogar` varchar(3) NOT NULL,
   `Territorio` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `desplazados_datos`
+--
+
+INSERT INTO `desplazados_datos` (`Documento`, `Nombre_Completo`, `Primer_Apellido`, `Segundo_Apellido`, `Tipo_de_Documento`, `Fecha_de_Victimizacion`, `Codigo_RUPV`, `Departamento`, `Municipio`, `Zona`, `Localidad`, `Direccion`, `Telefono`, `Estado_Civil`, `Parentesco`, `Es_Jefe_de_Hogar`, `Territorio`) VALUES
+(1, 'Milton', 'Otavo ', 'Varon', 'CeduladeCiudadania', '2016-02-26', '1234', '#', '#', 'Urbana', 'Topacio', 'Direccion 2', 2669988, 'Soltero(a)', 'Padre/Padrastro', 'NO', 'Nacionals');
 
 -- --------------------------------------------------------
 
@@ -613,19 +622,28 @@ CREATE TABLE `usuarios` (
   `ROL` int(1) NOT NULL DEFAULT '0',
   `NOMBRES` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `P_APELLIDO` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `S_APELLIDO` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `S_APELLIDO` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `KEYPASS` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NEWPASS` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ULTIMA_CONEXION` int(32) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`ID`, `DOC`, `USER`, `PASS`, `EMAIL`, `ROL`, `NOMBRES`, `P_APELLIDO`, `S_APELLIDO`) VALUES
-(1, 1110540682, 'admin', 'c0784027b45aa11e848a38e890f8416c', 'milton_otavo@hotmail.com', 2, 'MILTON', 'OTAVO', 'VARON');
+INSERT INTO `usuarios` (`ID`, `DOC`, `USER`, `PASS`, `EMAIL`, `ROL`, `NOMBRES`, `P_APELLIDO`, `S_APELLIDO`, `KEYPASS`, `NEWPASS`, `ULTIMA_CONEXION`) VALUES
+(1, 1110540682, 'admin', '218b6b23f9a12bd4610893308c5f80f0', 'milton.otavo@gmail.com', 2, 'MILTON', 'OTAVO', 'VARON', '5391e0cebb2453f473b48be26a020ed7', '16AF68C1', 0);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `desplazados_datos`
+--
+ALTER TABLE `desplazados_datos`
+  ADD PRIMARY KEY (`Documento`);
 
 --
 -- Indices de la tabla `usuarios`

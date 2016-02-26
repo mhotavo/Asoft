@@ -7,7 +7,7 @@ function Desplazados() {
 		while ($d=$db->recorrer($sql)) {
 			$desplazados[$d['Documento']]= array(
 				'Documento' => $d['Documento'],
-				'Nombre_Completo' => $d['Nombre_Completo'].' '.$d['Primer_Apellido'].' '.$d['Segundo_Apellido'],
+				'Nombre_Completo' => $d['Nombre_Completo'],
 				'Primer_Apellido' => $d['Primer_Apellido'],
 				'Segundo_Apellido' => $d['Segundo_Apellido'],
 				'Tipo_de_Documento' => $d['Tipo_de_Documento'],

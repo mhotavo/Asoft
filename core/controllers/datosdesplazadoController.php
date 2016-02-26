@@ -1,7 +1,8 @@
 <?php 
+
 if (isset($_SESSION['app_id'])) {
 require('core/models/class.Desplazados.php');
-$isset_id= isset($_GET['id']) and is_numeric($_GET['id']) and $_GET['id']>=1;
+$id= $_GET['id']; 
 $desplazados = new Desplazados();
 
 switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
@@ -13,27 +14,33 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 		}
 		break;	
 	case 'edit':
-		if ($isset_id) {
-			if ($_POST) {
+		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0) {
 				$desplazados->Edit();
-			} else {
-
-			}
-			
+				include('html/app/desplazados/ingresarDatosDesplazados.php');
 		}
 		else{
-			header('location: ?view=desplazados');
+			header('location: ?view=validardesplazados');
+		}
+		break;
+
+	case 'view':
+		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0) {
+				include('html/app/desplazados/ingresarDatosDesplazados.php');
+		}
+		else{
+			header('location: ?view=validardesplazados');
 		}
 		break;	
 
 	case 'delete':
-		if ($isset_id) {
+		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0) {
+
 			$desplazados->Delete();
 		}
 		break;
 	
 	default:
-		
+		header('location: ?view=validardesplazados');
 		break;
 }
 

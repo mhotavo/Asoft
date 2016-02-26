@@ -31,7 +31,7 @@
                             </tr>
                             <tr>
                                   <td style="text-align:right;">CONTRASEÑA: &nbsp;</td>
-                                <td style="text-align:left;"><input id="contrasena" type="text" name="txtContrasena" required></td>
+                                <td style="text-align:left;"><input id="contrasena" type="password" name="" required></td>
                             </tr>
                             <tr>
                             <td>&nbsp;</td>

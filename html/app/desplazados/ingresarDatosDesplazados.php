@@ -17,13 +17,12 @@
 
                 <div >
                     <h1> Agregar Datos</h1> 
-                    <form action="AgregarDatosDesplazadosServlet" method="post" class="form-horizontal">
-                    <table width="100%">
+                        <form class="form-horizontal" action="?view=datosdesplazado&mode=edit&id=<?php echo $_GET['id'] ?>" method="POST" enctype="application/x-www-form-urlencoded">                    <table width="100%">
                         <tr>
                             <td class="right">Nombre Completo: </td>
                             <td class="left">
                               <div class="col-md-8">
-                                 <input type="text" id="nombreComp" class="form-control" name="txtNombreCompD" >
+                                 <input type="text" value="<?php echo $_desplazados[$_GET['id']]['Nombre_Completo'] ?>" class="form-control" name="txtNombreCompD" >
                              </div>
                             </td>
                         </tr>
@@ -31,14 +30,15 @@
                             <td class="right">Tipo de Documento: </td>
                             <td class="left">
                              <div class="col-md-8">
-                                <select id="tipoDocumento" name="cboTipoDocumentoD" class="form-control">
-                                    <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                                    <option value="Libreta Militar">Libreta Militar</option>
-                                    <option value="Registro Civil">Registro Civil</option>
-                                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                                    <option value="NUIP">Numero Unico de Identificacion Personal(NUIP)</option>
-                                    <option value="No Tiene">No Tiene</option>
+                                <select  name="cboTipoDocumentoD" class="form-control">
+                                    <option value="">[...]</option>
+                                    <option value="CeduladeCiudadania" <?php echo ($_desplazados[$_GET['id']]['Tipo_de_Documento']=='CeduladeCiudadania') ?  "selected": null; ?> >Cedula de Ciudadania</option>
+                                    <option value="TarjetadeIdentidad" <?php echo ($_desplazados[$_GET['id']]['Tipo_de_Documento']=='TarjetadeIdentidad') ?  "selected": null; ?>>Tarjeta de Identidad</option>
+                                    <option value="LibretaMilitar" <?php echo ($_desplazados[$_GET['id']]['Tipo_de_Documento']=='LibretaMilitar') ?  "selected": null; ?>>Libreta Militar</option>
+                                    <option value="RegistroCivil" <?php echo ($_desplazados[$_GET['id']]['Tipo_de_Documento']=='RegistroCivil') ?  "selected": null; ?>>Registro Civil</option>
+                                    <option value="TarjetadeIdentidad" <?php echo ($_desplazados[$_GET['id']]['Tipo_de_Documento']=='TarjetadeIdentidad') ?  "selected": null; ?>>Tarjeta de Identidad</option>
+                                    <option value="NUIP" <?php echo ($_desplazados[$_GET['id']]['Tipo_de_Documento']=='NUIP') ?  "selected": null; ?>>Numero Unico de Identificacion Personal(NUIP)</option>
+                                    <option value="NoTiene" <?php echo ($_desplazados[$_GET['id']]['Tipo_de_Documento']=='NoTiene') ?  "selected": null; ?>>No Tiene</option>
                                 </select>
                             </div>
                             </td>
@@ -47,7 +47,7 @@
                             <td class="right">Fecha de Victimización: </td>
                             <td class="left">
                              <div class="col-md-8"> 
-                                <input type="text" class="form-control" name="txtFechaVictimizacionD">
+                                <input type="text" class="form-control" name="txtFechaVictimizacionD" value="<?php echo $_desplazados[$_GET['id']]['Fecha_de_Victimizacion']; ?>">
                             </div>
                              </td>
                         </tr>
@@ -55,7 +55,7 @@
                             <td class="right">Codigo RUPV: </td>
                             <td class="left">
                              <div class="col-md-8">
-                                <input type="text" class="form-control"  name="txtCodigoRUPVD">
+                                <input type="text" class="form-control"  name="txtCodigoRUPVD" value="<?php echo $_desplazados[$_GET['id']]['Codigo_RUPV']; ?>">
                             </div>
                              </td>
                         </tr>
@@ -84,9 +84,9 @@
                             <td class="left">
                              <div class="col-md-8">                                
                                 <select id="zona" name="cboZonaD" class="form-control">
-                                    <option value=""></option>
-                                    <option value="Rural">Rural</option>
-                                    <option value="Urbana">Urbana</option> 
+                                    <option value="">[...]</option>
+                                    <option value="Rural"  <?php echo ($_desplazados[$_GET['id']]['Zona']=='Rural') ?  "selected": null; ?>>Rural</option>
+                                    <option value="Urbana"  <?php echo ($_desplazados[$_GET['id']]['Zona']=='Urbana') ?  "selected": null; ?>>Urbana</option> 
                                  </select>
                             </td>
                             </div>
@@ -95,7 +95,7 @@
                             <td class="right">Localidad: </td>
                             <td class="left">
                              <div class="col-md-8"> 
-                                <input type="text" name="txtLocalidadD" class="form-control">
+                                <input type="text" name="txtLocalidadD" class="form-control" value="<?php echo $_desplazados[$_GET['id']]['Localidad']; ?>">
                             </div>
                              </td>
                         </tr>
@@ -103,7 +103,7 @@
                             <td class="right">Direccion: </td>
                             <td class="left">
                              <div class="col-md-8">
-                                <input type="text" name="txtDireccionD" class="form-control">
+                                <input type="text" name="txtDireccionD" class="form-control" value="<?php echo $_desplazados[$_GET['id']]['Direccion']; ?>">
                             </div>
                              </td>
                         </tr>
@@ -111,7 +111,7 @@
                             <td class="right">Telefono: </td>
                             <td class="left">
                              <div class="col-md-8">
-                                <input type="text" name="txtTelefonoD" class="form-control">
+                                <input type="text" name="txtTelefonoD" class="form-control" value="<?php echo $_desplazados[$_GET['id']]['Telefono']; ?>">
                             </div>
                              </td>
                         </tr>
@@ -119,13 +119,13 @@
                             <td class="right">Estado Civil: </td>
                             <td class="left">
                              <div class="col-md-8">
-                            <select id="estaCivil" name="cboEstadoCivilD" class="form-control">
+                            <select name="estaCivil"  class="form-control">
                                 <option value=""></option>
-                                <option value="Soltero">Soltero</option>
-                                <option value="Casado">Casado</option>
-                                <option value="Union Libre">Union Libre</option>
-                                <option value="Viudo">Viudo</option>
-                                <option value="Separado/Divorciado">Separado/Divorciado</option>                                                               
+                                <option value="Soltero(a)"  <?php echo ($_desplazados[$_GET['id']]['Estado_Civil']=='Soltero(a)') ?  "selected": null; ?>>Soltero</option>
+                                <option value="Casado(a)"  <?php echo ($_desplazados[$_GET['id']]['Estado_Civil']=='Casado(a)') ?  "selected": null; ?>>Casado</option>
+                                <option value="UnionLibre"  <?php echo ($_desplazados[$_GET['id']]['Estado_Civil']=='UnionLibre') ?  "selected": null; ?>>Union Libre</option>
+                                <option value="Viudo(a)"  <?php echo ($_desplazados[$_GET['id']]['Estado_Civil']=='Viudo(a)') ?  "selected": null; ?>>Viudo</option>
+                                <option value="Separado(a)"  <?php echo ($_desplazados[$_GET['id']]['Estado_Civil']=='Separado(a)') ?  "selected": null; ?>>Separado/Divorciado</option>                                                               
                             </select>
                             </div>
                             </td>
@@ -134,16 +134,16 @@
                             <td class="right">Parentesco: </td>
                             <td class="left">
                              <div class="col-md-8">
-                            <select id="Parentesco" name="cboParentescoD" class="form-control">
-                                <option value=""></option>
-                                <option value="Padre/Padrastro">Padre/Padrastro</option>
-                                <option value="Madre/Madrastra">Madre/Madrastra</option>
-                                <option value="Hijo(a)/Hojastro(a)">Hijo(a)/Hojastro(a)</option>
-                                <option value="Compañero(a)">Compañero(a)</option>
-                                <option value="Hermano(a)">Hermano(a)</option>
-                                <option value="Suegro(a)">Suegro(a)</option>
-                                <option value="Otro">Otro</option>
-                                <option value="No Parientes">No Parientes</option>                                
+                            <select name="Parentesco"  class="form-control">
+                                <option value="">[...]</option>
+                                <option value="Padre/Padrastro" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='Padre/Padrastro') ?  "selected": null; ?> >Padre/Padrastro</optioMadre/Madrastran>
+                                <option value="Madre/Madrastra" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='Madre/Madrastra') ?  "selected": null; ?> >Madre/Madrastra</option>
+                                <option value="Hijo(a)/Hojastro(a)" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='Separado(a)') ?  "selected": null; ?> >Hijo(a)/Hojastro(a)</option>
+                                <option value="Compañero(a)" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='Compañero(a)') ?  "selected": null; ?> >Compañero(a)</option>
+                                <option value="Hermano(a)" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='Hermano(a)') ?  "selected": null; ?> >Hermano(a)</option>
+                                <option value="Suegro(a)" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='Suegro(a)') ?  "selected": null; ?> >Suegro(a)</option>
+                                <option value="Otro" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='Otro') ?  "selected": null; ?> >Otro</option>
+                                <option value="NoParientes" <?php echo ($_desplazados[$_GET['id']]['Parentesco']=='NoParientes') ?  "selected": null; ?> >No Parientes</option>                                
                             </select>
                             </div>
                             </td>
@@ -152,10 +152,10 @@
                             <td class="right">Es Jefe de Hogar: </td>
                             <td class="left">
                              <div class="col-md-8" >
-                                <select id="jdh" name="cboJdhD" class="form-control">
-                                    <option value=""></option>
-                                    <option value="Si">Si</option>
-                                    <option value="NO">No</option> 
+                                <select  name="JefeDeHogar" class="form-control">
+                                    <option value="">[...]</option>
+                                    <option value="Si" <?php echo ($_desplazados[$_GET['id']]['JefeDeHogar']=='SI') ?  "selected": null; ?> >Si</option>
+                                    <option value="NO" <?php echo ($_desplazados[$_GET['id']]['JefeDeHogar']=='NO') ?  "selected": null; ?> >No</option> 
                                  </select>
                              </div>    
                             </td>
@@ -164,7 +164,7 @@
                             <td class="right">Territorio: </td>
                             <td class="left">
                              <div class="col-md-8">
-                                <input type="text" name="txtTerritorioD" class="form-control">
+                                <input type="text" name="txtTerritorioD" class="form-control" value="<?php echo $_desplazados[$_GET['id']]['Territorio']; ?>">
                             </div>
                              </td>
                         </tr>
@@ -172,7 +172,7 @@
                             <td colspan="2">
                             <br><br>
 
-                                <button type="submit" class="btn btn-default">Agregar Desplazado</button>
+                                <button type="submit" class="btn btn-default" >Agregar Desplazado</button>
  
                             </td>
                         </tr>

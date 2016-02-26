@@ -21,7 +21,7 @@ function Desplazados() {
 				'Telefono' => $d['Telefono'],
 				'Estado_Civil' => $d['Estado_Civil'],
 				'Parentesco' => $d['Parentesco'],
-				'Es_Jefe_de_Hogar' => $d['Es_Jefe_de_Hogar'],
+				'JefeDeHogar' => $d['Es_Jefe_de_Hogar'],
 				'Territorio' => $d['Territorio']
 				);
 		}

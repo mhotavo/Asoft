@@ -14,10 +14,10 @@ sudo apt-get install gitk giggle git-cola git-gui gitg
 git gui
 
 #poner el nombre del usuario en git
-git config --global user.name nombre
+git config --global user.name mhotavo
 
 #colocar email del usuario
-git config --global user.email email
+git config --global user.email milton.otavo@gmail.com
 
 
 #para asegurarnos de que no exista ningún cambio que nosotros no tengamos

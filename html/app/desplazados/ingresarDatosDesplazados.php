@@ -23,7 +23,7 @@
                             <td class="right">Numero de Documento: </td>
                             <td class="left">
                               <div class="col-md-8">
-                                 <input type="text"  required value="<?php echo isset($_GET['id']) ? $_desplazados[$_GET['id']]['Documento'] : isset($_GET['newDoc']) ? $_GET['newDoc'] : null  ?>"  <?php echo isset($_GET['id']) ?  "disabled" : null ; ?> class="form-control" name="Documento" id="Documento" >
+                                 <input type="text"  required value="<?php echo isset($_GET['id']) ? $_desplazados[$_GET['id']]['Documento'] : $_GET['newDoc']   ?>"  <?php echo isset($_GET['id']) ?  "disabled" : null ; ?> class="form-control" name="Documento" id="Documento" >
                              </div>
                             </td>
                         </tr>
@@ -179,7 +179,7 @@
                              <div class="col-md-8" >
                                 <select  name="JefeDeHogar" required  class="form-control">
                                     <option value="">[...]</option>
-                                    <option value="Si" <?php echo (isset($_GET['id']) and $_desplazados[$_GET['id']]['JefeDeHogar']=='SI') ?  "selected": null; ?> >Si</option>
+                                    <option value="SI" <?php echo (isset($_GET['id']) and $_desplazados[$_GET['id']]['JefeDeHogar']=='SI') ?  "selected": null; ?> >Si</option>
                                     <option value="NO" <?php echo (isset($_GET['id']) and $_desplazados[$_GET['id']]['JefeDeHogar']=='NO') ?  "selected": null; ?> >No</option> 
                                  </select>
                              </div>    
@@ -197,7 +197,9 @@
                             <td colspan="2">
                             <br><br>
 
-                                <button type="submit" class="btn btn-default" >Agregar Desplazado</button>
+
+                  
+                  <button type="submit" class="btn btn-primary">Guardar y continuar</button>
  
                             </td>
                         </tr>

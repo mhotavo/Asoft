@@ -1,99 +1,19 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ingresar Familiar</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-       
-        <link rel="stylesheet" href="../../css/style.css"/>
-        <script type="text/javascript" src="../../js/funciones.js"></script>
-        
-    </head>
+<?php include(HTML_DIR.'/overall/header.php') ?>
     <body>
-        <!-- MENU PRINCIPAL -->       
-        <header>
-            <div class="wrap" > 
-                <nav>
-                    <ul class="menu">
-                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
-                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
-                            <ul>
-                                <li><a href="../validarDocumentoDesplazados.html">Desplazados</a></li>
-                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
-                            </ul>
-                        </li>
 
-                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
-                            <ul>
-                                <li><a href="#">Informe Parcial</a></li>
-                                <li><a href="#">Informe Total</a></li>                  
-                            </ul>
-                        </li>
-
-                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
-                            <ul>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Directions</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
-                        </li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
+            <div class=" " > 
+            <?php include(HTML_DIR.'/overall/nav.php') ?> 
+             <h1 style="color:white;">POBLACION DESPLAZADA</h1>  
+           
             </div>
-        </header> 
+          
         
-        <!-- MENU SECUNDARIO --> 
-        <aside>
-            <div class="wrap" id='menuDesplazado'> 
-                <nav class="navMenuDesplazado">
-                    <ul class="menu" id="MD">
-                        <li id="MD"><a href="ingresarDatosDesplazados.html"><span></span>Datos</a></li>
-                        <li id="MD"><a href="#"><span></span>Familiares</a>
-                            <ul>
-                                <li ><a href="ingresarFamiliarDesplazados.html">Agregar</a></li>
-                                <li ><a href="#">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li id="MD"><a href="ingresarDesplazamiento.html"><span></span>Desplazamiento</a></li>
-                        <li id="MD"><a href="ingresarEstabilizacion.html"><span></span>Estabilizacion</a></li>
-                        <li id="MD"><a href="ingresarViviendaDesplazados.html"><span></span>Vivienda</a></li>
-                        <li id="MD"><a href="ingresarEconomiaFamiliarDesplazados.html"><span></span>Economia</a></li>
-                        <li id="MD"><a href="ingresarProteccionDesplazados.html"><span></span>Protección</a></li>
-                        <li id="MD"><a href="ingresarAyudasRecibidasDesplazados.html"><span></span>Ayudas</a></li>
-                        <li id="MD"><a href="ingresarDiscapacidadDesplazados.html"><span></span>Discapacidad</a></li>
-                        <li id="MD"><a href="ingresarEspecialProteccionDesplazados.html"><span></span>Protección Especial</a></li>
-                        <li id="MD"><a href="ingresarReparacionDesplazados.html"><span></span>Reparacion</a></li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
-            </div>            
-        </aside>
-        
-        <!-- TITULO IDENTIFICADOR DE POSICION --> 
-        <footer>
-            <div class="idMenus">
-                <h1>POBLACION DESPLAZADA</h1>                                   
-            </div>
-        </footer>
-        
-        <!-- FORMULARIO AGREGAR FAMILIAR -->
-            <div class="formulario"  id="formularioFamiliar">
-                
-                <h1 class="titulo1">Agregar Familiar</h1>            
-                
-                <form action="AgregarFamiliarDServlet" method="post">
-                             
+
+        <div class="container" >
+        <!-- FORMULARIO AGREGAR DATOS -->
+                <?php include(HTML_DIR.'/overall/navDesplazados.php') ?> 
+             <div class="row formulario" >
                     Identificacion: <input type="text" name="txtIdentificacionD"><br/>
                     Tipo de Identificacion: <select id="TI" name="cboTipoIdentificacionD">
                                 <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
@@ -212,7 +132,6 @@ and open the template in the editor.
                                         <ul id="indemnizacion">                                       
                                             <li id="indemnizacion"><a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizacion HI">Indemnizacion ayuda humanitaria inmediata</a></li>
                                             <li id="indemnizacion" ><a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.l.Q.N.I.P">Indemnizaciones Administrativa por lesiones que no
-                                                                                                                                    no causaron incapacidad permanente</a></li>
                                             <li id="indemnizacion" ><a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.I.P">Indemnizacion Administrativa por incapacidad permanente</a></li>
                                         </ul>
                     </div>
@@ -418,9 +337,13 @@ and open the template in the editor.
                             </select><br/>
                     
                     <input id="agregar" type="submit" value="Agregar Familiar">
-                    <br/><br/> 
-                    
-                </form>            
-            </div>           
+            </div>  
+            
+         </div>
+             
     </body>
+    <footer>
+        <?php include(HTML_DIR.'/overall/footer.php') ?> 
+    </footer>
+
 </html>

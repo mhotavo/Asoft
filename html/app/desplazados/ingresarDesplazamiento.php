@@ -36,13 +36,13 @@
                             <tr>
                                 <td class="right">Año:</td>
                                 <td  class="left">
-                                <div class="col-md-2">    
+                                <div class="col-md-3">    
                                     <input  required class="form-control" type="text" name="anoDesplazamiento1" placeholder="Año 1">
                                 </div>
-                                 <div class="col-md-2">    
+                                 <div class="col-md-3">    
                                     <input  required class="form-control" type="text" name="anoDesplazamiento2" placeholder="Año 2">
                                 </div>
-                                 <div class="col-md-2">    
+                                 <div class="col-md-3">    
                                     <input  required class="form-control" type="text" name="anoDesplazamiento3" placeholder="Año 3">
                                 </div>
                                 </td>

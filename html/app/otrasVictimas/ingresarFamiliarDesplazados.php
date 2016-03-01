@@ -20,18 +20,13 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td class="right" width="60%">Identificacion:</td>
-                                <td class="left" width="40%">
-                                <div class="col-md-8">
-                                    <input type="text" name="txtIdentificacionD" required class="form-control">
-                                </div>
-                                </td>
+                                <td>Identificacion:</td>
+                                <td><input type="text" name="txtIdentificacionD"></td>
                             </tr>
                             <tr>
-                                <td class="right">Tipo de Identificacion: </td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <select id="TI" name="cboTipoIdentificacionD" required class="form-control">
+                                <td>Tipo de Identificacion: </td>
+                                <td>
+                                    <select id="TI" name="cboTipoIdentificacionD">
                                         <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                         <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
                                         <option value="Libreta Militar">Libreta Militar</option>
@@ -40,60 +35,39 @@
                                         <option value="NUIP">Numero Unico de Identificacion Personal(NUIP)</option>
                                         <option value="No Tiene">No Tiene</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Nombres:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" name="txtNombresD" required class="form-control">
-                                </div>
-                                </td>
+                                <td>Nombres:</td>
+                                <td><input type="text" name="txtNombresD"></td>
                             </tr>
                             <tr>
-                                <td class="right">Apellidos:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" name="txtApellidosD" required class="form-control">
-                                </div>    
-
-                                </td>
+                                <td>Apellidos:</td>
+                                <td><input type="text" name="txtApellidosD"></td>
                             </tr>
                             <tr>
-                                <td class="right">Genero:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <select name="cboGeneroD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Genero:</td>
+                                <td>
+                                    <select name="cboGeneroD">
+                                        <option value=""></option>
                                         <option value="Femenino">Femenino</option>
                                         <option value="Masculino">Masculino</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Fecha de Nacimiento:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" name="txtFechaNacimientoD" required class="form-control">
-                                </div>    
-                                </td>
+                                <td>Fecha de Nacimiento:</td>
+                                <td><input type="text" name="txtFechaNacimientoD"></td>
                             </tr>
                             <tr>
-                                <td class="right">Edad:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" name="txtEdadD" required class="form-control">
-                                </div>
-                                </td>
+                                <td>Edad:</td>
+                                <td><input type="text" name="txtEdadD"></td>
                             </tr>
                             <tr>
-                                <td class="right">Enfoque Diferencial:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="ED" name="cboEnfoqueD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Enfoque Diferencial:</td>
+                                <td>
+                                    <select id="ED" name="cboEnfoqueD">
+                                        <option value=""></option>
                                         <option value="Ninguno">Ninguno</option>                            
                                         <option value="LGBTI">LGBTI</option>
                                         <option value="Indigena">Indigena</option>
@@ -102,16 +76,13 @@
                                         <option value="Raizal (San Andres)">Raizal "San Andres"</option>
                                         <option value="Otro">Otro</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Estado Civil:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="estaCivil" name="cboEstadoCivilD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Estado Civil:</td>
+                                <td>
+                                    <select id="estaCivil" name="cboEstadoCivilD">
+                                        <option value=""></option>
                                         <option value="Soltero">Soltero</option>
                                         <option value="Casado">Casado</option>
                                         <option value="Union Libre">Union Libre</option>
@@ -121,12 +92,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Parentesco:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="Parentesco" name="cboParentescoD" required class="form-control"> 
-                                        <option value="">[...]</option>
+                                <td>Parentesco:</td>
+                                <td>
+                                    <select id="Parentesco" name="cboParentescoD">
+                                        <option value=""></option>
                                         <option value="Padre/Padrastro">Padre/Padrastro</option>
                                         <option value="Madre/Madrastra">Madre/Madrastra</option>
                                         <option value="Hijo(a)/Hojastro(a)">Hijo(a)/Hojastro(a)</option>
@@ -136,43 +105,34 @@
                                         <option value="Otro">Otro</option>
                                         <option value="No Parientes">No Parientes</option>                                
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Estuvo Separado:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="separado" name="cboSeparadoD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Estuvo Separado:</td>
+                                <td>
+                                    <select id="separado" name="cboSeparadoD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Discapacitado:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="discapacitado" name="cboDiscapacitadoD" onChange="discapacitadoMostrarSi(this)" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Discapacitado:</td>
+                                <td>
+                                    <select id="discapacitado" name="cboDiscapacitadoD" onChange="discapacitadoMostrarSi(this)">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                      </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Discapacidad) que se muestra o se oculta si es dicapacitado -->
                             <tr>
-                                <td class="right">Discapacidad:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="discapacidad" name="cboDiscapacidadD" onChange="discapacidadMostrarSi(this)" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Discapacidad:</td>
+                                <td>
+                                    <select id="discapacidad" name="cboDiscapacidadD" onChange="discapacidadMostrarSi(this)">
+                                        <option value=""></option>
                                         <option value="Visual">Visual</option>
                                         <option value="Autismo">Autismo</option> 
                                         <option value="Auditiva">Auditiva</option>
@@ -186,282 +146,212 @@
                                         <option value="Paralisis o Ausencia de un Miembro Inferior">Paralisis o Ausencia de un Miembro Inferior</option>
                                         <option value="Otra Discapacidad">Otra Discapacidad</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Cual) que se muestra o se oculta si es dicapacitado -->
                             <tr>
-                                <td class="right">Cual:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" id="otraDiscapacidad" name="txtOtraDiscapacidadD" required class="form-control">
-                                </div>
-                                    </td>
+                                <td>Cual:</td>
+                                <td><input type="text" id="otraDiscapacidad" name="txtOtraDiscapacidadD" size="30"></td>
                             </tr>
                             <tr>
-                                <td class="right">¿Ha Sido Victima de Mina-Antipersonal?:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <select id="mina-Antipersonal" name="cboVictimaMinaD" onChange="victimaMinaMostrarSi(this)" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>¿Ha Sido Victima de Mina-Antipersonal?:</td>
+                                <td><select id="mina-Antipersonal" name="cboVictimaMinaD" onChange="victimaMinaMostrarSi(this)">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Recibio Auxilio de Transporte) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->
                             <tr>
-                                <td class="right">Recibio Auxilio de Transporte de Emergencia al Centro Asistencial?:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="auxilioTransporte" name="auxilioTransporteD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Recibio Auxilio de Transporte de Emergencia al Centro Asistencial?:</td>
+                                <td>
+                                    <select id="auxilioTransporte" name="auxilioTransporteD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                     </select> 
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Se le Otorgo ayuda medica en) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->
                             <tr>
-                                <td class="right">Se le Otorgo ayuda medica en:</td>
-                                <td class="left">
-                                <div class="col-md-10" style="text-align: left;">
-
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Medicamentos"> Medicamentos <br>
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Cirugia Plastica"> Cirugia Plastica <br>
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Cirugia Vascular"> Cirugia Vascular <br>
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Osteosintesis"> Osteosintesis <br>
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Protesis"> Protesis <br>
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Ortesis"> Ortesis  <br>                   
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Terapias"> Terapias <br>
+                                <td>Se le Otorgo ayuda medica en:</td>
+                                <td>
+                                    <a><input type="checkbox" name="checkboxAyudaMedicaD" value="Medicamentos">Medicamentos</a>
+                                    <a><input type="checkbox" name="checkboxAyudaMedicaD" value="Cirugia Plastica">Cirugia Plastica</a>
+                                    <a><input type="checkbox" name="checkboxAyudaMedicaD" value="Cirugia Vascular">Cirugia Vascular</a>
+                                    <a><input type="checkbox" name="checkboxAyudaMedicaD" value="Osteosintesis">Osteosintesis</a>
+                                    <a><input type="checkbox" name="checkboxAyudaMedicaD" value="Protesis">Protesis</a>
+                                    <a><input type="checkbox" name="checkboxAyudaMedicaD" value="Ortesis">Ortesis</a>                                
+                                    <a><input type="checkbox" name="checkboxAyudaMedicaD" value="Terapias">Terapias</a>
                                 </td>
                             </tr>
                             <!-- (Otra:) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->
                             <tr>
-                                <td class="right">Otra:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                     <input id="otraAyuda" type="text" name="txtOtraAyudaD" required class="form-control">
-                                </div>
-                                </td>
+                                <td>Otra:</td>
+                                <td> <input id="otraAyuda" type="text" name="txtOtraAyudaD"></td>
                             </tr>
                             <!-- (En cuanto a indemnizacion por) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->
                             <tr>
-                                <td class="right">En cuanto a indemnizacion por Concepto de victimizacion por Minas-Antipersonal se le otorgo:</td>
-                                <td class="left">
-                                <div class="col-md-10" style="text-align: left;">
-
-                                    <input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizacion HI"> Indemnizacion ayuda humanitaria inmediata <br>
-                                    <input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.l.Q.N.I.P"> Indemnizaciones Administrativa por lesiones que no  <br>
-                                    <input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.I.P"> Indemnizacion Administrativa por incapacidad permanente
+                                <td>En cuanto a indemnizacion por Concepto de victimizacion por Minas-Antipersonal se le otorgo:</td>
+                                <td>
+                                    <a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizacion HI">Indemnizacion ayuda humanitaria inmediata</a></li>
+                                    <a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.l.Q.N.I.P">Indemnizaciones Administrativa por lesiones que no
+                                    <a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.I.P">Indemnizacion Administrativa por incapacidad permanente</a>
                                 </td>
                             </tr> 
                             <tr>
-                                <td class="right"> Afiliado a Salud:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="afiliadoSalud" name="cboAfiliadoSaludD" onChange="afiliadoSaludMostrarSi(this)" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td> Afiliado a Salud:</td>
+                                <td> 
+                                    <select id="afiliadoSalud" name="cboAfiliadoSaludD" onChange="afiliadoSaludMostrarSi(this)">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Regimen) que se muestra o se oculta si es Afiliado a Salud: -->
                             <tr>
-                                <td class="right">Regimen:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="regimen" name="cboRegimenD" onChange="regimenMostrarSi(this)" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Regimen:</td>
+                                <td>
+                                    <select id="regimen" name="cboRegimenD" onChange="regimenMostrarSi(this)">
+                                        <option value=""></option>
                                         <option value="Contributivo">Contributivo</option>
                                         <option value="Subsidiado">Subsidiado</option> 
                                         <option value="Vinculado">Vinculado</option>
                                         <option value="Especial">Especial</option>
                                         <option value="Ninguno">Ninguno</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Cual:) que se muestra o se oculta si es Afiliado a Salud: --> 
                             <tr>
-                                <td class="right">Cual:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" id="cualRegimen" name="txtCualRegimenD" required class="form-control">
-                                </div>
+                                <td>Cual:</td>
+                                <td>
+                                    <input type="text" id="cualRegimen" name="txtCualRegimenD">
                                 </td>
                             </tr> 
                             <tr>
-                                <td class="right">Recibio Atencion Salud Mental:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <select id="comboboxDesicion" name="cboSaludMentalD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Recibio Atencion Salud Mental:</td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboSaludMentalD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr> 
                             <tr>
-                                <td class="right">Recibio Apoyo PsicoSocial:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="comboboxDesicion" name="cboPsicosocialD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Recibio Apoyo PsicoSocial:</td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboPsicosocialD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
-                                        <option value="No">No</option>                                                                                             
+                                        <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr>  
                             <tr>
-                                <td class="right">Asistio Programa Salud Reproductiva:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="comboboxDesicion" name="cboSaludReproductivaD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Asistio Programa Salud Reproductiva:</td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboSaludReproductivaD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right"> Vacunas:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="vacunas" name="cboVacunasD" onChange="vacunasMostrarSi(this)" required class="form-control">
-                                            <option value="">[...]</option>
+                                <td> Vacunas:</td>
+                                <td>
+                                    <select id="vacunas" name="cboVacunasD" onChange="vacunasMostrarSi(this)">
+                                            <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Cuales Vacunas:) que se muestra o se oculta si tiene vacunas --> 
                             <tr>
-                                <td class="right">Cuales Vacunas:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" id="cualesVacunas" name="txtCualesVacunasD" required class="form-control">
-                                </div>
-                                </td>
+                                <td>Cuales Vacunas:</td>
+                                <td><input type="text" id="cualesVacunas" name="txtCualesVacunasD" size="30"></td>
                             </tr> 
                             <tr>
-                                <td class="right">Le han Diagnosticado una Enfermedad Cronica: </td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="enfCronica" name="cboEnfCronicaD" onChange="enfCronicaMostrarSi(this)" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Le han Diagnosticado una Enfermedad Cronica: </td>
+                                <td>
+                                    <select id="enfCronica" name="cboEnfCronicaD" onChange="enfCronicaMostrarSi(this)">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr> 
                             <!-- (Cual Enfermedad:) que se muestra o se oculta si Le han Diagnosticado una Enfermedad Cronica: -->  
                             <tr>
-                                <td class="right">Cual Enfermedad:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" id="cualEnfCronica" name="txtCualEnfCronicaD" required class="form-control">
-                                </div>
-                                </td>
+                                <td>Cual Enfermedad:</td>
+                                <td><input type="text" id="cualEnfCronica" name="txtCualEnfCronicaD" size="30"></td>
                             </tr>  
                             <tr>
-                                <td class="right">Califique el Estado de Salud (1-5):</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" id="califEstadoSalud" name="txtCalifEstadoSaludD" required class="form-control">
-                                </div>
-                                </td>
+                                <td>Califique el Estado de Salud (1-5):</td>
+                                <td><input type="text" id="califEstadoSalud" name="txtCalifEstadoSaludD" size="2"></td>
                             </tr>   
                             <tr>
-                                <td class="right">Estudiaba Antes de Ser Victima:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="comboboxDesicion" name="cboEstudiabaAntesD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Estudiaba Antes de Ser Victima:</td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboEstudiabaAntesD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Estudia Actualmente:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="estudiaA" name="cboEstudiaAD" onChange="estudiaAMostrarSi(this)" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Estudia Actualmente:</td>
+                                <td>
+                                    <select id="estudiaA" name="cboEstudiaAD" onChange="estudiaAMostrarSi(this)">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Programa de Acom) que se muestra o se oculta si Estudia Actualmente: -->  
                             <tr>
-                                <td class="right">Programa de Acompañamiento Escolar:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="proEscolar" name="cboProEscolarD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Programa de Acompañamiento Escolar:</td>
+                                <td>
+                                    <select id="proEscolar" name="cboProEscolarD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <!-- (Cancela Algun Costo ) que se muestra o se oculta si Estudia Actualmente: -->  
                             <tr>
-                                <td class="right">Cancela Algun Costo Educativo:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="costoEdu" name="cboCostoEduD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Cancela Algun Costo Educativo:</td>
+                                <td>
+                                    <select id="costoEdu" name="cboCostoEduD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Sabe Leer:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="comboboxDesicion" name="cboSabeLeerD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Sabe Leer:</td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboSabeLeerD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr>              
                             <tr>
-                                <td class="right"> Nivel Alcanzado:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="nivelAlcanzado" name="cboNivelAlcanzadoD" required class="form-control">
-                                        <option value="">[...]</option>                                
+                                <td> Nivel Alcanzado:</td>
+                                <td>
+                                    <select id="nivelAlcanzado" name="cboNivelAlcanzadoD">
+                                        <option value=""></option>                                
                                         <option value="Preescolar">Preescolar</option>
                                         <option value="Primaria">Primaria</option>
                                         <option value="Secundaria">Secundaria</option>
@@ -471,16 +361,13 @@
                                         <option value="Posgrado">Posgrado</option>
                                         <option value="Ninguno">Ninguno</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Competencia Laboral:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="compeLaboral" name="cboCompeLaboralD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Competencia Laboral:</td>
+                                <td>
+                                    <select id="compeLaboral" name="cboCompeLaboralD">
+                                        <option value=""></option>
                                         <option value="Mineria">Mineria</option>
                                         <option value="Industria">Industria</option>
                                         <option value="Sistemas">Sistemas</option>
@@ -493,29 +380,23 @@
                                         <option value="Agropecuario Siembra,Pezca,Caza">Agropecuario Siembra,Pezca,Caza</option>
                                         <option value="Otra">Otra</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Competencia ha Sido Certificada:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="comboboxDesicion" name="cboCompeCertificadaD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Competencia ha Sido Certificada:</td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboCompeCertificadaD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Le Gustaria Capacitarse en:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="capacitacion" name="cboCapacitacionD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Le Gustaria Capacitarse en:</td>
+                                <td>
+                                    <select id="capacitacion" name="cboCapacitacionD">
+                                        <option value=""></option>
                                         <option value="Mineria">Mineria</option>
                                         <option value="Industria">Industria</option>
                                         <option value="Sistemas">Sistemas</option>
@@ -528,29 +409,23 @@
                                         <option value="Agropecuario Siembra,Pezca,Caza">Agropecuario Siembra,Pezca,Caza</option>
                                         <option value="Otra">Otra</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Horario de Capacitacion:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="horaCapacitacion" name="cboHoraCapacitacionD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Horario de Capacitacion:</td>
+                                <td>
+                                    <select id="horaCapacitacion" name="cboHoraCapacitacionD">
+                                        <option value=""></option>
                                         <option value="Diurno">Diurno</option>
                                         <option value="Nocturno">Nocturno</option>                                
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                              <tr>
-                                <td class="right">Actividad Laboral Actual:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="actiLaboral" name="cboActiLaboralD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Actividad Laboral Actual:</td>
+                                <td>
+                                    <select id="actiLaboral" name="cboActiLaboralD">
+                                        <option value=""></option>
                                         <option value="Trabajando">Trabajando</option>
                                         <option value="Buscando Trabajo">Buscando Trabajo</option>
                                         <option value="Estudiante">Estudiante</option>
@@ -560,16 +435,13 @@
                                         <option value="Pensionado">Pensionado</option>                                
                                         <option value="Otra">Otra</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                              <tr>
-                                <td class="right">Rama Actividad Actual:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="ramaActual" name="cboRamaActualD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Rama Actividad Actual:</td>
+                                <td>
+                                    <select id="ramaActual" name="cboRamaActualD">
+                                        <option value=""></option>
                                         <option value="Mineria">Mineria</option>
                                         <option value="Industria">Industria</option>
                                         <option value="Sistemas">Sistemas</option>
@@ -582,47 +454,37 @@
                                         <option value="Agropecuario Siembra,Pezca,Caza">Agropecuario Siembra,Pezca,Caza</option>
                                         <option value="Otra">Otra</option>
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                              <tr>
-                                <td class="right">Contrato Laboral Escrito:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="comboboxDesicion" name="cboContraLaboralD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Contrato Laboral Escrito:</td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboContraLaboralD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Trabaja en Jornada:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="jornada" name="cboJornadaD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Trabaja en Jornada:</td>
+                                <td>
+                                    <select id="jornada" name="cboJornadaD">
+                                        <option value=""></option>
                                         <option value="Legal">Legal</option>
                                         <option value="Ilegal">Ilegal</option>
                                         <option value="Ns/Nr">Ns/Nr</option> 
                                     </select>
-                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Seguro Social y Riesgos Profesinales: </td>
-                                <td class="left">
-                                <div class="col-md-8">
-
-                                    <select id="comboboxDesicion" name="cboSSocialRProfeD" required class="form-control">
-                                        <option value="">[...]</option>
+                                <td>Seguro Social y Riesgos Profesinales: </td>
+                                <td>
+                                    <select id="comboboxDesicion" name="cboSSocialRProfeD">
+                                        <option value=""></option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                 
                                     </select>
-                                </div>
                                 </td>
                             </tr> 
 

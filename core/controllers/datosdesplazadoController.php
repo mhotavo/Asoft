@@ -51,7 +51,7 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 
 
 } else {
-
+	header('location: ?view=index');
 }
 
  ?>

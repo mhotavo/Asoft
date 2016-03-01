@@ -1,298 +1,495 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ingresar Desplazamiento</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-       
-        <link rel="stylesheet" href="../../css/style.css"/>
-        <script type="text/javascript" src="../../js/funciones.js"></script>
-        
-    </head>
+<?php include(HTML_DIR.'/overall/header.php') ?>
     <body>
-        <!-- MENU PRINCIPAL -->       
-        <header>
-            <div class="wrap" > 
-                <nav>
-                    <ul class="menu">
-                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
-                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
-                            <ul>
-                                <li><a href="../validarDocumentoDesplazados.html">Desplazados</a></li>
-                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
-                            </ul>
-                        </li>
 
-                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
-                            <ul>
-                                <li><a href="#">Informe Parcial</a></li>
-                                <li><a href="#">Informe Total</a></li>                  
-                            </ul>
-                        </li>
-
-                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
-                            <ul>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Directions</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
-                        </li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
+            <div class=" " > 
+            <?php include(HTML_DIR.'/overall/nav.php') ?> 
+             <h1 style="color:white;">POBLACION DESPLAZADA</h1>  
+           
             </div>
-        </header> 
+          
         
-        <!-- MENU SECUNDARIO --> 
-        <aside>
-            <div class="wrap" id='menuDesplazado'> 
-                <nav class="navMenuDesplazado">
-                    <ul class="menu" id="MD">
-                        <li id="MD"><a href="ingresarDatosDesplazados.html"><span></span>Datos</a></li>
-                        <li id="MD"><a href="#"><span></span>Familiares</a>
-                            <ul>
-                                <li ><a href="ingresarFamiliarDesplazados.html">Agregar</a></li>
-                                <li ><a href="#">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li id="MD"><a href="ingresarDesplazamiento.html"><span></span>Desplazamiento</a></li>
-                        <li id="MD"><a href="ingresarEstabilizacion.html"><span></span>Estabilizacion</a></li>
-                        <li id="MD"><a href="ingresarViviendaDesplazados.html"><span></span>Vivienda</a></li>
-                        <li id="MD"><a href="ingresarEconomiaFamiliarDesplazados.html"><span></span>Economia</a></li>
-                        <li id="MD"><a href="ingresarProteccionDesplazados.html"><span></span>Protección</a></li>
-                        <li id="MD"><a href="ingresarAyudasRecibidasDesplazados.html"><span></span>Ayudas</a></li>
-                        <li id="MD"><a href="ingresarDiscapacidadDesplazados.html"><span></span>Discapacidad</a></li>
-                        <li id="MD"><a href="ingresarEspecialProteccionDesplazados.html"><span></span>Protección Especial</a></li>
-                        <li id="MD"><a href="ingresarReparacionDesplazados.html"><span></span>Reparacion</a></li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
-            </div>            
-        </aside>
-        
-        <!-- TITULO IDENTIFICADOR DE POSICION --> 
-        <footer>
-            <div class="idMenus">
-                <h1>POBLACION DESPLAZADA</h1>                                   
-            </div>
-        </footer>
-        
-        <!-- FORMULARIO AGREGAR VICTIMIZACION -->
-            <div class="formulario"  id="formularioVictimizacion">
-                
-                <h1 class="titulo1">Agregar Desplazamiento</h1>            
-                
-                <form action="AgregarDesplazamientoDServlet" method="post">
-                    
-                    <!-- COMBOBOX VICTIMIZADO QUE OCULTA -->
-                    <div>
-                        <a id="vecesVictimizado">Durante los ultimos años cuantas</a><br/>
-                        veces ha sido desplazado: <select id="victimizado" name="cboVictimizadoD" onChange="victimizadoMostrarSi(this)">
-                                            <option value=""></option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                         </SELECT>                        
-                    </div>   
-                    <div id="victimizado1" style="display:none">
-                            Año: <input type="text" id="anoVictimizacion" name="txtAnoVictimizacionD" size="2">
-                            Localidad: <input type="text" id="localidadVictimizacion" name="txtLocalidadVictimizacionD" size="10">
-                            Municipio: <input type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacionD" size="10">                       
-                    </div>
-                    <div id="victimizado2" style="display:none">
-                            Año: <input type="text" id="anoVictimizacion" name="txtAnoVictimizacion2D" size="2">
-                            Localidad: <input type="text" id="localidadVictimizacion" name="txtLocalidadVictimizacion2D" size="10">
-                            Municipio: <input type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion2D" size="10"><br/>
-                            Año: <input type="text" id="anoVictimizacion" name="txtAnoVictimizacion22D" size="2">
-                            Localidad: <input type="text" id="localidadVictimizacion" name="txtLocalidadVictimizacion22D" size="10">
-                            Municipio: <input type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion22D" size="10">
-                    </div>
-                    <div id="victimizado3" style="display:none">
-                            Año: <input type="text" id="anoVictimizacion" name="txtAnoVictimizacion3D" size="2">
-                            Localidad: <input type="text" id="localidadVictimizacion" name="txtLocalidadVictimizacion3D" size="10">
-                            Municipio: <input type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion3D" size="10"><br/>
-                            Año: <input type="text" id="anoVictimizacion" name="txtAnoVictimizacion33D" size="2">
-                            Localidad: <input type="text" id="localidadVictimizacion" name="txtLocalidadVictimizacion33D" size="10">
-                            Municipio: <input type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion33D" size="10"><br/>
-                            Año: <input type="text" id="anoVictimizacion" name="txtAnoVictimizacion333D" size="2">
-                            Localidad: <input type="text" id="localidadVictimizacion" name="txtLocalidadVictimizacion333D" size="10">
-                            Municipio: <input type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion333D" size="10">
-                    </div>
+
+        <div class="container" >
+        <!-- FORMULARIO AGREGAR DATOS -->
+                <?php include(HTML_DIR.'/overall/navDesplazados.php') ?> 
+                <div class="row formulario" >
+
+                <div >
+                    <h1> Agregar Desplazamiento</h1> 
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <table width="100%">
+                            <tr>
+                                <td class="right" width="60%">Durante los ultimos años cuantas veces ha sido desplazado:</td>
+                                <td  class="left" width="40%">
+                                <div class="col-md-9">
+                                    <select id="victimizado" name="cboVictimizadoD" onChange="victimizadoMostrarSi(this)" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <!-- Se muestra cuando cuando ha sido victimizado 1 vez -->
+                            <tr>
+                                <td class="right">Año:</td>
+                                <td  class="left">
+                                <div class="col-md-2">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento1" placeholder="Año 1">
+                                </div>
+                                 <div class="col-md-2">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento2" placeholder="Año 2">
+                                </div>
+                                 <div class="col-md-2">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento3" placeholder="Año 3">
+                                </div>
+                                </td>
+                            </tr>
+                          <tr>
+                                <td class="right">Municipio:</td>
+                                <td  class="left">
+                                <div class="col-md-3">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
+                                </div>
+                                <div class="col-md-3">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
+                                </div>
+                                <div class="col-md-3">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
+                                </div>                                                                
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td class="right">Localidad:</td>
+                                <td  class="left">
+                                <div class="col-md-3">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Localidad 1">
+                                </div>
+                                <div class="col-md-3">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento2" placeholder="Localidad 2">
+                                </div>
+                               <div class="col-md-3">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento3" placeholder="Localidad 3">
+                                </div>
+                                </td>
+                            </tr>
+  
+                            <!-- Se muestra cuando cuando ha sido victimizado 1 y 2 veces
+                            <tr>
+                                <td class="right">Año:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input  required class="form-control" type="text" id="anoVictimizacion" name="txtAnoVictimizacion2D" >
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Localidad:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input  required class="form-control" type="text"  name="txtLocalidadVictimizacion2D" >
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Municipio:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input  required class="form-control" type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion2D">
+                                </div>
+                                </td>
+                            </tr> -->
+                            <!-- Se muestra cuando cuando ha sido victimizado 1  2 y 3 veces 
+                            <tr>
+                                <td class="right">Año:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input  required class="form-control" type="text" id="anoVictimizacion" name="txtAnoVictimizacion3D" >
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Localidad:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input  required class="form-control" type="text"  name="txtLocalidadVictimizacion3D">
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Municipio:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input  required class="form-control" type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion3D">
+                                </div>
+                                </td>
+                            </tr>-->
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td class="right">A Cuales Causas Le Atribuye Su Desplazamiento:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input type="text" id="CausaDesplazamiento" name="CausaDesplazamiento" required class="form-control">
+                                </div>
+                                </td>
+                            </tr>
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td  class="right" >Confrontacion Armada:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="confrontacionArmada" name="cboConfrontacionArmadaD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td class="right">Amenaza Indirecta:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="amenazaIndirecta" name="amenazaIndirectaD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td  class="right" >Campos Minados:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="camposMinados" name="cboCamposMinadosD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td class="right">Asesinato Familia:</td>
+                                <td class="left">
+                                <div class="col-md-9">
+                                <select id="asesinatoFamilia" name="cboAsesinatoFamiliaD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                                </td>
+                            </tr>
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td class="right">Amenaza Directa:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="amenazaDirecta" name="cboAmenazaDirectaD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td  class="right">Reclutamiento de Menores:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="recluMenores" name="cboRecluMenoresD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td class="right">Ausencia del Gobierno:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="ausenGobierno" name="cboAusenGobiernoD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr> 
+                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
+                            <tr>
+                                <td  class="right">Desplazamiento Masivo:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="desplaMasivo" name="cboDesplaMasivoD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">No de Personas que Conformaban su hogar en ese momento:</td>
+                                <td  class="left">
+                                <div class="col-md-9">    
+                                    <input  required class="form-control" type="text" id="nPersonas" name="txtNPersonasD" >
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">En ese momento la familia se separo:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliaSeparoD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td  class="right">Solicito ayuda estatal para la reunificacion:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboReunificacionD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">Su nucleo se volvio a unificar:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboUnificarD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">Para esto recibio ayuda estatal:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboUnificarEstatalD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">La familia en el momento del desplazamiento estan vivos:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliaVivoD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Algun Familiar ha sido detenido de forma arbitraria:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliarDeteD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Algun Familiar ha sido Victima de Violacion o Prostitucion forzada:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliarVPD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Algun Familiar fue asesinado por denunciar grupos armados:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliarAseD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Algun Familiar fue reclutado por grupos armados al margen de la ley:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliarRecluD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Algun Familiar ha sido victima de secuestro:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliarSecuesD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right"> Ha instalado demanda por desplazamiento:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboDemandaVictiD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Algun familiar fue victima de Minas-Antipersonal:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboFamiliarMinaD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td  class="right">En El Momento de los desplazamientos su Nucleo Familiar Declaro Ante:</td>
+                               <td  class="left">
+                                <div class="col-md-9">
+                                  <input  required class="form-control" type="text" id="" name="" >
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">Defensoria:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboDefensoriaD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td  class="right">Procuraduria:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboProcuraduriaD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">Departamento para la prosperidad social:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboProspeD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td  class="right">Personeria:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboPersoneriaD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">UAO:</td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboUAOD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="right">Otra: </td>
+                                <td  class="left">
+                                <div class="col-md-9">
+                                    <select id="selectVicti" name="cboOtraD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                            
+                                    </select>
+                                </div>
+                                </td>
+                            </tr>                                                 
+                            
+
+                            <tr>
+                                <td colspan="2">
+                                <br><br>                      
+                                    <button type="submit" class="btn btn-primary">Guardar y continuar</button>     
+                                </td>
+                            </tr>                           
                         
-                    <div id="infVictimizacion"  style="display:none">
-                        <a id="causasVic1">A Cuales Causas Le Atribuye Su</a><br/> 
-                        <a id="causasVic2">Desplazamiento:</a><br/> 
-                        Confrontacion Armada: <select id="confrontacionArmada" name="cboConfrontacionArmadaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                        Amenaza Indirecta: <select id="amenazaIndirecta" name="amenazaIndirectaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                        Campos Minados: <select id="camposMinados" name="cboCamposMinadosD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                        Asesinato Familia: <select id="asesinatoFamilia" name="cboAsesinatoFamiliaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                        Amenaza Directa: <select id="amenazaDirecta" name="cboAmenazaDirectaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                        Reclutamiento de Menores: <select id="recluMenores" name="cboRecluMenoresD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                        Ausencia del Gobierno <select id="ausenGobierno" name="cboAusenGobiernoD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                        Desplazamiento Masivo: <select id="desplaMasivo" name="cboDesplaMasivoD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    </div>
-                    
-                    No de Personas que Conformaban 
-                           su hogar en ese momento: <input type="text" id="nPersonas" name="txtNPersonasD" size="2"><br/>
-                    
-                    En ese momento la familia se  
-                    separo: <select id="selectVicti" name="cboFamiliaSeparoD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    
-                    Solicito ayuda estatal para la reunificacion: <select id="selectVicti" name="cboReunificacionD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                                         
-                    Su nucleo se volvio a unificar: <select id="selectVicti" name="cboUnificarD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                                         
-                    Para esto recibio ayuda estatal: <select id="selectVicti" name="cboUnificarEstatalD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>           
-                           
-                    La familia en el momento del 
-                    desplazamiento estan vivos: <select id="selectVicti" name="cboFamiliaVivoD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    
-                    Algun Familiar ha sido detenido 
-                    de forma arbitraria: <select id="selectVicti" name="cboFamiliarDeteD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    
-                    Algun Familiar ha sido Victima de Violacion o 
-                    Prostitucion forzada: <select id="selectVicti" name="cboFamiliarVPD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                                         
-                    Algun Familiar fue asesinado por denunciar 
-                    grupos armados: <select id="selectVicti" name="cboFamiliarAseD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    Algun Familiar fue reclutado por grupos 
-                    armados al margen de la ley: <select id="selectVicti" name="cboFamiliarRecluD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    Algun Familiar ha sido victima de secuestro: <select id="selectVicti" name="cboFamiliarSecuesD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    Ha instalado demanda por desplazamiento: <select id="selectVicti" name="cboDemandaVictiD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    Algun familiar fue victima de Minas-Antipersonal: <select id="selectVicti" name="cboFamiliarMinaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                                         
-                    <a id="declaroAnte">En El Momento de los desplazamientos su Nucleo Familiar Declaro Ante:</a><br/>
-                    
-                    Defensoria: <select id="selectVicti" name="cboDefensoriaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                                         
-                    Procuraduria: <select id="selectVicti" name="cboProcuraduriaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    
-                    Departamento para la prosperidad social: <select id="selectVicti" name="cboProspeD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    
-                    Personeria: <select id="selectVicti" name="cboPersoneriaD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    UAO: <select id="selectVicti" name="cboUAOD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                    Otra: <select id="selectVicti" name="cboOtraD">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                         </SELECT><br/>
-                              
-                    
-                    <input id="agregar" type="submit" value="Agregar Desplazamiento">
-                    <br/><br/> 
-                    
-                </form>            
-            </div>           
+                        </table>
+                        </form> 
+                    </div>         
+                 </div>           
+            </div>             
     </body>
-</html>
 
+    <footer>
+        <?php include(HTML_DIR.'/overall/footer.php') ?> 
+    </footer>
+
+</html>

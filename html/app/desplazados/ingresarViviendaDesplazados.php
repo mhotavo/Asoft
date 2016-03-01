@@ -1,100 +1,28 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ingresar Vivienda</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-       
-        <link rel="stylesheet" href="../../css/style.css"/>
-        <script type="text/javascript" src="../../js/funciones.js"></script>
-        
-    </head>
+<?php include(HTML_DIR.'/overall/header.php') ?>
     <body>
-        <!-- MENU PRINCIPAL -->       
-        <header>
-            <div class="wrap" > 
-                <nav>
-                    <ul class="menu">
-                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
-                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
-                            <ul>
-                                <li><a href="../validarDocumentoDesplazados.html">Desplazados</a></li>
-                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
-                            </ul>
-                        </li>
 
-                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
-                            <ul>
-                                <li><a href="#">Informe Parcial</a></li>
-                                <li><a href="#">Informe Total</a></li>                  
-                            </ul>
-                        </li>
-
-                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
-                            <ul>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Directions</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
-                        </li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
+            <div class=" " > 
+            <?php include(HTML_DIR.'/overall/nav.php') ?> 
+             <h1 style="color:white;">POBLACION DESPLAZADA</h1>  
+           
             </div>
-        </header> 
+          
         
-        <!-- MENU SECUNDARIO --> 
-        <aside>
-            <div class="wrap" id='menuDesplazado'> 
-                <nav class="navMenuDesplazado">
-                    <ul class="menu" id="MD">
-                        <li id="MD"><a href="ingresarDatosDesplazados.html"><span></span>Datos</a></li>
-                        <li id="MD"><a href="#"><span></span>Familiares</a>
-                            <ul>
-                                <li ><a href="ingresarFamiliarDesplazados.html">Agregar</a></li>
-                                <li ><a href="#">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li id="MD"><a href="ingresarDesplazamiento.html"><span></span>Desplazamiento</a></li>
-                        <li id="MD"><a href="ingresarEstabilizacion.html"><span></span>Estabilizacion</a></li>
-                        <li id="MD"><a href="ingresarViviendaDesplazados.html"><span></span>Vivienda</a></li>
-                        <li id="MD"><a href="ingresarEconomiaFamiliarDesplazados.html"><span></span>Economia</a></li>
-                        <li id="MD"><a href="ingresarProteccionDesplazados.html"><span></span>Protección</a></li>
-                        <li id="MD"><a href="ingresarAyudasRecibidasDesplazados.html"><span></span>Ayudas</a></li>
-                        <li id="MD"><a href="ingresarDiscapacidadDesplazados.html"><span></span>Discapacidad</a></li>
-                        <li id="MD"><a href="ingresarEspecialProteccionDesplazados.html"><span></span>Protección Especial</a></li>
-                        <li id="MD"><a href="ingresarReparacionDesplazados.html"><span></span>Reparacion</a></li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
-            </div>            
-        </aside>
-        
-        <!-- TITULO IDENTIFICADOR DE POSICION --> 
-        <footer>
-            <div class="idMenus">
-                <h1>POBLACION DESPLAZADA</h1>                                   
-            </div>
-        </footer>
-        
-        <!-- FORMULARIO AGREGAR VIVIENDA -->
-            <div class="formulario"  id="formularioVivienda">
-                
-                <h1 class="titulo1">Agregar Vivienda</h1>            
-                
-                <form action="AgregarViviendaDServlet" method="post">                    
-                                        
-                    Actualmente la vivienda que habita es: <select id="actualVivienda" name="cboActualViviendaD">
+
+        <div class="container" >
+        <!-- FORMULARIO AGREGAR DATOS -->
+                <?php include(HTML_DIR.'/overall/navDesplazados.php') ?> 
+                <div class="row formulario" >
+
+                <div >
+                    <h1> Agregar Vivienda</h1> 
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <table width="100%">
+                            <tr>
+                                <td>Actualmente la vivienda que habita es:</td>
+                                <td>
+                                    <select id="actualVivienda" name="cboActualViviendaD">
                                             <option value=""></option>
                                             <option value="Casa">Casa</option>
                                             <option value="Rancho">Rancho</option>
@@ -103,9 +31,13 @@ and open the template in the editor.
                                             <option value="Apartamento">Apartamento</option>
                                             <option value="Refugio Natural(Calle)">Refugio Natural(Calle)</option>
                                             <option value="Otro">Otro</option>
-                                         </SELECT><br/>
-                    
-                    Tenencia: <select id="tenencia" name="cboTenenciaD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tenencia:</td>
+                                <td>
+                                    <select id="tenencia" name="cboTenenciaD">
                                              <option value=""></option>
                                             <option value="Propia">Propia</option>
                                             <option value="Arriendo">Arriendo</option>
@@ -115,29 +47,45 @@ and open the template in the editor.
                                             <option value="En Asufructo">En Asufructo</option>
                                             <option value="Albergue Temporal">Albergue Temporal</option>
                                             <option value="Ocupada de Hecho">Otra</option>
-                                         </SELECT><br/>
-                     
-                    Tipo de Contrato: <select id="tipoContra" name="cboTipoContraD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tipo de Contrato:</td>
+                                <td>
+                                    <select id="tipoContra" name="cboTipoContraD">
                                              <option value=""></option>
                                             <option value="Ninguno">Ninguno</option>
                                             <option value="Contrato Verbal">Contrato Verbal</option>
                                             <option value="Contrato Escrito">Contrato Escrito</option>
-                                            <option value="Escritura Registrada">Escritura Registrada</option>                                            
-                                         </SELECT><br/>
-                    
-                    Zona Vivienda: <select id="zonaVivienda" name="cboZonaViviendaD">
+                                            <option value="Escritura Registrada">Escritura Registrada</option>                               
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zona Vivienda:</td>
+                                <td>
+                                    <select id="zonaVivienda" name="cboZonaViviendaD">
                                              <option value=""></option>
                                             <option value="Rural">Rural</option>
-                                            <option value="Urbana">Urbana</option>                                                                                     
-                                         </SELECT><br/>
-                    
-                    Esta zona ha sido considerada en Alto Riesgo: <select id="zonaAltoR" name="cboZonaAltoRD">
+                                            <option value="Urbana">Urbana</option>                                                       
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Esta zona ha sido considerada en Alto Riesgo:</td>
+                                <td>
+                                    <select id="zonaAltoR" name="cboZonaAltoRD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                    
-                    Paredes: <select id="paredes" name="cboParedesD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Paredes:</td>
+                                <td>
+                                    <select id="paredes" name="cboParedesD">
                                              <option value=""></option>
                                             <option value="Bloque">Bloque</option>
                                             <option value="Piedra">Piedra</option>
@@ -146,79 +94,135 @@ and open the template in the editor.
                                             <option value="Ladrillo">Ladrillo</option>
                                             <option value="Bahareque">Bahareque</option>
                                             <option value="Otro">Otro</option>
-                                         </SELECT><br/> 
-                                         
-                    Piso: <select id="piso" name="cboPisoD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Piso:</td>
+                                <td>
+                                    <select id="piso" name="cboPisoD">
                                              <option value=""></option>
                                             <option value="Arena">Arena</option>
                                             <option value="Madera">Madera</option>
                                             <option value="Baldosa">Baldosa</option>
                                             <option value="Cemento">Cemento</option>
-                                            <option value="Otro">Otro</option>                                                                                        
-                                         </SELECT><br/>                                          
-                                         
-                    Techo: <select id="techo" name="cboTechoD">
+                                            <option value="Otro">Otro</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Techo:</td>
+                                <td>
+                                    <select id="techo" name="cboTechoD">
                                              <option value=""></option>                                            
                                             <option value="Carton">Carton</option>
                                             <option value="Plastico">Plastico</option>
                                             <option value="Teja de Zinc">Teja de Zinc</option>
                                             <option value="Teja de Eternit(Asbesto)">Teja de Eternit(Asbesto)</option>
                                             <option value="Plancha de Cemento">Plancha de Cemento</option>
-                                            <option value="Otro">Otro</option>                                                                                        
-                                         </SELECT><br/>
-                                         
-                    Servicio de Acueducto: <select id="acueducto" name="cboAcueductoD">
+                                            <option value="Otro">Otro</option>                                                               
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Servicio de Acueducto:</td>
+                                <td>
+                                    <select id="acueducto" name="cboAcueductoD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                                         
-                    Servicio de Telefono: <select id="telefono" name="cboTelefonoD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Servicio de Telefono:</td>
+                                <td>
+                                    <select id="telefono" name="cboTelefonoD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                               
-                    Servicio de Energia Electrica: <select id="eElectrica" name="cboEElectricaD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Servicio de Energia Electrica:</td>
+                                <td>
+                                    <select id="eElectrica" name="cboEElectricaD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                                         
-                    Servicio de Alcantarillado: <select id="alcantarillado" name="cboAlcantarilladoD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Servicio de Alcantarillado:</td>
+                                <td>
+                                    <select id="alcantarillado" name="cboAlcantarilladoD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                    
-                    Servicio de Gas Domiciliario: <select id="gasDomiciliario" name="cboGasDomiciliarioD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Servicio de Gas Domiciliario:</td>
+                                <td>
+                                    <select id="gasDomiciliario" name="cboGasDomiciliarioD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                                         
-                    Servicio Recoleccion de Basuras: <select id="reBasuras" name="cboReBasurasD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Servicio Recoleccion de Basuras:</td>
+                                <td>
+                                     <select id="reBasuras" name="cboReBasurasD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                                         
-                    No de Habitaciones para dormir que tenia Anteriormente: <input type="text" id="nHabiAnte" name="txtNHabiAnteD" size="2"><br/>
-                    No de Habitaciones para dormir que cuenta Actualmente: <input type="text" id="nHabiActu" name="txtNHAbiActuD" size="2"><br/>
-                                                             
-                    Cuantas Familias comparten la casa donde habita el hogar Actualmente: <input type="text" id="nFamilias" name="txtNFamiliasD" size="2"><br/>
-                    Ha Recibido subsidio para comprar o mejoramiento de vivienda: <select id="subsVivienda" name="cboSubsViviendaD">
-                                                                                    <option value=""></option>
-                                                                                    <option value="Si">Si</option>
-                                                                                    <option value="No">No</option>
-                                                                                    </SELECT><br/>            
-                    
-                    <input id="agregar" type="submit" value="Agregar Vivienda">
-                    <br/><br/> 
-                    
-                </form>            
-            </div>           
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>No de Habitaciones para dormir que tenia Anteriormente:</td>
+                                <td><input type="text" id="nHabiAnte" name="txtNHabiAnteD" size="2"></td>
+                            </tr>
+                            <tr>
+                                <td>No de Habitaciones para dormir que cuenta Actualmente:</td>
+                                <td><input type="text" id="nHabiActu" name="txtNHAbiActuD" size="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Cuantas Familias comparten la casa donde habita el hogar Actualmente: </td>
+                                <td><input type="text" id="nFamilias" name="txtNFamiliasD" size="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Ha Recibido subsidio para comprar o mejoramiento de vivienda:</td>
+                                <td>
+                                    <select id="subsVivienda" name="cboSubsViviendaD">
+                                        <option value=""></option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>    
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                <br><br>                      
+                                    <button type="submit" class="btn btn-primary">Guardar y continuar</button>     
+                                </td>
+                            </tr>                           
+                        
+                        </table>
+                        </form> 
+                    </div>         
+                 </div>           
+            </div>             
     </body>
+
+    <footer>
+        <?php include(HTML_DIR.'/overall/footer.php') ?> 
+    </footer>
+
 </html>
-
-

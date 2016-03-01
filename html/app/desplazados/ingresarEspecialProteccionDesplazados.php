@@ -1,115 +1,58 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ingresar Especial Proteccion</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-       
-        <link rel="stylesheet" href="../../css/style.css"/>
-        <script type="text/javascript" src="../../js/funciones.js"></script>
-        
-    </head>
+<?php include(HTML_DIR.'/overall/header.php') ?>
     <body>
-        <!-- MENU PRINCIPAL -->       
-        <header>
-            <div class="wrap" > 
-                <nav>
-                    <ul class="menu">
-                        <li><a href="../home.html"><span class="iconic home"></span></a></li>
-                        <li><a href="#"><span class="iconic plus-alt"></span>Ingresar</a>                    
-                            <ul>
-                                <li><a href="../validarDocumentoDesplazados.html">Desplazados</a></li>
-                                <li><a href="../validarDocumentoOtrasVictimas.html">Otras Victimas</a></li>
-                            </ul>
-                        </li>
 
-                        <li><a href="#"><span class="iconic magnifying-glass"></span>Informes</a>
-                            <ul>
-                                <li><a href="#">Informe Parcial</a></li>
-                                <li><a href="#">Informe Total</a></li>                  
-                            </ul>
-                        </li>
-
-                        <li><a href="#"><span class="iconic mail"></span>Contact</a>
-                            <ul>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Directions</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#"><span class="iconic arrow-right-alt"></span>Cerrar Sesion</a>               
-                        </li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
+            <div class=" " > 
+            <?php include(HTML_DIR.'/overall/nav.php') ?> 
+             <h1 style="color:white;">POBLACION DESPLAZADA</h1>  
+           
             </div>
-        </header> 
+          
         
-        <!-- MENU SECUNDARIO --> 
-        <aside>
-            <div class="wrap" id='menuDesplazado'> 
-                <nav class="navMenuDesplazado">
-                    <ul class="menu" id="MD">
-                        <li id="MD"><a href="ingresarDatosDesplazados.html"><span></span>Datos</a></li>
-                        <li id="MD"><a href="#"><span></span>Familiares</a>
-                            <ul>
-                                <li ><a href="ingresarFamiliarDesplazados.html">Agregar</a></li>
-                                <li ><a href="#">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li id="MD"><a href="ingresarDesplazamiento.html"><span></span>Desplazamiento</a></li>
-                        <li id="MD"><a href="ingresarEstabilizacion.html"><span></span>Estabilizacion</a></li>
-                        <li id="MD"><a href="ingresarViviendaDesplazados.html"><span></span>Vivienda</a></li>
-                        <li id="MD"><a href="ingresarEconomiaFamiliarDesplazados.html"><span></span>Economia</a></li>
-                        <li id="MD"><a href="ingresarProteccionDesplazados.html"><span></span>Protección</a></li>
-                        <li id="MD"><a href="ingresarAyudasRecibidasDesplazados.html"><span></span>Ayudas</a></li>
-                        <li id="MD"><a href="ingresarDiscapacidadDesplazados.html"><span></span>Discapacidad</a></li>
-                        <li id="MD"><a href="ingresarEspecialProteccionDesplazados.html"><span></span>Protección Especial</a></li>
-                        <li id="MD"><a href="ingresarReparacionDesplazados.html"><span></span>Reparacion</a></li>
-                    </ul>
-                    
-                    <div class="clearfix"></div>
-                </nav>
-            </div>            
-        </aside>
-        
-        <!-- TITULO IDENTIFICADOR DE POSICION --> 
-        <footer>
-            <div class="idMenus">
-                <h1>POBLACION DESPLAZADA</h1>                                   
-            </div>
-        </footer>
-        
-        <!-- FORMULARIO AGREGAR AYUDAS RECIBIDAS -->
-            <div class="formulario"  id="formularioEsProteccion">
-                
-                <h1 class="titulo1">Agregar Especial Proteccion</h1>            
-                
-                <form id="formularioEsProteccion" action="AgregarEsProteccionDServlet" method="post">         
-                    
-                    La ayuda humanitaria recibida corresponde a su cultura: <select id="selectEsProteccion" name="cboEsProteccionD">
-                                             <option value=""></option>
+
+        <div class="container" >
+        <!-- FORMULARIO AGREGAR DATOS -->
+                <?php include(HTML_DIR.'/overall/navDesplazados.php') ?> 
+                <div class="row formulario" >
+
+                <div >
+                    <h1> Agregar Especial Proteccion</h1> 
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <table width="100%">
+                            <tr>
+                                <td>La ayuda humanitaria recibida corresponde a su cultura:</td>
+                                <td>
+                                    <select id="selectEsProteccion" name="cboEsProteccionD">
+                                            <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/> 
-                    La Educacion recibida por menores de 18 años es apropiada a su cultura <select id="selectEsProteccion" name="cboEducaCulturaD">
-                                             <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>La Educacion recibida por menores de 18 años es apropiada a su cultura: </td>
+                                <td>
+                                    <select id="selectEsProteccion" name="cboEducaCulturaD">
+                                            <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                    Los funcionarios publicos les dan un trato digno y respetuoso: <select id="selectEsProteccion" name="cboTratoD">
-                                             <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Los funcionarios publicos les dan un trato digno y respetuoso:</td>
+                                <td>
+                                    <select id="selectEsProteccion" name="cboTratoD">
+                                            <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                    Seleccione el nombre del pueblo indigena al que pertenece: <select id="selectEsProteccion2" name="cboPuebloIndiD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Seleccione el nombre del pueblo indigena al que pertenece:</td>
+                                <td>
+                                    <select id="selectEsProteccion2" name="cboPuebloIndiD">
                                             <option value=""></option>
                                             <option value="Achagua">Achagua</option>
                                             <option value="Andaquí">Andaquí</option>
@@ -217,44 +160,75 @@ and open the template in the editor.
                                             <option value="Yukpa de Colombia y Venezuela">Yukpa de Colombia y Venezuela</option>
                                             <option value="Yuri (etnia)">Yuri (etnia)</option>
                                             <option value="Zenú">Zenú</option>
-                                            </SELECT><br/>
-                        
-                    Las mujeres indigenas o afrodescendientes reciben violencia intrafamiliar: <select id="selectEsProteccion" name="cboViolenciaD">
-                                             <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Las mujeres indigenas o afrodescendientes reciben violencia intrafamiliar:</td>
+                                <td>
+                                    <select id="selectEsProteccion" name="cboViolenciaD">
+                                            <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                                         
-                    Ha denunciado: <select id="selectEsProteccion" name="cboDenunciadoD">
-                                             <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ha denunciado:</td>
+                                <td>
+                                    <select id="selectEsProteccion" name="cboDenunciadoD">
+                                            <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>
-                                         
-                    Ante Cual Entidad: <input id="cualEntidad" type="text" name="txtCualEntidadD"><br/>
-                    
-                    Que tipo de Violencia han padecido: <select id="selectEsProteccion3" name="cboTipoViolenciaD">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ante Cual Entidad: </td>
+                                <td><input id="cualEntidad" type="text" name="txtCualEntidadD"><br/></td>
+                            </tr>
+                            <tr>
+                                <td>Que tipo de Violencia han padecido:</td>
+                                <td>
+                                    <select id="selectEsProteccion3" name="cboTipoViolenciaD">
                                              <option value=""></option>
                                             <option value="Psicologica">Psicologica</option>
                                             <option value="Fisica">Fisica</option>
                                             <option value="Sexual">Sexual</option>
                                             <option value="Otra">Otra</option>
-                                         </SELECT><br/>
-                                         
-                    Son parte de una organizacion donde promueven sus derechos: <select id="selectEsProteccion" name="cboPromuevenDereD">
-                                             <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Son parte de una organizacion donde promueven sus derechos:</td>
+                                <td>
+                                    <select id="selectEsProteccion" name="cboPromuevenDereD">
+                                            <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                         </SELECT><br/>                                
-                                                                                    
-                    
-                    <input id="agregarEspProteccion" type="submit" value="Agregar Esp.Proteccion">
-                    <br/><br/> 
-                    
-                </form>            
-            </div>           
-    </body>
-</html>
+                                    </select>
+                                </td>
+                            </tr>
+                            
 
+                            <tr>
+                                <td colspan="2">
+                                <br><br>                      
+                                    <button type="submit" class="btn btn-primary">Guardar y continuar</button>     
+                                </td>
+                            </tr>                           
+                        
+                        </table>
+                        </form> 
+                    </div>         
+                 </div>           
+            </div>             
+    </body>
+
+    <footer>
+        <?php include(HTML_DIR.'/overall/footer.php') ?> 
+    </footer>
+
+</html>
 
 

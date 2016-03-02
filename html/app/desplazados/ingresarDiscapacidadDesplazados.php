@@ -20,157 +20,185 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td>La discapacidad surgio antes del desplazamiento:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboDiscaAntesDesplaD">
-                                        <option value=""></option>
+                                <td class="right" width="45%">La discapacidad surgio antes del desplazamiento:</td>
+                                <td  class="left" width="55%">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboDiscaAntesDesplaD" required class="form-control">
+                                        <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                         <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>la persona discapacitada se siente en igualdad de condiciones:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboIguCondicionesD">
-                                            <option value=""></option>
+                                <td class="right">la persona discapacitada se siente en igualdad de condiciones:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboIguCondicionesD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Que entidad le ha brindado apoyo para su rehabilitacion:</td>
-                                <td>
-                                    <select id="selectReha" name="cboEntiApoyoD">
-                                        <option value=""></option>
+                                <td class="right">Que entidad le ha brindado apoyo para su rehabilitacion:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectReha" name="cboEntiApoyoD" required class="form-control">
+                                        <option value="">[...]</option>
                                         <option value="Privada">Privada</option>
                                         <option value="Publica">Publica</option>
                                         <option value="Otro">Otro</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Se le ha ofrecido hubicarlo laboralmente de acuerdo a sus condiciones:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboRehuLaboraD">
-                                        <option value=""></option>
+                                <td class="right">Se le ha ofrecido hubicarlo laboralmente de acuerdo a sus condiciones:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboRehuLaboraD" required class="form-control">
+                                        <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                         <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ha sido marginado o discriminado por discapacidad:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboDiscriDiscapaD">
-                                            <option value=""></option>
+                                <td class="right">Ha sido marginado o discriminado por discapacidad:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboDiscriDiscapaD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Encuentra facilidad y suficientes sitios publicos y privados:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboPubliPrivaD">
-                                        <option value=""></option>
+                                <td class="right">Encuentra facilidad y suficientes sitios publicos y privados:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboPubliPrivaD" required class="form-control">
+                                        <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                         <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ha sido excluido de algun beneficio o ventaja por discapacidad:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboExcluidoD">
-                                            <option value=""></option>
+                                <td class="right">Ha sido excluido de algun beneficio o ventaja por discapacidad:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboExcluidoD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ha recibido rehabilitacion y orientacion para su desarrollo:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboRehabilitacionD">
-                                            <option value=""></option>
+                                <td class="right">Ha recibido rehabilitacion y orientacion para su desarrollo:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboRehabilitacionD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Las personas con discapacidad mental estas cuenta con algun subsidio:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboDiscaAntesDesplaD">
-                                            <option value=""></option>
+                                <td class="right">Las personas con discapacidad mental estas cuenta con algun subsidio:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboDiscaAntesDesplaD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Familiar cuenta con capacidad economica para cubrir los gastos requeridos:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboCapaEconomicaD">
-                                            <option value=""></option>
+                                <td class="right">Familiar cuenta con capacidad economica para cubrir los gastos requeridos:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboCapaEconomicaD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Los menores de 18 años con discapacidad estudian:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboDiscaEstudianD">
-                                            <option value=""></option>
+                                <td class="right">Los menores de 18 años con discapacidad estudian:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboDiscaEstudianD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ha recibido la prorroga automatica de ayuda humanitaria de emergencia:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboProrroAutoD">
-                                             <option value=""></option>
+                                <td class="right">Ha recibido la prorroga automatica de ayuda humanitaria de emergencia:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboProrroAutoD" required class="form-control">
+                                             <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Hace parte de alguna organizacion de desplazados discapacitados:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboOrganiDesplaD">
-                                            <option value=""></option>
+                                <td class="right">Hace parte de alguna organizacion de desplazados discapacitados:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboOrganiDesplaD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Se le reconoce y se le respeta su participacion en las OPDS:</td>
-                                <td>
-                                    <select id="selectDiscapacidad" name="cboOPDSD">
-                                             <option value=""></option>
+                                <td class="right">Se le reconoce y se le respeta su participacion en las OPDS:</td>
+                                <td  class="left">
+                                <div class="col-md-7">
+                                    <select id="selectDiscapacidad" name="cboOPDSD" required class="form-control">
+                                             <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                             <option value="No">No Aplica</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
 

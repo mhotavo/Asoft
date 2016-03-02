@@ -20,8 +20,8 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td class="right" width="60%">Durante los ultimos años cuantas veces ha sido desplazado:</td>
-                                <td  class="left" width="40%">
+                                <td class="right" width="45%">Durante los ultimos años cuantas veces ha sido desplazado:</td>
+                                <td  class="left" width="55%">
                                 <div class="col-md-9">
                                     <select id="victimizado" name="cboVictimizadoD" onChange="victimizadoMostrarSi(this)" required class="form-control">
                                         <option value="">[...]</option>

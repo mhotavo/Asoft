@@ -20,112 +20,125 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td>Ha Acudido a alguna entidad para solicitar Proteccion:</td>
-                                <td>
-                                    <a><input type="checkbox" name="checkboxSolicitudProteD" value="Fiscalia">Fiscalia</a>
-                                    <a><input type="checkbox" name="checkboxSolicitudProteD" value="Emabajadas">Emabajadas</a>
-                                    <a><input type="checkbox" name="checkboxSolicitudProteD" value="Fuerzas Armadas">Fuerzas Armadas</a>
-                                    <a><input type="checkbox" name="checkboxSolicitudProteD" value="Ministerio del Interior">Ministerio del Interior</a>
-                                    <a><input type="checkbox" name="checkboxSolicitudProteD" value="Defensoria O Procuraduria">Defensoria O Procuraduria</a>
-                                    <a><input type="checkbox" name="checkboxSolicitudProteD" value="Organismo Nacional de Derechos Humanos">Organismo Nacional de Derechos Humanos</a>                               
-                                    <a><input type="checkbox" name="checkboxSolicitudProteD" value="Ninguno">Ninguno</a>
+                                <td class="right" width="45%">Ha Acudido a alguna entidad para solicitar Proteccion:</td>
+                                 <td  class="left" width="55%">
+                                  <div class="col-md-9" style="text-align: left;">
+                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Fiscalia"> Fiscalia<br>
+                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Emabajadas"> Emabajadas<br>
+                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Fuerzas Armadas"> Fuerzas Armadas<br>
+                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Ministerio del Interior"> Ministerio del Interior<br>
+                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Defensoria O Procuraduria"> Defensoria O Procuraduria<br>
+                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Organismo Nacional de Derechos Humanos"> Organismo Nacional de Derechos Humanos<br>                               
+                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Ninguno"> Ninguno<br>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Otra:</td>
-                                <td><input id="otraSolicitudProte" type="text" name="txtSolicitudProteD"></td>
+                                <td class="right">Otra:</td>
+                                <td class="left">
+                                <div class="col-md-9">
+                                    <input id="otraSolicitudProte" type="text" name="txtSolicitudProteD" required class="form-control">
+                                </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>Conoce sobre la ayuda que presta el estado a la poblacion desplazada:</td>
-                                <td>
-                                    <select id="ayudaEstado" name="cboAyudaEstadoD">
+                                <td class="right">Conoce sobre la ayuda que presta el estado a la poblacion desplazada:</td>
+                                <td class="left">
+                                 <div class="col-md-9">
+                                    <select  required class="form-control" id="ayudaEstado" name="cboAyudaEstadoD">
                                             <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
+                                </div>    
                                 </td>
                             </tr>
                             <tr>
-                                <td>Usted o Algunos miembros de su hogar estan Inscritos en porgramas especificos para:</td>
-                                <td></td>
+                                <td class="right">¿Usted o Algunos miembros de su hogar estan Inscritos en programas especificos para Mujer, Adulto Mayor ó jovenes?</td>
+                                <td class="left">
+                                  <div class="col-md-3">
+                                    <select  required class="form-control" id="selectProteccion" name="cboMujerD">
+                                             <option value="">Mujeres</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                    </select>
+                                    </div>
+                                     <div class="col-md-3">
+                                    <select  required class="form-control" id="selectProteccion" name="cboAdultoMayorD">
+                                             <option value="">Adulto Mayores</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                    </select>
+                                    </div>
+                                      <div class="col-md-3">
+                                    <select  required class="form-control" id="selectProteccion" name="cboJovenesD">
+                                             <option value="">Jovenes</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                    </select>
+                                    </div>
+                                </td>
                             </tr>
+                           
                             <tr>
-                                <td>Mujer:</td>
-                                <td>
-                                    <select id="selectProteccion" name="cboMujerD">
+                                <td class="right">Discapacidad:</td>
+                                <td class="left">
+                                 <div class="col-md-9">
+                                    <select  required class="form-control" id="selectProteccion" name="cboDiscapacidadD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Adulto Mayor:</td>
-                                <td>
-                                    <select id="selectProteccion" name="cboAdultoMayorD">
+                                <td class="right">Algun miembro de la familia esta afiliado a OPD:</td>
+                                <td class="left">
+                                 <div class="col-md-9">
+                                    <select  required class="form-control" id="selectProteccion" name="cboAfiliadoOPDD">
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Jovenes:</td>
-                                <td>
-                                    <select id="selectProteccion" name="cboJovenesD">
+                                <td class="right">Cual OPD:</td>
+                                <td class="left">
+                                <div class="col-md-9">
+                                    <input id="inputProteccion" type="text" name="txtCualOPDD" required class="form-control" >
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Participan en Evaluacion de politica publica:</td>
+                                <td class="left">
+                                 <div class="col-md-9">
+                                    <select  required class="form-control" id="selectProteccion" name="cboEvaPoliPubliD" >
                                              <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Discapacidad:</td>
-                                <td>
-                                    <select id="selectProteccion" name="cboDiscapacidadD">
-                                             <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
-                                    </select>
+                                <td class="right">Cual:</td>
+                                <td class="left">
+                                <div class="col-md-9">
+                                    <input id="inputProteccion" type="text" name="txtCualPoliPubliD" class="form-control">
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Algun miembro de la familia esta afiliado a OPD:</td>
-                                <td>
-                                    <select id="selectProteccion" name="cboAfiliadoOPDD">
-                                             <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Cual OPD:</td>
-                                <td><input id="inputProteccion" type="text" name="txtCualOPDD"></td>
-                            </tr>
-                            <tr>
-                                <td>Participan en Evaluacion de politica publica:</td>
-                                <td>
-                                    <select id="selectProteccion" name="cboEvaPoliPubliD">
-                                             <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Cual:</td>
-                                <td><input id="inputProteccion" type="text" name="txtCualPoliPubliD"></td>
-                            </tr>
-                            <tr>
-                                <td>Clasifique el componente de atencion que considera Prioritario recibir en este momento: </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Prioridad 1:</td>
-                                <td>
-                                    <select id="prioridad" name="cboPrioridad1D">
-                                            <option value=""></option>
+                                <td class="right">Clasifique el componente de atencion que considera Prioritario recibir en este momento: </td>
+                                <td class="left">
+                                 <div class="col-md-4">
+                                    <select  required class="form-control" id="prioridad" name="cboPrioridad1D">
+                                            <option value="">Prioridad 1</option>
                                             <option value="Salud">Salud</option>
                                             <option value="Empleo">Empleo</option>
                                             <option value="Vivienda">Vivienda</option>
@@ -136,13 +149,10 @@
                                             <option value="Atencion Humanitaria">Atencion Humanitaria</option>
                                             <option value="Generacion de Ingresos">Generacion de Ingresos</option>
                                     </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Prioridad 2:</td>
-                                <td>
-                                    <select id="prioridad" name="cboPrioridad2D">
-                                             <option value=""></option>
+                                </div>
+                                 <div class="col-md-4">
+                                    <select  required class="form-control" id="prioridad" name="cboPrioridad2D">
+                                            <option value="">Prioridad 2</option>
                                             <option value="Salud">Salud</option>
                                             <option value="Empleo">Empleo</option>
                                             <option value="Vivienda">Vivienda</option>
@@ -153,13 +163,15 @@
                                             <option value="Atencion Humanitaria">Atencion Humanitaria</option>
                                             <option value="Generacion de Ingresos">Generacion de Ingresos</option>
                                     </select>
+                                </div>                                
                                 </td>
                             </tr>
                             <tr>
-                                <td>Prioridad 3:</td>
-                                <td>
-                                    <select id="prioridad" name="cboPrioridad3D">
-                                             <option value=""></option>
+                                <td class="right"></td>
+                                <td class="left">
+                                 <div class="col-md-4">
+                                    <select  required class="form-control" id="prioridad" name="cboPrioridad1D">
+                                            <option value="">Prioridad 3</option>
                                             <option value="Salud">Salud</option>
                                             <option value="Empleo">Empleo</option>
                                             <option value="Vivienda">Vivienda</option>
@@ -170,13 +182,10 @@
                                             <option value="Atencion Humanitaria">Atencion Humanitaria</option>
                                             <option value="Generacion de Ingresos">Generacion de Ingresos</option>
                                     </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Prioridad 4:</td>
-                                <td>
-                                    <select id="prioridad" name="cboPrioridad4D">
-                                             <option value=""></option>
+                                </div>
+                                 <div class="col-md-4">
+                                    <select  required class="form-control" id="prioridad" name="cboPrioridad2D">
+                                            <option value="">Prioridad 4</option>
                                             <option value="Salud">Salud</option>
                                             <option value="Empleo">Empleo</option>
                                             <option value="Vivienda">Vivienda</option>
@@ -187,13 +196,15 @@
                                             <option value="Atencion Humanitaria">Atencion Humanitaria</option>
                                             <option value="Generacion de Ingresos">Generacion de Ingresos</option>
                                     </select>
+                                </div>                                
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Prioridad 5:</td>
-                                <td>
-                                    <select id="prioridad" name="cboPrioridad5D">
-                                            <option value=""></option>
+                             <tr>
+                                <td class="right"></td>
+                                <td class="left">
+                                 <div class="col-md-4">
+                                    <select  required class="form-control" id="prioridad" name="cboPrioridad1D">
+                                            <option value="">Prioridad 5</option>
                                             <option value="Salud">Salud</option>
                                             <option value="Empleo">Empleo</option>
                                             <option value="Vivienda">Vivienda</option>
@@ -204,9 +215,9 @@
                                             <option value="Atencion Humanitaria">Atencion Humanitaria</option>
                                             <option value="Generacion de Ingresos">Generacion de Ingresos</option>
                                     </select>
+                                </div>                                
                                 </td>
                             </tr>
-
 
                             <tr>
                                 <td colspan="2">

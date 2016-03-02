@@ -20,8 +20,8 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td class="right" width="60%">Identificacion:</td>
-                                <td class="left" width="40%">
+                                <td class="right" width="40%">Identificacion:</td>
+                                <td class="left" width="60%">
                                 <div class="col-md-8">
                                     <input type="text" name="txtIdentificacionD" required class="form-control">
                                 </div>

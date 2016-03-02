@@ -9,7 +9,7 @@ $newDoc= isset($_GET['newDoc']) ? $_GET['newDoc'] : null;
 switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 
 	case 'add':
-			include(HTML_DIR . "app/desplazados/ingresarProteccionDesplazados.php");
+			include(HTML_DIR . "app/desplazados/ingresarEspecialProteccionDesplazados.php");
 		break;	
 
 
@@ -23,7 +23,7 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 	
 	default:
 
-		include(HTML_DIR . "app/desplazados/ingresarProteccionDesplazados.php");
+		include(HTML_DIR . "app/desplazados/ingresarEspecialProteccionDesplazados.php");
 		break;
 }
 

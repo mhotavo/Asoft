@@ -20,98 +20,120 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td>El estado le ha informado sobre la verdad de la violacion de los D.H y del D.I.H cometidos contra el (ella), y/o los miembros de su hogar en relacion a los hechos ocurridos con su Victimizacion?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboViolaDHD">
-                                            <option value=""></option>
+                                <td class="right" width="75%">El estado le ha informado sobre la verdad de la violacion de los D.H y del D.I.H cometidos contra el (ella), y/o los miembros de su hogar en relacion a los hechos ocurridos con su Victimizacion?:</td>
+                                 <td class="left" width="25%">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboViolaDHD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Algun miembro del hogar ha sido reparado o indemnizado por el estado por desplazamiento forzado
+                                <td class="right">Algun miembro del hogar ha sido reparado o indemnizado por el estado por desplazamiento forzado
                                 u otros delitos?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboRepaIndemnizadoD">
-                                            <option value=""></option>
+                            
+                             <td class="left">
+                                <div class="col-md-8">    <select id="selectReparacion" name="cboRepaIndemnizadoD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>El estado le ha brindado garantias para que no se vuelva a repetir un nuevo desplazamiento?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboGarantiasD">
-                                            <option value=""></option>
+                                <td class="right">El estado le ha brindado garantias para que no se vuelva a repetir un nuevo desplazamiento?:</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboGarantiasD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Algun miembro de su hogar ha solicitado restitucion de vivienda o tierras que ocupaban antes del desplazamiento?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboSoliRestitucionT">
-                                            <option value=""></option>
+                                <td class="right">Algun miembro de su hogar ha solicitado restitucion de vivienda o tierras que ocupaban antes del desplazamiento?:</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboSoliRestitucionT" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ante que entidad solicitaron la restitucion de vivienda o tierras?:</td>
-                                <td><input id="selectReparacion" type="text" name="txtQueEntidad"></td>
-                            </tr>
-                            <tr>
-                                <td>El estado le ha restituido sus bienes (vivienda o tierras que eran de su propiedad):</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboRestitucionBienes">
-                                            <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
-                                    </select>
+                                <td class="right">Ante que entidad solicitaron la restitucion de vivienda o tierras?:</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                 <input id="selectReparacion" type="text" name="txtQueEntidad" required class="form-control">
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Algun miembro de su familia solicito al estado indemnizacion monetaria para la perdida de su vivienda o tierras?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboSoliEstadoD">
-                                            <option value=""></option>
+                                <td class="right">El estado le ha restituido sus bienes (vivienda o tierras que eran de su propiedad):</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboRestitucionBienes" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Algun miembro de su familia recibio del estado indemnizacion monetaria por la perdida de su vivienda o tierras?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboReciEstadoD">
-                                            <option value=""></option>
+                                <td class="right">Algun miembro de su familia solicito al estado indemnizacion monetaria para la perdida de su vivienda o tierras?:</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboSoliEstadoD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Usted y toda su familia han recibido rehabilitacion despues del desplazamiento para reparar el daño causado?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboRehabilitacionD">
-                                            <option value=""></option>
+                                <td class="right">Algun miembro de su familia recibio del estado indemnizacion monetaria por la perdida de su vivienda o tierras?:</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboReciEstadoD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Algun miembro de su hogar ha sido beneficiario de medidas de satisfaccion por parte del estado consistentes en la investigacion, juzgamiento y sancion de los responsables del desplazamiento del cual fueron victimas?:</td>
-                                <td>
-                                    <select id="selectReparacion" name="cboSancionD">
-                                            <option value=""></option>
+                                <td class="right">Usted y toda su familia han recibido rehabilitacion despues del desplazamiento para reparar el daño causado?:</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboRehabilitacionD" required class="form-control">
+                                            <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Algun miembro de su hogar ha sido beneficiario de medidas de satisfaccion por parte del estado consistentes en la investigacion, juzgamiento y sancion de los responsables del desplazamiento del cual fueron victimas?:</td>
+                                 <td class="left">
+                                <div class="col-md-8">
+                                    <select id="selectReparacion" name="cboSancionD" required class="form-control">
+                                            <option value="">[...]</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                    </select>
+                                </div>
                                 </td>
                             </tr>
 

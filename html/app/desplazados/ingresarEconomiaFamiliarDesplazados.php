@@ -20,8 +20,8 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td class="right" width="70%">Ingresos Mensuales en la Familia:</td>
-                                <td class="left" width="30%">
+                                <td class="right" width="45%">Ingresos Mensuales en la Familia:</td>
+                                <td class="left" width="55%">
                                 <div class="col-md-7">
                                     <select id="ingreMensuales" name="cboIngreMensualesD" required class="form-control">
                                             <option value=""></option>

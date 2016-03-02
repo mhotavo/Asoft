@@ -20,8 +20,8 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td class="right" width="60%">Actualmente la vivienda que habita es:</td>
-                                <td class="left" width="40%">
+                                <td class="right" width="45%">Actualmente la vivienda que habita es:</td>
+                                <td class="left" width="55%">
                                 <div class="col-md-7">
                                     <select id="actualVivienda" name="cboActualViviendaD" required class="form-control">
                                             <option value="">[...]</option>

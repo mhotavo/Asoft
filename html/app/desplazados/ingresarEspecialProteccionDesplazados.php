@@ -17,42 +17,49 @@
 
                 <div >
                     <h1> Agregar Especial Proteccion</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded" >                    
                         <table width="100%">
                             <tr>
-                                <td>La ayuda humanitaria recibida corresponde a su cultura:</td>
-                                <td>
-                                    <select id="selectEsProteccion" name="cboEsProteccionD">
+                                <td class="right" width="45%">La ayuda humanitaria recibida corresponde a su cultura:</td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion" name="cboEsProteccionD" required class="form-control">
                                             <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>La Educacion recibida por menores de 18 años es apropiada a su cultura: </td>
-                                <td>
-                                    <select id="selectEsProteccion" name="cboEducaCulturaD">
+                                <td class="right">La Educacion recibida por menores de 18 años es apropiada a su cultura: </td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion" name="cboEducaCulturaD" required class="form-control">
                                             <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Los funcionarios publicos les dan un trato digno y respetuoso:</td>
-                                <td>
-                                    <select id="selectEsProteccion" name="cboTratoD">
+                                <td class="right">Los funcionarios publicos les dan un trato digno y respetuoso:</td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion" name="cboTratoD" required class="form-control">
                                             <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Seleccione el nombre del pueblo indigena al que pertenece:</td>
-                                <td>
-                                    <select id="selectEsProteccion2" name="cboPuebloIndiD">
+                                <td class="right">Seleccione el nombre del pueblo indigena al que pertenece:</td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion2" name="cboPuebloIndiD" required class="form-control">
                                             <option value=""></option>
                                             <option value="Achagua">Achagua</option>
                                             <option value="Andaquí">Andaquí</option>
@@ -161,52 +168,65 @@
                                             <option value="Yuri (etnia)">Yuri (etnia)</option>
                                             <option value="Zenú">Zenú</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Las mujeres indigenas o afrodescendientes reciben violencia intrafamiliar:</td>
-                                <td>
-                                    <select id="selectEsProteccion" name="cboViolenciaD">
+                                <td class="right">Las mujeres indigenas o afrodescendientes reciben violencia intrafamiliar:</td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion" name="cboViolenciaD" required class="form-control">
                                             <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ha denunciado:</td>
-                                <td>
-                                    <select id="selectEsProteccion" name="cboDenunciadoD">
+                                <td class="right">Ha denunciado:</td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion" name="cboDenunciadoD" required class="form-control">
                                             <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ante Cual Entidad: </td>
-                                <td><input id="cualEntidad" type="text" name="txtCualEntidadD"><br/></td>
+                                <td class="right">Ante Cual Entidad: </td>
+                                <td class="left">
+                              <div class="col-md-8">                                
+                                    <input id="cualEntidad" type="text" name="txtCualEntidadD" required class="form-control">
+                                </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>Que tipo de Violencia han padecido:</td>
-                                <td>
-                                    <select id="selectEsProteccion3" name="cboTipoViolenciaD">
+                                <td class="right">Que tipo de Violencia han padecido:</td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion3" name="cboTipoViolenciaD" required class="form-control">
                                              <option value=""></option>
                                             <option value="Psicologica">Psicologica</option>
                                             <option value="Fisica">Fisica</option>
                                             <option value="Sexual">Sexual</option>
                                             <option value="Otra">Otra</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Son parte de una organizacion donde promueven sus derechos:</td>
-                                <td>
-                                    <select id="selectEsProteccion" name="cboPromuevenDereD">
+                                <td class="right">Son parte de una organizacion donde promueven sus derechos:</td>
+                                <td class="left">
+                              <div class="col-md-8">
+                                    <select id="selectEsProteccion" name="cboPromuevenDereD" required class="form-control">
                                             <option value=""></option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                     </select>
+                                </div>
                                 </td>
                             </tr>
                             

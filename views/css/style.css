@@ -331,7 +331,7 @@ nav.navMenuOtrasVictimas{
 .right{
 	text-align: right;
  	font-weight: bold;
-	width: 30%;
+	/*width: 30%; */
 	vertical-align: middle;
 }
 .left{

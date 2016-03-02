@@ -20,8 +20,8 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
-                                <td  class="right" width="60%">Razones para elegir este lugar:</td>
-                                <td  class="left" width="40%">
+                                <td  class="right" width="45%">Razones para elegir este lugar:</td>
+                                <td  class="left" width="55%">
                                 <div class="col-md-7" style="text-align: left;">
                                     <input type="checkbox" name="checkboxRazones" value="Por la vivienda"> Por la vivienda <br>
                                     <input type="checkbox" name="checkboxRazones" value="Accesibilidad a salud"> Accesibilidad a salud <br>

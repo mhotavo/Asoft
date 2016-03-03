@@ -21,7 +21,7 @@
                             <td class="right">DOCUMENTO: </td>
                             <td class="left">
                               <div class="col-md-8">
-                                 <input type="text" name="numDocumento" class="form-control" required>
+                                 <input type="text" name="numDocumento" id="numDocumento" class="form-control"  value="<?php echo isset($_GET['id']) ? $_GET['id'] : null; ?>" required>
                              </div>
                             </td>
                         </tr>

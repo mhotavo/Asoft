@@ -89,7 +89,7 @@
                             <td class="left">
                              <div class="col-md-8">
                                 <select id="depa" required name="cboDepartamentoD" class="form-control">
-                                    <option value="#">IngresarBDdepartamento</option>                               
+                                    <option value="05">ANTIOQUIA</option>                               
                                 </select>   
                             </div>                             
                             </td>
@@ -99,7 +99,7 @@
                             <td class="left">
                              <div class="col-md-8">
                                  <select id="muni" required name="cboMunicipioD" class="form-control">
-                                    <option value="#">IngresarBDmunicipio</option>                               
+                                    <option value="5001">MEDELLIN</option>                               
                                  </select>
                             </div>
                             </td>

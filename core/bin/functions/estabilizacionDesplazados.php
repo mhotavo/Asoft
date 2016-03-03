@@ -5,7 +5,7 @@ function Desplazados() {
 	 $sql = $db->query("SELECT * FROM desplazados_datos;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$desplazados[$d['DOCUMENTO_DESPLAZADO']]= array(
+			$desplazados[$d['Documento']]= array(
 				'Documento' => $d['DOCUMENTO_DESPLAZADO'],
 				'Nombre_Completo' => $d['NOMBRE_COMPLETO'],
 				'Primer_Apellido' => $d['PRIMER_APELLIDO'],

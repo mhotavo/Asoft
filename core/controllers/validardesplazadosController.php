@@ -4,7 +4,12 @@ if (isset($_SESSION['app_id'])) {
 
 		require('core/models/class.Desplazados.php');
 		$desplazados = new Desplazados();
-		$desplazados->Buscar();
+		$buscar=$desplazados->Buscar();
+		if ($buscar==1) { 
+			header('location: ?view=validardesplazados&id='.$_POST['numDocumento'].'&success=true');
+		} else {
+			header('location: ?view=validardesplazados&id='.$_POST['numDocumento'].'&success=false');
+		}
 
 	} else {
 		include('html/app/validarDesplazados.php');

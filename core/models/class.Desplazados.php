@@ -23,7 +23,7 @@ class Desplazados {
 
 	public function __construct (){
 		$this->db = new Conexion();
-        $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : intval($_POST['Documento']);
+        $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
         $this->Nombre= isset($_POST['txtNombre']) ? $_POST['txtNombre'] : null;
         $this->Primer_Apellido= isset($_POST['txtPrimerApellido']) ? $_POST['txtPrimerApellido'] : null;
         $this->Segundo_Apellido= isset($_POST['txtSegundoApellido']) ? $_POST['txtSegundoApellido'] : null;
@@ -45,30 +45,53 @@ class Desplazados {
 
 
   public function Add() {
-        $this->db->query("INSERT INTO desplazados_datos (Documento, Nombre_Completo, Primer_Apellido, Segundo_Apellido, Tipo_de_Documento, Fecha_de_Victimizacion, Codigo_RUPV, Departamento, Municipio, Zona, Localidad, Direccion, Telefono, Estado_Civil, Parentesco, Es_Jefe_de_Hogar, Territorio) VALUES ('$this->Documento', '$this->Nombre', '$this->Primer_Apellido', '$this->Segundo_Apellido', '$this->Tipo_de_Documento', '$this->Fecha_de_Victimizacion', '$this->Codigo_RUPV', '$this->Departamento', '$this->Municipio', '$this->Zona', '$this->Localidad', '$this->Direccion', '$this->Telefono', '$this->Estado_Civil', '$this->Parentesco', '$this->Es_Jefe_de_Hogar', '$this->Territorio');");
-    
+
+        $this->db->query(" INSERT INTO desplazados_datos
+                        (DOCUMENTO_DESPLAZADO, NOMBRE_COMPLETO, PRIMER_APELLIDO, 
+                        SEGUNDO_APELLIDO, TIPO_DE_DOCUMENTO, FECHA_DE_VICTIMIZACION,
+                        CODIGO_RUPV, DEPARTAMENTO, MUNICIPIO, ZONA, LOCALIDAD, DIRECCION, 
+                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO) 
+                        VALUES (
+                        '$this->Documento',
+                        '$this->Nombre',
+                        '$this->Primer_Apellido',
+                        '$this->Segundo_Apellido', 
+                        '$this->Tipo_de_Documento',
+                        '$this->Fecha_de_Victimizacion',
+                        '$this->Codigo_RUPV',
+                        '$this->Departamento', 
+                        '$this->Municipio',
+                        '$this->Zona', 
+                        '$this->Localidad',
+                        '$this->Direccion',
+                        '$this->Telefono',
+                        '$this->Estado_Civil',
+                        '$this->Parentesco',
+                        '$this->Es_Jefe_de_Hogar',
+                        '$this->Territorio');");
+ 
     //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
     header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
   } 
 
   public function Edit() {
       $this->db->query("UPDATE desplazados_datos SET 
-            Nombre_Completo='$this->Nombre',
-            Primer_Apellido ='$this->Primer_Apellido',
-            Segundo_Apellido ='$this->Segundo_Apellido',
-            Tipo_de_Documento ='$this->Tipo_de_Documento',
-            Fecha_de_Victimizacion ='$this->Fecha_de_Victimizacion',
-            Codigo_RUPV ='$this->Codigo_RUPV',
-            Departamento ='$this->Departamento',
-            Municipio ='$this->Municipio',
-            Zona ='$this->Zona',
-            Localidad ='$this->Localidad',
-            Direccion ='$this->Direccion',
-            Telefono ='$this->Telefono',
-            Estado_Civil ='$this->Estado_Civil',
-            Parentesco ='$this->Parentesco',
-            Es_Jefe_de_Hogar ='$this->Es_Jefe_de_Hogar',
-            Territorio ='$this->Territorio'
+            NOMBRE_COMPLETO='$this->Nombre',
+            PRIMER_APELLIDO ='$this->Primer_Apellido',
+            SEGUNDO_APELLIDO ='$this->Segundo_Apellido',
+            TIPO_DE_DOCUMENTO ='$this->Tipo_de_Documento',
+            FECHA_DE_VICTIMIZACION ='$this->Fecha_de_Victimizacion',
+            CODIGO_RUPV ='$this->Codigo_RUPV',
+            DEPARTAMENTO ='$this->Departamento',
+            MUNICIPIO ='$this->Municipio',
+            ZONA ='$this->Zona',
+            LOCALIDAD ='$this->Localidad',
+            DIRECCION ='$this->Direccion',
+            TELEFONO ='$this->Telefono',
+            ESTADO_CIVIL ='$this->Estado_Civil',
+            PARENTESCO ='$this->Parentesco',
+            ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
+            TERRITORIO ='$this->Territorio'
             WHERE Documento='$this->Documento';"); 
             //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
             header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
@@ -80,12 +103,12 @@ class Desplazados {
   }
 
   public function Buscar() {
-    $this->id = intval($_POST['numDocumento']);
-    $sql= $this->db->query("SELECT * FROM  desplazados_datos  WHERE Documento='$this->id';");
+    $this->id = intval($_POST['numDocumento']); 
+    $sql= $this->db->query("SELECT * FROM  desplazados_datos  WHERE DOCUMENTO_DESPLAZADO='$this->id';");
     if ($this->db->rows($sql)>0) {
-    	header('location: ?view=validardesplazados&id='.$this->id.'&success=true');
+    	return 1;
     } else {
-    	header('location: ?view=validardesplazados&id='.$this->id.'&success=false');
+    	return 0;
     }
     
   }

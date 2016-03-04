@@ -3,7 +3,7 @@
 
 session_start();
 
-#Constantes de la conexion
+#Constantes de la conexion FE5C3EE9
 	define('DB_HOST', 'localhost');
 	define('DB_USER', 'root');
 	define('DB_PASS', '');

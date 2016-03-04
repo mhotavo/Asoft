@@ -47,15 +47,24 @@
                                 <td class="right">Nombres:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtNombresD" required class="form-control">
+                                    <input type="text" name="txtPrimerApellido" required class="form-control">
                                 </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Apellidos:</td>
+                                <td class="right">Primer Apellido:</td>
                                 <td class="left">
                                 <div class="col-md-8">
                                     <input type="text" name="txtApellidosD" required class="form-control">
+                                </div>    
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">Segundo Apellido:</td>
+                                <td class="left">
+                                <div class="col-md-8">
+                                    <input type="text" name="txtSegundoApellido" required class="form-control">
                                 </div>    
 
                                 </td>
@@ -80,19 +89,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Edad:</td>
-                                <td class="left">
-                                <div class="col-md-8">
-                                    <input type="text" name="txtEdadD" required class="form-control">
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td class="right">Enfoque Diferencial:</td>
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="ED" name="cboEnfoqueD" required class="form-control">
+                                    <select  name="cboEnfoqueD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Ninguno">Ninguno</option>                            
                                         <option value="LGBTI">LGBTI</option>
@@ -194,7 +195,7 @@
                                 <td class="right">Cual:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" id="otraDiscapacidad" name="txtOtraDiscapacidadD" required class="form-control">
+                                    <input type="text" name="txtOtraDiscapacidadD" required class="form-control">
                                 </div>
                                     </td>
                             </tr>
@@ -202,7 +203,7 @@
                                 <td class="right">¿Ha Sido Victima de Mina-Antipersonal?:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <select id="mina-Antipersonal" name="cboVictimaMinaD" onChange="victimaMinaMostrarSi(this)" required class="form-control">
+                                    <select name="cboVictimaMinaD" onChange="victimaMinaMostrarSi(this)" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
@@ -216,7 +217,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="auxilioTransporte" name="auxilioTransporteD" required class="form-control">
+                                    <select name="auxilioTransporteD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option> 
@@ -231,8 +232,8 @@
                                 <div class="col-md-10" style="text-align: left;">
 
                                     <input type="checkbox" name="checkboxAyudaMedicaD" value="Medicamentos"> Medicamentos <br>
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Cirugia Plastica"> Cirugia Plastica <br>
-                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="Cirugia Vascular"> Cirugia Vascular <br>
+                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="CirugiaPlastica"> Cirugia Plastica <br>
+                                    <input type="checkbox" name="checkboxAyudaMedicaD" value="CirugiaVascular"> Cirugia Vascular <br>
                                     <input type="checkbox" name="checkboxAyudaMedicaD" value="Osteosintesis"> Osteosintesis <br>
                                     <input type="checkbox" name="checkboxAyudaMedicaD" value="Protesis"> Protesis <br>
                                     <input type="checkbox" name="checkboxAyudaMedicaD" value="Ortesis"> Ortesis  <br>                   
@@ -244,7 +245,7 @@
                                 <td class="right">Otra:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                     <input id="otraAyuda" type="text" name="txtOtraAyudaD" required class="form-control">
+                                     <input  type="text" name="txtOtraAyudaD" required class="form-control">
                                 </div>
                                 </td>
                             </tr>
@@ -302,7 +303,7 @@
                                 <td class="right">Recibio Atencion Salud Mental:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <select id="comboboxDesicion" name="cboSaludMentalD" required class="form-control">
+                                    <select  name="cboSaludMentalD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
@@ -315,7 +316,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="comboboxDesicion" name="cboPsicosocialD" required class="form-control">
+                                    <select  name="cboPsicosocialD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                             
@@ -328,7 +329,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="comboboxDesicion" name="cboSaludReproductivaD" required class="form-control">
+                                    <select  name="cboSaludReproductivaD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
@@ -393,7 +394,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="comboboxDesicion" name="cboEstudiabaAntesD" required class="form-control">
+                                    <select  name="cboEstudiabaAntesD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
@@ -447,7 +448,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="comboboxDesicion" name="cboSabeLeerD" required class="form-control">
+                                    <select  name="cboSabeLeerD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
@@ -501,7 +502,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="comboboxDesicion" name="cboCompeCertificadaD" required class="form-control">
+                                    <select  name="cboCompeCertificadaD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
@@ -590,7 +591,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="comboboxDesicion" name="cboContraLaboralD" required class="form-control">
+                                    <select  name="cboContraLaboralD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                                                                               
@@ -617,7 +618,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="comboboxDesicion" name="cboSSocialRProfeD" required class="form-control">
+                                    <select  name="cboSSocialRProfeD" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>                                 

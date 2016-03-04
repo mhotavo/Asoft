@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2016 a las 23:53:08
+-- Servidor: localhost
+-- Tiempo de generación: 04-03-2016 a las 04:34:19
 -- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,18 +23,70 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `departamento`
+--
+
+CREATE TABLE `departamento` (
+  `ID_DEPARTAMENTO` int(11) NOT NULL,
+  `NOMBRE_DEPARTAMENTO` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `departamento`
+--
+
+INSERT INTO `departamento` (`ID_DEPARTAMENTO`, `NOMBRE_DEPARTAMENTO`) VALUES
+(5, 'Antioquia'),
+(8, 'Atlantico'),
+(11, 'Bogota D.C.'),
+(13, 'Bolivar'),
+(15, 'Boyaca'),
+(17, 'Caldas'),
+(18, 'Caqueta'),
+(19, 'Cauca'),
+(20, 'Cesar'),
+(23, 'Cordoba'),
+(25, 'Cundinamarca'),
+(27, 'Choco'),
+(41, 'Huila'),
+(44, 'La Guajira'),
+(47, 'Magdalena'),
+(50, 'Meta'),
+(52, 'Nariño'),
+(54, 'Norte de Santander'),
+(63, 'Quindio'),
+(66, 'Risaralda'),
+(68, 'Santander'),
+(70, 'Sucre'),
+(73, 'Tolima'),
+(76, 'Valle del Cauca'),
+(81, 'Arauca'),
+(85, 'Casanare'),
+(86, 'Putumayo'),
+(88, 'San Andres'),
+(91, 'Amazonas'),
+(94, 'Guainia'),
+(95, 'Guaviare'),
+(97, 'Vaupes'),
+(99, 'Vichada');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `desplazados_ayudasrecibidas`
 --
 
 CREATE TABLE `desplazados_ayudasrecibidas` (
-  `Atencion_Menor` varchar(3) NOT NULL,
-  `Cuidado_Infantil` varchar(3) NOT NULL,
-  `Pro_Alimentacion` varchar(3) NOT NULL,
-  `Hambre_FaltaA` varchar(3) NOT NULL,
-  `Seguridad_AI` varchar(3) NOT NULL,
-  `Comple_Alimenticio` varchar(3) NOT NULL,
-  `Benefi_Desayuno` varchar(3) NOT NULL,
-  `Ayuda_Municipio` varchar(100) NOT NULL
+  `ID_AYUDASRECIBIDAS` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `ATENCION_MENOR` varchar(3) DEFAULT NULL,
+  `CUIDADO_INFANTIL` varchar(3) DEFAULT NULL,
+  `PRO_ALIMENTACION` varchar(3) DEFAULT NULL,
+  `HAMBRE_FALTAA` varchar(3) DEFAULT NULL,
+  `SEGURIDAD_AI` varchar(3) DEFAULT NULL,
+  `COMPLE_ALIMENTICIO` varchar(3) DEFAULT NULL,
+  `BENEFI_DESAYUNO` varchar(3) DEFAULT NULL,
+  `AYUDA_MUNICIPIO` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -44,31 +96,32 @@ CREATE TABLE `desplazados_ayudasrecibidas` (
 --
 
 CREATE TABLE `desplazados_datos` (
-  `Documento` int(11) NOT NULL,
-  `Nombre_Completo` varchar(60) NOT NULL,
-  `Primer_Apellido` varchar(50) NOT NULL,
-  `Segundo_Apellido` varchar(50) NOT NULL,
-  `Tipo_de_Documento` varchar(50) NOT NULL,
-  `Fecha_de_Victimizacion` date NOT NULL,
-  `Codigo_RUPV` varchar(25) NOT NULL,
-  `Departamento` varchar(25) NOT NULL,
-  `Municipio` varchar(25) NOT NULL,
-  `Zona` varchar(7) NOT NULL,
-  `Localidad` varchar(30) NOT NULL,
-  `Direccion` varchar(40) NOT NULL,
-  `Telefono` int(15) NOT NULL,
-  `Estado_Civil` varchar(25) NOT NULL,
-  `Parentesco` varchar(25) NOT NULL,
-  `Es_Jefe_de_Hogar` varchar(3) NOT NULL,
-  `Territorio` varchar(25) NOT NULL
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `NOMBRE_COMPLETO` varchar(70) DEFAULT NULL,
+  `PRIMER_APELLIDO` varchar(50) NOT NULL,
+  `SEGUNDO_APELLIDO` varchar(50) NOT NULL,
+  `TIPO_DE_DOCUMENTO` varchar(60) DEFAULT NULL,
+  `FECHA_DE_VICTIMIZACION` date DEFAULT NULL,
+  `CODIGO_RUPV` varchar(25) DEFAULT NULL,
+  `DEPARTAMENTO` int(11) DEFAULT NULL,
+  `MUNICIPIO` int(11) DEFAULT NULL,
+  `ZONA` varchar(7) DEFAULT NULL,
+  `LOCALIDAD` varchar(30) DEFAULT NULL,
+  `DIRECCION` varchar(40) DEFAULT NULL,
+  `TELEFONO` int(11) DEFAULT NULL,
+  `ESTADO_CIVIL` varchar(25) DEFAULT NULL,
+  `PARENTESCO` varchar(25) DEFAULT NULL,
+  `ES_JEFE_DE_HOGAR` varchar(3) DEFAULT NULL,
+  `TERRITORIO` varchar(25) DEFAULT NULL,
+  `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `desplazados_datos`
 --
 
-INSERT INTO `desplazados_datos` (`Documento`, `Nombre_Completo`, `Primer_Apellido`, `Segundo_Apellido`, `Tipo_de_Documento`, `Fecha_de_Victimizacion`, `Codigo_RUPV`, `Departamento`, `Municipio`, `Zona`, `Localidad`, `Direccion`, `Telefono`, `Estado_Civil`, `Parentesco`, `Es_Jefe_de_Hogar`, `Territorio`) VALUES
-(1, 'Milton', 'Otavo ', 'Varon', 'CeduladeCiudadania', '2016-02-26', '1234', '#', '#', 'Urbana', 'Topacio', 'Direccion 2', 2669988, 'Soltero(a)', 'Padre/Padrastro', 'NO', 'Nacionals');
+INSERT INTO `desplazados_datos` (`DOCUMENTO_DESPLAZADO`, `NOMBRE_COMPLETO`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `TIPO_DE_DOCUMENTO`, `FECHA_DE_VICTIMIZACION`, `CODIGO_RUPV`, `DEPARTAMENTO`, `MUNICIPIO`, `ZONA`, `LOCALIDAD`, `DIRECCION`, `TELEFONO`, `ESTADO_CIVIL`, `PARENTESCO`, `ES_JEFE_DE_HOGAR`, `TERRITORIO`, `FECHALOG`) VALUES
+(1, 'Hugo', 'Otavo', 'Varon', 'TarjetadeIdentidad', '2016-03-03', '3243535', 5, 5001, 'Urbana', 'nn', 'nn', 234566, 'Casado(a)', 'Madre/Madrastra', 'NO', '1', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -77,20 +130,22 @@ INSERT INTO `desplazados_datos` (`Documento`, `Nombre_Completo`, `Primer_Apellid
 --
 
 CREATE TABLE `desplazados_economiafamiliar` (
-  `Ingresos_Mensuales` varchar(50) NOT NULL,
-  `Gastos_Mensuales` varchar(50) NOT NULL,
-  `1_Gasto` varchar(20) NOT NULL,
-  `2_Gasto` varchar(20) NOT NULL,
-  `3_Gasto` varchar(20) NOT NULL,
-  `No_Comidas_Dia` varchar(15) NOT NULL,
-  `Adultos` varchar(25) NOT NULL,
-  `Ninos` varchar(25) NOT NULL,
-  `Menores_2Anos` varchar(25) NOT NULL,
-  `Alimentacion_Cultura` varchar(3) NOT NULL,
-  `Alimentacion_Adecuada` varchar(3) NOT NULL,
-  `Fuente_1` varchar(25) NOT NULL,
-  `Fuente_2` varchar(25) NOT NULL,
-  `Fuente_3` varchar(25) NOT NULL
+  `ID_ECONOMIAFAMILIAR` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `INGRESOS_MENSUALES` varchar(50) DEFAULT NULL,
+  `GASTOS_MENSUALES` varchar(50) DEFAULT NULL,
+  `1_GASTO` varchar(20) DEFAULT NULL,
+  `2_GASTO` varchar(20) DEFAULT NULL,
+  `3_GASTO` varchar(20) DEFAULT NULL,
+  `NO_COMIDAS_DIA` varchar(15) DEFAULT NULL,
+  `ADULTOS` varchar(25) DEFAULT NULL,
+  `NINOS` varchar(25) DEFAULT NULL,
+  `MENORES_2ANOS` varchar(25) DEFAULT NULL,
+  `ALIMENTACION_CULTURA` varchar(3) DEFAULT NULL,
+  `ALIMENTACION_ADECUADA` varchar(3) DEFAULT NULL,
+  `FUENTE_1` varchar(25) DEFAULT NULL,
+  `FUENTE_2` varchar(25) DEFAULT NULL,
+  `FUENTE_3` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -100,15 +155,17 @@ CREATE TABLE `desplazados_economiafamiliar` (
 --
 
 CREATE TABLE `desplazados_especialproteccion` (
-  `Ayuda_Cultura` varchar(3) NOT NULL,
-  `Ayuda_18_Cultura` varchar(3) NOT NULL,
-  `Funcionario_Trato` varchar(3) NOT NULL,
-  `Pueblo_Indigena` varchar(45) NOT NULL,
-  `Indigenas_VioIntra` varchar(3) NOT NULL,
-  `Denunciado` varchar(3) NOT NULL,
-  `CualEntidad_Denun` varchar(40) NOT NULL,
-  `Tipo_Violencia` varchar(15) NOT NULL,
-  `Promueven_Derechos` varchar(3) NOT NULL
+  `ID_ESPECIALPROTECCION` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `AYUDA_CULTURA` varchar(3) DEFAULT NULL,
+  `AYUDA_18_CULTURA` varchar(3) DEFAULT NULL,
+  `FUNCIONARIO_TRATO` varchar(3) DEFAULT NULL,
+  `PUEBLO_INDIGENA` varchar(45) DEFAULT NULL,
+  `INDIGENAS_VIOINTRA` varchar(3) DEFAULT NULL,
+  `DENUNCIADO` varchar(3) DEFAULT NULL,
+  `CUALENTIDAD_DENUN` varchar(40) DEFAULT NULL,
+  `TIPO_VIOLENCIA` varchar(15) DEFAULT NULL,
+  `PROMUEVEN_DERECHOS` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -118,52 +175,60 @@ CREATE TABLE `desplazados_especialproteccion` (
 --
 
 CREATE TABLE `desplazados_familiar` (
-  `Identificacion` int(11) NOT NULL,
-  `Tipo_Identificacion` varchar(50) NOT NULL,
-  `Nombres` varchar(25) NOT NULL,
-  `Apellidos` varchar(25) NOT NULL,
-  `Genero` varchar(10) NOT NULL,
-  `Fecha_Nacimiento` date NOT NULL,
-  `Edad` int(2) NOT NULL,
-  `Enfoque_Diferencial` varchar(20) NOT NULL,
-  `Estado_Civil` varchar(20) NOT NULL,
-  `Parentesco` varchar(20) NOT NULL,
-  `Estuvo_Separado` varchar(3) NOT NULL,
-  `Discapacitado` varchar(3) NOT NULL,
-  `Discapacidad` varchar(45) NOT NULL,
-  `Cual_D` varchar(45) NOT NULL,
-  `Ha_Sido_Victima_M_A` varchar(3) NOT NULL,
-  `Recibio_Auxilio_T_E_C_A` varchar(3) NOT NULL,
-  `Se_Otorgo_Ayuda_M` varchar(100) NOT NULL,
-  `Otra_A_M` varchar(25) NOT NULL,
-  `En_cuanto_Indemnizacion` varchar(200) NOT NULL,
-  `Afiliado_Salud` varchar(3) NOT NULL,
-  `Regimen` varchar(20) NOT NULL,
-  `Cual_R` varchar(20) NOT NULL,
-  `Recibio_Atencion_S_M` varchar(3) NOT NULL,
-  `Recibio_Apoyo_PsicoSocial` varchar(3) NOT NULL,
-  `Asistio_Programa_S_R` varchar(3) NOT NULL,
-  `Vacunas` varchar(3) NOT NULL,
-  `Cuales_Vacunas` varchar(60) NOT NULL,
-  `Diagnosticado_E_C` varchar(3) NOT NULL,
-  `Cual_Enfermedad` varchar(3) NOT NULL,
-  `Califique_E_S` int(2) NOT NULL,
-  `Estudiaba_Antes_V` varchar(3) NOT NULL,
-  `Estudia_Actualmente` varchar(3) NOT NULL,
-  `Programa_A_E` varchar(3) NOT NULL,
-  `Cancela_Costo_E` varchar(3) NOT NULL,
-  `Sabe_Leer` varchar(3) NOT NULL,
-  `Nivel_Alcanzado` varchar(15) NOT NULL,
-  `Competencia_Laboral` varchar(35) NOT NULL,
-  `Competencia_Certificada` varchar(3) NOT NULL,
-  `Gustaria _Capacitarse` varchar(35) NOT NULL,
-  `Horario_Capacitacion` varchar(10) NOT NULL,
-  `Actividad_Laboral_Actual` varchar(20) NOT NULL,
-  `Rama_Actividad_Actual` varchar(35) NOT NULL,
-  `Contrato_Escrito` varchar(3) NOT NULL,
-  `Trabaja_Jornada` varchar(7) NOT NULL,
-  `S_Social_R_P` varchar(3) NOT NULL
+  `IDENTIFICACION_FAMILIAR` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `TIPO_IDENTIFICACION` varchar(50) DEFAULT NULL,
+  `NOMBRES` varchar(25) DEFAULT NULL,
+  `PRIMER_APELLIDO` varchar(50) DEFAULT NULL,
+  `SEGUNDO_APELLIDO` varchar(50) NOT NULL,
+  `GENERO` varchar(10) DEFAULT NULL,
+  `FECHA_NACIMIENTO` date DEFAULT NULL,
+  `ENFOQUE_DIFERENCIAL` varchar(20) DEFAULT NULL,
+  `ESTADO_CIVIL` varchar(20) DEFAULT NULL,
+  `PARENTESCO` varchar(20) DEFAULT NULL,
+  `ESTUVO_SEPARADO` varchar(3) DEFAULT NULL,
+  `DISCAPACITADO` varchar(3) DEFAULT NULL,
+  `DISCAPACIDAD` varchar(45) DEFAULT NULL,
+  `CUAL_D` varchar(45) DEFAULT NULL,
+  `HA_SIDO_VICTIMA_M_A_` varchar(3) DEFAULT NULL,
+  `RECIBIO_AUXILIO_T_E_C_A` varchar(3) DEFAULT NULL,
+  `SE_OTORGO_AYUDA_M` varchar(100) DEFAULT NULL,
+  `OTRA_A_M` varchar(25) DEFAULT NULL,
+  `EN_CUANTO_INDEMNIZACION` varchar(200) DEFAULT NULL,
+  `AFILIADO_SALUD` varchar(3) DEFAULT NULL,
+  `REGIMEN` varchar(20) DEFAULT NULL,
+  `CUAL_R` varchar(20) DEFAULT NULL,
+  `RECIBIO_ATENCION_S_M` varchar(3) DEFAULT NULL,
+  `RECIBIO_APOYO_PSICOSOCIAL` varchar(3) DEFAULT NULL,
+  `ASISTIO_PROGRAMA_S_R` varchar(3) DEFAULT NULL,
+  `VACUNAS` varchar(3) DEFAULT NULL,
+  `CUALES_VACUNAS` varchar(60) DEFAULT NULL,
+  `DIAGNOSTICADO_E_C` varchar(3) DEFAULT NULL,
+  `CUAL_ENFERMEDAD_` varchar(3) DEFAULT NULL,
+  `CALIFIQUE_E_S` int(11) DEFAULT NULL,
+  `ESTUDIABA_ANTES_V` varchar(3) DEFAULT NULL,
+  `ESTUDIA_ACTUALMENTE` varchar(3) DEFAULT NULL,
+  `PROGRAMA_A_E` varchar(3) DEFAULT NULL,
+  `CANCELA_COSTO_E` varchar(3) DEFAULT NULL,
+  `SABE_LEER` varchar(3) DEFAULT NULL,
+  `NIVEL_ALCANZADO` varchar(15) DEFAULT NULL,
+  `COMPETENCIA_LABORAL` varchar(35) DEFAULT NULL,
+  `COMPETENCIA_CERTIFICADA` varchar(3) DEFAULT NULL,
+  `GUSTARIA__CAPACITARSE_` varchar(35) DEFAULT NULL,
+  `HORARIO_CAPACITACION_` varchar(10) DEFAULT NULL,
+  `ACTIVIDAD_LABORAL_ACTUAL` varchar(20) DEFAULT NULL,
+  `RAMA_ACTIVIDAD_ACTUAL` varchar(35) DEFAULT NULL,
+  `CONTRATO_ESCRITO` varchar(3) DEFAULT NULL,
+  `TRABAJA_JORNADA` varchar(7) DEFAULT NULL,
+  `S_SOCIAL_R_P` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `desplazados_familiar`
+--
+
+INSERT INTO `desplazados_familiar` (`IDENTIFICACION_FAMILIAR`, `DOCUMENTO_DESPLAZADO`, `TIPO_IDENTIFICACION`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `GENERO`, `FECHA_NACIMIENTO`, `ENFOQUE_DIFERENCIAL`, `ESTADO_CIVIL`, `PARENTESCO`, `ESTUVO_SEPARADO`, `DISCAPACITADO`, `DISCAPACIDAD`, `CUAL_D`, `HA_SIDO_VICTIMA_M_A_`, `RECIBIO_AUXILIO_T_E_C_A`, `SE_OTORGO_AYUDA_M`, `OTRA_A_M`, `EN_CUANTO_INDEMNIZACION`, `AFILIADO_SALUD`, `REGIMEN`, `CUAL_R`, `RECIBIO_ATENCION_S_M`, `RECIBIO_APOYO_PSICOSOCIAL`, `ASISTIO_PROGRAMA_S_R`, `VACUNAS`, `CUALES_VACUNAS`, `DIAGNOSTICADO_E_C`, `CUAL_ENFERMEDAD_`, `CALIFIQUE_E_S`, `ESTUDIABA_ANTES_V`, `ESTUDIA_ACTUALMENTE`, `PROGRAMA_A_E`, `CANCELA_COSTO_E`, `SABE_LEER`, `NIVEL_ALCANZADO`, `COMPETENCIA_LABORAL`, `COMPETENCIA_CERTIFICADA`, `GUSTARIA__CAPACITARSE_`, `HORARIO_CAPACITACION_`, `ACTIVIDAD_LABORAL_ACTUAL`, `RAMA_ACTIVIDAD_ACTUAL`, `CONTRATO_ESCRITO`, `TRABAJA_JORNADA`, `S_SOCIAL_R_P`) VALUES
+(1, 1, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -172,27 +237,29 @@ CREATE TABLE `desplazados_familiar` (
 --
 
 CREATE TABLE `desplazados_proteccion` (
-  `Solicitar_Proteccion` varchar(200) NOT NULL,
-  `Otra_Entidad` varchar(30) NOT NULL,
-  `AyudaPoblac_desplaza` varchar(3) NOT NULL,
-  `Mujer` varchar(3) NOT NULL,
-  `Adulto_Mayor` varchar(3) NOT NULL,
-  `Jovenes` varchar(3) NOT NULL,
-  `Discapacidad` varchar(3) NOT NULL,
-  `Afiliado_OPD` varchar(3) NOT NULL,
-  `Cual_OPD` varchar(30) NOT NULL,
-  `Participa_E_P_P` varchar(3) NOT NULL,
-  `Cual_E_P_P` varchar(30) NOT NULL,
-  `Ayuda_Humanitaria` varchar(40) NOT NULL,
-  `Salud` varchar(40) NOT NULL,
-  `Generacion_Ingresos` varchar(40) NOT NULL,
-  `Atencion_Vivienda` varchar(40) NOT NULL,
-  `Educacion_Otra` varchar(40) NOT NULL,
-  `Prioridad_1` varchar(40) NOT NULL,
-  `Prioridad_2` varchar(40) NOT NULL,
-  `Prioridad_3` varchar(40) NOT NULL,
-  `Prioridad_4` varchar(40) NOT NULL,
-  `Prioridad_5` varchar(40) NOT NULL
+  `ID_PROTECCION` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `SOLICITAR_PROTECCION` varchar(200) DEFAULT NULL,
+  `OTRA_ENTIDAD` varchar(30) DEFAULT NULL,
+  `AYUDAPOBLAC_DESPLAZA` varchar(3) DEFAULT NULL,
+  `MUJER` varchar(3) DEFAULT NULL,
+  `ADULTO_MAYOR` varchar(3) DEFAULT NULL,
+  `JOVENES` varchar(3) DEFAULT NULL,
+  `DISCAPACIDAD` varchar(3) DEFAULT NULL,
+  `AFILIADO_OPD` varchar(3) DEFAULT NULL,
+  `CUAL_OPD` varchar(30) DEFAULT NULL,
+  `PARTICIPA_E_P_P` varchar(3) DEFAULT NULL,
+  `CUAL_E_P_P` varchar(30) DEFAULT NULL,
+  `AYUDA_HUMANITARIA` varchar(40) DEFAULT NULL,
+  `SALUD` varchar(40) DEFAULT NULL,
+  `GENERACION_INGRESOS` varchar(40) DEFAULT NULL,
+  `ATENCION_VIVIENDA` varchar(40) DEFAULT NULL,
+  `EDUCACION_OTRA` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_1` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_2` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_3` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_4` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_5` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -202,16 +269,18 @@ CREATE TABLE `desplazados_proteccion` (
 --
 
 CREATE TABLE `desplazados_reparacion` (
-  `Estado_Informado` varchar(3) NOT NULL,
-  `MiembroH_Indemnizado` varchar(3) NOT NULL,
-  `Estado_Garantias` varchar(3) NOT NULL,
-  `MiembroH_Restitucion` varchar(3) NOT NULL,
-  `Entidad_Restitucion` varchar(50) NOT NULL,
-  `Estado_Restituido` varchar(3) NOT NULL,
-  `Estado_Indemnizacion` varchar(3) NOT NULL,
-  `MiembroH_Indemnizacion` varchar(3) NOT NULL,
-  `Familia_Rehabilitacion` varchar(3) NOT NULL,
-  `MiembroH_Beneficiario` varchar(3) NOT NULL
+  `ID_REPARACION` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `ESTADO_INFORMADO` varchar(3) DEFAULT NULL,
+  `MIEMBROH_INDEMNIZADO` varchar(3) DEFAULT NULL,
+  `ESTADO_GARANTIAS` varchar(3) DEFAULT NULL,
+  `MIEMBROH_RESTITUCION` varchar(3) DEFAULT NULL,
+  `ENTIDAD_RESTITUCION` varchar(50) DEFAULT NULL,
+  `ESTADO_RESTITUIDO` varchar(3) DEFAULT NULL,
+  `ESTADO_INDEMNIZACION` varchar(3) DEFAULT NULL,
+  `MIEMBROH_INDEMNIZACION` varchar(3) DEFAULT NULL,
+  `FAMILIA_REHABILITACION` varchar(3) DEFAULT NULL,
+  `MIEMBROH_BENEFICIARIO` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -221,24 +290,26 @@ CREATE TABLE `desplazados_reparacion` (
 --
 
 CREATE TABLE `desplazados_vivienda` (
-  `Actual_Vivienda` varchar(30) NOT NULL,
-  `Tenencia` varchar(25) NOT NULL,
-  `Tipo_Contrato` varchar(25) NOT NULL,
-  `Zona_Vivienda` varchar(7) NOT NULL,
-  `Zona_AltoRiesgo` varchar(3) NOT NULL,
-  `Paredes` varchar(10) NOT NULL,
-  `Piso` varchar(10) NOT NULL,
-  `Techo` varchar(30) NOT NULL,
-  `S_Acueducto` varchar(3) NOT NULL,
-  `S_Telefono` varchar(3) NOT NULL,
-  `S_Energia_Electrica` varchar(3) NOT NULL,
-  `S_Alcantarillado` varchar(3) NOT NULL,
-  `S_Gas` varchar(3) NOT NULL,
-  `S_ReBasuras` varchar(3) NOT NULL,
-  `No_Habit_Antes` int(2) NOT NULL,
-  `No_Habit_Actual` int(2) NOT NULL,
-  `No_Famili_Casa` int(2) NOT NULL,
-  `Recibi_Subsidio` varchar(3) NOT NULL
+  `ID_VIVIENDA` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `ACTUAL_VIVIENDA` varchar(30) DEFAULT NULL,
+  `TENENCIA` varchar(25) DEFAULT NULL,
+  `TIPO_CONTRATO` varchar(25) DEFAULT NULL,
+  `ZONA_VIVIENDA` varchar(7) DEFAULT NULL,
+  `ZONA_ALTORIESGO` varchar(3) DEFAULT NULL,
+  `PAREDES` varchar(10) DEFAULT NULL,
+  `PISO` varchar(10) DEFAULT NULL,
+  `TECHO` varchar(30) DEFAULT NULL,
+  `S_ACUEDUCTO` varchar(3) DEFAULT NULL,
+  `S_TELEFONO` varchar(3) DEFAULT NULL,
+  `S_ENERGIA_ELECTRICA` varchar(3) DEFAULT NULL,
+  `S_ALCANTARILLADO` varchar(3) DEFAULT NULL,
+  `S_GAS` varchar(3) DEFAULT NULL,
+  `S_REBASURAS` varchar(3) DEFAULT NULL,
+  `NO_HABIT_ANTES` int(11) DEFAULT NULL,
+  `NO_HABIT_ACTUAL` int(11) DEFAULT NULL,
+  `NO_FAMILI_CASA` int(11) DEFAULT NULL,
+  `RECIBI_SUBSIDIO` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -248,20 +319,22 @@ CREATE TABLE `desplazados_vivienda` (
 --
 
 CREATE TABLE `desplazado_discapacidad` (
-  `Antes_Desplazamiento` varchar(3) NOT NULL,
-  `Igual_Condiciones` varchar(3) NOT NULL,
-  `Entidad_Rehabilitacion` varchar(3) NOT NULL,
-  `Rehubicacion_Laboral` varchar(3) NOT NULL,
-  `Marginado_Discriminado` varchar(3) NOT NULL,
-  `Encuentra_P_P` varchar(3) NOT NULL,
-  `Excluido` varchar(3) NOT NULL,
-  `Rehabilitacion` varchar(3) NOT NULL,
-  `Subsidio_Discapacidad` varchar(3) NOT NULL,
-  `Capacidad_Econo` varchar(3) NOT NULL,
-  `Menores_18` varchar(3) NOT NULL,
-  `Recibio_Ayu_Huma` varchar(3) NOT NULL,
-  `Organizacion_Despla` varchar(3) NOT NULL,
-  `Participacion_OPDS` varchar(3) NOT NULL
+  `ID_DISCAPACIDAD` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `ANTES_DESPLAZAMIENTO` varchar(3) DEFAULT NULL,
+  `IGUAL_CONDICIONES` varchar(3) DEFAULT NULL,
+  `ENTIDAD_REHABILITACION` varchar(3) DEFAULT NULL,
+  `REHUBICACION_LABORAL` varchar(3) DEFAULT NULL,
+  `MARGINADO_DISCRIMINADO` varchar(3) DEFAULT NULL,
+  `ENCUENTRA_P_P` varchar(3) DEFAULT NULL,
+  `EXCLUIDO` varchar(3) DEFAULT NULL,
+  `REHABILITACION` varchar(3) DEFAULT NULL,
+  `SUBSIDIO_DISCAPACIDAD` varchar(3) DEFAULT NULL,
+  `CAPACIDAD_ECONO` varchar(3) DEFAULT NULL,
+  `MENORES_18` varchar(3) DEFAULT NULL,
+  `RECIBIO_AYU_HUMA` varchar(3) DEFAULT NULL,
+  `ORGANIZACION_DESPLA` varchar(3) DEFAULT NULL,
+  `PARTICIPACION_OPDS` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -271,43 +344,45 @@ CREATE TABLE `desplazado_discapacidad` (
 --
 
 CREATE TABLE `desplazamiento` (
-  `Veces_Desplazado` int(2) NOT NULL,
-  `Ano1` int(4) NOT NULL,
-  `Localidad1` varchar(20) NOT NULL,
-  `Municipio1` varchar(25) NOT NULL,
-  `Ano2` int(2) NOT NULL,
-  `Localidad2` varchar(4) NOT NULL,
-  `Municipio2` varchar(20) NOT NULL,
-  `Ano3` int(2) NOT NULL,
-  `Localidad3` varchar(4) NOT NULL,
-  `Municipio3` varchar(20) NOT NULL,
-  `Confrontacion_Armada` varchar(3) NOT NULL,
-  `Amenaza_Indirecta` varchar(3) NOT NULL,
-  `Campos_Minados` varchar(3) NOT NULL,
-  `Asesinato_Familia` varchar(3) NOT NULL,
-  `Amenaza_Directa` varchar(3) NOT NULL,
-  `Reclutamiento_Menores` varchar(3) NOT NULL,
-  `Ausencia_Gobierno` varchar(3) NOT NULL,
-  `Desplazamiento_Masivo` varchar(3) NOT NULL,
-  `No_Personas_H` int(2) NOT NULL,
-  `Familia_Separo` varchar(3) NOT NULL,
-  `S_Ayuda_Estatal` varchar(3) NOT NULL,
-  `Nucleo_Unificar` varchar(3) NOT NULL,
-  `R_Ayuda_Estatl` varchar(3) NOT NULL,
-  `Familia_Vivos` varchar(3) NOT NULL,
-  `Familiar_Detenido` varchar(3) NOT NULL,
-  `Familiar_V_P` varchar(3) NOT NULL,
-  `Familiar_Asesinado` varchar(3) NOT NULL,
-  `Familiar_Reclutado` varchar(3) NOT NULL,
-  `Familiar_Secuestro` varchar(3) NOT NULL,
-  `Demanda_Desplazamiento` varchar(3) NOT NULL,
-  `Familiar_Vic_M_A` varchar(3) NOT NULL,
-  `Defensoria` varchar(3) NOT NULL,
-  `Procuraduria` varchar(3) NOT NULL,
-  `Depa_Pros_Soc` varchar(3) NOT NULL,
-  `Personeria` varchar(3) NOT NULL,
-  `UAO` varchar(3) NOT NULL,
-  `Otra` varchar(20) NOT NULL
+  `ID_DESPLAZAMIENTO` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `VECES_DESPLAZADO` int(11) DEFAULT NULL,
+  `ANO1` int(11) DEFAULT NULL,
+  `LOCALIDAD1` varchar(20) DEFAULT NULL,
+  `MUNICIPIO1` varchar(25) DEFAULT NULL,
+  `ANO2` int(11) DEFAULT NULL,
+  `LOCALIDAD2` varchar(4) DEFAULT NULL,
+  `MUNICIPIO2` varchar(20) DEFAULT NULL,
+  `ANO3` int(11) DEFAULT NULL,
+  `LOCALIDAD3` varchar(4) DEFAULT NULL,
+  `MUNICIPIO3` varchar(20) DEFAULT NULL,
+  `CONFRONTACION_ARMADA` varchar(3) DEFAULT NULL,
+  `AMENAZA_INDIRECTA` varchar(3) DEFAULT NULL,
+  `CAMPOS_MINADOS_` varchar(3) DEFAULT NULL,
+  `ASESINATO_FAMILIA` varchar(3) DEFAULT NULL,
+  `AMENAZA_DIRECTA` varchar(3) DEFAULT NULL,
+  `RECLUTAMIENTO_MENORES` varchar(3) DEFAULT NULL,
+  `AUSENCIA_GOBIERNO` varchar(3) DEFAULT NULL,
+  `DESPLAZAMIENTO_MASIVO` varchar(3) DEFAULT NULL,
+  `NO_PERSONAS_H` int(11) DEFAULT NULL,
+  `FAMILIA_SEPARO` varchar(3) DEFAULT NULL,
+  `S_AYUDA_ESTATAL` varchar(3) DEFAULT NULL,
+  `NUCLEO_UNIFICAR` varchar(3) DEFAULT NULL,
+  `R_AYUDA_ESTATL` varchar(3) DEFAULT NULL,
+  `FAMILIA_VIVOS` varchar(3) DEFAULT NULL,
+  `FAMILIAR_DETENIDO` varchar(3) DEFAULT NULL,
+  `FAMILIAR_V_P` varchar(3) DEFAULT NULL,
+  `FAMILIAR_ASESINADO` varchar(3) DEFAULT NULL,
+  `FAMILIAR_RECLUTADO` varchar(3) DEFAULT NULL,
+  `FAMILIAR_SECUESTRO` varchar(3) DEFAULT NULL,
+  `DEMANDA_DESPLAZAMIENTO` varchar(3) DEFAULT NULL,
+  `FAMILIAR_VIC_M_A` varchar(3) DEFAULT NULL,
+  `DEFENSORIA` varchar(3) DEFAULT NULL,
+  `PROCURADURIA` varchar(3) DEFAULT NULL,
+  `DEPA_PROS_SOC` varchar(3) DEFAULT NULL,
+  `PERSONERIA` varchar(3) DEFAULT NULL,
+  `UAO` varchar(3) DEFAULT NULL,
+  `OTRA` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -317,18 +392,1158 @@ CREATE TABLE `desplazamiento` (
 --
 
 CREATE TABLE `estabilizacion` (
-  `Razones_Lugar` varchar(200) NOT NULL,
-  `Familia_Retorno` varchar(3) NOT NULL,
-  `EstuvoEsta_Retorno` varchar(3) NOT NULL,
-  `Residencia_Desearia` varchar(15) NOT NULL,
-  `DondeQuiere_Reubicarse` varchar(40) NOT NULL,
-  `Zona_Retorno` varchar(7) NOT NULL,
-  `Razones_Reubicarse` varchar(200) NOT NULL,
-  `Razones_Retornar` varchar(200) NOT NULL,
-  `Raices_Abandonadas` varchar(3) NOT NULL,
-  `Algunos_Despojados` varchar(3) NOT NULL,
-  `Solicito_Proteccion` varchar(3) NOT NULL
+  `ID_ESTABILIZACION` int(11) NOT NULL,
+  `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
+  `RAZONES_LUGAR` varchar(200) DEFAULT NULL,
+  `FAMILIA_RETORNO` varchar(3) DEFAULT NULL,
+  `ESTUVOESTA_RETORNO` varchar(3) DEFAULT NULL,
+  `RESIDENCIA_DESEARIA` varchar(15) DEFAULT NULL,
+  `DONDEQUIERE_REUBICARSE` varchar(40) DEFAULT NULL,
+  `ZONA_RETORNO` varchar(7) DEFAULT NULL,
+  `RAZONES_REUBICARSE` varchar(200) DEFAULT NULL,
+  `RAZONES_RETORNAR` varchar(200) DEFAULT NULL,
+  `RAICES_ABANDONADAS` varchar(3) DEFAULT NULL,
+  `ALGUNOS_DESPOJADOS` varchar(3) DEFAULT NULL,
+  `SOLICITO_PROTECCION` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `municipios`
+--
+
+CREATE TABLE `municipios` (
+  `ID_MUNICIPIOS` int(11) NOT NULL,
+  `ID_DEPARTAMENTO` int(11) DEFAULT NULL,
+  `NOMBRE_MUNICIPIO` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `municipios`
+--
+
+INSERT INTO `municipios` (`ID_MUNICIPIOS`, `ID_DEPARTAMENTO`, `NOMBRE_MUNICIPIO`) VALUES
+(5001, 5, 'MEDELLIN'),
+(5002, 5, 'ABEJORRAL'),
+(5004, 5, 'ABRIAQUI'),
+(5021, 5, 'ALEJANDRIA'),
+(5030, 5, 'AMAGA'),
+(5031, 5, 'AMALFI'),
+(5034, 5, 'ANDES'),
+(5036, 5, 'ANGELOPOLIS'),
+(5038, 5, 'ANGOSTURA'),
+(5040, 5, 'ANORI'),
+(5042, 5, 'SANTAFE DE ANTIOQUIA'),
+(5044, 5, 'ANZA'),
+(5045, 5, 'APARTADO'),
+(5051, 5, 'ARBOLETES'),
+(5055, 5, 'ARGELIA'),
+(5059, 5, 'ARMENIA'),
+(5079, 5, 'BARBOSA'),
+(5086, 5, 'BELMIRA'),
+(5088, 5, 'BELLO'),
+(5091, 5, 'BETANIA'),
+(5093, 5, 'BETULIA'),
+(5101, 5, 'CIUDAD BOLIVAR'),
+(5107, 5, 'BRICEÑO'),
+(5113, 5, 'BURITICA'),
+(5120, 5, 'CACERES'),
+(5125, 5, 'CAICEDO'),
+(5129, 5, 'CALDAS'),
+(5134, 5, 'CAMPAMENTO'),
+(5138, 5, 'CAÑASGORDAS'),
+(5142, 5, 'CARACOLI'),
+(5145, 5, 'CARAMANTA'),
+(5147, 5, 'CAREPA'),
+(5148, 5, 'EL CARMEN DE VIBORAL'),
+(5150, 5, 'CAROLINA'),
+(5154, 5, 'CAUCASIA'),
+(5172, 5, 'CHIGORODO'),
+(5190, 5, 'CISNEROS'),
+(5197, 5, 'COCORNA'),
+(5206, 5, 'CONCEPCION'),
+(5209, 5, 'CONCORDIA'),
+(5212, 5, 'COPACABANA'),
+(5234, 5, 'DABEIBA'),
+(5237, 5, 'DON MATIAS'),
+(5240, 5, 'EBEJICO'),
+(5250, 5, 'EL BAGRE'),
+(5264, 5, 'ENTRERRIOS'),
+(5266, 5, 'ENVIGADO'),
+(5282, 5, 'FREDONIA'),
+(5284, 5, 'FRONTINO'),
+(5306, 5, 'GIRALDO'),
+(5308, 5, 'GIRARDOTA'),
+(5310, 5, 'GOMEZ PLATA'),
+(5313, 5, 'GRANADA'),
+(5315, 5, 'GUADALUPE'),
+(5318, 5, 'GUARNE'),
+(5321, 5, 'GUATAPE'),
+(5347, 5, 'HELICONIA'),
+(5353, 5, 'HISPANIA'),
+(5360, 5, 'ITAGUI'),
+(5361, 5, 'ITUANGO'),
+(5364, 5, 'JARDIN'),
+(5368, 5, 'JERICO'),
+(5376, 5, 'LA CEJA'),
+(5380, 5, 'LA ESTRELLA'),
+(5390, 5, 'LA PINTADA'),
+(5400, 5, 'LA UNION'),
+(5411, 5, 'LIBORINA'),
+(5425, 5, 'MACEO'),
+(5440, 5, 'MARINILLA'),
+(5467, 5, 'MONTEBELLO'),
+(5475, 5, 'MURINDO'),
+(5480, 5, 'MUTATA'),
+(5483, 5, 'NARIÑO'),
+(5490, 5, 'NECOCLI'),
+(5495, 5, 'NECHI'),
+(5501, 5, 'OLAYA'),
+(5541, 5, 'PEÑOL'),
+(5543, 5, 'PEQUE'),
+(5576, 5, 'PUEBLORRICO'),
+(5579, 5, 'PUERTO BERRIO'),
+(5585, 5, 'PUERTO NARE'),
+(5591, 5, 'PUERTO TRIUNFO'),
+(5604, 5, 'REMEDIOS'),
+(5607, 5, 'RETIRO'),
+(5615, 5, 'RIONEGRO'),
+(5628, 5, 'SABANALARGA'),
+(5631, 5, 'SABANETA'),
+(5642, 5, 'SALGAR'),
+(5647, 5, 'SAN ANDRES DE CUERQUIA'),
+(5649, 5, 'SAN CARLOS'),
+(5652, 5, 'SAN FRANCISCO'),
+(5656, 5, 'SAN JERONIMO'),
+(5658, 5, 'SAN JOSE DE LA MONTA?A'),
+(5659, 5, 'SAN JUAN DE URABA'),
+(5660, 5, 'SAN LUIS'),
+(5664, 5, 'SAN PEDRO'),
+(5665, 5, 'SAN PEDRO DE URABA'),
+(5667, 5, 'SAN RAFAEL'),
+(5670, 5, 'SAN ROQUE'),
+(5674, 5, 'SAN VICENTE'),
+(5679, 5, 'SANTA BARBARA'),
+(5686, 5, 'SANTA ROSA DE OSOS'),
+(5690, 5, 'SANTO DOMINGO'),
+(5697, 5, 'EL SANTUARIO'),
+(5736, 5, 'SEGOVIA'),
+(5756, 5, 'SONSON'),
+(5761, 5, 'SOPETRAN'),
+(5789, 5, 'TAMESIS'),
+(5790, 5, 'TARAZA'),
+(5792, 5, 'TARSO'),
+(5809, 5, 'TITIRIBI'),
+(5819, 5, 'TOLEDO'),
+(5837, 5, 'TURBO'),
+(5842, 5, 'URAMITA'),
+(5847, 5, 'URRAO'),
+(5854, 5, 'VALDIVIA'),
+(5856, 5, 'VALPARAISO'),
+(5858, 5, 'VEGACHI'),
+(5861, 5, 'VENECIA'),
+(5873, 5, 'VIGIA DEL FUERTE'),
+(5885, 5, 'YALI'),
+(5887, 5, 'YARUMAL'),
+(5890, 5, 'YOLOMBO'),
+(5893, 5, 'YONDO'),
+(5895, 5, 'ZARAGOZA'),
+(8001, 8, 'BARRANQUILLA'),
+(8078, 8, 'BARANOA'),
+(8137, 8, 'CAMPO DE LA CRUZ'),
+(8141, 8, 'CANDELARIA'),
+(8296, 8, 'GALAPA'),
+(8372, 8, 'JUAN DE ACOSTA'),
+(8421, 8, 'LURUACO'),
+(8433, 8, 'MALAMBO'),
+(8436, 8, 'MANATI'),
+(8520, 8, 'PALMAR DE VARELA'),
+(8549, 8, 'PIOJO'),
+(8558, 8, 'POLONUEVO'),
+(8560, 8, 'PONEDERA'),
+(8573, 8, 'PUERTO COLOMBIA'),
+(8606, 8, 'REPELON'),
+(8634, 8, 'SABANAGRANDE'),
+(8638, 8, 'SABANALARGA'),
+(8675, 8, 'SANTA LUCIA'),
+(8685, 8, 'SANTO TOMAS'),
+(8758, 8, 'SOLEDAD'),
+(8770, 8, 'SUAN'),
+(8832, 8, 'TUBARA'),
+(8849, 8, 'USIACURI'),
+(11001, 11, 'BOGOTA, D.C.'),
+(13001, 13, 'CARTAGENA'),
+(13006, 13, 'ACHI'),
+(13030, 13, 'ALTOS DEL ROSARIO'),
+(13042, 13, 'ARENAL'),
+(13052, 13, 'ARJONA'),
+(13062, 13, 'ARROYOHONDO'),
+(13074, 13, 'BARRANCO DE LOBA'),
+(13140, 13, 'CALAMAR'),
+(13160, 13, 'CANTAGALLO'),
+(13188, 13, 'CICUCO'),
+(13212, 13, 'CORDOBA'),
+(13222, 13, 'CLEMENCIA'),
+(13244, 13, 'EL CARMEN DE BOLIVAR'),
+(13248, 13, 'EL GUAMO'),
+(13268, 13, 'EL PEÑON'),
+(13300, 13, 'HATILLO DE LOBA'),
+(13430, 13, 'MAGANGUE'),
+(13433, 13, 'MAHATES'),
+(13440, 13, 'MARGARITA'),
+(13442, 13, 'MARIA LA BAJA'),
+(13458, 13, 'MONTECRISTO'),
+(13468, 13, 'MOMPOS'),
+(13473, 13, 'MORALES'),
+(13549, 13, 'PINILLOS'),
+(13580, 13, 'REGIDOR'),
+(13600, 13, 'RIO VIEJO'),
+(13620, 13, 'SAN CRISTOBAL'),
+(13647, 13, 'SAN ESTANISLAO'),
+(13650, 13, 'SAN FERNANDO'),
+(13654, 13, 'SAN JACINTO'),
+(13655, 13, 'SAN JACINTO DEL CAUCA'),
+(13657, 13, 'SAN JUAN NEPOMUCENO'),
+(13667, 13, 'SAN MARTIN DE LOBA'),
+(13670, 13, 'SAN PABLO'),
+(13673, 13, 'SANTA CATALINA'),
+(13683, 13, 'SANTA ROSA'),
+(13688, 13, 'SANTA ROSA DEL SUR'),
+(13744, 13, 'SIMITI'),
+(13760, 13, 'SOPLAVIENTO'),
+(13780, 13, 'TALAIGUA NUEVO'),
+(13810, 13, 'TIQUISIO'),
+(13836, 13, 'TURBACO'),
+(13838, 13, 'TURBANA'),
+(13873, 13, 'VILLANUEVA'),
+(13894, 13, 'ZAMBRANO'),
+(15001, 15, 'TUNJA'),
+(15022, 15, 'ALMEIDA'),
+(15047, 15, 'AQUITANIA'),
+(15051, 15, 'ARCABUCO'),
+(15087, 15, 'BELEN'),
+(15090, 15, 'BERBEO'),
+(15092, 15, 'BETEITIVA'),
+(15097, 15, 'BOAVITA'),
+(15104, 15, 'BOYACA'),
+(15106, 15, 'BRICEÑO'),
+(15109, 15, 'BUENAVISTA'),
+(15114, 15, 'BUSBANZA'),
+(15131, 15, 'CALDAS'),
+(15135, 15, 'CAMPOHERMOSO'),
+(15162, 15, 'CERINZA'),
+(15172, 15, 'CHINAVITA'),
+(15176, 15, 'CHIQUINQUIRA'),
+(15180, 15, 'CHISCAS'),
+(15183, 15, 'CHITA'),
+(15185, 15, 'CHITARAQUE'),
+(15187, 15, 'CHIVATA'),
+(15189, 15, 'CIENEGA'),
+(15204, 15, 'COMBITA'),
+(15212, 15, 'COPER'),
+(15215, 15, 'CORRALES'),
+(15218, 15, 'COVARACHIA'),
+(15223, 15, 'CUBARA'),
+(15224, 15, 'CUCAITA'),
+(15226, 15, 'CUITIVA'),
+(15232, 15, 'CHIQUIZA'),
+(15236, 15, 'CHIVOR'),
+(15238, 15, 'DUITAMA'),
+(15244, 15, 'EL COCUY'),
+(15248, 15, 'EL ESPINO'),
+(15272, 15, 'FIRAVITOBA'),
+(15276, 15, 'FLORESTA'),
+(15293, 15, 'GACHANTIVA'),
+(15296, 15, 'GAMEZA'),
+(15299, 15, 'GARAGOA'),
+(15317, 15, 'GUACAMAYAS'),
+(15322, 15, 'GUATEQUE'),
+(15325, 15, 'GUAYATA'),
+(15332, 15, 'GUICAN'),
+(15362, 15, 'IZA'),
+(15367, 15, 'JENESANO'),
+(15368, 15, 'JERICO'),
+(15377, 15, 'LABRANZAGRANDE'),
+(15380, 15, 'LA CAPILLA'),
+(15401, 15, 'LA VICTORIA'),
+(15403, 15, 'LA UVITA'),
+(15407, 15, 'VILLA DE LEYVA'),
+(15425, 15, 'MACANAL'),
+(15442, 15, 'MARIPI'),
+(15455, 15, 'MIRAFLORES'),
+(15464, 15, 'MONGUA'),
+(15466, 15, 'MONGUI'),
+(15469, 15, 'MONIQUIRA'),
+(15476, 15, 'MOTAVITA'),
+(15480, 15, 'MUZO'),
+(15491, 15, 'NOBSA'),
+(15494, 15, 'NUEVO COLON'),
+(15500, 15, 'OICATA'),
+(15507, 15, 'OTANCHE'),
+(15511, 15, 'PACHAVITA'),
+(15514, 15, 'PAEZ'),
+(15516, 15, 'PAIPA'),
+(15518, 15, 'PAJARITO'),
+(15522, 15, 'PANQUEBA'),
+(15531, 15, 'PAUNA'),
+(15533, 15, 'PAYA'),
+(15537, 15, 'PAZ DE RIO'),
+(15542, 15, 'PESCA'),
+(15550, 15, 'PISBA'),
+(15572, 15, 'PUERTO BOYACA'),
+(15580, 15, 'QUIPAMA'),
+(15599, 15, 'RAMIRIQUI'),
+(15600, 15, 'RAQUIRA'),
+(15621, 15, 'RONDON'),
+(15632, 15, 'SABOYA'),
+(15638, 15, 'SACHICA'),
+(15646, 15, 'SAMACA'),
+(15660, 15, 'SAN EDUARDO'),
+(15664, 15, 'SAN JOSE DE PARE'),
+(15667, 15, 'SAN LUIS DE GACENO'),
+(15673, 15, 'SAN MATEO'),
+(15676, 15, 'SAN MIGUEL DE SEMA'),
+(15681, 15, 'SAN PABLO DE BORBUR'),
+(15686, 15, 'SANTANA'),
+(15690, 15, 'SANTA MARIA'),
+(15693, 15, 'SANTA ROSA DE VITERBO'),
+(15696, 15, 'SANTA SOFIA'),
+(15720, 15, 'SATIVANORTE'),
+(15723, 15, 'SATIVASUR'),
+(15740, 15, 'SIACHOQUE'),
+(15753, 15, 'SOATA'),
+(15755, 15, 'SOCOTA'),
+(15757, 15, 'SOCHA'),
+(15759, 15, 'SOGAMOSO'),
+(15761, 15, 'SOMONDOCO'),
+(15762, 15, 'SORA'),
+(15763, 15, 'SOTAQUIRA'),
+(15764, 15, 'SORACA'),
+(15774, 15, 'SUSACON'),
+(15776, 15, 'SUTAMARCHAN'),
+(15778, 15, 'SUTATENZA'),
+(15790, 15, 'TASCO'),
+(15798, 15, 'TENZA'),
+(15804, 15, 'TIBANA'),
+(15806, 15, 'TIBASOSA'),
+(15808, 15, 'TINJACA'),
+(15810, 15, 'TIPACOQUE'),
+(15814, 15, 'TOCA'),
+(15816, 15, 'TOGUI'),
+(15820, 15, 'TOPAGA'),
+(15822, 15, 'TOTA'),
+(15832, 15, 'TUNUNGUA'),
+(15835, 15, 'TURMEQUE'),
+(15837, 15, 'TUTA'),
+(15839, 15, 'TUTAZA'),
+(15842, 15, 'UMBITA'),
+(15861, 15, 'VENTAQUEMADA'),
+(15879, 15, 'VIRACACHA'),
+(15897, 15, 'ZETAQUIRA'),
+(17001, 17, 'MANIZALES'),
+(17013, 17, 'AGUADAS'),
+(17042, 17, 'ANSERMA'),
+(17050, 17, 'ARANZAZU'),
+(17088, 17, 'BELALCAZAR'),
+(17174, 17, 'CHINCHINA'),
+(17272, 17, 'FILADELFIA'),
+(17380, 17, 'LA DORADA'),
+(17388, 17, 'LA MERCED'),
+(17433, 17, 'MANZANARES'),
+(17442, 17, 'MARMATO'),
+(17444, 17, 'MARQUETALIA'),
+(17446, 17, 'MARULANDA'),
+(17486, 17, 'NEIRA'),
+(17495, 17, 'NORCASIA'),
+(17513, 17, 'PACORA'),
+(17524, 17, 'PALESTINA'),
+(17541, 17, 'PENSILVANIA'),
+(17614, 17, 'RIOSUCIO'),
+(17616, 17, 'RISARALDA'),
+(17653, 17, 'SALAMINA'),
+(17662, 17, 'SAMANA'),
+(17665, 17, 'SAN JOSE'),
+(17777, 17, 'SUPIA'),
+(17867, 17, 'VICTORIA'),
+(17873, 17, 'VILLAMARIA'),
+(17877, 17, 'VITERBO'),
+(18001, 18, 'FLORENCIA'),
+(18029, 18, 'ALBANIA'),
+(18094, 18, 'BELEN DE LOS ANDAQUIES'),
+(18150, 18, 'CARTAGENA DEL CHAIRA'),
+(18205, 18, 'CURILLO'),
+(18247, 18, 'EL DONCELLO'),
+(18256, 18, 'EL PAUJIL'),
+(18410, 18, 'LA MONTA?ITA'),
+(18460, 18, 'MILAN'),
+(18479, 18, 'MORELIA'),
+(18592, 18, 'PUERTO RICO'),
+(18610, 18, 'SAN JOSE DEL FRAGUA'),
+(18753, 18, 'SAN VICENTE DEL CAGUAN'),
+(18756, 18, 'SOLANO'),
+(18785, 18, 'SOLITA'),
+(18860, 18, 'VALPARAISO'),
+(19001, 19, 'POPAYAN'),
+(19022, 19, 'ALMAGUER'),
+(19050, 19, 'ARGELIA'),
+(19075, 19, 'BALBOA'),
+(19100, 19, 'BOLIVAR'),
+(19110, 19, 'BUENOS AIRES'),
+(19130, 19, 'CAJIBIO'),
+(19137, 19, 'CALDONO'),
+(19142, 19, 'CALOTO'),
+(19212, 19, 'CORINTO'),
+(19256, 19, 'EL TAMBO'),
+(19290, 19, 'FLORENCIA'),
+(19300, 19, 'GUACHENE'),
+(19318, 19, 'GUAPI'),
+(19355, 19, 'INZA'),
+(19364, 19, 'JAMBALO'),
+(19392, 19, 'LA SIERRA'),
+(19397, 19, 'LA VEGA'),
+(19418, 19, 'LOPEZ'),
+(19450, 19, 'MERCADERES'),
+(19455, 19, 'MIRANDA'),
+(19473, 19, 'MORALES'),
+(19513, 19, 'PADILLA'),
+(19517, 19, 'PAEZ'),
+(19532, 19, 'PATIA'),
+(19533, 19, 'PIAMONTE'),
+(19548, 19, 'PIENDAMO'),
+(19573, 19, 'PUERTO TEJADA'),
+(19585, 19, 'PURACE'),
+(19622, 19, 'ROSAS'),
+(19693, 19, 'SAN SEBASTIAN'),
+(19698, 19, 'SANTANDER DE QUILICHAO'),
+(19701, 19, 'SANTA ROSA'),
+(19743, 19, 'SILVIA'),
+(19760, 19, 'SOTARA'),
+(19780, 19, 'SUAREZ'),
+(19785, 19, 'SUCRE'),
+(19807, 19, 'TIMBIO'),
+(19809, 19, 'TIMBIQUI'),
+(19821, 19, 'TORIBIO'),
+(19824, 19, 'TOTORO'),
+(19845, 19, 'VILLA RICA'),
+(20001, 20, 'VALLEDUPAR'),
+(20011, 20, 'AGUACHICA'),
+(20013, 20, 'AGUSTIN CODAZZI'),
+(20032, 20, 'ASTREA'),
+(20045, 20, 'BECERRIL'),
+(20060, 20, 'BOSCONIA'),
+(20175, 20, 'CHIMICHAGUA'),
+(20178, 20, 'CHIRIGUANA'),
+(20228, 20, 'CURUMANI'),
+(20238, 20, 'EL COPEY'),
+(20250, 20, 'EL PASO'),
+(20295, 20, 'GAMARRA'),
+(20310, 20, 'GONZALEZ'),
+(20383, 20, 'LA GLORIA'),
+(20400, 20, 'LA JAGUA DE IBIRICO'),
+(20443, 20, 'MANAURE'),
+(20517, 20, 'PAILITAS'),
+(20550, 20, 'PELAYA'),
+(20570, 20, 'PUEBLO BELLO'),
+(20614, 20, 'RIO DE ORO'),
+(20621, 20, 'LA PAZ'),
+(20710, 20, 'SAN ALBERTO'),
+(20750, 20, 'SAN DIEGO'),
+(20770, 20, 'SAN MARTIN'),
+(20787, 20, 'TAMALAMEQUE'),
+(23001, 23, 'MONTERIA'),
+(23068, 23, 'AYAPEL'),
+(23079, 23, 'BUENAVISTA'),
+(23090, 23, 'CANALETE'),
+(23162, 23, 'CERETE'),
+(23168, 23, 'CHIMA'),
+(23182, 23, 'CHINU'),
+(23189, 23, 'CIENAGA DE ORO'),
+(23300, 23, 'COTORRA'),
+(23350, 23, 'LA APARTADA'),
+(23417, 23, 'LORICA'),
+(23419, 23, 'LOS CORDOBAS'),
+(23464, 23, 'MOMIL'),
+(23466, 23, 'MONTELIBANO'),
+(23500, 23, 'MO?ITOS'),
+(23555, 23, 'PLANETA RICA'),
+(23570, 23, 'PUEBLO NUEVO'),
+(23574, 23, 'PUERTO ESCONDIDO'),
+(23580, 23, 'PUERTO LIBERTADOR'),
+(23586, 23, 'PURISIMA'),
+(23660, 23, 'SAHAGUN'),
+(23670, 23, 'SAN ANDRES SOTAVENTO'),
+(23672, 23, 'SAN ANTERO'),
+(23675, 23, 'SAN BERNARDO DEL VIENTO'),
+(23678, 23, 'SAN CARLOS'),
+(23686, 23, 'SAN PELAYO'),
+(23807, 23, 'TIERRALTA'),
+(23855, 23, 'VALENCIA'),
+(25001, 25, 'AGUA DE DIOS'),
+(25019, 25, 'ALBAN'),
+(25035, 25, 'ANAPOIMA'),
+(25040, 25, 'ANOLAIMA'),
+(25053, 25, 'ARBELAEZ'),
+(25086, 25, 'BELTRAN'),
+(25095, 25, 'BITUIMA'),
+(25099, 25, 'BOJACA'),
+(25120, 25, 'CABRERA'),
+(25123, 25, 'CACHIPAY'),
+(25126, 25, 'CAJICA'),
+(25148, 25, 'CAPARRAPI'),
+(25151, 25, 'CAQUEZA'),
+(25154, 25, 'CARMEN DE CARUPA'),
+(25168, 25, 'CHAGUANI'),
+(25175, 25, 'CHIA'),
+(25178, 25, 'CHIPAQUE'),
+(25181, 25, 'CHOACHI'),
+(25183, 25, 'CHOCONTA'),
+(25200, 25, 'COGUA'),
+(25214, 25, 'COTA'),
+(25224, 25, 'CUCUNUBA'),
+(25245, 25, 'EL COLEGIO'),
+(25258, 25, 'EL PEÑON'),
+(25260, 25, 'EL ROSAL'),
+(25269, 25, 'FACATATIVA'),
+(25279, 25, 'FOMEQUE'),
+(25281, 25, 'FOSCA'),
+(25286, 25, 'FUNZA'),
+(25288, 25, 'FUQUENE'),
+(25290, 25, 'FUSAGASUGA'),
+(25293, 25, 'GACHALA'),
+(25295, 25, 'GACHANCIPA'),
+(25297, 25, 'GACHETA'),
+(25299, 25, 'GAMA'),
+(25307, 25, 'GIRARDOT'),
+(25312, 25, 'GRANADA'),
+(25317, 25, 'GUACHETA'),
+(25320, 25, 'GUADUAS'),
+(25322, 25, 'GUASCA'),
+(25324, 25, 'GUATAQUI'),
+(25326, 25, 'GUATAVITA'),
+(25328, 25, 'GUAYABAL DE SIQUIMA'),
+(25335, 25, 'GUAYABETAL'),
+(25339, 25, 'GUTIERREZ'),
+(25368, 25, 'JERUSALEN'),
+(25372, 25, 'JUNIN'),
+(25377, 25, 'LA CALERA'),
+(25386, 25, 'LA MESA'),
+(25394, 25, 'LA PALMA'),
+(25398, 25, 'LA PEÑA'),
+(25402, 25, 'LA VEGA'),
+(25407, 25, 'LENGUAZAQUE'),
+(25426, 25, 'MACHETA'),
+(25430, 25, 'MADRID'),
+(25436, 25, 'MANTA'),
+(25438, 25, 'MEDINA'),
+(25473, 25, 'MOSQUERA'),
+(25483, 25, 'NARIÑO'),
+(25486, 25, 'NEMOCON'),
+(25488, 25, 'NILO'),
+(25489, 25, 'NIMAIMA'),
+(25491, 25, 'NOCAIMA'),
+(25506, 25, 'VENECIA'),
+(25513, 25, 'PACHO'),
+(25518, 25, 'PAIME'),
+(25524, 25, 'PANDI'),
+(25530, 25, 'PARATEBUENO'),
+(25535, 25, 'PASCA'),
+(25572, 25, 'PUERTO SALGAR'),
+(25580, 25, 'PULI'),
+(25592, 25, 'QUEBRADANEGRA'),
+(25594, 25, 'QUETAME'),
+(25596, 25, 'QUIPILE'),
+(25599, 25, 'APULO'),
+(25612, 25, 'RICAURTE'),
+(25645, 25, 'SAN ANTONIO DEL TEQUENDAMA'),
+(25649, 25, 'SAN BERNARDO'),
+(25653, 25, 'SAN CAYETANO'),
+(25658, 25, 'SAN FRANCISCO'),
+(25662, 25, 'SAN JUAN DE RIO SECO'),
+(25718, 25, 'SASAIMA'),
+(25736, 25, 'SESQUILE'),
+(25740, 25, 'SIBATE'),
+(25743, 25, 'SILVANIA'),
+(25745, 25, 'SIMIJACA'),
+(25754, 25, 'SOACHA'),
+(25758, 25, 'SOPO'),
+(25769, 25, 'SUBACHOQUE'),
+(25772, 25, 'SUESCA'),
+(25777, 25, 'SUPATA'),
+(25779, 25, 'SUSA'),
+(25781, 25, 'SUTATAUSA'),
+(25785, 25, 'TABIO'),
+(25793, 25, 'TAUSA'),
+(25797, 25, 'TENA'),
+(25799, 25, 'TENJO'),
+(25805, 25, 'TIBACUY'),
+(25807, 25, 'TIBIRITA'),
+(25815, 25, 'TOCAIMA'),
+(25817, 25, 'TOCANCIPA'),
+(25823, 25, 'TOPAIPI'),
+(25839, 25, 'UBALA'),
+(25841, 25, 'UBAQUE'),
+(25843, 25, 'VILLA DE SAN DIEGO DE UBATE'),
+(25845, 25, 'UNE'),
+(25851, 25, 'UTICA'),
+(25862, 25, 'VERGARA'),
+(25867, 25, 'VIANI'),
+(25871, 25, 'VILLAGOMEZ'),
+(25873, 25, 'VILLAPINZON'),
+(25875, 25, 'VILLETA'),
+(25878, 25, 'VIOTA'),
+(25885, 25, 'YACOPI'),
+(25898, 25, 'ZIPACON'),
+(25899, 25, 'ZIPAQUIRA'),
+(27001, 27, 'QUIBDO'),
+(27006, 27, 'ACANDI'),
+(27025, 27, 'ALTO BAUDO'),
+(27050, 27, 'ATRATO'),
+(27073, 27, 'BAGADO'),
+(27075, 27, 'BAHIA SOLANO'),
+(27077, 27, 'BAJO BAUDO'),
+(27086, 27, 'BELEN DE BAJIRA'),
+(27099, 27, 'BOJAYA'),
+(27135, 27, 'EL CANTON DEL SAN PABLO'),
+(27150, 27, 'CARMEN DEL DARIEN'),
+(27160, 27, 'CERTEGUI'),
+(27205, 27, 'CONDOTO'),
+(27245, 27, 'EL CARMEN DE ATRATO'),
+(27250, 27, 'EL LITORAL DEL SAN JUAN'),
+(27361, 27, 'ISTMINA'),
+(27372, 27, 'JURADO'),
+(27413, 27, 'LLORO'),
+(27425, 27, 'MEDIO ATRATO'),
+(27430, 27, 'MEDIO BAUDO'),
+(27450, 27, 'MEDIO SAN JUAN'),
+(27491, 27, 'NOVITA'),
+(27495, 27, 'NUQUI'),
+(27580, 27, 'RIO IRO'),
+(27600, 27, 'RIO QUITO'),
+(27615, 27, 'RIOSUCIO'),
+(27660, 27, 'SAN JOSE DEL PALMAR'),
+(27745, 27, 'SIPI'),
+(27787, 27, 'TADO'),
+(27800, 27, 'UNGUIA'),
+(27810, 27, 'UNION PANAMERICANA'),
+(41001, 41, 'NEIVA'),
+(41006, 41, 'ACEVEDO'),
+(41013, 41, 'AGRADO'),
+(41016, 41, 'AIPE'),
+(41020, 41, 'ALGECIRAS'),
+(41026, 41, 'ALTAMIRA'),
+(41078, 41, 'BARAYA'),
+(41132, 41, 'CAMPOALEGRE'),
+(41206, 41, 'COLOMBIA'),
+(41244, 41, 'ELIAS'),
+(41298, 41, 'GARZON'),
+(41306, 41, 'GIGANTE'),
+(41319, 41, 'GUADALUPE'),
+(41349, 41, 'HOBO'),
+(41357, 41, 'IQUIRA'),
+(41359, 41, 'ISNOS'),
+(41378, 41, 'LA ARGENTINA'),
+(41396, 41, 'LA PLATA'),
+(41483, 41, 'NATAGA'),
+(41503, 41, 'OPORAPA'),
+(41518, 41, 'PAICOL'),
+(41524, 41, 'PALERMO'),
+(41530, 41, 'PALESTINA'),
+(41548, 41, 'PITAL'),
+(41551, 41, 'PITALITO'),
+(41615, 41, 'RIVERA'),
+(41660, 41, 'SALADOBLANCO'),
+(41668, 41, 'SAN AGUSTIN'),
+(41676, 41, 'SANTA MARIA'),
+(41770, 41, 'SUAZA'),
+(41791, 41, 'TARQUI'),
+(41797, 41, 'TESALIA'),
+(41799, 41, 'TELLO'),
+(41801, 41, 'TERUEL'),
+(41807, 41, 'TIMANA'),
+(41872, 41, 'VILLAVIEJA'),
+(41885, 41, 'YAGUARA'),
+(44001, 44, 'RIOHACHA'),
+(44035, 44, 'ALBANIA'),
+(44078, 44, 'BARRANCAS'),
+(44090, 44, 'DIBULLA'),
+(44098, 44, 'DISTRACCION'),
+(44110, 44, 'EL MOLINO'),
+(44279, 44, 'FONSECA'),
+(44378, 44, 'HATONUEVO'),
+(44420, 44, 'LA JAGUA DEL PILAR'),
+(44430, 44, 'MAICAO'),
+(44560, 44, 'MANAURE'),
+(44650, 44, 'SAN JUAN DEL CESAR'),
+(44847, 44, 'URIBIA'),
+(44855, 44, 'URUMITA'),
+(44874, 44, 'VILLANUEVA'),
+(47001, 47, 'SANTA MARTA'),
+(47030, 47, 'ALGARROBO'),
+(47053, 47, 'ARACATACA'),
+(47058, 47, 'ARIGUANI'),
+(47161, 47, 'CERRO SAN ANTONIO'),
+(47170, 47, 'CHIBOLO'),
+(47189, 47, 'CIENAGA'),
+(47205, 47, 'CONCORDIA'),
+(47245, 47, 'EL BANCO'),
+(47258, 47, 'EL PIÑON'),
+(47268, 47, 'EL RETEN'),
+(47288, 47, 'FUNDACION'),
+(47318, 47, 'GUAMAL'),
+(47460, 47, 'NUEVA GRANADA'),
+(47541, 47, 'PEDRAZA'),
+(47545, 47, 'PIJIÑO DEL CARMEN'),
+(47551, 47, 'PIVIJAY'),
+(47555, 47, 'PLATO'),
+(47570, 47, 'PUEBLOVIEJO'),
+(47605, 47, 'REMOLINO'),
+(47660, 47, 'SABANAS DE SAN ANGEL'),
+(47675, 47, 'SALAMINA'),
+(47692, 47, 'SAN SEBASTIAN DE BUENAVISTA'),
+(47703, 47, 'SAN ZENON'),
+(47707, 47, 'SANTA ANA'),
+(47720, 47, 'SANTA BARBARA DE PINTO'),
+(47745, 47, 'SITIONUEVO'),
+(47798, 47, 'TENERIFE'),
+(47960, 47, 'ZAPAYAN'),
+(47980, 47, 'ZONA BANANERA'),
+(50001, 50, 'VILLAVICENCIO'),
+(50006, 50, 'ACACIAS'),
+(50110, 50, 'BARRANCA DE UPIA'),
+(50124, 50, 'CABUYARO'),
+(50150, 50, 'CASTILLA LA NUEVA'),
+(50223, 50, 'CUBARRAL'),
+(50226, 50, 'CUMARAL'),
+(50245, 50, 'EL CALVARIO'),
+(50251, 50, 'EL CASTILLO'),
+(50270, 50, 'EL DORADO'),
+(50287, 50, 'FUENTE DE ORO'),
+(50313, 50, 'GRANADA'),
+(50318, 50, 'GUAMAL'),
+(50325, 50, 'MAPIRIPAN'),
+(50330, 50, 'MESETAS'),
+(50350, 50, 'LA MACARENA'),
+(50370, 50, 'URIBE'),
+(50400, 50, 'LEJANIAS'),
+(50450, 50, 'PUERTO CONCORDIA'),
+(50568, 50, 'PUERTO GAITAN'),
+(50573, 50, 'PUERTO LOPEZ'),
+(50577, 50, 'PUERTO LLERAS'),
+(50590, 50, 'PUERTO RICO'),
+(50606, 50, 'RESTREPO'),
+(50680, 50, 'SAN CARLOS DE GUAROA'),
+(50683, 50, 'SAN JUAN DE ARAMA'),
+(50686, 50, 'SAN JUANITO'),
+(50689, 50, 'SAN MARTIN'),
+(50711, 50, 'VISTAHERMOSA'),
+(52001, 52, 'PASTO'),
+(52019, 52, 'ALBAN'),
+(52022, 52, 'ALDANA'),
+(52036, 52, 'ANCUYA'),
+(52051, 52, 'ARBOLEDA'),
+(52079, 52, 'BARBACOAS'),
+(52083, 52, 'BELEN'),
+(52110, 52, 'BUESACO'),
+(52203, 52, 'COLON'),
+(52207, 52, 'CONSACA'),
+(52210, 52, 'CONTADERO'),
+(52215, 52, 'CORDOBA'),
+(52224, 52, 'CUASPUD'),
+(52227, 52, 'CUMBAL'),
+(52233, 52, 'CUMBITARA'),
+(52240, 52, 'CHACHAGUI'),
+(52250, 52, 'EL CHARCO'),
+(52254, 52, 'EL PEÑOL'),
+(52256, 52, 'EL ROSARIO'),
+(52258, 52, 'EL TABLON DE GOMEZ'),
+(52260, 52, 'EL TAMBO'),
+(52287, 52, 'FUNES'),
+(52317, 52, 'GUACHUCAL'),
+(52320, 52, 'GUAITARILLA'),
+(52323, 52, 'GUALMATAN'),
+(52352, 52, 'ILES'),
+(52354, 52, 'IMUES'),
+(52356, 52, 'IPIALES'),
+(52378, 52, 'LA CRUZ'),
+(52381, 52, 'LA FLORIDA'),
+(52385, 52, 'LA LLANADA'),
+(52390, 52, 'LA TOLA'),
+(52399, 52, 'LA UNION'),
+(52405, 52, 'LEIVA'),
+(52411, 52, 'LINARES'),
+(52418, 52, 'LOS ANDES'),
+(52427, 52, 'MAG?I'),
+(52435, 52, 'MALLAMA'),
+(52473, 52, 'MOSQUERA'),
+(52480, 52, 'NARIÑO'),
+(52490, 52, 'OLAYA HERRERA'),
+(52506, 52, 'OSPINA'),
+(52520, 52, 'FRANCISCO PIZARRO'),
+(52540, 52, 'POLICARPA'),
+(52560, 52, 'POTOSI'),
+(52565, 52, 'PROVIDENCIA'),
+(52573, 52, 'PUERRES'),
+(52585, 52, 'PUPIALES'),
+(52612, 52, 'RICAURTE'),
+(52621, 52, 'ROBERTO PAYAN'),
+(52678, 52, 'SAMANIEGO'),
+(52683, 52, 'SANDONA'),
+(52685, 52, 'SAN BERNARDO'),
+(52687, 52, 'SAN LORENZO'),
+(52693, 52, 'SAN PABLO'),
+(52694, 52, 'SAN PEDRO DE CARTAGO'),
+(52696, 52, 'SANTA BARBARA'),
+(52699, 52, 'SANTACRUZ'),
+(52720, 52, 'SAPUYES'),
+(52786, 52, 'TAMINANGO'),
+(52788, 52, 'TANGUA'),
+(52835, 52, 'SAN ANDRES DE TUMACO'),
+(52838, 52, 'TUQUERRES'),
+(52885, 52, 'YACUANQUER'),
+(54001, 54, 'CUCUTA'),
+(54003, 54, 'ABREGO'),
+(54051, 54, 'ARBOLEDAS'),
+(54099, 54, 'BOCHALEMA'),
+(54109, 54, 'BUCARASICA'),
+(54125, 54, 'CACOTA'),
+(54128, 54, 'CACHIRA'),
+(54172, 54, 'CHINACOTA'),
+(54174, 54, 'CHITAGA'),
+(54206, 54, 'CONVENCION'),
+(54223, 54, 'CUCUTILLA'),
+(54239, 54, 'DURANIA'),
+(54245, 54, 'EL CARMEN'),
+(54250, 54, 'EL TARRA'),
+(54261, 54, 'EL ZULIA'),
+(54313, 54, 'GRAMALOTE'),
+(54344, 54, 'HACARI'),
+(54347, 54, 'HERRAN'),
+(54377, 54, 'LABATECA'),
+(54385, 54, 'LA ESPERANZA'),
+(54398, 54, 'LA PLAYA'),
+(54405, 54, 'LOS PATIOS'),
+(54418, 54, 'LOURDES'),
+(54480, 54, 'MUTISCUA'),
+(54498, 54, 'OCAÑA'),
+(54518, 54, 'PAMPLONA'),
+(54520, 54, 'PAMPLONITA'),
+(54553, 54, 'PUERTO SANTANDER'),
+(54599, 54, 'RAGONVALIA'),
+(54660, 54, 'SALAZAR'),
+(54670, 54, 'SAN CALIXTO'),
+(54673, 54, 'SAN CAYETANO'),
+(54680, 54, 'SANTIAGO'),
+(54720, 54, 'SARDINATA'),
+(54743, 54, 'SILOS'),
+(54800, 54, 'TEORAMA'),
+(54810, 54, 'TIBU'),
+(54820, 54, 'TOLEDO'),
+(54871, 54, 'VILLA CARO'),
+(54874, 54, 'VILLA DEL ROSARIO'),
+(63001, 63, 'ARMENIA'),
+(63111, 63, 'BUENAVISTA'),
+(63130, 63, 'CALARCA'),
+(63190, 63, 'CIRCASIA'),
+(63212, 63, 'CORDOBA'),
+(63272, 63, 'FILANDIA'),
+(63302, 63, 'GENOVA'),
+(63401, 63, 'LA TEBAIDA'),
+(63470, 63, 'MONTENEGRO'),
+(63548, 63, 'PIJAO'),
+(63594, 63, 'QUIMBAYA'),
+(63690, 63, 'SALENTO'),
+(66001, 66, 'PEREIRA'),
+(66045, 66, 'APIA'),
+(66075, 66, 'BALBOA'),
+(66088, 66, 'BELEN DE UMBRIA'),
+(66170, 66, 'DOSQUEBRADAS'),
+(66318, 66, 'GUATICA'),
+(66383, 66, 'LA CELIA'),
+(66400, 66, 'LA VIRGINIA'),
+(66440, 66, 'MARSELLA'),
+(66456, 66, 'MISTRATO'),
+(66572, 66, 'PUEBLO RICO'),
+(66594, 66, 'QUINCHIA'),
+(66682, 66, 'SANTA ROSA DE CABAL'),
+(66687, 66, 'SANTUARIO'),
+(68001, 68, 'BUCARAMANGA'),
+(68013, 68, 'AGUADA'),
+(68020, 68, 'ALBANIA'),
+(68051, 68, 'ARATOCA'),
+(68077, 68, 'BARBOSA'),
+(68079, 68, 'BARICHARA'),
+(68081, 68, 'BARRANCABERMEJA'),
+(68092, 68, 'BETULIA'),
+(68101, 68, 'BOLIVAR'),
+(68121, 68, 'CABRERA'),
+(68132, 68, 'CALIFORNIA'),
+(68147, 68, 'CAPITANEJO'),
+(68152, 68, 'CARCASI'),
+(68160, 68, 'CEPITA'),
+(68162, 68, 'CERRITO'),
+(68167, 68, 'CHARALA'),
+(68169, 68, 'CHARTA'),
+(68176, 68, 'CHIMA'),
+(68179, 68, 'CHIPATA'),
+(68190, 68, 'CIMITARRA'),
+(68207, 68, 'CONCEPCION'),
+(68209, 68, 'CONFINES'),
+(68211, 68, 'CONTRATACION'),
+(68217, 68, 'COROMORO'),
+(68229, 68, 'CURITI'),
+(68235, 68, 'EL CARMEN DE CHUCURI'),
+(68245, 68, 'EL GUACAMAYO'),
+(68250, 68, 'EL PEÑON'),
+(68255, 68, 'EL PLAYON'),
+(68264, 68, 'ENCINO'),
+(68266, 68, 'ENCISO'),
+(68271, 68, 'FLORIAN'),
+(68276, 68, 'FLORIDABLANCA'),
+(68296, 68, 'GALAN'),
+(68298, 68, 'GAMBITA'),
+(68307, 68, 'GIRON'),
+(68318, 68, 'GUACA'),
+(68320, 68, 'GUADALUPE'),
+(68322, 68, 'GUAPOTA'),
+(68324, 68, 'GUAVATA'),
+(68327, 68, 'GUEPSA'),
+(68344, 68, 'HATO'),
+(68368, 68, 'JESUS MARIA'),
+(68370, 68, 'JORDAN'),
+(68377, 68, 'LA BELLEZA'),
+(68385, 68, 'LANDAZURI'),
+(68397, 68, 'LA PAZ'),
+(68406, 68, 'LEBRIJA'),
+(68418, 68, 'LOS SANTOS'),
+(68425, 68, 'MACARAVITA'),
+(68432, 68, 'MALAGA'),
+(68444, 68, 'MATANZA'),
+(68464, 68, 'MOGOTES'),
+(68468, 68, 'MOLAGAVITA'),
+(68498, 68, 'OCAMONTE'),
+(68500, 68, 'OIBA'),
+(68502, 68, 'ONZAGA'),
+(68522, 68, 'PALMAR'),
+(68524, 68, 'PALMAS DEL SOCORRO'),
+(68533, 68, 'PARAMO'),
+(68547, 68, 'PIEDECUESTA'),
+(68549, 68, 'PINCHOTE'),
+(68572, 68, 'PUENTE NACIONAL'),
+(68573, 68, 'PUERTO PARRA'),
+(68575, 68, 'PUERTO WILCHES'),
+(68615, 68, 'RIONEGRO'),
+(68655, 68, 'SABANA DE TORRES'),
+(68669, 68, 'SAN ANDRES'),
+(68673, 68, 'SAN BENITO'),
+(68679, 68, 'SAN GIL'),
+(68682, 68, 'SAN JOAQUIN'),
+(68684, 68, 'SAN JOSE DE MIRANDA'),
+(68686, 68, 'SAN MIGUEL'),
+(68689, 68, 'SAN VICENTE DE CHUCURI'),
+(68705, 68, 'SANTA BARBARA'),
+(68720, 68, 'SANTA HELENA DEL OPON'),
+(68745, 68, 'SIMACOTA'),
+(68755, 68, 'SOCORRO'),
+(68770, 68, 'SUAITA'),
+(68773, 68, 'SUCRE'),
+(68780, 68, 'SURATA'),
+(68820, 68, 'TONA'),
+(68855, 68, 'VALLE DE SAN JOSE'),
+(68861, 68, 'VELEZ'),
+(68867, 68, 'VETAS'),
+(68872, 68, 'VILLANUEVA'),
+(68895, 68, 'ZAPATOCA'),
+(70001, 70, 'SINCELEJO'),
+(70110, 70, 'BUENAVISTA'),
+(70124, 70, 'CAIMITO'),
+(70204, 70, 'COLOSO'),
+(70215, 70, 'COROZAL'),
+(70221, 70, 'COVE?AS'),
+(70230, 70, 'CHALAN'),
+(70233, 70, 'EL ROBLE'),
+(70235, 70, 'GALERAS'),
+(70265, 70, 'GUARANDA'),
+(70400, 70, 'LA UNION'),
+(70418, 70, 'LOS PALMITOS'),
+(70429, 70, 'MAJAGUAL'),
+(70473, 70, 'MORROA'),
+(70508, 70, 'OVEJAS'),
+(70523, 70, 'PALMITO'),
+(70670, 70, 'SAMPUES'),
+(70678, 70, 'SAN BENITO ABAD'),
+(70702, 70, 'SAN JUAN DE BETULIA'),
+(70708, 70, 'SAN MARCOS'),
+(70713, 70, 'SAN ONOFRE'),
+(70717, 70, 'SAN PEDRO'),
+(70742, 70, 'SAN LUIS DE SINCE'),
+(70771, 70, 'SUCRE'),
+(70820, 70, 'SANTIAGO DE TOLU'),
+(70823, 70, 'TOLU VIEJO'),
+(73001, 73, 'IBAGUE'),
+(73024, 73, 'ALPUJARRA'),
+(73026, 73, 'ALVARADO'),
+(73030, 73, 'AMBALEMA'),
+(73043, 73, 'ANZOATEGUI'),
+(73055, 73, 'ARMERO'),
+(73067, 73, 'ATACO'),
+(73124, 73, 'CAJAMARCA'),
+(73148, 73, 'CARMEN DE APICALA'),
+(73152, 73, 'CASABIANCA'),
+(73168, 73, 'CHAPARRAL'),
+(73200, 73, 'COELLO'),
+(73217, 73, 'COYAIMA'),
+(73226, 73, 'CUNDAY'),
+(73236, 73, 'DOLORES'),
+(73268, 73, 'ESPINAL'),
+(73270, 73, 'FALAN'),
+(73275, 73, 'FLANDES'),
+(73283, 73, 'FRESNO'),
+(73319, 73, 'GUAMO'),
+(73347, 73, 'HERVEO'),
+(73349, 73, 'HONDA'),
+(73352, 73, 'ICONONZO'),
+(73408, 73, 'LERIDA'),
+(73411, 73, 'LIBANO'),
+(73443, 73, 'MARIQUITA'),
+(73449, 73, 'MELGAR'),
+(73461, 73, 'MURILLO'),
+(73483, 73, 'NATAGAIMA'),
+(73504, 73, 'ORTEGA'),
+(73520, 73, 'PALOCABILDO'),
+(73547, 73, 'PIEDRAS'),
+(73555, 73, 'PLANADAS'),
+(73563, 73, 'PRADO'),
+(73585, 73, 'PURIFICACION'),
+(73616, 73, 'RIOBLANCO'),
+(73622, 73, 'RONCESVALLES'),
+(73624, 73, 'ROVIRA'),
+(73671, 73, 'SALDAÑA'),
+(73675, 73, 'SAN ANTONIO'),
+(73678, 73, 'SAN LUIS'),
+(73686, 73, 'SANTA ISABEL'),
+(73770, 73, 'SUAREZ'),
+(73854, 73, 'VALLE DE SAN JUAN'),
+(73861, 73, 'VENADILLO'),
+(73870, 73, 'VILLAHERMOSA'),
+(73873, 73, 'VILLARRICA'),
+(76001, 76, 'CALI'),
+(76020, 76, 'ALCALA'),
+(76036, 76, 'ANDALUCIA'),
+(76041, 76, 'ANSERMANUEVO'),
+(76054, 76, 'ARGELIA'),
+(76100, 76, 'BOLIVAR'),
+(76109, 76, 'BUENAVENTURA'),
+(76111, 76, 'GUADALAJARA DE BUGA'),
+(76113, 76, 'BUGALAGRANDE'),
+(76122, 76, 'CAICEDONIA'),
+(76126, 76, 'CALIMA'),
+(76130, 76, 'CANDELARIA'),
+(76147, 76, 'CARTAGO'),
+(76233, 76, 'DAGUA'),
+(76243, 76, 'EL AGUILA'),
+(76246, 76, 'EL CAIRO'),
+(76248, 76, 'EL CERRITO'),
+(76250, 76, 'EL DOVIO'),
+(76275, 76, 'FLORIDA'),
+(76306, 76, 'GINEBRA'),
+(76318, 76, 'GUACARI'),
+(76364, 76, 'JAMUNDI'),
+(76377, 76, 'LA CUMBRE'),
+(76400, 76, 'LA UNION'),
+(76403, 76, 'LA VICTORIA'),
+(76497, 76, 'OBANDO'),
+(76520, 76, 'PALMIRA'),
+(76563, 76, 'PRADERA'),
+(76606, 76, 'RESTREPO'),
+(76616, 76, 'RIOFRIO'),
+(76622, 76, 'ROLDANILLO'),
+(76670, 76, 'SAN PEDRO'),
+(76736, 76, 'SEVILLA'),
+(76823, 76, 'TORO'),
+(76828, 76, 'TRUJILLO'),
+(76834, 76, 'TULUA'),
+(76845, 76, 'ULLOA'),
+(76863, 76, 'VERSALLES'),
+(76869, 76, 'VIJES'),
+(76890, 76, 'YOTOCO'),
+(76892, 76, 'YUMBO'),
+(76895, 76, 'ZARZAL'),
+(81001, 81, 'ARAUCA'),
+(81065, 81, 'ARAUQUITA'),
+(81220, 81, 'CRAVO NORTE'),
+(81300, 81, 'FORTUL'),
+(81591, 81, 'PUERTO RONDON'),
+(81736, 81, 'SARAVENA'),
+(81794, 81, 'TAME'),
+(85001, 85, 'YOPAL'),
+(85010, 85, 'AGUAZUL'),
+(85015, 85, 'CHAMEZA'),
+(85125, 85, 'HATO COROZAL'),
+(85136, 85, 'LA SALINA'),
+(85139, 85, 'MANI'),
+(85162, 85, 'MONTERREY'),
+(85225, 85, 'NUNCHIA'),
+(85230, 85, 'OROCUE'),
+(85250, 85, 'PAZ DE ARIPORO'),
+(85263, 85, 'PORE'),
+(85279, 85, 'RECETOR'),
+(85300, 85, 'SABANALARGA'),
+(85315, 85, 'SACAMA'),
+(85325, 85, 'SAN LUIS DE PALENQUE'),
+(85400, 85, 'TAMARA'),
+(85410, 85, 'TAURAMENA'),
+(85430, 85, 'TRINIDAD'),
+(85440, 85, 'VILLANUEVA'),
+(86001, 86, 'MOCOA'),
+(86219, 86, 'COLON'),
+(86320, 86, 'ORITO'),
+(86568, 86, 'PUERTO ASIS'),
+(86569, 86, 'PUERTO CAICEDO'),
+(86571, 86, 'PUERTO GUZMAN'),
+(86573, 86, 'LEGUIZAMO'),
+(86749, 86, 'SIBUNDOY'),
+(86755, 86, 'SAN FRANCISCO'),
+(86757, 86, 'SAN MIGUEL'),
+(86760, 86, 'SANTIAGO'),
+(86865, 86, 'VALLE DEL GUAMUEZ'),
+(86885, 86, 'VILLAGARZON'),
+(88001, 88, 'SAN ANDRES'),
+(88564, 88, 'PROVIDENCIA'),
+(91001, 91, 'LETICIA'),
+(91263, 91, 'EL ENCANTO'),
+(91405, 91, 'LA CHORRERA'),
+(91407, 91, 'LA PEDRERA'),
+(91430, 91, 'LA VICTORIA'),
+(91460, 91, 'MIRITI - PARANA'),
+(91530, 91, 'PUERTO ALEGRIA'),
+(91536, 91, 'PUERTO ARICA'),
+(91540, 91, 'PUERTO NARI?O'),
+(91669, 91, 'PUERTO SANTANDER'),
+(91798, 91, 'TARAPACA'),
+(94001, 94, 'INIRIDA'),
+(94343, 94, 'BARRANCO MINAS'),
+(94663, 94, 'MAPIRIPANA'),
+(94883, 94, 'SAN FELIPE'),
+(94884, 94, 'PUERTO COLOMBIA'),
+(94885, 94, 'LA GUADALUPE'),
+(94886, 94, 'CACAHUAL'),
+(94887, 94, 'PANA PANA'),
+(94888, 94, 'MORICHAL'),
+(95001, 95, 'SAN JOSE DEL GUAVIARE'),
+(95015, 95, 'CALAMAR'),
+(95025, 95, 'EL RETORNO'),
+(95200, 95, 'MIRAFLORES'),
+(97001, 97, 'MITU'),
+(97161, 97, 'CARURU'),
+(97511, 97, 'PACOA'),
+(97666, 97, 'TARAIRA'),
+(97777, 97, 'PAPUNAUA'),
+(97889, 97, 'YAVARATE'),
+(99001, 99, 'PUERTO CARRE?O'),
+(99524, 99, 'LA PRIMAVERA'),
+(99624, 99, 'SANTA ROSALIA'),
+(99773, 99, 'CUMARIBO');
 
 -- --------------------------------------------------------
 
@@ -337,14 +1552,16 @@ CREATE TABLE `estabilizacion` (
 --
 
 CREATE TABLE `ovictimas_ayudasrecibidas` (
-  `Atencion_Menor_Otra` varchar(3) NOT NULL,
-  `Cuidado_Infantil_Otra_Otra` varchar(3) NOT NULL,
-  `Pro_Alimentacion_Otra` varchar(3) NOT NULL,
-  `Hambre_FaltaA_Otra` varchar(3) NOT NULL,
-  `Seguridad_AI_Otra` varchar(3) NOT NULL,
-  `Comple_Alimenticio_Otra` varchar(3) NOT NULL,
-  `Benefi_Desayuno_Otra` varchar(3) NOT NULL,
-  `Ayuda_Municipio_Otra` varchar(100) NOT NULL
+  `ID_AYUDASRECIBIDASO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `ATENCION_MENOR_OTRA` varchar(3) DEFAULT NULL,
+  `CUIDADO_INFANTIL_OTRA_OTRA` varchar(3) DEFAULT NULL,
+  `PRO_ALIMENTACION_OTRA` varchar(3) DEFAULT NULL,
+  `HAMBRE_FALTAA_OTRA` varchar(3) DEFAULT NULL,
+  `SEGURIDAD_AI_OTRA` varchar(3) DEFAULT NULL,
+  `COMPLE_ALIMENTICIO_OTRA` varchar(3) DEFAULT NULL,
+  `BENEFI_DESAYUNO_OTRA` varchar(3) DEFAULT NULL,
+  `AYUDA_MUNICIPIO_OTRA` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -354,21 +1571,21 @@ CREATE TABLE `ovictimas_ayudasrecibidas` (
 --
 
 CREATE TABLE `ovictimas_datos` (
-  `Documento_Otra` int(11) NOT NULL,
-  `Nombre_Completo_Otra` varchar(60) NOT NULL,
-  `Tipo_de_Documento_Otra` varchar(50) NOT NULL,
-  `Fecha_de_Victimizacion_Otra` date NOT NULL,
-  `Codigo_RUPV_Otra` varchar(25) NOT NULL,
-  `Departamento_Otra` varchar(25) NOT NULL,
-  `Municipio_Otra` varchar(25) NOT NULL,
-  `Zona_Otra` varchar(7) NOT NULL,
-  `Localidad_Otra` varchar(30) NOT NULL,
-  `Direccion_Otra` varchar(40) NOT NULL,
-  `Telefono_Otra` int(15) NOT NULL,
-  `Estado_Civil_Otra` varchar(25) NOT NULL,
-  `Parentesco_Otra` varchar(25) NOT NULL,
-  `Es_Jefe_de_Hogar_Otra` varchar(3) NOT NULL,
-  `Territorio_Otra` varchar(25) NOT NULL
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `NOMBRE_COMPLETO_OTRA` varchar(60) DEFAULT NULL,
+  `TIPO_DE_DOCUMENTO_OTRA` varchar(50) DEFAULT NULL,
+  `FECHA_DE_VICTIMIZACION_OTRA` date DEFAULT NULL,
+  `CODIGO_RUPV_OTRA` varchar(25) DEFAULT NULL,
+  `DEPARTAMENTO_OTRA` varchar(25) DEFAULT NULL,
+  `MUNICIPIO_OTRA` varchar(25) DEFAULT NULL,
+  `ZONA_OTRA` varchar(7) DEFAULT NULL,
+  `LOCALIDAD_OTRA` varchar(30) DEFAULT NULL,
+  `DIRECCION_OTRA` varchar(40) DEFAULT NULL,
+  `TELEFONO_OTRA` int(11) DEFAULT NULL,
+  `ESTADO_CIVIL_OTRA` varchar(25) DEFAULT NULL,
+  `PARENTESCO_OTRA` varchar(25) DEFAULT NULL,
+  `ES_JEFE_DE_HOGAR_OTRA` varchar(3) DEFAULT NULL,
+  `TERRITORIO_OTRA` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -378,20 +1595,22 @@ CREATE TABLE `ovictimas_datos` (
 --
 
 CREATE TABLE `ovictimas_discapacidad` (
-  `Antes_Desplazamiento_Otra` varchar(3) NOT NULL,
-  `Igual_Condiciones_Otra` varchar(3) NOT NULL,
-  `Entidad_Rehabilitacion_Otra` varchar(3) NOT NULL,
-  `Rehubicacion_Laboral_Otra` varchar(3) NOT NULL,
-  `Marginado_Discriminado_Otra` varchar(3) NOT NULL,
-  `Encuentra_P_P_Otra` varchar(3) NOT NULL,
-  `Excluido_Otra` varchar(3) NOT NULL,
-  `Rehabilitacion_Otra` varchar(3) NOT NULL,
-  `Subsidio_Discapacidad_Otra` varchar(3) NOT NULL,
-  `Capacidad_Econo_Otra` varchar(3) NOT NULL,
-  `Menores_18_Otra` varchar(3) NOT NULL,
-  `Recibio_Ayu_Huma_Otra` varchar(3) NOT NULL,
-  `Organizacion_Despla_Otra` varchar(3) NOT NULL,
-  `Participacion_OPDS_Otra` varchar(3) NOT NULL
+  `ID_DISCAPACIDADO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `ANTES_DESPLAZAMIENTO_OTRA` varchar(3) DEFAULT NULL,
+  `IGUAL_CONDICIONES_OTRA` varchar(3) DEFAULT NULL,
+  `ENTIDAD_REHABILITACION_OTRA` varchar(3) DEFAULT NULL,
+  `REHUBICACION_LABORAL_OTRA` varchar(3) DEFAULT NULL,
+  `MARGINADO_DISCRIMINADO_OTRA` varchar(3) DEFAULT NULL,
+  `ENCUENTRA_P_P_OTRA` varchar(3) DEFAULT NULL,
+  `EXCLUIDO_OTRA` varchar(3) DEFAULT NULL,
+  `REHABILITACION_OTRA` varchar(3) DEFAULT NULL,
+  `SUBSIDIO_DISCAPACIDAD_OTRA` varchar(3) DEFAULT NULL,
+  `CAPACIDAD_ECONO_OTRA` varchar(3) DEFAULT NULL,
+  `MENORES_18_OTRA` varchar(3) DEFAULT NULL,
+  `RECIBIO_AYU_HUMA_OTRA` varchar(3) DEFAULT NULL,
+  `ORGANIZACION_DESPLA_OTRA` varchar(3) DEFAULT NULL,
+  `PARTICIPACION_OPDS_OTRA` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -401,20 +1620,22 @@ CREATE TABLE `ovictimas_discapacidad` (
 --
 
 CREATE TABLE `ovictimas_economiafamiliar` (
-  `Ingresos_Mensuales_Otra` varchar(50) NOT NULL,
-  `Gastos_Mensuales_Otra` varchar(50) NOT NULL,
-  `1_Gasto_Otra` varchar(20) NOT NULL,
-  `2_Gasto_Otra` varchar(20) NOT NULL,
-  `3_Gasto_Otra` varchar(20) NOT NULL,
-  `No_Comidas_Dia_Otra` varchar(15) NOT NULL,
-  `Adultos_Otra` varchar(25) NOT NULL,
-  `Ninos_Otra` varchar(25) NOT NULL,
-  `Menores_2Anos_Otra` varchar(25) NOT NULL,
-  `Alimentacion_Cultura_Otra` varchar(3) NOT NULL,
-  `Alimentacion_Adecuada_Otra` varchar(3) NOT NULL,
-  `Fuente_1_Otra` varchar(25) NOT NULL,
-  `Fuente_2_Otra` varchar(25) NOT NULL,
-  `Fuente_3_Otra` varchar(25) NOT NULL
+  `ID_ECONOMIAFAMILIARO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `INGRESOS_MENSUALES_OTRA` varchar(50) DEFAULT NULL,
+  `GASTOS_MENSUALES_OTRA` varchar(50) DEFAULT NULL,
+  `1_GASTO_OTRA` varchar(20) DEFAULT NULL,
+  `2_GASTO_OTRA` varchar(20) DEFAULT NULL,
+  `3_GASTO_OTRA` varchar(20) DEFAULT NULL,
+  `NO_COMIDAS_DIA_OTRA` varchar(15) DEFAULT NULL,
+  `ADULTOS_OTRA` varchar(25) DEFAULT NULL,
+  `NINOS_OTRA` varchar(25) DEFAULT NULL,
+  `MENORES_2ANOS_OTRA` varchar(25) DEFAULT NULL,
+  `ALIMENTACION_CULTURA_OTRA` varchar(3) DEFAULT NULL,
+  `ALIMENTACION_ADECUADA_OTRA` varchar(3) DEFAULT NULL,
+  `FUENTE_1_OTRA` varchar(25) DEFAULT NULL,
+  `FUENTE_2_OTRA` varchar(25) DEFAULT NULL,
+  `FUENTE_3_OTRA` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -424,15 +1645,17 @@ CREATE TABLE `ovictimas_economiafamiliar` (
 --
 
 CREATE TABLE `ovictimas_especialproteccion` (
-  `Ayuda_Cultura_Otra` varchar(3) NOT NULL,
-  `Ayuda_18_Cultura_Otra` varchar(3) NOT NULL,
-  `Funcionario_Trato_Otra` varchar(3) NOT NULL,
-  `Pueblo_Indigena_Otra` varchar(45) NOT NULL,
-  `Indigenas_VioIntra_Otra` varchar(3) NOT NULL,
-  `Denunciado_Otra` varchar(3) NOT NULL,
-  `CualEntidad_Denun_Otra` varchar(40) NOT NULL,
-  `Tipo_Violencia_Otra` varchar(15) NOT NULL,
-  `Promueven_Derechos_Otra` varchar(3) NOT NULL
+  `ID_ESPECIALPROTECCIONO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `AYUDA_CULTURA_OTRA` varchar(3) DEFAULT NULL,
+  `AYUDA_18_CULTURA_OTRA` varchar(3) DEFAULT NULL,
+  `FUNCIONARIO_TRATO_OTRA` varchar(3) DEFAULT NULL,
+  `PUEBLO_INDIGENA_OTRA` varchar(45) DEFAULT NULL,
+  `INDIGENAS_VIOINTRA_OTRA` varchar(3) DEFAULT NULL,
+  `DENUNCIADO_OTRA` varchar(3) DEFAULT NULL,
+  `CUALENTIDAD_DENUN_OTRA` varchar(40) DEFAULT NULL,
+  `TIPO_VIOLENCIA_OTRA` varchar(15) DEFAULT NULL,
+  `PROMUEVEN_DERECHOS_OTRA` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -442,51 +1665,52 @@ CREATE TABLE `ovictimas_especialproteccion` (
 --
 
 CREATE TABLE `ovictimas_familiar` (
-  `Identificacion_Otra` int(11) NOT NULL,
-  `Tipo_Identificacion_Otra` varchar(50) NOT NULL,
-  `Nombres_Otra` varchar(25) NOT NULL,
-  `Apellidos_Otra` varchar(25) NOT NULL,
-  `Genero_Otra` varchar(10) NOT NULL,
-  `Fecha_Nacimiento_Otra` date NOT NULL,
-  `Edad_Otra` int(2) NOT NULL,
-  `Enfoque_Diferencial_Otra` varchar(20) NOT NULL,
-  `Estado_Civil_Otra` varchar(20) NOT NULL,
-  `Parentesco_Otra` varchar(20) NOT NULL,
-  `Estuvo_Separado_Otra` varchar(3) NOT NULL,
-  `Discapacitado_Otra` varchar(3) NOT NULL,
-  `Discapacidad_Otra` varchar(45) NOT NULL,
-  `Cual_D_Otra` varchar(45) NOT NULL,
-  `Ha_Sido_Victima_M_A_Otra` varchar(3) NOT NULL,
-  `Recibio_Auxilio_T_E_C_A_Otra` varchar(3) NOT NULL,
-  `Se_Otorgo_Ayuda_M_Otra` varchar(100) NOT NULL,
-  `Otra_A_M_Otra` varchar(25) NOT NULL,
-  `En_cuanto_Indemnizacion_Otra` varchar(200) NOT NULL,
-  `Afiliado_Salud_Otra_Otra` varchar(3) NOT NULL,
-  `Regimen_Otra` varchar(20) NOT NULL,
-  `Cual_R_Otra` varchar(20) NOT NULL,
-  `Recibio_Atencion_S_M_Otra` varchar(3) NOT NULL,
-  `Recibio_Apoyo_PsicoSocial_Otra` varchar(3) NOT NULL,
-  `Asistio_Programa_S_R_Otra` varchar(3) NOT NULL,
-  `Vacunas_Otra` varchar(3) NOT NULL,
-  `Cuales_Vacunas_Otra` varchar(60) NOT NULL,
-  `Diagnosticado_E_C_Otra` varchar(3) NOT NULL,
-  `Cual_Enfermedad_Otra` varchar(3) NOT NULL,
-  `Califique_E_S_Otra` int(2) NOT NULL,
-  `Estudiaba_Antes_V_Otra` varchar(3) NOT NULL,
-  `Estudia_Actualmente_Otra` varchar(3) NOT NULL,
-  `Programa_A_E_Otra` varchar(3) NOT NULL,
-  `Cancela_Costo_E_Otra` varchar(3) NOT NULL,
-  `Sabe_Leer_Otra` varchar(3) NOT NULL,
-  `Nivel_Alcanzado_Otra` varchar(15) NOT NULL,
-  `Competencia_Laboral_Otra` varchar(35) NOT NULL,
-  `Competencia_Certificada_Otra` varchar(3) NOT NULL,
-  `Gustaria _Capacitarse_Otra` varchar(35) NOT NULL,
-  `Horario_Capacitacion_Otra` varchar(10) NOT NULL,
-  `Actividad_Laboral_Actual_Otra` varchar(20) NOT NULL,
-  `Rama_Actividad_Actual_Otra` varchar(35) NOT NULL,
-  `Contrato_Escrito_Otra` varchar(3) NOT NULL,
-  `Trabaja_Jornada_Otra` varchar(7) NOT NULL,
-  `S_Social_R_P_Otra` varchar(3) NOT NULL
+  `IDENTIFICACION_FAMILIARO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `TIPO_IDENTIFICACION_OTRA` varchar(50) DEFAULT NULL,
+  `NOMBRES_OTRA` varchar(25) DEFAULT NULL,
+  `APELLIDOS_OTRA` varchar(25) DEFAULT NULL,
+  `GENERO_OTRA` varchar(10) DEFAULT NULL,
+  `FECHA_NACIMIENTO_OTRA` date DEFAULT NULL,
+  `EDAD_OTRA` int(11) DEFAULT NULL,
+  `ENFOQUE_DIFERENCIAL_OTRA` varchar(20) DEFAULT NULL,
+  `ESTADO_CIVIL_OTRA` varchar(20) DEFAULT NULL,
+  `PARENTESCO_OTRA` varchar(20) DEFAULT NULL,
+  `ESTUVO_SEPARADO_OTRA` varchar(3) DEFAULT NULL,
+  `DISCAPACITADO_OTRA` varchar(3) DEFAULT NULL,
+  `DISCAPACIDAD_OTRA` varchar(45) DEFAULT NULL,
+  `CUAL_D_OTRA` varchar(45) DEFAULT NULL,
+  `HA_SIDO_VICTIMA_M_A_OTRA` varchar(3) DEFAULT NULL,
+  `RECIBIO_AUXILIO_T_E_C_A_OTRA` varchar(3) DEFAULT NULL,
+  `SE_OTORGO_AYUDA_M_OTRA` varchar(100) DEFAULT NULL,
+  `OTRA_A_M_OTRA` varchar(25) DEFAULT NULL,
+  `EN_CUANTO_INDEMNIZACION_OTRA` varchar(200) DEFAULT NULL,
+  `AFILIADO_SALUD_OTRA_OTRA` varchar(3) DEFAULT NULL,
+  `REGIMEN_OTRA` varchar(20) DEFAULT NULL,
+  `CUAL_R_OTRA` varchar(20) DEFAULT NULL,
+  `RECIBIO_ATENCION_S_M_OTRA` varchar(3) DEFAULT NULL,
+  `RECIBIO_APOYO_PSICOSOCIAL_OTRA` varchar(3) DEFAULT NULL,
+  `ASISTIO_PROGRAMA_S_R_OTRA` varchar(3) DEFAULT NULL,
+  `VACUNAS_OTRA` varchar(3) DEFAULT NULL,
+  `CUALES_VACUNAS_OTRA` varchar(60) DEFAULT NULL,
+  `DIAGNOSTICADO_E_C_OTRA` varchar(3) DEFAULT NULL,
+  `CUAL_ENFERMEDAD_OTRA` varchar(3) DEFAULT NULL,
+  `CALIFIQUE_E_S_OTRA` int(11) DEFAULT NULL,
+  `ESTUDIABA_ANTES_V_OTRA` varchar(3) DEFAULT NULL,
+  `ESTUDIA_ACTUALMENTE_OTRA` varchar(3) DEFAULT NULL,
+  `PROGRAMA_A_E_OTRA` varchar(3) DEFAULT NULL,
+  `CANCELA_COSTO_E_OTRA` varchar(3) DEFAULT NULL,
+  `SABE_LEER_OTRA` varchar(3) DEFAULT NULL,
+  `NIVEL_ALCANZADO_OTRA` varchar(15) DEFAULT NULL,
+  `COMPETENCIA_LABORAL_OTRA` varchar(35) DEFAULT NULL,
+  `COMPETENCIA_CERTIFICADA_OTRA` varchar(3) DEFAULT NULL,
+  `GUSTARIA__CAPACITARSE_OTRA_` varchar(35) DEFAULT NULL,
+  `HORARIO_CAPACITACION_OTRA` varchar(10) DEFAULT NULL,
+  `ACTIVIDAD_LABORAL_ACTUAL_OTRA` varchar(20) DEFAULT NULL,
+  `RAMA_ACTIVIDAD_ACTUAL_OTRA` varchar(35) DEFAULT NULL,
+  `CONTRATO_ESCRITO_OTRA` varchar(3) DEFAULT NULL,
+  `TRABAJA_JORNADA_OTRA` varchar(7) DEFAULT NULL,
+  `S_SOCIAL_R_P_OTRA` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -496,27 +1720,29 @@ CREATE TABLE `ovictimas_familiar` (
 --
 
 CREATE TABLE `ovictimas_proteccion` (
-  `Solicitar_Proteccion_Otra` varchar(200) NOT NULL,
-  `Otra_Entidad_Otra` varchar(30) NOT NULL,
-  `AyudaPoblac_desplaza_Otra` varchar(3) NOT NULL,
-  `Mujer_Otra` varchar(3) NOT NULL,
-  `Adulto_Mayor_Otra` varchar(3) NOT NULL,
-  `Jovenes_Otra` varchar(3) NOT NULL,
-  `Discapacidad_Otra` varchar(3) NOT NULL,
-  `Afiliado_OPD_Otra` varchar(3) NOT NULL,
-  `Cual_OPD_Otra` varchar(30) NOT NULL,
-  `Participa_E_P_P_Otra` varchar(3) NOT NULL,
-  `Cual_E_P_P_Otra` varchar(30) NOT NULL,
-  `Ayuda_Humanitaria_Otra` varchar(40) NOT NULL,
-  `Salud_Otra` varchar(40) NOT NULL,
-  `Generacion_Ingresos_Otra` varchar(40) NOT NULL,
-  `Atencion_Vivienda_Otra` varchar(40) NOT NULL,
-  `Educacion_Otra` varchar(40) NOT NULL,
-  `Prioridad_1_Otra` varchar(40) NOT NULL,
-  `Prioridad_2_Otra` varchar(40) NOT NULL,
-  `Prioridad_3_Otra` varchar(40) NOT NULL,
-  `Prioridad_4_Otra` varchar(40) NOT NULL,
-  `Prioridad_5_Otra` varchar(40) NOT NULL
+  `ID_PROTECCIONO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `SOLICITAR_PROTECCION_OTRA` varchar(200) DEFAULT NULL,
+  `OTRA_ENTIDAD_OTRA` varchar(30) DEFAULT NULL,
+  `AYUDAPOBLAC_DESPLAZA_OTRA` varchar(3) DEFAULT NULL,
+  `MUJER_OTRA` varchar(3) DEFAULT NULL,
+  `ADULTO_MAYOR_OTRA` varchar(3) DEFAULT NULL,
+  `JOVENES_OTRA` varchar(3) DEFAULT NULL,
+  `DISCAPACIDAD_OTRA` varchar(3) DEFAULT NULL,
+  `AFILIADO_OPD_OTRA` varchar(3) DEFAULT NULL,
+  `CUAL_OPD_OTRA` varchar(30) DEFAULT NULL,
+  `PARTICIPA_E_P_P_OTRA` varchar(3) DEFAULT NULL,
+  `CUAL_E_P_P_OTRA` varchar(30) DEFAULT NULL,
+  `AYUDA_HUMANITARIA_OTRA` varchar(40) DEFAULT NULL,
+  `SALUD_OTRA` varchar(40) DEFAULT NULL,
+  `GENERACION_INGRESOS_OTRA` varchar(40) DEFAULT NULL,
+  `ATENCION_VIVIENDA_OTRA` varchar(40) DEFAULT NULL,
+  `EDUCACION_OTRA` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_1_OTRA` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_2_OTRA` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_3_OTRA` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_4_OTRA` varchar(40) DEFAULT NULL,
+  `PRIORIDAD_5_OTRA` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -526,16 +1752,18 @@ CREATE TABLE `ovictimas_proteccion` (
 --
 
 CREATE TABLE `ovictimas_reparacion` (
-  `Estado_Informado_Otra` varchar(3) NOT NULL,
-  `MiembroH_Indemnizado_Otra` varchar(3) NOT NULL,
-  `Estado_Garantias_Otra` varchar(3) NOT NULL,
-  `MiembroH_Restitucion_Otra` varchar(3) NOT NULL,
-  `Entidad_Restitucion_Otra` varchar(50) NOT NULL,
-  `Estado_Restituido_Otra` varchar(3) NOT NULL,
-  `Estado_Indemnizacion_Otra` varchar(3) NOT NULL,
-  `MiembroH_Indemnizacion_Otra` varchar(3) NOT NULL,
-  `Familia_Rehabilitacion_Otra` varchar(3) NOT NULL,
-  `MiembroH_Beneficiario_Otra` varchar(3) NOT NULL
+  `ID_REPARACIONO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `ESTADO_INFORMADO_OTRA` varchar(3) DEFAULT NULL,
+  `MIEMBROH_INDEMNIZADO_OTRA` varchar(3) DEFAULT NULL,
+  `ESTADO_GARANTIAS_OTRA` varchar(3) DEFAULT NULL,
+  `MIEMBROH_RESTITUCION_OTRA` varchar(3) DEFAULT NULL,
+  `ENTIDAD_RESTITUCION_OTRA` varchar(50) DEFAULT NULL,
+  `ESTADO_RESTITUIDO_OTRA` varchar(3) DEFAULT NULL,
+  `ESTADO_INDEMNIZACION_OTRA` varchar(3) DEFAULT NULL,
+  `MIEMBROH_INDEMNIZACION_OTRA` varchar(3) DEFAULT NULL,
+  `FAMILIA_REHABILITACION_OTRA` varchar(3) DEFAULT NULL,
+  `MIEMBROH_BENEFICIARIO_OTRA` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -545,39 +1773,41 @@ CREATE TABLE `ovictimas_reparacion` (
 --
 
 CREATE TABLE `ovictimas_victimizacion` (
-  `Veces_Victimizado_Otra` int(2) NOT NULL,
-  `Ano1_Otra` int(4) NOT NULL,
-  `Localidad1_Otra` varchar(20) NOT NULL,
-  `Municipio1_Otra` varchar(25) NOT NULL,
-  `Ano2_Otra` int(2) NOT NULL,
-  `Localidad2_Otra` varchar(4) NOT NULL,
-  `Municipio2_Otra` varchar(20) NOT NULL,
-  `Ano3_Otra` int(2) NOT NULL,
-  `Localidad3_Otra` varchar(4) NOT NULL,
-  `Municipio3_Otra` varchar(20) NOT NULL,
-  `Confrontacion_Armada_Otra` varchar(3) NOT NULL,
-  `Amenaza_Indirecta_Otra` varchar(3) NOT NULL,
-  `Campos_Minados_Otra` varchar(3) NOT NULL,
-  `Asesinato_Familia_Otra` varchar(3) NOT NULL,
-  `Amenaza_Directa_Otra` varchar(3) NOT NULL,
-  `Reclutamiento_Menores_Otra` varchar(3) NOT NULL,
-  `Ausencia_Gobierno_Otra` varchar(3) NOT NULL,
-  `Desplazamiento_Masivo_Otra` varchar(3) NOT NULL,
-  `No_Personas_H_Otra` int(2) NOT NULL,
-  `Familia_Vivos_Otra` varchar(3) NOT NULL,
-  `Familiar_Detenido_Otra` varchar(3) NOT NULL,
-  `Familiar_V_P_Otra` varchar(3) NOT NULL,
-  `Familiar_Asesinado_Otra` varchar(3) NOT NULL,
-  `Familiar_Reclutado_Otra` varchar(3) NOT NULL,
-  `Familiar_Secuestro_Otra` varchar(3) NOT NULL,
-  `Demanda_Desplazamiento_Otra` varchar(3) NOT NULL,
-  `Familiar_Vic_M_A_Otra` varchar(3) NOT NULL,
-  `Defensoria_Otra` varchar(3) NOT NULL,
-  `Procuraduria_Otra` varchar(3) NOT NULL,
-  `Depa_Pros_Soc_Otra` varchar(3) NOT NULL,
-  `Personeria_Otra` varchar(3) NOT NULL,
-  `UAO_Otra` varchar(3) NOT NULL,
-  `Otra_Otra` varchar(20) NOT NULL
+  `ID_VICTIMIZACIONO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `VECES_VICTIMIZADO_OTRA` int(11) DEFAULT NULL,
+  `ANO1_OTRA_` int(11) DEFAULT NULL,
+  `LOCALIDAD1_OTRA` varchar(20) DEFAULT NULL,
+  `MUNICIPIO1_OTRA` varchar(25) DEFAULT NULL,
+  `ANO2_OTRA` int(11) DEFAULT NULL,
+  `LOCALIDAD2_OTRA` varchar(20) DEFAULT NULL,
+  `MUNICIPIO2_OTRA` varchar(25) DEFAULT NULL,
+  `ANO3_OTRA` int(11) DEFAULT NULL,
+  `LOCALIDAD3_OTRA` varchar(20) DEFAULT NULL,
+  `MUNICIPIO3_OTRA` varchar(25) DEFAULT NULL,
+  `CONFRONTACION_ARMADA_OTRA` varchar(3) DEFAULT NULL,
+  `AMENAZA_INDIRECTA_OTRA` varchar(3) DEFAULT NULL,
+  `CAMPOS_MINADOS_OTRA` varchar(3) DEFAULT NULL,
+  `ASESINATO_FAMILIA_OTRA` varchar(3) DEFAULT NULL,
+  `AMENAZA_DIRECTA_OTRA` varchar(3) DEFAULT NULL,
+  `RECLUTAMIENTO_MENORES_OTRA` varchar(3) DEFAULT NULL,
+  `AUSENCIA_GOBIERNO_OTRA` varchar(3) DEFAULT NULL,
+  `DESPLAZAMIENTO_MASIVO_OTRA` varchar(3) DEFAULT NULL,
+  `NO_PERSONAS_H_OTRA` int(11) DEFAULT NULL,
+  `FAMILIA_VIVOS_OTRA` varchar(3) DEFAULT NULL,
+  `FAMILIAR_DETENIDO_OTRA` varchar(3) DEFAULT NULL,
+  `FAMILIAR_V_P_OTRA` varchar(3) DEFAULT NULL,
+  `FAMILIAR_ASESINADO_OTRA` varchar(3) DEFAULT NULL,
+  `FAMILIAR_RECLUTADO_OTRA` varchar(3) DEFAULT NULL,
+  `FAMILIAR_SECUESTRO_OTRA` varchar(3) DEFAULT NULL,
+  `DEMANDA_DESPLAZAMIENTO_OTRA` varchar(3) DEFAULT NULL,
+  `FAMILIAR_VIC_M_A_OTRA` varchar(3) DEFAULT NULL,
+  `DEFENSORIA_OTRA` varchar(3) DEFAULT NULL,
+  `PROCURADURIA_OTRA` varchar(3) DEFAULT NULL,
+  `DEPA_PROS_SOC_OTRA` varchar(3) DEFAULT NULL,
+  `PERSONERIA_OTRA` varchar(3) DEFAULT NULL,
+  `UAO_OTRA` varchar(3) DEFAULT NULL,
+  `OTRA_OTRA` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -587,24 +1817,26 @@ CREATE TABLE `ovictimas_victimizacion` (
 --
 
 CREATE TABLE `ovictimas_vivienda` (
-  `Actual_Vivienda_Otra` varchar(30) NOT NULL,
-  `Tenencia_Otra` varchar(25) NOT NULL,
-  `Tipo_Contrato_Otra` varchar(25) NOT NULL,
-  `Zona_Vivienda_Otra` varchar(7) NOT NULL,
-  `Zona_AltoRiesgo_Otra` varchar(3) NOT NULL,
-  `Paredes_Otra` varchar(10) NOT NULL,
-  `Piso_Otra` varchar(10) NOT NULL,
-  `Techo_Otra` varchar(30) NOT NULL,
-  `S_Acueducto_Otra` varchar(3) NOT NULL,
-  `S_Telefono_Otra` varchar(3) NOT NULL,
-  `S_Energia_Electrica_Otra` varchar(3) NOT NULL,
-  `S_Alcantarillado_Otra` varchar(3) NOT NULL,
-  `S_Gas_Otra` varchar(3) NOT NULL,
-  `S_ReBasuras_Otra` varchar(3) NOT NULL,
-  `No_Habit_Antes_Otra` int(2) NOT NULL,
-  `No_Habit_Actual_Otra` int(2) NOT NULL,
-  `No_Famili_Casa_Otra` int(2) NOT NULL,
-  `Recibi_Subsidio_Otra` varchar(3) NOT NULL
+  `ID_VIVIENDAO` int(11) NOT NULL,
+  `DOCUMENTO_VICTIMA` int(11) NOT NULL,
+  `ACTUAL_VIVIENDA_OTRA` varchar(30) DEFAULT NULL,
+  `TENENCIA_OTRA` varchar(25) DEFAULT NULL,
+  `TIPO_CONTRATO_OTRA` varchar(25) DEFAULT NULL,
+  `ZONA_VIVIENDA_OTRA` varchar(7) DEFAULT NULL,
+  `ZONA_ALTORIESGO_OTRA` varchar(3) DEFAULT NULL,
+  `PAREDES_OTRA` varchar(10) DEFAULT NULL,
+  `PISO_OTRA` varchar(10) DEFAULT NULL,
+  `TECHO_OTRA` varchar(30) DEFAULT NULL,
+  `S_ACUEDUCTO_OTRA` varchar(3) DEFAULT NULL,
+  `S_TELEFONO_OTRA` varchar(3) DEFAULT NULL,
+  `S_ENERGIA_ELECTRICA_OTRA` varchar(3) DEFAULT NULL,
+  `S_ALCANTARILLADO_OTRA` varchar(3) DEFAULT NULL,
+  `S_GAS_OTRA` varchar(3) DEFAULT NULL,
+  `S_REBASURAS_OTRA` varchar(3) DEFAULT NULL,
+  `NO_HABIT_ANTES_OTRA` int(11) DEFAULT NULL,
+  `NO_HABIT_ACTUAL_OTRA` int(11) DEFAULT NULL,
+  `NO_FAMILI_CASA_OTRA` int(11) DEFAULT NULL,
+  `RECIBI_SUBSIDIO_OTRA` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -633,17 +1865,171 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID`, `DOC`, `USER`, `PASS`, `EMAIL`, `ROL`, `NOMBRES`, `P_APELLIDO`, `S_APELLIDO`, `KEYPASS`, `NEWPASS`, `ULTIMA_CONEXION`) VALUES
-(1, 1110540682, 'admin', '218b6b23f9a12bd4610893308c5f80f0', 'milton.otavo@gmail.com', 2, 'MILTON', 'OTAVO', 'VARON', '5391e0cebb2453f473b48be26a020ed7', '16AF68C1', 0);
+(1, 1110540682, 'admin', 'd9529dbe59fa02092ee87e645ab6a516', 'milton.otavo@gmail.com', 2, 'MILTON', 'OTAVO', 'VARON', '573e5feb61b20121114c322b050f0dfd', '9699F73A', 0);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `departamento`
+--
+ALTER TABLE `departamento`
+  ADD PRIMARY KEY (`ID_DEPARTAMENTO`);
+
+--
+-- Indices de la tabla `desplazados_ayudasrecibidas`
+--
+ALTER TABLE `desplazados_ayudasrecibidas`
+  ADD PRIMARY KEY (`ID_AYUDASRECIBIDAS`),
+  ADD KEY `FK_RELATIONSHIP_1` (`DOCUMENTO_DESPLAZADO`);
+
+--
 -- Indices de la tabla `desplazados_datos`
 --
 ALTER TABLE `desplazados_datos`
-  ADD PRIMARY KEY (`Documento`);
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
+  ADD KEY `MUNICIPIO` (`MUNICIPIO`),
+  ADD KEY `DEPARTAMENTO` (`DEPARTAMENTO`);
+
+--
+-- Indices de la tabla `desplazados_economiafamiliar`
+--
+ALTER TABLE `desplazados_economiafamiliar`
+  ADD PRIMARY KEY (`ID_ECONOMIAFAMILIAR`),
+  ADD KEY `FK_RELATIONSHIP_2` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `desplazados_especialproteccion`
+--
+ALTER TABLE `desplazados_especialproteccion`
+  ADD PRIMARY KEY (`ID_ESPECIALPROTECCION`),
+  ADD KEY `FK_RELATIONSHIP_3` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `desplazados_familiar`
+--
+ALTER TABLE `desplazados_familiar`
+  ADD PRIMARY KEY (`IDENTIFICACION_FAMILIAR`),
+  ADD KEY `FK_RELATIONSHIP_4` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `desplazados_proteccion`
+--
+ALTER TABLE `desplazados_proteccion`
+  ADD PRIMARY KEY (`ID_PROTECCION`),
+  ADD KEY `FK_RELATIONSHIP_5` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `desplazados_reparacion`
+--
+ALTER TABLE `desplazados_reparacion`
+  ADD PRIMARY KEY (`ID_REPARACION`),
+  ADD KEY `FK_RELATIONSHIP_6` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `desplazados_vivienda`
+--
+ALTER TABLE `desplazados_vivienda`
+  ADD PRIMARY KEY (`ID_VIVIENDA`),
+  ADD KEY `FK_RELATIONSHIP_7` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `desplazado_discapacidad`
+--
+ALTER TABLE `desplazado_discapacidad`
+  ADD PRIMARY KEY (`ID_DISCAPACIDAD`),
+  ADD KEY `FK_RELATIONSHIP_8` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `desplazamiento`
+--
+ALTER TABLE `desplazamiento`
+  ADD PRIMARY KEY (`ID_DESPLAZAMIENTO`),
+  ADD KEY `FK_RELATIONSHIP_9` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `estabilizacion`
+--
+ALTER TABLE `estabilizacion`
+  ADD PRIMARY KEY (`ID_ESTABILIZACION`),
+  ADD KEY `FK_RELATIONSHIP_10` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Indices de la tabla `municipios`
+--
+ALTER TABLE `municipios`
+  ADD PRIMARY KEY (`ID_MUNICIPIOS`),
+  ADD KEY `FK_RELATIONSHIP_20` (`ID_DEPARTAMENTO`);
+
+--
+-- Indices de la tabla `ovictimas_ayudasrecibidas`
+--
+ALTER TABLE `ovictimas_ayudasrecibidas`
+  ADD PRIMARY KEY (`ID_AYUDASRECIBIDASO`),
+  ADD KEY `FK_RELATIONSHIP_11` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_datos`
+--
+ALTER TABLE `ovictimas_datos`
+  ADD PRIMARY KEY (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_discapacidad`
+--
+ALTER TABLE `ovictimas_discapacidad`
+  ADD PRIMARY KEY (`ID_DISCAPACIDADO`),
+  ADD KEY `FK_RELATIONSHIP_12` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_economiafamiliar`
+--
+ALTER TABLE `ovictimas_economiafamiliar`
+  ADD PRIMARY KEY (`ID_ECONOMIAFAMILIARO`),
+  ADD KEY `FK_RELATIONSHIP_13` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_especialproteccion`
+--
+ALTER TABLE `ovictimas_especialproteccion`
+  ADD PRIMARY KEY (`ID_ESPECIALPROTECCIONO`),
+  ADD KEY `FK_RELATIONSHIP_14` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_familiar`
+--
+ALTER TABLE `ovictimas_familiar`
+  ADD PRIMARY KEY (`IDENTIFICACION_FAMILIARO`),
+  ADD KEY `FK_RELATIONSHIP_15` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_proteccion`
+--
+ALTER TABLE `ovictimas_proteccion`
+  ADD PRIMARY KEY (`ID_PROTECCIONO`),
+  ADD KEY `FK_RELATIONSHIP_16` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_reparacion`
+--
+ALTER TABLE `ovictimas_reparacion`
+  ADD PRIMARY KEY (`ID_REPARACIONO`),
+  ADD KEY `FK_RELATIONSHIP_17` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_victimizacion`
+--
+ALTER TABLE `ovictimas_victimizacion`
+  ADD PRIMARY KEY (`ID_VICTIMIZACIONO`),
+  ADD KEY `FK_RELATIONSHIP_18` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Indices de la tabla `ovictimas_vivienda`
+--
+ALTER TABLE `ovictimas_vivienda`
+  ADD PRIMARY KEY (`ID_VIVIENDAO`),
+  ADD KEY `FK_RELATIONSHIP_19` (`DOCUMENTO_VICTIMA`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -656,10 +2042,226 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `desplazados_ayudasrecibidas`
+--
+ALTER TABLE `desplazados_ayudasrecibidas`
+  MODIFY `ID_AYUDASRECIBIDAS` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `desplazados_economiafamiliar`
+--
+ALTER TABLE `desplazados_economiafamiliar`
+  MODIFY `ID_ECONOMIAFAMILIAR` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `desplazados_especialproteccion`
+--
+ALTER TABLE `desplazados_especialproteccion`
+  MODIFY `ID_ESPECIALPROTECCION` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `desplazados_proteccion`
+--
+ALTER TABLE `desplazados_proteccion`
+  MODIFY `ID_PROTECCION` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `desplazados_reparacion`
+--
+ALTER TABLE `desplazados_reparacion`
+  MODIFY `ID_REPARACION` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `desplazados_vivienda`
+--
+ALTER TABLE `desplazados_vivienda`
+  MODIFY `ID_VIVIENDA` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `desplazado_discapacidad`
+--
+ALTER TABLE `desplazado_discapacidad`
+  MODIFY `ID_DISCAPACIDAD` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `desplazamiento`
+--
+ALTER TABLE `desplazamiento`
+  MODIFY `ID_DESPLAZAMIENTO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `estabilizacion`
+--
+ALTER TABLE `estabilizacion`
+  MODIFY `ID_ESTABILIZACION` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_ayudasrecibidas`
+--
+ALTER TABLE `ovictimas_ayudasrecibidas`
+  MODIFY `ID_AYUDASRECIBIDASO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_discapacidad`
+--
+ALTER TABLE `ovictimas_discapacidad`
+  MODIFY `ID_DISCAPACIDADO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_economiafamiliar`
+--
+ALTER TABLE `ovictimas_economiafamiliar`
+  MODIFY `ID_ECONOMIAFAMILIARO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_especialproteccion`
+--
+ALTER TABLE `ovictimas_especialproteccion`
+  MODIFY `ID_ESPECIALPROTECCIONO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_proteccion`
+--
+ALTER TABLE `ovictimas_proteccion`
+  MODIFY `ID_PROTECCIONO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_reparacion`
+--
+ALTER TABLE `ovictimas_reparacion`
+  MODIFY `ID_REPARACIONO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_victimizacion`
+--
+ALTER TABLE `ovictimas_victimizacion`
+  MODIFY `ID_VICTIMIZACIONO` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ovictimas_vivienda`
+--
+ALTER TABLE `ovictimas_vivienda`
+  MODIFY `ID_VIVIENDAO` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `desplazados_ayudasrecibidas`
+--
+ALTER TABLE `desplazados_ayudasrecibidas`
+  ADD CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazados_datos`
+--
+ALTER TABLE `desplazados_datos`
+  ADD CONSTRAINT `FK_DESPLAZADO_DEPARTAMENTO` FOREIGN KEY (`DEPARTAMENTO`) REFERENCES `departamento` (`ID_DEPARTAMENTO`),
+  ADD CONSTRAINT `FK_DESPLAZADO_MUNICIPIO` FOREIGN KEY (`MUNICIPIO`) REFERENCES `municipios` (`ID_MUNICIPIOS`);
+
+--
+-- Filtros para la tabla `desplazados_economiafamiliar`
+--
+ALTER TABLE `desplazados_economiafamiliar`
+  ADD CONSTRAINT `FK_RELATIONSHIP_2` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazados_especialproteccion`
+--
+ALTER TABLE `desplazados_especialproteccion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_3` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazados_familiar`
+--
+ALTER TABLE `desplazados_familiar`
+  ADD CONSTRAINT `FK_RELATIONSHIP_4` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazados_proteccion`
+--
+ALTER TABLE `desplazados_proteccion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_5` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazados_reparacion`
+--
+ALTER TABLE `desplazados_reparacion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_6` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazados_vivienda`
+--
+ALTER TABLE `desplazados_vivienda`
+  ADD CONSTRAINT `FK_RELATIONSHIP_7` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazado_discapacidad`
+--
+ALTER TABLE `desplazado_discapacidad`
+  ADD CONSTRAINT `FK_RELATIONSHIP_8` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `desplazamiento`
+--
+ALTER TABLE `desplazamiento`
+  ADD CONSTRAINT `FK_RELATIONSHIP_9` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `estabilizacion`
+--
+ALTER TABLE `estabilizacion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_10` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
+
+--
+-- Filtros para la tabla `municipios`
+--
+ALTER TABLE `municipios`
+  ADD CONSTRAINT `FK_RELATIONSHIP_20` FOREIGN KEY (`ID_DEPARTAMENTO`) REFERENCES `departamento` (`ID_DEPARTAMENTO`);
+
+--
+-- Filtros para la tabla `ovictimas_ayudasrecibidas`
+--
+ALTER TABLE `ovictimas_ayudasrecibidas`
+  ADD CONSTRAINT `FK_RELATIONSHIP_11` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_discapacidad`
+--
+ALTER TABLE `ovictimas_discapacidad`
+  ADD CONSTRAINT `FK_RELATIONSHIP_12` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_economiafamiliar`
+--
+ALTER TABLE `ovictimas_economiafamiliar`
+  ADD CONSTRAINT `FK_RELATIONSHIP_13` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_especialproteccion`
+--
+ALTER TABLE `ovictimas_especialproteccion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_14` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_familiar`
+--
+ALTER TABLE `ovictimas_familiar`
+  ADD CONSTRAINT `FK_RELATIONSHIP_15` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_proteccion`
+--
+ALTER TABLE `ovictimas_proteccion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_16` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_reparacion`
+--
+ALTER TABLE `ovictimas_reparacion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_17` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_victimizacion`
+--
+ALTER TABLE `ovictimas_victimizacion`
+  ADD CONSTRAINT `FK_RELATIONSHIP_18` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
+--
+-- Filtros para la tabla `ovictimas_vivienda`
+--
+ALTER TABLE `ovictimas_vivienda`
+  ADD CONSTRAINT `FK_RELATIONSHIP_19` FOREIGN KEY (`DOCUMENTO_VICTIMA`) REFERENCES `ovictimas_datos` (`DOCUMENTO_VICTIMA`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

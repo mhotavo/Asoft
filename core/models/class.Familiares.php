@@ -198,9 +198,7 @@ class Familiares {
                         '$this->ContraroLaboral',
                         '$this->JornadaTrabajo',
                         '$this->SeguroRiesgos'); ");
- 
-    //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Identificacion);
-    header('location: ?view=listarfamiliares&mode=add&id='.$this->Identificacion);
+     //header('location: ?view=listarfamiliares&mode=add&id='.$this->Identificacion);
   } 
 
   public function Edit() {

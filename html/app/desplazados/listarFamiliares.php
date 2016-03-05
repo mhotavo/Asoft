@@ -18,7 +18,7 @@
                 <div class="col-md-10">
                     <h1> Listar Familiares </h1> 
                     <div style="text-align: right;padding: 0 14px 14px 14px;">
-                        <a href="#" class="btn btn-success">Agregar Familiar</a>
+                        <a href="?view=agregarfamiliares&mode=add&id=<?php echo $_GET['id']; ?>" class="btn btn-success">Agregar Familiar</a>
                         <br>
                     </div>
                     <table id="FamiliaresDesplazados" class="table table-striped table-bordered" cellspacing="0" width="100%">

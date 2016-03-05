@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="views/css/style.css"/>
     <link rel="stylesheet" href="views/fontawesome/css/font-awesome.min.css"/>
     <!-- DataTables-->
-     <script src="views/web/assets/jquery/jquery-2.2.0.min.js"></script> 
-	<link rel="stylesheet" type="text/css" href="views/DataTables/media/css/dataTables.bootstrap.css">
+    <script src="views/web/assets/jquery/jquery-2.2.0.min.js"></script> 
+  	<link rel="stylesheet" type="text/css" href="views/DataTables/media/css/dataTables.bootstrap.css">
+  	<script type="text/javascript" src="views/DataTables/media/js/jquery.dataTables.js"></script>
+  	<script type="text/javascript" src="views/DataTables/media/js/dataTables.bootstrap.js"></script>
 
-	<script type="text/javascript" language="javascript" src="views/DataTables/media/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" language="javascript" src="views/DataTables/media/js/dataTables.bootstrap.js"></script>
-
+    <!--DatePicker -->
+    <link rel="stylesheet" type="text/css" href="views/datepicker/css/datepicker.css">
+    <script type="text/javascript" src="views/datepicker/js/bootstrap-datepicker.js"></script>
 
     <style type="text/css">
 /*table {border-collapse:collapse}
@@ -46,5 +48,14 @@ td {
 
 	});
 } );
+
+              $(document).ready(function () {
+                $('.fechas').datepicker({
+                    format: "yyyy-mm-dd"
+                });  
+            
+            });
+        </script>
 </script>
+
 </head>

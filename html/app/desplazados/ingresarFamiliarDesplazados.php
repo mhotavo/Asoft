@@ -17,7 +17,7 @@
 
                 <div >
                     <h1> Agregar Familiar</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <form class="form-horizontal" action="<?php echo isset($_GET['idFamiliar']) ?  "?view=agregarfamiliares&mode=edit&idFamiliar=".$_GET['idFamiliar']."&id=".$_GET['id'] : "?view=agregarfamiliares&mode=add&id=".$_GET['id'];  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
                                 <td class="right" width="40%">Identificacion:</td>
@@ -32,13 +32,12 @@
                                 <td class="left">
                                 <div class="col-md-8">
                                     <select id="TI" name="cboTipoIdentificacionD" required class="form-control">
-                                        <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                                        <option value="Libreta Militar">Libreta Militar</option>
-                                        <option value="Registro Civil">Registro Civil</option>
-                                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                                        <option value="CeduladeCiudadania">Cedula de Ciudadania</option>
+                                        <option value="TarjetadeIdentidad">Tarjeta de Identidad</option>
+                                        <option value="LibretaMilitar">Libreta Militar</option>
+                                        <option value="RegistroCivil">Registro Civil</option>
                                         <option value="NUIP">Numero Unico de Identificacion Personal(NUIP)</option>
-                                        <option value="No Tiene">No Tiene</option>
+                                        <option value="NoTiene">No Tiene</option>
                                     </select>
                                 </div>
                                 </td>
@@ -47,7 +46,7 @@
                                 <td class="right">Nombres:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtPrimerApellido" required class="form-control">
+                                    <input type="text" name="txtNombresD" required class="form-control">
                                 </div>
                                 </td>
                             </tr>
@@ -55,7 +54,7 @@
                                 <td class="right">Primer Apellido:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtApellidosD" required class="form-control">
+                                    <input type="text" name="txtPrimerApellido" required class="form-control">
                                 </div>    
 
                                 </td>
@@ -84,7 +83,7 @@
                                 <td class="right">Fecha de Nacimiento:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtFechaNacimientoD" required class="form-control">
+                                    <input type="text" name="txtFechaNacimientoD" required class="form-control fechas" placeholder="AAAA-MM-DD">
                                 </div>    
                                 </td>
                             </tr>
@@ -638,7 +637,7 @@
                         </form> 
                     </div>         
                  </div>           
-            </div>             
+            </div>                    
     </body>
 
     <footer>

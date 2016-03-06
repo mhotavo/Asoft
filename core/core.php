@@ -28,6 +28,7 @@ require('core/bin/functions/Encrypt.php');
 require('core/bin/functions/Users.php');
 require('core/bin/functions/Desplazados.php');
 require('core/bin/functions/lostpassTemplate.php');
+require('core/bin/functions/familiaresDesplazados.php');
 $users=users();
 $_desplazados=desplazados();
  ?>

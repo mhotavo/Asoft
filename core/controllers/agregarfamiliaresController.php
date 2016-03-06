@@ -10,6 +10,7 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 	case 'add':
 		if ($_POST) {
 			$familiares->Add();
+			  header('location: ?view=listarfamiliares&id='.$id);
 		}else {	
 			include(HTML_DIR . 'app/desplazados/ingresarFamiliarDesplazados.php');
 		}

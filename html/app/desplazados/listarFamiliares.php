@@ -33,14 +33,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Donna Snider</td>
-                                    <td>Customer Support</td>
-                                    <td>New York</td>
-                                    <td>27</td>
-                                    <td><a href="?view=agregarfamiliares&mode=edit" class="btn btn-primary">Editar</a></td>
-                                    <td><a href="#" class="btn btn-danger">Eliminar</a></td>
-                                </tr>
+                            <?php 
+                         $_familiaresDesplazados=familiaresDesplazados($_GET['id']);   
+                         if(false != $_familiaresDesplazados) {
+                                foreach($_familiaresDesplazados as $id_familiaresDesplazados => $contenido) {  ?>                                 
+                                 <tr>
+                                        <td><?php echo $_familiaresDesplazados[$id_familiaresDesplazados]['IDENTIFICACION_FAMILIAR']; ?></td>
+                                        <td><?php echo $_familiaresDesplazados[$id_familiaresDesplazados]['NOMBRE_COMPLETO']; ?></td>
+                                        <td><?php echo $_familiaresDesplazados[$id_familiaresDesplazados]['PARENTESCO']; ?></td>
+                                        <td><?php echo $_familiaresDesplazados[$id_familiaresDesplazados]['EDAD']; ?></td>
+                                        <td><a href="?view=agregarfamiliares&mode=edit&id=<?php echo $_GET['id']; ?>&familiar=<?php echo  $_familiaresDesplazados[$id_familiaresDesplazados]['IDENTIFICACION_FAMILIAR']; ?>" class="btn btn-primary">Editar</a></td>
+                                        <td><a href="#" class="btn btn-danger">Eliminar</a></td>
+                                    </tr>
+                                <?php }
+                            }
+                             ?>
                             </tbody>
                         </table>
                     </div>  

@@ -1,8 +1,8 @@
 <?php 
 
-function familiaresDesplazados() {
-	$db = New Conexion();
-	 $sql = $db->query("SELECT * FROM desplazados_familiar;");
+function familiaresDesplazados($DocumentoDesplazado) {
+	 $db = New Conexion();
+	 $sql = $db->query("SELECT * FROM desplazados_familiar WHERE DOCUMENTO_DESPLAZADO='$DocumentoDesplazado';");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
 			$FamiliaresDesplazados[$d['IDENTIFICACION_FAMILIAR']]= array(
@@ -12,8 +12,10 @@ function familiaresDesplazados() {
 				'NOMBRES' => $d['NOMBRES'],
 				'PRIMER_APELLIDO' => $d['PRIMER_APELLIDO'],
 				'SEGUNDO_APELLIDO' => $d['SEGUNDO_APELLIDO'],
+				'NOMBRE_COMPLETO' => $d['NOMBRES']. ' ' .$d['PRIMER_APELLIDO']. ' ' .$d['SEGUNDO_APELLIDO'],
 				'GENERO' => $d['GENERO'],
 				'FECHA_NACIMIENTO' => $d['FECHA_NACIMIENTO'],
+				'EDAD' => $d['FECHA_NACIMIENTO'],
 				'ENFOQUE_DIFERENCIAL' => $d['ENFOQUE_DIFERENCIAL'],
 				'ESTADO_CIVIL' => $d['ESTADO_CIVIL'],
 				'PARENTESCO' => $d['PARENTESCO'],

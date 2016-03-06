@@ -51,7 +51,8 @@ td {
 
               $(document).ready(function () {
                 $('.fechas').datepicker({
-                    format: "yyyy-mm-dd"
+                    format: "dd-mm-yyyy",
+                    autoclose: true
                 });  
             
             });

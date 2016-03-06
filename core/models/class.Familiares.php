@@ -66,7 +66,7 @@ class Familiares {
         $this->Parentesco= isset($_POST['cboParentescoD']) ? $_POST['cboParentescoD'] : null;
         $this->Separado= isset($_POST['cboSeparadoD']) ? $_POST['cboSeparadoD'] : null;
         $this->Discapacitado= isset($_POST['cboDiscapacitadoD']) ? $_POST['cboDiscapacitadoD'] : null;
-        $this->Discapacidad= isset($_POST['cboDiscapacidadD']) ? intval($_POST['cboDiscapacidadD']) : null;
+        $this->Discapacidad= isset($_POST['cboDiscapacidadD']) ? $_POST['cboDiscapacidadD'] : null;
         $this->CualDiscapacidad= isset($_POST['txtOtraDiscapacidadD']) ? $_POST['txtOtraDiscapacidadD'] : null;
         $this->VictimaMina= isset($_POST['cboVictimaMinaD']) ? $_POST['cboVictimaMinaD'] : null;
         $this->AuxilioTransporte= isset($_POST['auxilioTransporteD']) ? $_POST['auxilioTransporteD'] : null;
@@ -159,7 +159,7 @@ class Familiares {
                         '$this->PrimerApellido', 
                         '$this->SegundoApellido',
                         '$this->Genero',
-                        '$this->FechaNacimiento',
+                         STR_TO_DATE( '$this->FechaNacimiento', '%d-%m-%Y' ),
                         '$this->EnfoqueDiferencial', 
                         '$this->EstadoCivil',
                         '$this->Parentesco', 

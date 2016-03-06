@@ -83,7 +83,7 @@
                                 <td class="right">Fecha de Nacimiento:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtFechaNacimientoD" required class="form-control fechas" placeholder="AAAA-MM-DD">
+                                    <input type="text" name="txtFechaNacimientoD" data-date-format="dd-mm-aaaa" required class="form-control fechas" placeholder="DD-MM-AAAA">
                                 </div>    
                                 </td>
                             </tr>
@@ -384,7 +384,16 @@
                                 <td class="right">Califique el Estado de Salud (1-5):</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" id="califEstadoSalud" name="txtCalifEstadoSaludD" required class="form-control">
+                                     <select  name="txtCalifEstadoSaludD" required class="form-control">
+                                        <option value="">[...]</option>
+                                        <option value="1"> Uno </option>
+                                        <option value="2"> Dos </option>
+                                        <option value="3"> Tres </option>
+                                        <option value="4"> Cuatro </option>
+                                        <option value="5"> Cinco</option>
+                                        
+
+                                    </select>
                                 </div>
                                 </td>
                             </tr>   

@@ -20,9 +20,11 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 
 
 	case 'edit':
+
 		if (  isset($id) and isset($idFam) and !empty($idFam) and !empty($id) ) {
 				if ($_POST) {
 					$familiares->edit();
+					header('location: ?view=listarfamiliares&id='.$id);
 				} else {
 					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
 					include(HTML_DIR . 'app/desplazados/ingresarFamiliarDesplazados.php');

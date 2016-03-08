@@ -81,9 +81,9 @@ class Familiares {
         $this->SaludReproductiva= isset($_POST['cboSaludReproductivaD']) ? $_POST['cboSaludReproductivaD'] : null;
         $this->Vacunas= isset($_POST['cboVacunasD']) ? $_POST['cboVacunasD'] : null;
         $this->CualesVacunas= isset($_POST['txtCualesVacunasD']) ? $_POST['txtCualesVacunasD'] : null;
-        $this->EnfermedadCronica= isset($_POST['txtCualEnfCronicaD']) ? $_POST['txtCualEnfCronicaD'] : null;
-        $this->CualEnfermedad= isset($_POST['txtCualEnfermedadD']) ? $_POST['txtCualEnfermedadD'] : null;
-        $this->EstadoSalud= isset($_POST['califEstadoSalud']) ? $_POST['califEstadoSalud'] : null;
+        $this->EnfermedadCronica= isset($_POST['cboEnfCronicaD']) ? $_POST['cboEnfCronicaD'] : null;
+        $this->CualEnfermedad= isset($_POST['txtOtraDiscapacidadD']) ? $_POST['txtOtraDiscapacidadD'] : null;
+        $this->EstadoSalud= isset($_POST['txtCalifEstadoSaludD']) ? $_POST['txtCalifEstadoSaludD'] : null;
         $this->Estudiaba= isset($_POST['cboEstudiabaAntesD']) ? $_POST['cboEstudiabaAntesD'] : null;
         $this->Estudia= isset($_POST['cboEstudiaAD']) ? $_POST['cboEstudiaAD'] : null;
         $this->AcompaEscolar= isset($_POST['cboProEscolarD']) ? $_POST['cboProEscolarD'] : null;
@@ -202,26 +202,56 @@ print        $query= (" INSERT INTO desplazados_familiar (
   } 
 
   public function Edit() {
-      $this->db->query("UPDATE desplazados_datos SET 
-            TipoIdentificacion_COMPLETO='$this->TipoIdentificacion',
-            Nombres ='$this->Nombres',
-            PrimerApellido ='$this->PrimerApellido',
-            SegundoApellido ='$this->SegundoApellido',
-            Genero ='$this->Genero',
-            FechaNacimiento ='$this->FechaNacimiento',
-            EnfoqueDiferencial ='$this->EnfoqueDiferencial',
-            EstadoCivil ='$this->EstadoCivil',
-            Parentesco ='$this->Parentesco',
-            Separado ='$this->Separado',
-            Discapacitado ='$this->Discapacitado',
-            Discapacidad ='$this->Discapacidad',
-            CualDiscapacidad ='$this->CualDiscapacidad',
-            VictimaMina ='$this->VictimaMina',
-            AuxilioTransporte ='$this->AuxilioTransporte',
-            AyudaMedica ='$this->AyudaMedica'
-            WHERE Identificacion='$this->Identificacion';"); 
+    $documento=$_GET['familiar'];
+
+         $this->db->query("UPDATE desplazados_familiar SET 
+                TIPO_IDENTIFICACION = '$this->TipoIdentificacion',
+                NOMBRES =  '$this->Nombres',
+                PRIMER_APELLIDO =  '$this->PrimerApellido',
+                SEGUNDO_APELLIDO =  '$this->SegundoApellido',
+                GENERO =  '$this->Genero',
+                FECHA_NACIMIENTO =  STR_TO_DATE( '$this->FechaNacimiento', '%d-%m-%Y' ),
+                ENFOQUE_DIFERENCIAL =  '$this->EnfoqueDiferencial',
+                ESTADO_CIVIL =  '$this->EstadoCivil',
+                PARENTESCO =  '$this->Parentesco',
+                ESTUVO_SEPARADO =  '$this->Separado',
+                DISCAPACITADO =  '$this->Discapacitado',
+                DISCAPACIDAD =  '$this->Discapacidad',
+                CUAL_D =  '$this->CualDiscapacidad',
+                HA_SIDO_VICTIMA_M_A_ = '$this->VictimaMina',
+                RECIBIO_AUXILIO_T_E_C_A =  '$this->AuxilioTransporte',
+                SE_OTORGO_AYUDA_M =  '$this->AyudaMedica',
+                OTRA_A_M =  '$this->OtraAyudaMedica',
+                EN_CUANTO_INDEMNIZACION =  '$this->IndemnizacionMina',
+                AFILIADO_SALUD =  '$this->AfiliadoSalud',
+                REGIMEN =  '$this->Regimen',
+                CUAL_R =  '$this->CualRegimen',
+                RECIBIO_ATENCION_S_M =  '$this->AtencionMental',
+                RECIBIO_APOYO_PSICOSOCIAL =  '$this->ApoyoPsicosocial',
+                ASISTIO_PROGRAMA_S_R =  '$this->SaludReproductiva',
+                VACUNAS =  '$this->Vacunas',
+                CUALES_VACUNAS =  '$this->CualesVacunas',
+                DIAGNOSTICADO_E_C =  '$this->EnfermedadCronica',
+                CUAL_ENFERMEDAD_ =  '$this->CualEnfermedad',
+                CALIFIQUE_E_S =  '$this->EstadoSalud',
+                ESTUDIABA_ANTES_V =  '$this->Estudiaba',
+                ESTUDIA_ACTUALMENTE =  '$this->Estudia',
+                PROGRAMA_A_E = '$this->AcompaEscolar',
+                CANCELA_COSTO_E =  '$this->CostoEducativo',
+                SABE_LEER =  '$this->SabeLeer',
+                NIVEL_ALCANZADO =  '$this->NivelAlcanzado',
+                COMPETENCIA_LABORAL =  '$this->CompetenciaLaboral',
+                COMPETENCIA_CERTIFICADA =  '$this->CompetenciaCertificada',
+                GUSTARIA__CAPACITARSE_ =  '$this->CapacitarseEn',
+                HORARIO_CAPACITACION_ =  '$this->HorarioCapacitacion',
+                ACTIVIDAD_LABORAL_ACTUAL =  '$this->ActividadLaboral',
+                RAMA_ACTIVIDAD_ACTUAL =  '$this->RamaActividad',
+                CONTRATO_ESCRITO =  '$this->ContraroLaboral',
+                TRABAJA_JORNADA =  '$this->JornadaTrabajo',
+                S_SOCIAL_R_P = '$this->SeguroRiesgos'
+            WHERE IDENTIFICACION_FAMILIAR='$documento';"); 
+ 
             //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Identificacion);
-            header('location: ?view=listarfamiliares&mode=add&id='.$this->Identificacion);
   }
   public function Delete() {
     $this->id = intval($_GET['id']);

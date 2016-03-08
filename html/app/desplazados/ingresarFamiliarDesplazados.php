@@ -65,7 +65,7 @@
                                 <td class="right">Segundo Apellido:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtSegundoApellido" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['SEGUNDO_APELLIDO'] : null   ?>">
+                                    <input type="text" name="txtSegundoApellido"  class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['SEGUNDO_APELLIDO'] : null   ?>">
                                 </div>    
 
                                 </td>

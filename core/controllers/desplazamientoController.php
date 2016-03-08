@@ -1,31 +1,59 @@
 <?php 
 
-if (isset($_SESSION['app_id'])) {
-require('core/models/class.Desplazados.php');
-$id= isset($_GET['id']) ? $_GET['id'] : null; 
-$newDoc= isset($_GET['newDoc']) ? $_GET['newDoc'] : null; 
+$id= isset($_GET['id']) ? $_GET['id'] : null;  #Identificacion del desplazado
 
+if (isset($_SESSION['app_id']) and !empty($id) ) {
+//require('core/models/class.Desplazamiento.php');
 
-switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
+//$desplazamiento = new Desplazamiento();
+
+#Comprobamos si ya se registro el desplazamiento
+    $db = new Conexion();
+    $sql = $db->query("SELECT * FROM desplazamiento WHERE DOCUMENTO_DESPLAZADO='$id' LIMIT 1 ");
+	  	if($db->rows($sql) > 0) {
+	  		$mode='edit';
+	  	} else {
+	  		$mode='add';
+	  	}
+
+switch (isset($mode) ?  $mode : null ) {
 
 	case 'add':
-			include(HTML_DIR . "app/desplazados/ingresarDesplazamiento.php");
+		if ($_POST) {
+			$familiares->Add();
+			  header('location: ?view=listarfamiliares&id='.$id);
+		}else {	
+			include(HTML_DIR . 'app/desplazados/ingresarDesplazamiento.php');
+		}
 		break;	
 
 
 	case 'edit':
 
+		if (  isset($id) and !empty($id) ) {
+				if ($_POST) {
+					$familiares->edit();
+					header('location: ?view=listarfamiliares&id='.$id);
+				} else {
+					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
+					//include(HTML_DIR . 'app/desplazados/ingresarDesplazamiento.php');
+				}
+				
+			}
+		else{
+			header('location: ?view=validardesplazados');
+		}
 		break;	
 
-	case 'delete':
-	
-		break;
 	
 	default:
 
-		include(HTML_DIR . "app/desplazados/ingresarDesplazamiento.php");
+		header('location: ?view=validardesplazados');
 		break;
 }
+
+    $db->liberar($sql);
+    $db->close();
 
 
 } else {
@@ -33,3 +61,6 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 }
 
  ?>
+ 
+
+ 

@@ -21,6 +21,7 @@
                         <a href="?view=agregarfamiliares&mode=add&id=<?php echo $_GET['id']; ?>" class="btn btn-success">Agregar Familiar</a>
                         <br>
                     </div>
+                    <div style="background-color: #E3E3E3;padding: 10px;">
                     <table id="FamiliaresDesplazados" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
@@ -43,13 +44,14 @@
                                         <td><?php echo $_familiaresDesplazados[$id_familiaresDesplazados]['PARENTESCO']; ?></td>
                                         <td><?php echo $_familiaresDesplazados[$id_familiaresDesplazados]['EDAD']; ?></td>
                                         <td><a href="?view=agregarfamiliares&mode=edit&id=<?php echo $_GET['id']; ?>&familiar=<?php echo  $_familiaresDesplazados[$id_familiaresDesplazados]['IDENTIFICACION_FAMILIAR']; ?>" class="btn btn-primary">Editar</a></td>
-                                        <td><a href="#" class="btn btn-danger">Eliminar</a></td>
+                                        <td><a onclick="DeleteItem('¿Está seguro de eliminar este familiar?','?view=agregarfamiliares&mode=delete&id=<?php echo $_GET['id']; ?>&familiar=<?php echo  $_familiaresDesplazados[$id_familiaresDesplazados]['IDENTIFICACION_FAMILIAR']; ?>')" class="btn btn-danger">Eliminar</a></td>
                                     </tr>
                                 <?php }
                             }
                              ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>  
                     <div class="col-md-1">&nbsp;</div>       
             </div>  

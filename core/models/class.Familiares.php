@@ -254,9 +254,8 @@ print        $query= (" INSERT INTO desplazados_familiar (
             //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Identificacion);
   }
   public function Delete() {
-    $this->id = intval($_GET['id']);
-    $this->db->query("DELETE FROM foros WHERE id='$this->id';");
-    header('location: ?view=datosdesplazado&success=true');
+    $this->id = intval($_GET['familiar']);
+    $this->db->query("DELETE FROM desplazados_familiar WHERE IDENTIFICACION_FAMILIAR='$this->id';");
   }
 
   public function Buscar() {

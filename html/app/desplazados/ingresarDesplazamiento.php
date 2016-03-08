@@ -23,7 +23,7 @@
                                 <td class="right" width="45%">Durante los ultimos años cuantas veces ha sido desplazado:</td>
                                 <td  class="left" width="55%">
                                 <div class="col-md-9">
-                                    <select id="victimizado" name="cboVictimizadoD" onChange="victimizadoMostrarSi(this)" required class="form-control">
+                                    <select id="victimizado" name="cboVictimizadoD" onChange="Desplazamiento(this.value)" required class="form-control">
                                         <option value="">[...]</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -34,44 +34,44 @@
                             </tr>
                             <!-- Se muestra cuando cuando ha sido victimizado 1 vez -->
                             <tr>
-                                <td class="right">Año:</td>
+                                <td class="right" style="display: none;">Año:</td>
                                 <td  class="left">
-                                <div class="col-md-3">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento1" placeholder="Año 1">
+                                <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento1"  id="anoDesplazamiento1" placeholder="Año 1">
                                 </div>
-                                 <div class="col-md-3">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento2" placeholder="Año 2">
+                                 <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento2" id="anoDesplazamiento2" placeholder="Año 2">
                                 </div>
-                                 <div class="col-md-3">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento3" placeholder="Año 3">
+                                 <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento3"  id="anoDesplazamiento3" placeholder="Año 3">
                                 </div>
                                 </td>
                             </tr>
                           <tr>
-                                <td class="right">Municipio:</td>
+                                <td class="right" style="display: none;">Municipio:</td>
                                 <td  class="left">
-                                <div class="col-md-3">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
+                                <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" id="MunicipioDesplazamiento1" >
                                 </div>
-                                <div class="col-md-3">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
+                                <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" id="MunicipioDesplazamiento2">
                                 </div>
-                                <div class="col-md-3">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
+                                <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" id="MunicipioDesplazamiento3">
                                 </div>                                                                
                                 </td>
                             </tr>                            
                             <tr>
-                                <td class="right">Localidad:</td>
+                                <td class="right" style="display: none;">Localidad:</td>
                                 <td  class="left">
-                                <div class="col-md-3">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Localidad 1">
+                                <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento1" id="localidadDesplazamiento1" placeholder="Localidad 1">
                                 </div>
-                                <div class="col-md-3">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento2" placeholder="Localidad 2">
+                                <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento2" id="localidadDesplazamiento2" placeholder="Localidad 2">
                                 </div>
-                               <div class="col-md-3">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento3" placeholder="Localidad 3">
+                               <div class="col-md-3" style="display: none;">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento3"  id="localidadDesplazamiento3"placeholder="Localidad 3">
                                 </div>
                                 </td>
                             </tr>

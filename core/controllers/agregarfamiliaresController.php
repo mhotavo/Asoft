@@ -37,9 +37,12 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 		break;	
 
 	case 'delete':
-		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0) {
-
-			$familiares->Delete();
+		if (  isset($id) and isset($idFam) and !empty($idFam) and !empty($id) ) {
+				$familiares->delete();
+				header('location: ?view=listarfamiliares&id='.$id);			 			
+			}
+		else{
+			header('location: ?view=validardesplazados');
 		}
 		break;
 	

@@ -2,7 +2,8 @@
 
 function familiaresDesplazados($DocumentoDesplazado) {
 	 $db = New Conexion();
-	 $sql = $db->query("SELECT * FROM desplazados_familiar WHERE DOCUMENTO_DESPLAZADO='$DocumentoDesplazado';");
+	 $sql = $db->query("SELECT *, YEAR(CURDATE())-YEAR(FECHA_NACIMIENTO) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(FECHA_NACIMIENTO,'%m-%d'), 0, -1) AS EDAD_ACTUAL 
+	 					FROM desplazados_familiar WHERE DOCUMENTO_DESPLAZADO='$DocumentoDesplazado';");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
 			$FamiliaresDesplazados[$d['IDENTIFICACION_FAMILIAR']]= array(
@@ -15,7 +16,7 @@ function familiaresDesplazados($DocumentoDesplazado) {
 				'NOMBRE_COMPLETO' => $d['NOMBRES']. ' ' .$d['PRIMER_APELLIDO']. ' ' .$d['SEGUNDO_APELLIDO'],
 				'GENERO' => $d['GENERO'],
 				'FECHA_NACIMIENTO' => $d['FECHA_NACIMIENTO'],
-				'EDAD' => $d['FECHA_NACIMIENTO'],
+				'EDAD' => $d['EDAD_ACTUAL'],
 				'ENFOQUE_DIFERENCIAL' => $d['ENFOQUE_DIFERENCIAL'],
 				'ESTADO_CIVIL' => $d['ESTADO_CIVIL'],
 				'PARENTESCO' => $d['PARENTESCO'],

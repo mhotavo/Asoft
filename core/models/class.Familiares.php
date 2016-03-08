@@ -105,7 +105,7 @@ class Familiares {
 
   public function Add() {
 
-        $this->db->query(" INSERT INTO desplazados_familiar (
+print        $query= (" INSERT INTO desplazados_familiar (
                         IDENTIFICACION_FAMILIAR,
                         DOCUMENTO_DESPLAZADO,
                         TIPO_IDENTIFICACION,
@@ -170,6 +170,7 @@ class Familiares {
                         '$this->VictimaMina',
                         '$this->AuxilioTransporte',
                         '$this->AyudaMedica',
+                        '$this->OtraAyudaMedica',
                         '$this->IndemnizacionMina',
                         '$this->AfiliadoSalud',
                         '$this->Regimen',
@@ -177,7 +178,6 @@ class Familiares {
                         '$this->AtencionMental',
                         '$this->ApoyoPsicosocial',
                         '$this->SaludReproductiva',
-                        '$this->AyudaMedica',
                         '$this->Vacunas',
                         '$this->CualesVacunas',
                         '$this->EnfermedadCronica',
@@ -197,7 +197,7 @@ class Familiares {
                         '$this->RamaActividad',
                         '$this->ContraroLaboral',
                         '$this->JornadaTrabajo',
-                        '$this->SeguroRiesgos'); ");
+                        '$this->SeguroRiesgos'); "); 
      //header('location: ?view=listarfamiliares&mode=add&id='.$this->Identificacion);
   } 
 

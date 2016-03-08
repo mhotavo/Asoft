@@ -34,7 +34,7 @@
                             </thead>
                             <tbody>
                             <?php 
-                         $_familiaresDesplazados=familiaresDesplazados($_GET['id']);   
+                            
                          if(false != $_familiaresDesplazados) {
                                 foreach($_familiaresDesplazados as $id_familiaresDesplazados => $contenido) {  ?>                                 
                                  <tr>

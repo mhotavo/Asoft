@@ -1,38 +1,25 @@
 <?php 
 
-function Desplazados() {
+function Municipios() {
 	$db = New Conexion();
-	 $sql = $db->query("SELECT * FROM desplazados_datos;");
+	 $sql = $db->query("SELECT m.*, d.NOMBRE_DEPARTAMENTO FROM municipios m LEFT JOIN departamento d ON d.ID_DEPARTAMENTO=m.ID_DEPARTAMENTO;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$desplazados[$d['Documento']]= array(
-				'Documento' => $d['DOCUMENTO_DESPLAZADO'],
-				'Nombre_Completo' => $d['NOMBRE_COMPLETO'],
-				'Primer_Apellido' => $d['PRIMER_APELLIDO'],
-				'Segundo_Apellido' => $d['SEGUNDO_APELLIDO'],
-				'Tipo_de_Documento' => $d['TIPO_DE_DOCUMENTO'],
-				'Fecha_de_Victimizacion' => $d['FECHA_DE_VICTIMIZACION'],
-				'Codigo_RUPV' => $d['CODIGO_RUPV'],
-				'Departamento' => $d['DEPARTAMENTO'],
-				'Municipio' => $d['MUNICIPIO'],
-				'Zona' => $d['ZONA'],
-				'Localidad' => $d['LOCALIDAD'],
-				'Direccion' => $d['DIRECCION'],
-				'Telefono' => $d['TELEFONO'],
-				'Estado_Civil' => $d['ESTADO_CIVIL'],
-				'Parentesco' => $d['PARENTESCO'],
-				'JefeDeHogar' => $d['ES_JEFE_DE_HOGAR'],
-				'Territorio' => $d['TERRITORIO']
+			$municipios[$d['ID_MUNICIPIO']]= array(
+				'ID_MUNICIPIO' => $d['ID_MUNICIPIO'],
+				'ID_DEPARTAMENTO' => $d['ID_DEPARTAMENTO'],
+				'NOMBRE_MUNICIPIO' => $d['NOMBRE_MUNICIPIO'],
+				'NOMBRE_DEPARTAMENTO' => $d['NOMBRE_DEPARTAMENTO']
 				);
 		}
 
 	} else {
-		$desplazados=false;
+		$municipios=false;
 	}
 	$db->liberar($sql);
 	$db->close(); 
 
-	return $desplazados;
+	return $municipios;
 }
 
  ?>

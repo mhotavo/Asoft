@@ -12,23 +12,40 @@ function DeleteItem(contenido, url){
 function Desplazamiento (value){
 
 	switch(value) {
-	    case 1:
-	        __(anoDesplazamiento1).display="";
-	        __(MunicipioDesplazamiento1).display="";
-	        __(localidadDesplazamiento1).display="";
+	    case "1":
+	        __("anoDesplazamiento1").style.display = '';
+	        __("MunicipioDesplazamiento1").style.display = '';
+	        __("localidadDesplazamiento1").style.display='';    
+	        __("anoDesplazamiento2").style.display = 'none';
+	        __("MunicipioDesplazamiento2").style.display = 'none';
+	        __("localidadDesplazamiento2").style.display = 'none';
+	        __("anoDesplazamiento3").style.display = 'none';
+	        __("MunicipioDesplazamiento3").style.display = 'none';
+	        __("localidadDesplazamiento3").style.display = 'none';
 	        break;
-	    case 2:
-	        __(anoDesplazamiento2).display="";
-	        __(MunicipioDesplazamiento2).display="";
-	        __(localidadDesplazamiento2).display="";
+	    case "2":
+	        __("anoDesplazamiento1").style.display = '';
+	        __("MunicipioDesplazamiento1").style.display = '';
+	        __("localidadDesplazamiento1").style.displ	    
+	        __("anoDesplazamiento2").style.display = '';
+	        __("MunicipioDesplazamiento2").style.display = '';
+	        __("localidadDesplazamiento2").style.display = '';
+	        __("anoDesplazamiento3").style.display = 'none';
+	        __("MunicipioDesplazamiento3").style.display = 'none';
+	        __("localidadDesplazamiento3").style.display = 'none';
 	        break;	    
-	    case 2:
-	        __(anoDesplazamiento3).display="";
-	        __(MunicipioDesplazamiento3).display="";
-	        __(localidadDesplazamiento3).display="";
+	    case "3":
+	        __("anoDesplazamiento1").style.display = '';
+	        __("MunicipioDesplazamiento1").style.display = '';
+	        __("localidadDesplazamiento1").style.displ	    
+	        __("anoDesplazamiento2").style.display = '';
+	        __("MunicipioDesplazamiento2").style.display = '';
+	        __("localidadDesplazamiento2").style.display = '';
+	        __("anoDesplazamiento3").style.display = '';
+	        __("MunicipioDesplazamiento3").style.display = '';
+	        __("localidadDesplazamiento3").style.display = '';
 	        break;
-	    default:
-	         alert("hola");
+	     
 	}
 }
 

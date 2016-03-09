@@ -34,44 +34,44 @@
                             </tr>
                             <!-- Se muestra cuando cuando ha sido victimizado 1 vez -->
                             <tr>
-                                <td class="right" style="display: none;">Año:</td>
+                                <td class="right" >Año:</td>
                                 <td  class="left">
-                                <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento1"  id="anoDesplazamiento1" placeholder="Año 1">
+                                <div class="col-md-3" style="display: none;" id="anoDesplazamiento1">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento1"  placeholder="Año 1">
                                 </div>
-                                 <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento2" id="anoDesplazamiento2" placeholder="Año 2">
+                                 <div class="col-md-3" style="display: none;" id="anoDesplazamiento2">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento2"  placeholder="Año 2">
                                 </div>
-                                 <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento3"  id="anoDesplazamiento3" placeholder="Año 3">
+                                 <div class="col-md-3" style="display: none;" id="anoDesplazamiento3">    
+                                    <input  required class="form-control" type="text" name="anoDesplazamiento3"   placeholder="Año 3">
                                 </div>
                                 </td>
                             </tr>
                           <tr>
-                                <td class="right" style="display: none;">Municipio:</td>
+                                <td class="right" >Municipio:</td>
                                 <td  class="left">
-                                <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" id="MunicipioDesplazamiento1" >
+                                <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento1">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1"  >
                                 </div>
-                                <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" id="MunicipioDesplazamiento2">
+                                <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento2">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
                                 </div>
-                                <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" id="MunicipioDesplazamiento3">
+                                <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento3">    
+                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
                                 </div>                                                                
                                 </td>
                             </tr>                            
                             <tr>
-                                <td class="right" style="display: none;">Localidad:</td>
-                                <td  class="left">
-                                <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento1" id="localidadDesplazamiento1" placeholder="Localidad 1">
+                                <td class="right" >Localidad:</td>
+                                <td  class="left" >
+                                <div class="col-md-3" style="display: none;" id="localidadDesplazamiento1">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Localidad 1">
                                 </div>
-                                <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento2" id="localidadDesplazamiento2" placeholder="Localidad 2">
+                                <div class="col-md-3" style="display: none;" id="localidadDesplazamiento2">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento2"  placeholder="Localidad 2">
                                 </div>
-                               <div class="col-md-3" style="display: none;">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento3"  id="localidadDesplazamiento3"placeholder="Localidad 3">
+                               <div class="col-md-3" style="display: none;" id="localidadDesplazamiento3">    
+                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento3"  placeholder="Localidad 3">
                                 </div>
                                 </td>
                             </tr>

@@ -99,7 +99,13 @@
                             <td class="left">
                              <div class="col-md-8">
                                  <select id="muni" required name="cboMunicipioD" class="form-control">
-                                    <option value="5001">MEDELLIN</option>                               
+                                    <?php 
+                                     if(false != $_municipios) {
+                                        foreach($_municipios as $id__municipios => $contenido) {  ?>  
+                                     ?>
+                                    <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>"><?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?></option>                               
+                                    <?php } 
+                                     } ?>
                                  </select>
                             </div>
                             </td>

@@ -1,38 +1,33 @@
 <?php 
 
-function Desplazados() {
+function Estabilizacion() {
 	$db = New Conexion();
-	 $sql = $db->query("SELECT * FROM desplazados_datos;");
+	 $sql = $db->query("SELECT * FROM estabilizacion;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$desplazados[$d['Documento']]= array(
-				'Documento' => $d['DOCUMENTO_DESPLAZADO'],
-				'Nombre_Completo' => $d['NOMBRE_COMPLETO'],
-				'Primer_Apellido' => $d['PRIMER_APELLIDO'],
-				'Segundo_Apellido' => $d['SEGUNDO_APELLIDO'],
-				'Tipo_de_Documento' => $d['TIPO_DE_DOCUMENTO'],
-				'Fecha_de_Victimizacion' => $d['FECHA_DE_VICTIMIZACION'],
-				'Codigo_RUPV' => $d['CODIGO_RUPV'],
-				'Departamento' => $d['DEPARTAMENTO'],
-				'Municipio' => $d['MUNICIPIO'],
-				'Zona' => $d['ZONA'],
-				'Localidad' => $d['LOCALIDAD'],
-				'Direccion' => $d['DIRECCION'],
-				'Telefono' => $d['TELEFONO'],
-				'Estado_Civil' => $d['ESTADO_CIVIL'],
-				'Parentesco' => $d['PARENTESCO'],
-				'JefeDeHogar' => $d['ES_JEFE_DE_HOGAR'],
-				'Territorio' => $d['TERRITORIO']
+			$estabilizacion[$d['DOCUMENTO_DESPLAZADO']]= array(
+				'DOCUMENTO_DESPLAZADO' => $d['DOCUMENTO_DESPLAZADO'],
+				'RAZONES_LUGAR' => $d['RAZONES_LUGAR'],
+				'FAMILIA_RETORNO' => $d['FAMILIA_RETORNO'],
+				'ESTUVOESTA_RETORNO' => $d['ESTUVOESTA_RETORNO'],
+				'RESIDENCIA_DESEARIA' => $d['RESIDENCIA_DESEARIA'],
+				'DONDEQUIERE_REUBICARSE' => $d['DONDEQUIERE_REUBICARSE'],
+				'ZONA_RETORNO' => $d['ZONA_RETORNO'],
+				'RAZONES_REUBICARSE' => $d['RAZONES_REUBICARSE'],
+				'RAZONES_RETORNAR' => $d['RAZONES_RETORNAR'],
+				'RAICES_ABANDONADAS' => $d['RAICES_ABANDONADAS'],
+				'ALGUNOS_DESPOJADOS' => $d['ALGUNOS_DESPOJADOS'],
+				'SOLICITO_PROTECCION' => $d['SOLICITO_PROTECCION']
 				);
 		}
 
 	} else {
-		$desplazados=false;
+		$estabilizacion=false;
 	}
 	$db->liberar($sql);
 	$db->close(); 
 
-	return $desplazados;
+	return $estabilizacion;
 }
 
  ?>

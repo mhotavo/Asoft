@@ -10,7 +10,7 @@ class Desplazados {
     private $Tipo_de_Documento;
     private $Fecha_de_Victimizacion ;
     private $Codigo_RUPV;
-    private $Departamento;
+    #private $Departamento;
     private $Municipio;
     private $Zona ;
     private $Localidad;
@@ -30,7 +30,7 @@ class Desplazados {
         $this->Tipo_de_Documento= isset($_POST['cboTipoDocumentoD']) ? $_POST['cboTipoDocumentoD'] : null;
         $this->Fecha_de_Victimizacion= isset($_POST['txtFechaVictimizacionD']) ? $_POST['txtFechaVictimizacionD'] : null;
         $this->Codigo_RUPV= isset($_POST['txtCodigoRUPVD']) ? $_POST['txtCodigoRUPVD'] : null;
-        $this->Departamento= isset($_POST['cboDepartamentoD']) ? $_POST['cboDepartamentoD'] : null;
+        #$this->Departamento= isset($_POST['cboDepartamentoD']) ? $_POST['cboDepartamentoD'] : null;
         $this->Municipio= isset($_POST['cboMunicipioD']) ? $_POST['cboMunicipioD'] : null;
         $this->Zona= isset($_POST['cboZonaD']) ? $_POST['cboZonaD'] : null;
         $this->Localidad= isset($_POST['txtLocalidadD']) ? $_POST['txtLocalidadD'] : null;
@@ -59,7 +59,6 @@ class Desplazados {
                         '$this->Tipo_de_Documento',
                         '$this->Fecha_de_Victimizacion',
                         '$this->Codigo_RUPV',
-                        '$this->Departamento', 
                         '$this->Municipio',
                         '$this->Zona', 
                         '$this->Localidad',
@@ -71,18 +70,18 @@ class Desplazados {
                         '$this->Territorio');");
  
     //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
-    header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
+ 
   } 
 
   public function Edit() {
-      $this->db->query("UPDATE desplazados_datos SET 
+
+     $this->db->query("UPDATE desplazados_datos SET 
             NOMBRE_COMPLETO='$this->Nombre',
             PRIMER_APELLIDO ='$this->Primer_Apellido',
             SEGUNDO_APELLIDO ='$this->Segundo_Apellido',
             TIPO_DE_DOCUMENTO ='$this->Tipo_de_Documento',
             FECHA_DE_VICTIMIZACION ='$this->Fecha_de_Victimizacion',
             CODIGO_RUPV ='$this->Codigo_RUPV',
-            DEPARTAMENTO ='$this->Departamento',
             MUNICIPIO ='$this->Municipio',
             ZONA ='$this->Zona',
             LOCALIDAD ='$this->Localidad',
@@ -92,9 +91,9 @@ class Desplazados {
             PARENTESCO ='$this->Parentesco',
             ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
             TERRITORIO ='$this->Territorio'
-            WHERE Documento='$this->Documento';"); 
+            WHERE DOCUMENTO_DESPLAZADO='$this->Documento';" );  
             //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
-            header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
+      
   }
   public function Delete() {
     $this->id = intval($_GET['id']);

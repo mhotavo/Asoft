@@ -5,8 +5,7 @@ function ayudasayudasDesplazados() {
 	 $sql = $db->query("SELECT * FROM ayudasDesplazados_ayudasrecibidas;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$ayudasDesplazados[$d['ID_AYUDASRECIBIDAS']]= array(
-				'ID_AYUDASRECIBIDAS' => $d['ID_AYUDASRECIBIDAS'],
+			$ayudasDesplazados[$d['DOCUMENTO_DESPLAZADO']]= array(
 				'DOCUMENTO_DESPLAZADO' => $d['DOCUMENTO_DESPLAZADO'],
 				'ATENCION_MENOR' => $d['ATENCION_MENOR'],
 				'CUIDADO_INFANTIL' => $d['CUIDADO_INFANTIL'],

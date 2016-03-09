@@ -13,9 +13,6 @@ function Desplazamiento (value){
 
 	switch(value) {
 	    case "1":
-	        __("anoDesplazamiento1").style.display = '';
-	        __("MunicipioDesplazamiento1").style.display = '';
-	        __("localidadDesplazamiento1").style.display='';    
 	        __("anoDesplazamiento2").style.display = 'none';
 	        __("MunicipioDesplazamiento2").style.display = 'none';
 	        __("localidadDesplazamiento2").style.display = 'none';
@@ -23,10 +20,7 @@ function Desplazamiento (value){
 	        __("MunicipioDesplazamiento3").style.display = 'none';
 	        __("localidadDesplazamiento3").style.display = 'none';
 	        break;
-	    case "2":
-	        __("anoDesplazamiento1").style.display = '';
-	        __("MunicipioDesplazamiento1").style.display = '';
-	        __("localidadDesplazamiento1").style.displ	    
+	    case "2": 
 	        __("anoDesplazamiento2").style.display = '';
 	        __("MunicipioDesplazamiento2").style.display = '';
 	        __("localidadDesplazamiento2").style.display = '';
@@ -34,10 +28,7 @@ function Desplazamiento (value){
 	        __("MunicipioDesplazamiento3").style.display = 'none';
 	        __("localidadDesplazamiento3").style.display = 'none';
 	        break;	    
-	    case "3":
-	        __("anoDesplazamiento1").style.display = '';
-	        __("MunicipioDesplazamiento1").style.display = '';
-	        __("localidadDesplazamiento1").style.displ	    
+	    case "3":   
 	        __("anoDesplazamiento2").style.display = '';
 	        __("MunicipioDesplazamiento2").style.display = '';
 	        __("localidadDesplazamiento2").style.display = '';
@@ -45,7 +36,7 @@ function Desplazamiento (value){
 	        __("MunicipioDesplazamiento3").style.display = '';
 	        __("localidadDesplazamiento3").style.display = '';
 	        break;
-	     
+
 	}
 }
 

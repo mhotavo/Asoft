@@ -5,8 +5,7 @@ function EconomiaDesplazados() {
 	 $sql = $db->query("SELECT * FROM desplazados_economiafamiliar;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$economiaDesplazados[$d['ID_ECONOMIAFAMILIAR']]= array(
-				'ID_ECONOMIAFAMILIAR' => $d['ID_ECONOMIAFAMILIAR'],
+			$economiaDesplazados[$d['DOCUMENTO_DESPLAZADO']]= array(
 				'DOCUMENTO_DESPLAZADO' => $d['DOCUMENTO_DESPLAZADO'],
 				'INGRESOS_MENSUALES' => $d['INGRESOS_MENSUALES'],
 				'GASTOS_MENSUALES' => $d['GASTOS_MENSUALES'],
@@ -21,7 +20,7 @@ function EconomiaDesplazados() {
 				'ALIMENTACION_ADECUADA' => $d['ALIMENTACION_ADECUADA'],
 				'FUENTE_1' => $d['FUENTE_1'],
 				'FUENTE_2' => $d['FUENTE_2'],
-				'FUENTE_3' => $d['ES_JEFE_DE_HOGAR']
+				'FUENTE_3' => $d['FUENTE_3']
 				);
 		}
 

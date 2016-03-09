@@ -11,6 +11,7 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 	case 'add':
 		if ($_POST) {
 			$desplazados->Add();
+  		   header('location: ?view=listarfamiliares&mode=add&id='.$id);
 		}else {	
 			if (isset($id)) {
 				header('location: ?view=datosdesplazado&mode=add');
@@ -26,6 +27,7 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0 and isset($id)) {
 				if ($_POST) {
 					$desplazados->edit();
+					header('location: ?view=listarfamiliares&mode=add&id='.$id);
 				} else {
 					include(HTML_DIR.'app/desplazados/ingresarDatosDesplazados.php');
 				}

@@ -24,7 +24,6 @@
                                 <td  class="left" width="55%">
                                 <div class="col-md-9">
                                     <select id="victimizado" name="cboVictimizadoD" onChange="Desplazamiento(this.value)" required class="form-control">
-                                        <option value="">[...]</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -36,7 +35,7 @@
                             <tr>
                                 <td class="right" >Año:</td>
                                 <td  class="left">
-                                <div class="col-md-3" style="display: none;" id="anoDesplazamiento1">    
+                                <div class="col-md-3" id="anoDesplazamiento1">    
                                     <input  required class="form-control" type="text" name="anoDesplazamiento1"  placeholder="Año 1">
                                 </div>
                                  <div class="col-md-3" style="display: none;" id="anoDesplazamiento2">    
@@ -50,27 +49,60 @@
                           <tr>
                                 <td class="right" >Municipio:</td>
                                 <td  class="left">
-                                <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento1">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1"  >
+                                <div class="col-md-3"  id="MunicipioDesplazamiento1">  
+                                <select  required name="MunicipioDesplazamiento1" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                    <option value="">[...]</option>
+                                      <?php 
+                                     if(false != $_municipios) {
+                                        foreach($_municipios as $id__municipios => $contenido) {  ?>
+                                        <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                        </option>
+
+                                       <?php  } 
+                                     } ?>
+                                 </select>  
                                 </div>
                                 <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento2">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
-                                </div>
+                                <select  required name="MunicipioDesplazamiento2" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                    <option value="">[...]</option>
+                                      <?php 
+                                     if(false != $_municipios) {
+                                        foreach($_municipios as $id__municipios => $contenido) {  ?>
+                                        <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                        </option>
+
+                                       <?php  } 
+                                     } ?>
+                                 </select>                                 
+                                 </div>
                                 <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento3">    
-                                    <input  required class="form-control" type="text" name="MunicipioDesplazamiento1" >
-                                </div>                                                                
+                                <select  required name="MunicipioDesplazamiento3" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                    <option value="">[...]</option>
+                                      <?php 
+                                     if(false != $_municipios) {
+                                        foreach($_municipios as $id__municipios => $contenido) {  ?>
+                                        <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                        </option>
+
+                                       <?php  } 
+                                     } ?>
+                                 </select>                                
+                                 </div>                                                                
                                 </td>
                             </tr>                            
                             <tr>
                                 <td class="right" >Localidad:</td>
                                 <td  class="left" >
-                                <div class="col-md-3" style="display: none;" id="localidadDesplazamiento1">    
+                                <div class="col-md-3"  id="localidadDesplazamiento1">    
                                     <input  required class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Localidad 1">
                                 </div>
                                 <div class="col-md-3" style="display: none;" id="localidadDesplazamiento2">    
                                     <input  required class="form-control" type="text"  name="localidadDesplazamiento2"  placeholder="Localidad 2">
                                 </div>
-                               <div class="col-md-3" style="display: none;" id="localidadDesplazamiento3">    
+                                <div class="col-md-3" style="display: none;" id="localidadDesplazamiento3">    
                                     <input  required class="form-control" type="text"  name="localidadDesplazamiento3"  placeholder="Localidad 3">
                                 </div>
                                 </td>

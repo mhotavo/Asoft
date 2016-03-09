@@ -1,38 +1,43 @@
 <?php 
 
-function Desplazados() {
+function Proteccion() {
 	$db = New Conexion();
-	 $sql = $db->query("SELECT * FROM desplazados_datos;");
+	 $sql = $db->query("SELECT * FROM desplazados_proteccion;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$desplazados[$d['Documento']]= array(
-				'Documento' => $d['DOCUMENTO_DESPLAZADO'],
-				'Nombre_Completo' => $d['NOMBRE_COMPLETO'],
-				'Primer_Apellido' => $d['PRIMER_APELLIDO'],
-				'Segundo_Apellido' => $d['SEGUNDO_APELLIDO'],
-				'Tipo_de_Documento' => $d['TIPO_DE_DOCUMENTO'],
-				'Fecha_de_Victimizacion' => $d['FECHA_DE_VICTIMIZACION'],
-				'Codigo_RUPV' => $d['CODIGO_RUPV'],
-				'Departamento' => $d['DEPARTAMENTO'],
-				'Municipio' => $d['MUNICIPIO'],
-				'Zona' => $d['ZONA'],
-				'Localidad' => $d['LOCALIDAD'],
-				'Direccion' => $d['DIRECCION'],
-				'Telefono' => $d['TELEFONO'],
-				'Estado_Civil' => $d['ESTADO_CIVIL'],
-				'Parentesco' => $d['PARENTESCO'],
-				'JefeDeHogar' => $d['ES_JEFE_DE_HOGAR'],
-				'Territorio' => $d['TERRITORIO']
+			$proteccion[$d['DOCUMENTO_DESPLAZADO']]= array(
+				'DOCUMENTO_DESPLAZADO' => $d['DOCUMENTO_DESPLAZADO'],
+				'SOLICITAR_PROTECCION' => $d['SOLICITAR_PROTECCION'],
+				'OTRA_ENTIDAD' => $d['OTRA_ENTIDAD'],
+				'AYUDAPOBLAC_DESPLAZA' => $d['AYUDAPOBLAC_DESPLAZA'],
+				'MUJER' => $d['MUJER'],
+				'ADULTO_MAYOR' => $d['ADULTO_MAYOR'],
+				'JOVENES' => $d['JOVENES'],
+				'DISCAPACIDAD' => $d['DISCAPACIDAD'],
+				'AFILIADO_OPD' => $d['AFILIADO_OPD'],
+				'CUAL_OPD' => $d['CUAL_OPD'],
+				'PARTICIPA_E_P_P' => $d['PARTICIPA_E_P_P'],
+				'CUAL_E_P_P' => $d['CUAL_E_P_P'],
+				'AYUDA_HUMANITARIA' => $d['AYUDA_HUMANITARIA'],
+				'SALUD' => $d['SALUD'],
+				'GENERACION_INGRESOS' => $d['GENERACION_INGRESOS'],
+				'ATENCION_VIVIENDA' => $d['ATENCION_VIVIENDA'],
+				'EDUCACION_OTRA' => $d['EDUCACION_OTRA'],
+				'PRIORIDAD_1' => $d['PRIORIDAD_1'],
+				'PRIORIDAD_2' => $d['PRIORIDAD_2'],
+				'PRIORIDAD_3' => $d['PRIORIDAD_3'],
+				'PRIORIDAD_4' => $d['PRIORIDAD_4'],
+				'PRIORIDAD_5' => $d['EDUCACION_OTRA']
 				);
 		}
 
 	} else {
-		$desplazados=false;
+		$proteccion=false;
 	}
 	$db->liberar($sql);
 	$db->close(); 
 
-	return $desplazados;
+	return $proteccion;
 }
 
  ?>

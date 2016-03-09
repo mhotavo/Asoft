@@ -84,7 +84,7 @@
                             </div>
                              </td>
                         </tr>
-                        <tr>
+                       <!-- <tr>
                             <td class="right"> Departamento: </td>
                             <td class="left">
                              <div class="col-md-8">
@@ -93,18 +93,21 @@
                                 </select>   
                             </div>                             
                             </td>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <td class="right">Municipio: </td>
                             <td class="left">
                              <div class="col-md-8">
-                                 <select id="muni" required name="cboMunicipioD" class="form-control">
-                                    <?php 
+                                 <select  required name="cboMunicipioD" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                    <option value="">[...]</option>
+                                      <?php 
                                      if(false != $_municipios) {
-                                        foreach($_municipios as $id__municipios => $contenido) {  ?>  
-                                     ?>
-                                    <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>"><?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?></option>                               
-                                    <?php } 
+                                        foreach($_municipios as $id__municipios => $contenido) {  ?>
+                                        <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                        </option>
+
+                                       <?php  } 
                                      } ?>
                                  </select>
                             </div>

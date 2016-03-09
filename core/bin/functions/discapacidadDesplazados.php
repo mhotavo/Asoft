@@ -1,38 +1,36 @@
 <?php 
 
-function Desplazados() {
+function Discapacidad() {
 	$db = New Conexion();
-	 $sql = $db->query("SELECT * FROM desplazados_datos;");
+	 $sql = $db->query("SELECT * FROM desplazado_discapacidad;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$desplazados[$d['Documento']]= array(
-				'Documento' => $d['DOCUMENTO_DESPLAZADO'],
-				'Nombre_Completo' => $d['NOMBRE_COMPLETO'],
-				'Primer_Apellido' => $d['PRIMER_APELLIDO'],
-				'Segundo_Apellido' => $d['SEGUNDO_APELLIDO'],
-				'Tipo_de_Documento' => $d['TIPO_DE_DOCUMENTO'],
-				'Fecha_de_Victimizacion' => $d['FECHA_DE_VICTIMIZACION'],
-				'Codigo_RUPV' => $d['CODIGO_RUPV'],
-				'Departamento' => $d['DEPARTAMENTO'],
-				'Municipio' => $d['MUNICIPIO'],
-				'Zona' => $d['ZONA'],
-				'Localidad' => $d['LOCALIDAD'],
-				'Direccion' => $d['DIRECCION'],
-				'Telefono' => $d['TELEFONO'],
-				'Estado_Civil' => $d['ESTADO_CIVIL'],
-				'Parentesco' => $d['PARENTESCO'],
-				'JefeDeHogar' => $d['ES_JEFE_DE_HOGAR'],
-				'Territorio' => $d['TERRITORIO']
+			$discapacidad[$d['DOCUMENTO_DESPLAZADO']]= array(
+				'DOCUMENTO_DESPLAZADO' => $d['DOCUMENTO_DESPLAZADO'],
+				'ANTES_DESPLAZAMIENTO' => $d['ANTES_DESPLAZAMIENTO'],
+				'IGUAL_CONDICIONES' => $d['IGUAL_CONDICIONES'],
+				'ENTIDAD_REHABILITACION' => $d['ENTIDAD_REHABILITACION'],
+				'REHUBICACION_LABORAL' => $d['REHUBICACION_LABORAL'],
+				'MARGINADO_DISCRIMINADO' => $d['MARGINADO_DISCRIMINADO'],
+				'ENCUENTRA_P_P' => $d['ENCUENTRA_P_P'],
+				'EXCLUIDO' => $d['EXCLUIDO'],
+				'REHABILITACION' => $d['REHABILITACION'],
+				'SUBSIDIO_DISCAPACIDAD' => $d['SUBSIDIO_DISCAPACIDAD'],
+				'CAPACIDAD_ECONO' => $d['CAPACIDAD_ECONO'],
+				'MENORES_18' => $d['MENORES_18'],
+				'RECIBIO_AYU_HUMA' => $d['RECIBIO_AYU_HUMA'],
+				'ORGANIZACION_DESPLA' => $d['ORGANIZACION_DESPLA'],
+				'PARTICIPACION_OPDS' => $d['PARTICIPACION_OPDS']
 				);
 		}
 
 	} else {
-		$desplazados=false;
+		$discapacidad=false;
 	}
 	$db->liberar($sql);
 	$db->close(); 
 
-	return $desplazados;
+	return $discapacidad;
 }
 
  ?>

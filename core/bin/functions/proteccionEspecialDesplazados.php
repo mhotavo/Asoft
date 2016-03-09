@@ -5,8 +5,7 @@ function ProteccionEspecial() {
 	 $sql = $db->query("SELECT * FROM desplazados_especialproteccion;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$proteccionEspecial[$d['ID_ESPECIALPROTECCION']]= array(
-				'ID_ESPECIALPROTECCION' => $d['ID_ESPECIALPROTECCION'],
+			$proteccionEspecial[$d['DOCUMENTO_DESPLAZADO']]= array(
 				'DOCUMENTO_DESPLAZADO' => $d['DOCUMENTO_DESPLAZADO'],
 				'AYUDA_CULTURA' => $d['AYUDA_CULTURA'],
 				'AYUDA_18_CULTURA' => $d['AYUDA_18_CULTURA'],

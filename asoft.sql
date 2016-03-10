@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 09-03-2016 a las 05:27:51
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-03-2016 a las 23:47:52
 -- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -77,7 +77,6 @@ INSERT INTO `departamento` (`ID_DEPARTAMENTO`, `NOMBRE_DEPARTAMENTO`) VALUES
 --
 
 CREATE TABLE `desplazados_ayudasrecibidas` (
-  `ID_AYUDASRECIBIDAS` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `ATENCION_MENOR` varchar(3) DEFAULT NULL,
   `CUIDADO_INFANTIL` varchar(3) DEFAULT NULL,
@@ -88,6 +87,13 @@ CREATE TABLE `desplazados_ayudasrecibidas` (
   `BENEFI_DESAYUNO` varchar(3) DEFAULT NULL,
   `AYUDA_MUNICIPIO` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `desplazados_ayudasrecibidas`
+--
+
+INSERT INTO `desplazados_ayudasrecibidas` (`DOCUMENTO_DESPLAZADO`, `ATENCION_MENOR`, `CUIDADO_INFANTIL`, `PRO_ALIMENTACION`, `HAMBRE_FALTAA`, `SEGURIDAD_AI`, `COMPLE_ALIMENTICIO`, `BENEFI_DESAYUNO`, `AYUDA_MUNICIPIO`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -122,7 +128,7 @@ CREATE TABLE `desplazados_datos` (
 --
 
 INSERT INTO `desplazados_datos` (`DOCUMENTO_DESPLAZADO`, `NOMBRE_COMPLETO`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `TIPO_DE_DOCUMENTO`, `FECHA_DE_VICTIMIZACION`, `CODIGO_RUPV`, `DEPARTAMENTO`, `MUNICIPIO`, `ZONA`, `LOCALIDAD`, `DIRECCION`, `TELEFONO`, `ESTADO_CIVIL`, `PARENTESCO`, `ES_JEFE_DE_HOGAR`, `TERRITORIO`, `USUARIOLOG`, `FECHALOG`) VALUES
-(1, 'Hugo', 'Otavo', 'Varon', 'TarjetadeIdentidad', '2016-03-03', '3243535', 5, 5001, 'Urbana', 'nn', 'nn', 234566, 'Casado(a)', 'Madre/Madrastra', 'NO', '1', 1, '2016-03-06 16:47:54');
+(1, 'Hugo', 'Otavo', 'Varon', 'TarjetadeIdentidad', '2016-03-03', '3243535', 5, 73001, 'Urbana', 'nn', 'nn', 234566, 'Casado(a)', 'Madre/Madrastra', 'NO', '1', 1, '2016-03-09 16:23:40');
 
 -- --------------------------------------------------------
 
@@ -131,7 +137,6 @@ INSERT INTO `desplazados_datos` (`DOCUMENTO_DESPLAZADO`, `NOMBRE_COMPLETO`, `PRI
 --
 
 CREATE TABLE `desplazados_economiafamiliar` (
-  `ID_ECONOMIAFAMILIAR` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `INGRESOS_MENSUALES` varchar(50) DEFAULT NULL,
   `GASTOS_MENSUALES` varchar(50) DEFAULT NULL,
@@ -156,7 +161,6 @@ CREATE TABLE `desplazados_economiafamiliar` (
 --
 
 CREATE TABLE `desplazados_especialproteccion` (
-  `ID_ESPECIALPROTECCION` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `AYUDA_CULTURA` varchar(3) DEFAULT NULL,
   `AYUDA_18_CULTURA` varchar(3) DEFAULT NULL,
@@ -230,7 +234,9 @@ CREATE TABLE `desplazados_familiar` (
 --
 
 INSERT INTO `desplazados_familiar` (`IDENTIFICACION_FAMILIAR`, `DOCUMENTO_DESPLAZADO`, `TIPO_IDENTIFICACION`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `GENERO`, `FECHA_NACIMIENTO`, `ENFOQUE_DIFERENCIAL`, `ESTADO_CIVIL`, `PARENTESCO`, `ESTUVO_SEPARADO`, `DISCAPACITADO`, `DISCAPACIDAD`, `CUAL_D`, `HA_SIDO_VICTIMA_M_A_`, `RECIBIO_AUXILIO_T_E_C_A`, `SE_OTORGO_AYUDA_M`, `OTRA_A_M`, `EN_CUANTO_INDEMNIZACION`, `AFILIADO_SALUD`, `REGIMEN`, `CUAL_R`, `RECIBIO_ATENCION_S_M`, `RECIBIO_APOYO_PSICOSOCIAL`, `ASISTIO_PROGRAMA_S_R`, `VACUNAS`, `CUALES_VACUNAS`, `DIAGNOSTICADO_E_C`, `CUAL_ENFERMEDAD_`, `CALIFIQUE_E_S`, `ESTUDIABA_ANTES_V`, `ESTUDIA_ACTUALMENTE`, `PROGRAMA_A_E`, `CANCELA_COSTO_E`, `SABE_LEER`, `NIVEL_ALCANZADO`, `COMPETENCIA_LABORAL`, `COMPETENCIA_CERTIFICADA`, `GUSTARIA__CAPACITARSE_`, `HORARIO_CAPACITACION_`, `ACTIVIDAD_LABORAL_ACTUAL`, `RAMA_ACTIVIDAD_ACTUAL`, `CONTRATO_ESCRITO`, `TRABAJA_JORNADA`, `S_SOCIAL_R_P`, `USUARIOLOG`) VALUES
-(123456789, 1, 'CeduladeCiudadania', 'Luz Mirian', 'Varon', '', 'Femenino', '1963-12-02', 'Ninguno', 'Soltero', 'Madre/Madrastra', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Osteosintesis', 'Ninguna', 'PorLesiones', 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0);
+(1234567, 1, 'CeduladeCiudadania', 'Hugo', 'Varon', 'Varon', 'Femenino', '2016-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Osteosintesis', 'Ninguna', 'PorLesiones', 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0),
+(12345678, 1, 'CeduladeCiudadania', 'Luz', 'Varon', 'Varon', 'Femenino', '2016-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Osteosintesis', 'Ninguna', 'PorLesiones', 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0),
+(123456780, 1, 'CeduladeCiudadania', 'Luz', 'Varon', 'Varon', 'Femenino', '1916-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Osteosintesis', 'Ninguna', 'PorLesiones', 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0);
 
 -- --------------------------------------------------------
 
@@ -239,7 +245,6 @@ INSERT INTO `desplazados_familiar` (`IDENTIFICACION_FAMILIAR`, `DOCUMENTO_DESPLA
 --
 
 CREATE TABLE `desplazados_proteccion` (
-  `ID_PROTECCION` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `SOLICITAR_PROTECCION` varchar(200) DEFAULT NULL,
   `OTRA_ENTIDAD` varchar(30) DEFAULT NULL,
@@ -271,7 +276,6 @@ CREATE TABLE `desplazados_proteccion` (
 --
 
 CREATE TABLE `desplazados_reparacion` (
-  `ID_REPARACION` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `ESTADO_INFORMADO` varchar(3) DEFAULT NULL,
   `MIEMBROH_INDEMNIZADO` varchar(3) DEFAULT NULL,
@@ -292,7 +296,6 @@ CREATE TABLE `desplazados_reparacion` (
 --
 
 CREATE TABLE `desplazados_vivienda` (
-  `ID_VIVIENDA` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `ACTUAL_VIVIENDA` varchar(30) DEFAULT NULL,
   `TENENCIA` varchar(25) DEFAULT NULL,
@@ -321,7 +324,6 @@ CREATE TABLE `desplazados_vivienda` (
 --
 
 CREATE TABLE `desplazado_discapacidad` (
-  `ID_DISCAPACIDAD` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `ANTES_DESPLAZAMIENTO` varchar(3) DEFAULT NULL,
   `IGUAL_CONDICIONES` varchar(3) DEFAULT NULL,
@@ -346,7 +348,6 @@ CREATE TABLE `desplazado_discapacidad` (
 --
 
 CREATE TABLE `desplazamiento` (
-  `ID_DESPLAZAMIENTO` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `VECES_DESPLAZADO` int(11) DEFAULT NULL,
   `ANO1` int(11) DEFAULT NULL,
@@ -394,7 +395,6 @@ CREATE TABLE `desplazamiento` (
 --
 
 CREATE TABLE `estabilizacion` (
-  `ID_ESTABILIZACION` int(11) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `RAZONES_LUGAR` varchar(200) DEFAULT NULL,
   `FAMILIA_RETORNO` varchar(3) DEFAULT NULL,
@@ -1554,7 +1554,6 @@ INSERT INTO `municipios` (`ID_MUNICIPIO`, `ID_DEPARTAMENTO`, `NOMBRE_MUNICIPIO`)
 --
 
 CREATE TABLE `ovictimas_ayudasrecibidas` (
-  `ID_AYUDASRECIBIDASO` int(11) NOT NULL,
   `DOCUMENTO_VICTIMA` int(11) NOT NULL,
   `ATENCION_MENOR_OTRA` varchar(3) DEFAULT NULL,
   `CUIDADO_INFANTIL_OTRA_OTRA` varchar(3) DEFAULT NULL,
@@ -1883,7 +1882,7 @@ ALTER TABLE `departamento`
 -- Indices de la tabla `desplazados_ayudasrecibidas`
 --
 ALTER TABLE `desplazados_ayudasrecibidas`
-  ADD PRIMARY KEY (`ID_AYUDASRECIBIDAS`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_1` (`DOCUMENTO_DESPLAZADO`);
 
 --
@@ -1900,14 +1899,14 @@ ALTER TABLE `desplazados_datos`
 -- Indices de la tabla `desplazados_economiafamiliar`
 --
 ALTER TABLE `desplazados_economiafamiliar`
-  ADD PRIMARY KEY (`ID_ECONOMIAFAMILIAR`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_2` (`DOCUMENTO_DESPLAZADO`);
 
 --
 -- Indices de la tabla `desplazados_especialproteccion`
 --
 ALTER TABLE `desplazados_especialproteccion`
-  ADD PRIMARY KEY (`ID_ESPECIALPROTECCION`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_3` (`DOCUMENTO_DESPLAZADO`);
 
 --
@@ -1921,42 +1920,42 @@ ALTER TABLE `desplazados_familiar`
 -- Indices de la tabla `desplazados_proteccion`
 --
 ALTER TABLE `desplazados_proteccion`
-  ADD PRIMARY KEY (`ID_PROTECCION`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_5` (`DOCUMENTO_DESPLAZADO`);
 
 --
 -- Indices de la tabla `desplazados_reparacion`
 --
 ALTER TABLE `desplazados_reparacion`
-  ADD PRIMARY KEY (`ID_REPARACION`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_6` (`DOCUMENTO_DESPLAZADO`);
 
 --
 -- Indices de la tabla `desplazados_vivienda`
 --
 ALTER TABLE `desplazados_vivienda`
-  ADD PRIMARY KEY (`ID_VIVIENDA`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_7` (`DOCUMENTO_DESPLAZADO`);
 
 --
 -- Indices de la tabla `desplazado_discapacidad`
 --
 ALTER TABLE `desplazado_discapacidad`
-  ADD PRIMARY KEY (`ID_DISCAPACIDAD`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_8` (`DOCUMENTO_DESPLAZADO`);
 
 --
 -- Indices de la tabla `desplazamiento`
 --
 ALTER TABLE `desplazamiento`
-  ADD PRIMARY KEY (`ID_DESPLAZAMIENTO`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_9` (`DOCUMENTO_DESPLAZADO`);
 
 --
 -- Indices de la tabla `estabilizacion`
 --
 ALTER TABLE `estabilizacion`
-  ADD PRIMARY KEY (`ID_ESTABILIZACION`),
+  ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_10` (`DOCUMENTO_DESPLAZADO`);
 
 --
@@ -1970,7 +1969,7 @@ ALTER TABLE `municipios`
 -- Indices de la tabla `ovictimas_ayudasrecibidas`
 --
 ALTER TABLE `ovictimas_ayudasrecibidas`
-  ADD PRIMARY KEY (`ID_AYUDASRECIBIDASO`),
+  ADD PRIMARY KEY (`DOCUMENTO_VICTIMA`),
   ADD KEY `FK_RELATIONSHIP_11` (`DOCUMENTO_VICTIMA`);
 
 --
@@ -2045,56 +2044,6 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
---
--- AUTO_INCREMENT de la tabla `desplazados_ayudasrecibidas`
---
-ALTER TABLE `desplazados_ayudasrecibidas`
-  MODIFY `ID_AYUDASRECIBIDAS` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `desplazados_economiafamiliar`
---
-ALTER TABLE `desplazados_economiafamiliar`
-  MODIFY `ID_ECONOMIAFAMILIAR` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `desplazados_especialproteccion`
---
-ALTER TABLE `desplazados_especialproteccion`
-  MODIFY `ID_ESPECIALPROTECCION` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `desplazados_proteccion`
---
-ALTER TABLE `desplazados_proteccion`
-  MODIFY `ID_PROTECCION` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `desplazados_reparacion`
---
-ALTER TABLE `desplazados_reparacion`
-  MODIFY `ID_REPARACION` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `desplazados_vivienda`
---
-ALTER TABLE `desplazados_vivienda`
-  MODIFY `ID_VIVIENDA` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `desplazado_discapacidad`
---
-ALTER TABLE `desplazado_discapacidad`
-  MODIFY `ID_DISCAPACIDAD` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `desplazamiento`
---
-ALTER TABLE `desplazamiento`
-  MODIFY `ID_DESPLAZAMIENTO` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `estabilizacion`
---
-ALTER TABLE `estabilizacion`
-  MODIFY `ID_ESTABILIZACION` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `ovictimas_ayudasrecibidas`
---
-ALTER TABLE `ovictimas_ayudasrecibidas`
-  MODIFY `ID_AYUDASRECIBIDASO` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `ovictimas_discapacidad`
 --

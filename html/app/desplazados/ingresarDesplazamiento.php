@@ -50,13 +50,13 @@
                                 <td class="right" >Municipio:</td>
                                 <td  class="left">
                                 <div class="col-md-3"  id="MunicipioDesplazamiento1">  
-                                <select  required name="MunicipioDesplazamiento1" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                <select  required name="MunicipioDesplazamiento1" class="  form-control "  data-show-subtext="true"  data-live-search="true">
                                     <option value="">[...]</option>
                                       <?php 
                                      if(false != $_municipios) {
                                         foreach($_municipios as $id__municipios => $contenido) {  ?>
                                         <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
-                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                         </option>
 
                                        <?php  } 
@@ -64,13 +64,13 @@
                                  </select>  
                                 </div>
                                 <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento2">    
-                                <select  required name="MunicipioDesplazamiento2" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                <select  required name="MunicipioDesplazamiento2" class="  form-control "  data-show-subtext="true"  data-live-search="true">
                                     <option value="">[...]</option>
                                       <?php 
                                      if(false != $_municipios) {
                                         foreach($_municipios as $id__municipios => $contenido) {  ?>
                                         <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
-                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                         </option>
 
                                        <?php  } 
@@ -78,13 +78,13 @@
                                  </select>                                 
                                  </div>
                                 <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento3">    
-                                <select  required name="MunicipioDesplazamiento3" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                <select  required name="MunicipioDesplazamiento3" class="  form-control "  data-show-subtext="true"  data-live-search="true">
                                     <option value="">[...]</option>
                                       <?php 
                                      if(false != $_municipios) {
                                         foreach($_municipios as $id__municipios => $contenido) {  ?>
                                         <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
-                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                         </option>
 
                                        <?php  } 

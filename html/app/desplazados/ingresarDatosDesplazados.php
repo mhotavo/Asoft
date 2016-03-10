@@ -98,13 +98,13 @@
                             <td class="right">Municipio: </td>
                             <td class="left">
                              <div class="col-md-8">
-                                 <select  required name="cboMunicipioD" class=" selectpicker form-control "  data-show-subtext="true"  data-live-search="true">
+                                 <select  required name="cboMunicipioD" class="  form-control "  data-show-subtext="true"  data-live-search="true">
                                     <option value="">[...]</option>
                                       <?php 
                                      if(false != $_municipios) {
                                         foreach($_municipios as $id__municipios => $contenido) {  ?>
                                         <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
-                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO']; ?>
+                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                         </option>
 
                                        <?php  } 

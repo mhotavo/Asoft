@@ -1,6 +1,6 @@
 <?php 
 
-class Desplazados {
+class Estabilizaciones {
 
     private $db;
     private $Documento;
@@ -21,27 +21,27 @@ class Desplazados {
     private $Es_Jefe_de_Hogar;
     private $Territorio;
 
-	public function __construct (){
-		$this->db = new Conexion();
+    public function __construct (){
+        $this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->Nombre= isset($_POST['txtNombre']) ? $_POST['txtNombre'] : null;
-        $this->Primer_Apellido= isset($_POST['txtPrimerApellido']) ? $_POST['txtPrimerApellido'] : null;
-        $this->Segundo_Apellido= isset($_POST['txtSegundoApellido']) ? $_POST['txtSegundoApellido'] : null;
-        $this->Tipo_de_Documento= isset($_POST['cboTipoDocumentoD']) ? $_POST['cboTipoDocumentoD'] : null;
-        $this->Fecha_de_Victimizacion= isset($_POST['txtFechaVictimizacionD']) ? $_POST['txtFechaVictimizacionD'] : null;
-        $this->Codigo_RUPV= isset($_POST['txtCodigoRUPVD']) ? $_POST['txtCodigoRUPVD'] : null;
-        $this->Departamento= isset($_POST['cboDepartamentoD']) ? $_POST['cboDepartamentoD'] : null;
-        $this->Municipio= isset($_POST['cboMunicipioD']) ? $_POST['cboMunicipioD'] : null;
-        $this->Zona= isset($_POST['cboZonaD']) ? $_POST['cboZonaD'] : null;
-        $this->Localidad= isset($_POST['txtLocalidadD']) ? $_POST['txtLocalidadD'] : null;
-        $this->Direccion= isset($_POST['txtDireccionD']) ? $_POST['txtDireccionD'] : null;
-        $this->Telefono= isset($_POST['txtTelefonoD']) ? intval($_POST['txtTelefonoD']) : null;
-        $this->Estado_Civil= isset($_POST['estaCivil']) ? $_POST['estaCivil'] : null;
-        $this->Parentesco= isset($_POST['Parentesco']) ? $_POST['Parentesco'] : null;
-        $this->Es_Jefe_de_Hogar= isset($_POST['JefeDeHogar']) ? $_POST['JefeDeHogar'] : null;
-        $this->Territorio= isset($_POST['txtTerritorioD']) ? $_POST['txtTerritorioD'] : null;
+        $this->Nombre= isset($_POST['']) ? $_POST[''] : null;
+        $this->Primer_Apellido= isset($_POST['']) ? $_POST[''] : null;
+        $this->Segundo_Apellido= isset($_POST['']) ? $_POST[''] : null;
+        $this->Tipo_de_Documento= isset($_POST['']) ? $_POST[''] : null;
+        $this->Fecha_de_Victimizacion= isset($_POST['']) ? $_POST[''] : null;
+        $this->Codigo_RUPV= isset($_POST['']) ? $_POST[''] : null;
+        $this->Departamento= isset($_POST['']) ? $_POST[''] : null;
+        $this->Municipio= isset($_POST['']) ? $_POST[''] : null;
+        $this->Zona= isset($_POST['']) ? $_POST[''] : null;
+        $this->Localidad= isset($_POST['']) ? $_POST[''] : null;
+        $this->Direccion= isset($_POST['']) ? $_POST[''] : null;
+        $this->Telefono=  isset($_POST['']) ? $_POST[''] : null;
+        $this->Estado_Civil= isset($_POST['']) ? $_POST[''] : null;
+        $this->Parentesco= isset($_POST['']) ? $_POST[''] : null;
+        $this->Es_Jefe_de_Hogar= isset($_POST['']) ? $_POST[''] : null;
+        $this->Territorio= isset($_POST['']) ? $_POST[''] : null;
 
-	}
+    }
 
 
   public function Add() {
@@ -69,9 +69,7 @@ class Desplazados {
                         '$this->Parentesco',
                         '$this->Es_Jefe_de_Hogar',
                         '$this->Territorio');");
- 
-    //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
-    header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
+
   } 
 
   public function Edit() {
@@ -93,29 +91,13 @@ class Desplazados {
             ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
             TERRITORIO ='$this->Territorio'
             WHERE Documento='$this->Documento';"); 
-            //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
-            header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
-  }
-  public function Delete() {
-    $this->id = intval($_GET['id']);
-    $this->db->query("DELETE FROM foros WHERE id='$this->id';");
-    header('location: ?view=datosdesplazado&success=true');
+
   }
 
-  public function Buscar() {
-    $this->id = intval($_POST['numDocumento']); 
-    $sql= $this->db->query("SELECT * FROM  desplazados_datos  WHERE DOCUMENTO_DESPLAZADO='$this->id';");
-    if ($this->db->rows($sql)>0) {
-    	return 1;
-    } else {
-    	return 0;
-    }
-    
-  }
 
-	public function __destruct (){
-		$this->db->close();
-	}	
+    public function __destruct (){
+        $this->db->close();
+    }   
 
 }
 

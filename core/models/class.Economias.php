@@ -1,117 +1,95 @@
 <?php 
 
-class Desplazados {
+class Economias {
 
     private $db;
     private $Documento;
-    private $Nombre;
-    private $Primer_Apellido;
-    private $Segundo_Apellido;
-    private $Tipo_de_Documento;
-    private $Fecha_de_Victimizacion ;
-    private $Codigo_RUPV;
-    private $Departamento;
-    private $Municipio;
-    private $Zona ;
-    private $Localidad;
-    private $Direccion;
-    private $Telefono ;
-    private $Estado_Civil; 
-    private $Parentesco ;
+    private $IngresosMensuales;
+    private $GastosMensuales;
+    private $Gasto1;
+    private $Gasto2;
+    private $Gasto3 ;
+    private $NoComidasDia;
+    private $Adultos;
+    private $Ninos;
+    private $Menores2Años ;
+    private $AlimentacionCultura;
+    private $AlimentacionAdecuada;
+    private $Fuente1 ;
+    private $Fuente2; 
+    private $Fuente3 ;
     private $Es_Jefe_de_Hogar;
     private $Territorio;
 
 	public function __construct (){
 		$this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->Nombre= isset($_POST['txtNombre']) ? $_POST['txtNombre'] : null;
-        $this->Primer_Apellido= isset($_POST['txtPrimerApellido']) ? $_POST['txtPrimerApellido'] : null;
-        $this->Segundo_Apellido= isset($_POST['txtSegundoApellido']) ? $_POST['txtSegundoApellido'] : null;
-        $this->Tipo_de_Documento= isset($_POST['cboTipoDocumentoD']) ? $_POST['cboTipoDocumentoD'] : null;
-        $this->Fecha_de_Victimizacion= isset($_POST['txtFechaVictimizacionD']) ? $_POST['txtFechaVictimizacionD'] : null;
-        $this->Codigo_RUPV= isset($_POST['txtCodigoRUPVD']) ? $_POST['txtCodigoRUPVD'] : null;
-        $this->Departamento= isset($_POST['cboDepartamentoD']) ? $_POST['cboDepartamentoD'] : null;
-        $this->Municipio= isset($_POST['cboMunicipioD']) ? $_POST['cboMunicipioD'] : null;
-        $this->Zona= isset($_POST['cboZonaD']) ? $_POST['cboZonaD'] : null;
-        $this->Localidad= isset($_POST['txtLocalidadD']) ? $_POST['txtLocalidadD'] : null;
-        $this->Direccion= isset($_POST['txtDireccionD']) ? $_POST['txtDireccionD'] : null;
-        $this->Telefono= isset($_POST['txtTelefonoD']) ? intval($_POST['txtTelefonoD']) : null;
-        $this->Estado_Civil= isset($_POST['estaCivil']) ? $_POST['estaCivil'] : null;
-        $this->Parentesco= isset($_POST['Parentesco']) ? $_POST['Parentesco'] : null;
-        $this->Es_Jefe_de_Hogar= isset($_POST['JefeDeHogar']) ? $_POST['JefeDeHogar'] : null;
-        $this->Territorio= isset($_POST['txtTerritorioD']) ? $_POST['txtTerritorioD'] : null;
+        $this->IngresosMensuales= isset($_POST['']) ? $_POST[''] : null;
+        $this->GastosMensuales= isset($_POST['']) ? $_POST[''] : null;
+        $this->Gasto1= isset($_POST['']) ? $_POST[''] : null;
+        $this->Gasto2= isset($_POST['']) ? $_POST[''] : null;
+        $this->Gasto3= isset($_POST['']) ? $_POST[''] : null;
+        $this->NoComidasDia= isset($_POST['']) ? $_POST[''] : null;
+        $this->Adultos= isset($_POST['']) ? $_POST[''] : null;
+        $this->Ninos= isset($_POST['']) ? $_POST[''] : null;
+        $this->Menores2Años= isset($_POST['']) ? $_POST[''] : null;
+        $this->AlimentacionCultura= isset($_POST['']) ? $_POST[''] : null;
+        $this->AlimentacionAdecuada= isset($_POST['']) ? $_POST[''] : null;
+        $this->Fuente1= isset($_POST['']) ? $_POST[''] : null;
+        $this->Fuente2= isset($_POST['']) ? $_POST[''] : null;
+        $this->Fuente3= isset($_POST['']) ? $_POST[''] : null;
+        $this->Es_Jefe_de_Hogar= isset($_POST['']) ? $_POST[''] : null;
+        $this->Territorio= isset($_POST['']) ? $_POST[''] : null;
 
 	}
 
 
   public function Add() {
 
-        $this->db->query(" INSERT INTO desplazados_datos
-                        (DOCUMENTO_DESPLAZADO, NOMBRE_COMPLETO, PRIMER_APELLIDO, 
-                        SEGUNDO_APELLIDO, TIPO_DE_DOCUMENTO, FECHA_DE_VICTIMIZACION,
-                        CODIGO_RUPV, DEPARTAMENTO, MUNICIPIO, ZONA, LOCALIDAD, DIRECCION, 
-                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO) 
+        $this->db->query(" INSERT INTO desplazados_economiafamiliar
+                        (DOCUMENTO_DESPLAZADO, INGRESOS_MENSUALES, GASTOS_MENSUALES, 1_GASTO,
+                         2_GASTO, 3_GASTO, NO_COMIDAS_DIA, ADULTOS, NINOS, MENORES_2ANOS,
+                         ALIMENTACION_CULTURA, ALIMENTACION_ADECUADA, FUENTE_1, FUENTE_2, FUENTE_3)
                         VALUES (
                         '$this->Documento',
-                        '$this->Nombre',
-                        '$this->Primer_Apellido',
-                        '$this->Segundo_Apellido', 
-                        '$this->Tipo_de_Documento',
-                        '$this->Fecha_de_Victimizacion',
-                        '$this->Codigo_RUPV',
-                        '$this->Departamento', 
-                        '$this->Municipio',
-                        '$this->Zona', 
-                        '$this->Localidad',
-                        '$this->Direccion',
-                        '$this->Telefono',
-                        '$this->Estado_Civil',
-                        '$this->Parentesco',
-                        '$this->Es_Jefe_de_Hogar',
-                        '$this->Territorio');");
- 
-    //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
-    header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
+                        '$this->IngresosMensuales',
+                        '$this->GastosMensuales',
+                        '$this->Gasto1', 
+                        '$this->Gasto2',
+                        '$this->Gasto3',
+                        '$this->NoComidasDia',
+                        '$this->Adultos', 
+                        '$this->Ninos',
+                        '$this->Menores2Años', 
+                        '$this->AlimentacionCultura',
+                        '$this->AlimentacionAdecuada',
+                        '$this->Fuente1',
+                        '$this->Fuente2',
+                        '$this->Fuente3');
+                        ");
+
   } 
 
   public function Edit() {
-      $this->db->query("UPDATE desplazados_datos SET 
-            NOMBRE_COMPLETO='$this->Nombre',
-            PRIMER_APELLIDO ='$this->Primer_Apellido',
-            SEGUNDO_APELLIDO ='$this->Segundo_Apellido',
-            TIPO_DE_DOCUMENTO ='$this->Tipo_de_Documento',
-            FECHA_DE_VICTIMIZACION ='$this->Fecha_de_Victimizacion',
-            CODIGO_RUPV ='$this->Codigo_RUPV',
-            DEPARTAMENTO ='$this->Departamento',
-            MUNICIPIO ='$this->Municipio',
-            ZONA ='$this->Zona',
-            LOCALIDAD ='$this->Localidad',
-            DIRECCION ='$this->Direccion',
-            TELEFONO ='$this->Telefono',
-            ESTADO_CIVIL ='$this->Estado_Civil',
-            PARENTESCO ='$this->Parentesco',
-            ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
-            TERRITORIO ='$this->Territorio'
-            WHERE Documento='$this->Documento';"); 
-            //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
-            header('location: ?view=listarfamiliares&mode=add&id='.$this->Documento);
-  }
-  public function Delete() {
-    $this->id = intval($_GET['id']);
-    $this->db->query("DELETE FROM foros WHERE id='$this->id';");
-    header('location: ?view=datosdesplazado&success=true');
+      $this->db->query("UPDATE desplazados_economiafamiliar SET 
+            INGRESOS_MENSUALES='$this->IngresosMensuales',
+            GASTOS_MENSUALES ='$this->GastosMensuales',
+            1_GASTO ='$this->Gasto1',
+            2_GASTO ='$this->Gasto2',
+            3_GASTO ='$this->Gasto3',
+            NO_COMIDAS_DIA ='$this->NoComidasDia',
+            ADULTOS ='$this->Adultos',
+            NINOS ='$this->Ninos',
+            MENORES_2ANOS ='$this->Menores2Años',
+            ALIMENTACION_CULTURA ='$this->AlimentacionCultura',
+            ALIMENTACION_ADECUADA ='$this->AlimentacionAdecuada',
+            FUENTE_1 ='$this->Fuente1',
+            FUENTE_2 ='$this->Fuente2',
+            FUENTE_3 ='$this->Fuente3' 
+            WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
+
   }
 
-  public function Buscar() {
-    $this->id = intval($_POST['numDocumento']); 
-    $sql= $this->db->query("SELECT * FROM  desplazados_datos  WHERE DOCUMENTO_DESPLAZADO='$this->id';");
-    if ($this->db->rows($sql)>0) {
-    	return 1;
-    } else {
-    	return 0;
-    }
-    
-  }
 
 	public function __destruct (){
 		$this->db->close();

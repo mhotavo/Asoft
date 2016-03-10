@@ -20,9 +20,21 @@ class Familiares {
     private $CualDiscapacidad; 
     private $VictimaMina ;
     private $AuxilioTransporte;
-    private $AyudaMedica;
+
+    private $Medicamentos;
+    private $CirugiaPlastica;
+    private $CirugiaVascular;
+    private $Osteoporosis;
+    private $Protesis;
+    private $Ortesis;
+    private $Terapias;
     private $OtraAyudaMedica;
-    private $IndemnizacionMina;
+
+    private $IndAyudaHumanitaria;
+    private $IndLesiones;
+    private $IndIncapacidad;
+
+
     private $AfiliadoSalud;
     private $Regimen;                   
     private $CualRegimen;         
@@ -49,6 +61,7 @@ class Familiares {
     private $ContraroLaboral;             
     private $JornadaTrabajo;                   
     private $SeguroRiesgos;             
+    private $Usuario;             
 
 	public function __construct (){
 
@@ -70,9 +83,16 @@ class Familiares {
         $this->CualDiscapacidad= isset($_POST['txtOtraDiscapacidadD']) ? $_POST['txtOtraDiscapacidadD'] : null;
         $this->VictimaMina= isset($_POST['cboVictimaMinaD']) ? $_POST['cboVictimaMinaD'] : null;
         $this->AuxilioTransporte= isset($_POST['auxilioTransporteD']) ? $_POST['auxilioTransporteD'] : null;
-        $this->AyudaMedica= isset($_POST['checkboxAyudaMedicaD']) ? $_POST['checkboxAyudaMedicaD'] : null;
-        $this->OtraAyudaMedica= isset($_POST['txtOtraAyudaD']) ? $_POST['txtOtraAyudaD'] : null;
-        $this->IndemnizacionMina= isset($_POST['checkboxIndemnizacionD']) ? $_POST['checkboxIndemnizacionD'] : null;
+        $this->Medicamentos= isset($_POST['Medicamentos']) ? $_POST['Medicamentos'] : null;
+        $this->CirugiaPlastica= isset($_POST['CirugiaPlastica']) ? $_POST['CirugiaPlastica'] : null;
+        $this->CirugiaVascular= isset($_POST['CirugiaVascular']) ? $_POST['CirugiaVascular'] : null;
+        $this->Osteoporosis= isset($_POST['Osteosintesis']) ? $_POST['Osteosintesis'] : null;
+        $this->Protesis= isset($_POST['Protesis']) ? $_POST['Protesis'] : null;
+        $this->Ortesis= isset($_POST['Ortesis']) ? $_POST['Ortesis'] : null;
+        $this->Terapias= isset($_POST['Terapias']) ? $_POST['Terapias'] : null;        
+        $this->IndAyudaHumanitaria= isset($_POST['IndAyudaHumanitaria']) ? $_POST['IndAyudaHumanitaria'] : null;
+        $this->IndLesiones= isset($_POST['IndLesiones']) ? $_POST['IndLesiones'] : null;
+        $this->IndIncapacidad= isset($_POST['IndIncapacidad']) ? $_POST['IndIncapacidad'] : null;
         $this->AfiliadoSalud= isset($_POST['cboAfiliadoSaludD']) ? $_POST['cboAfiliadoSaludD'] : null;
         $this->Regimen= isset($_POST['cboRegimenD']) ? $_POST['cboRegimenD'] : null;
         $this->CualRegimen= isset($_POST['txtCualRegimenD']) ? $_POST['txtCualRegimenD'] : null;
@@ -99,6 +119,7 @@ class Familiares {
         $this->ContraroLaboral= isset($_POST['cboContraLaboralD']) ? $_POST['cboContraLaboralD'] : null;
         $this->JornadaTrabajo= isset($_POST['cboJornadaD']) ? $_POST['cboJornadaD'] : null;
         $this->SeguroRiesgos= isset($_POST['cboSSocialRProfeD']) ? $_POST['cboSSocialRProfeD'] : null;
+        $this->Usuario= isset($users[$_SESSION['app_id']]['DOC']) ? $users[$_SESSION['app_id']]['DOC'] : null;
 
 	}
 
@@ -123,9 +144,19 @@ print        $query= (" INSERT INTO desplazados_familiar (
                         CUAL_D,
                         HA_SIDO_VICTIMA_M_A_,
                         RECIBIO_AUXILIO_T_E_C_A,
-                        SE_OTORGO_AYUDA_M,
+                        AYUDA_MEDICAMENTOS,
+                        CIRUGIA_PLASTICA,
+                        CIRUGIA_VASCULAR,
+                        OSTEOPOROSIS,
+                        PROTESIS,
+                        ORTESIS,
+                        TERAPIAS,
                         OTRA_A_M,
-                        EN_CUANTO_INDEMNIZACION,
+
+                        IND_AYUDA_HUMANITARIA,
+                        IND_LESIONES,
+                        IND_INCAPACIDAD_PERMANENTE,
+
                         AFILIADO_SALUD,
                         REGIMEN,
                         CUAL_R,
@@ -151,7 +182,9 @@ print        $query= (" INSERT INTO desplazados_familiar (
                         RAMA_ACTIVIDAD_ACTUAL,
                         CONTRATO_ESCRITO,
                         TRABAJA_JORNADA,
-                        S_SOCIAL_R_P) VALUES 
+                        S_SOCIAL_R_P,
+                        USUARIOLOG
+                        ) VALUES 
                        ('$this->Identificacion',
                         '$this->DocumentoDesplazado',
                         '$this->TipoIdentificacion',
@@ -169,9 +202,16 @@ print        $query= (" INSERT INTO desplazados_familiar (
                         '$this->CualDiscapacidad',
                         '$this->VictimaMina',
                         '$this->AuxilioTransporte',
-                        '$this->AyudaMedica',
-                        '$this->OtraAyudaMedica',
-                        '$this->IndemnizacionMina',
+                        '$this->Medicamentos',
+                        '$this->CirugiaPlastica',
+                        '$this->CirugiaVascular',
+                        '$this->Osteoporosis',
+                        '$this->Protesis',
+                        '$this->Ortesis',
+                        '$this->Terapias',
+                        '$this->IndAyudaHumanitaria',
+                        '$this->IndLesiones',
+                        '$this->IndIncapacidad',
                         '$this->AfiliadoSalud',
                         '$this->Regimen',
                         '$this->CualRegimen',
@@ -197,8 +237,11 @@ print        $query= (" INSERT INTO desplazados_familiar (
                         '$this->RamaActividad',
                         '$this->ContraroLaboral',
                         '$this->JornadaTrabajo',
-                        '$this->SeguroRiesgos'); "); 
-     //header('location: ?view=listarfamiliares&mode=add&id='.$this->Identificacion);
+                        '$this->SeguroRiesgos',
+                        '$this->Usuario'
+
+                        ); "); 
+
   } 
 
   public function Edit() {
@@ -220,9 +263,17 @@ print        $query= (" INSERT INTO desplazados_familiar (
                 CUAL_D =  '$this->CualDiscapacidad',
                 HA_SIDO_VICTIMA_M_A_ = '$this->VictimaMina',
                 RECIBIO_AUXILIO_T_E_C_A =  '$this->AuxilioTransporte',
-                SE_OTORGO_AYUDA_M =  '$this->AyudaMedica',
+                AYUDA_MEDICAMENTOS =  '$this->Medicamentos',
+                CIRUGIA_PLASTICA =  '$this->CirugiaPlastica',
+                CIRUGIA_VASCULAR =  '$this->CirugiaVascular',
+                OSTEOPOROSIS =  '$this->Osteoporosis',
+                PROTESIS =  '$this->Protesis',
+                ORTESIS =  '$this->Ortesis',
+                TERAPIAS =  '$this->Terapias',
                 OTRA_A_M =  '$this->OtraAyudaMedica',
-                EN_CUANTO_INDEMNIZACION =  '$this->IndemnizacionMina',
+                IND_AYUDA_HUMANITARIA =  '$this->IndAyudaHumanitaria',
+                IND_LESIONES =  '$this->IndAyudaHumanitaria',
+                IND_INCAPACIDAD_PERMANENTE =  '$this->IndAyudaHumanitaria',
                 AFILIADO_SALUD =  '$this->AfiliadoSalud',
                 REGIMEN =  '$this->Regimen',
                 CUAL_R =  '$this->CualRegimen',

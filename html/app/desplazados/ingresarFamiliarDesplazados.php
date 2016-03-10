@@ -233,13 +233,13 @@
                                 <td class="left">
                                 <div class="col-md-10" style="text-align: left;">
 
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='Medicamentos' ) ?  "checked": null; ?> name="checkboxAyudaMedicaD" value="Medicamentos"> Medicamentos <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='CirugiaPlastica' ) ?  "checked": null; ?> name="checkboxAyudaMedicaD" value="CirugiaPlastica"> Cirugia Plastica <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='CirugiaVascular' ) ?  "checked": null; ?> name="checkboxAyudaMedicaD" value="CirugiaVascular"> Cirugia Vascular <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='Osteosintesis' ) ?  "checked": null; ?> name="checkboxAyudaMedicaD" value="Osteosintesis"> Osteosintesis <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='Protesis' ) ?  "checked": null; ?> name="checkboxAyudaMedicaD" value="Protesis"> Protesis <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='Ortesis' ) ?  "checked": null; ?> name="checkboxAyudaMedicaD" value="Ortesis"> Ortesis  <br>                   
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='Terapias' ) ?  "checked": null; ?> name="checkboxAyudaMedicaD" value="Terapias"> Terapias <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Medicamentos" value="1"> Medicamentos <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="CirugiaPlastica" value="1"> Cirugia Plastica <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="CirugiaVascular" value="1"> Cirugia Vascular <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Osteosintesis" value="1"> Osteosintesis <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Protesis" value="1"> Protesis <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Ortesis" value="1"> Ortesis  <br>                   
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Terapias" value="1"> Terapias <br>
                                 </td>
                             </tr>
                             <!-- (Otra:) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->

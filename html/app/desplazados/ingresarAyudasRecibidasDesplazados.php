@@ -110,10 +110,10 @@
                                 <td class="right">En el momento de los desplazamientos su nucleo familiar recibio ayuda de:</td>
                                 <td class="left">
                                 <div class="col-md79" style="text-align: left;">
-                                   <input type="checkbox" name="checkboxMuniAyudaD" value="Salud" > Salud<br>
-                                   <input type="checkbox" name="checkboxMuniAyudaD" value="Alojamiento"> Alojamiento<br>
-                                   <input type="checkbox" name="checkboxMuniAyudaD" value="Racion Alimentaria"> Racion Alimentaria<br>
-                                   <input type="checkbox" name="checkboxMuniAyudaD" value="Agua Potable"> Agua Potable<br>
+                                   <input type="checkbox" name="AyudaSalud" value="1" > Salud<br>
+                                   <input type="checkbox" name="AyudaAlojamiento" value="1"> Alojamiento<br>
+                                   <input type="checkbox" name="AyudaRacionAlimentaria" value="1"> Racion Alimentaria<br>
+                                   <input type="checkbox" name="AyudaAguaPotable" value="1"> Agua Potable<br>
                                 </div>
                                 </td>
                             </tr>

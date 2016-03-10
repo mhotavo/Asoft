@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-03-2016 a las 23:47:52
+-- Tiempo de generación: 10-03-2016 a las 23:42:15
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -85,15 +85,11 @@ CREATE TABLE `desplazados_ayudasrecibidas` (
   `SEGURIDAD_AI` varchar(3) DEFAULT NULL,
   `COMPLE_ALIMENTICIO` varchar(3) DEFAULT NULL,
   `BENEFI_DESAYUNO` varchar(3) DEFAULT NULL,
-  `AYUDA_MUNICIPIO` varchar(100) DEFAULT NULL
+  `AYUDA_SALUD` int(1) DEFAULT NULL,
+  `AYUDA_ALOJAMIENTO` int(1) DEFAULT NULL,
+  `AYUDA_ALIMENTARIA` int(1) DEFAULT NULL,
+  `AYUDA_AGUA` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `desplazados_ayudasrecibidas`
---
-
-INSERT INTO `desplazados_ayudasrecibidas` (`DOCUMENTO_DESPLAZADO`, `ATENCION_MENOR`, `CUIDADO_INFANTIL`, `PRO_ALIMENTACION`, `HAMBRE_FALTAA`, `SEGURIDAD_AI`, `COMPLE_ALIMENTICIO`, `BENEFI_DESAYUNO`, `AYUDA_MUNICIPIO`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -197,9 +193,17 @@ CREATE TABLE `desplazados_familiar` (
   `CUAL_D` varchar(45) DEFAULT NULL,
   `HA_SIDO_VICTIMA_M_A_` varchar(3) DEFAULT NULL,
   `RECIBIO_AUXILIO_T_E_C_A` varchar(3) DEFAULT NULL,
-  `SE_OTORGO_AYUDA_M` varchar(100) DEFAULT NULL,
+  `AYUDA_MEDICAMENTOS` varchar(2) DEFAULT NULL,
+  `CIRUGIA_PLASTICA` int(1) DEFAULT NULL,
+  `CIRUGIA_VASCULAR` int(1) DEFAULT NULL,
+  `OSTEOPOROSIS` int(1) DEFAULT NULL,
+  `PROTESIS` int(1) DEFAULT NULL,
+  `ORTESIS` int(1) DEFAULT NULL,
+  `TERAPIAS` int(1) DEFAULT NULL,
   `OTRA_A_M` varchar(25) DEFAULT NULL,
-  `EN_CUANTO_INDEMNIZACION` varchar(200) DEFAULT NULL,
+  `IND_AYUDA_HUMANITARIA` int(1) DEFAULT NULL,
+  `IND_LESIONES` int(1) DEFAULT NULL,
+  `IND_INCAPACIDAD_PERMANENTE` int(1) DEFAULT NULL,
   `AFILIADO_SALUD` varchar(3) DEFAULT NULL,
   `REGIMEN` varchar(20) DEFAULT NULL,
   `CUAL_R` varchar(20) DEFAULT NULL,
@@ -233,10 +237,10 @@ CREATE TABLE `desplazados_familiar` (
 -- Volcado de datos para la tabla `desplazados_familiar`
 --
 
-INSERT INTO `desplazados_familiar` (`IDENTIFICACION_FAMILIAR`, `DOCUMENTO_DESPLAZADO`, `TIPO_IDENTIFICACION`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `GENERO`, `FECHA_NACIMIENTO`, `ENFOQUE_DIFERENCIAL`, `ESTADO_CIVIL`, `PARENTESCO`, `ESTUVO_SEPARADO`, `DISCAPACITADO`, `DISCAPACIDAD`, `CUAL_D`, `HA_SIDO_VICTIMA_M_A_`, `RECIBIO_AUXILIO_T_E_C_A`, `SE_OTORGO_AYUDA_M`, `OTRA_A_M`, `EN_CUANTO_INDEMNIZACION`, `AFILIADO_SALUD`, `REGIMEN`, `CUAL_R`, `RECIBIO_ATENCION_S_M`, `RECIBIO_APOYO_PSICOSOCIAL`, `ASISTIO_PROGRAMA_S_R`, `VACUNAS`, `CUALES_VACUNAS`, `DIAGNOSTICADO_E_C`, `CUAL_ENFERMEDAD_`, `CALIFIQUE_E_S`, `ESTUDIABA_ANTES_V`, `ESTUDIA_ACTUALMENTE`, `PROGRAMA_A_E`, `CANCELA_COSTO_E`, `SABE_LEER`, `NIVEL_ALCANZADO`, `COMPETENCIA_LABORAL`, `COMPETENCIA_CERTIFICADA`, `GUSTARIA__CAPACITARSE_`, `HORARIO_CAPACITACION_`, `ACTIVIDAD_LABORAL_ACTUAL`, `RAMA_ACTIVIDAD_ACTUAL`, `CONTRATO_ESCRITO`, `TRABAJA_JORNADA`, `S_SOCIAL_R_P`, `USUARIOLOG`) VALUES
-(1234567, 1, 'CeduladeCiudadania', 'Hugo', 'Varon', 'Varon', 'Femenino', '2016-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Osteosintesis', 'Ninguna', 'PorLesiones', 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0),
-(12345678, 1, 'CeduladeCiudadania', 'Luz', 'Varon', 'Varon', 'Femenino', '2016-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Osteosintesis', 'Ninguna', 'PorLesiones', 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0),
-(123456780, 1, 'CeduladeCiudadania', 'Luz', 'Varon', 'Varon', 'Femenino', '1916-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Osteosintesis', 'Ninguna', 'PorLesiones', 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0);
+INSERT INTO `desplazados_familiar` (`IDENTIFICACION_FAMILIAR`, `DOCUMENTO_DESPLAZADO`, `TIPO_IDENTIFICACION`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `GENERO`, `FECHA_NACIMIENTO`, `ENFOQUE_DIFERENCIAL`, `ESTADO_CIVIL`, `PARENTESCO`, `ESTUVO_SEPARADO`, `DISCAPACITADO`, `DISCAPACIDAD`, `CUAL_D`, `HA_SIDO_VICTIMA_M_A_`, `RECIBIO_AUXILIO_T_E_C_A`, `AYUDA_MEDICAMENTOS`, `CIRUGIA_PLASTICA`, `CIRUGIA_VASCULAR`, `OSTEOPOROSIS`, `PROTESIS`, `ORTESIS`, `TERAPIAS`, `OTRA_A_M`, `IND_AYUDA_HUMANITARIA`, `IND_LESIONES`, `IND_INCAPACIDAD_PERMANENTE`, `AFILIADO_SALUD`, `REGIMEN`, `CUAL_R`, `RECIBIO_ATENCION_S_M`, `RECIBIO_APOYO_PSICOSOCIAL`, `ASISTIO_PROGRAMA_S_R`, `VACUNAS`, `CUALES_VACUNAS`, `DIAGNOSTICADO_E_C`, `CUAL_ENFERMEDAD_`, `CALIFIQUE_E_S`, `ESTUDIABA_ANTES_V`, `ESTUDIA_ACTUALMENTE`, `PROGRAMA_A_E`, `CANCELA_COSTO_E`, `SABE_LEER`, `NIVEL_ALCANZADO`, `COMPETENCIA_LABORAL`, `COMPETENCIA_CERTIFICADA`, `GUSTARIA__CAPACITARSE_`, `HORARIO_CAPACITACION_`, `ACTIVIDAD_LABORAL_ACTUAL`, `RAMA_ACTIVIDAD_ACTUAL`, `CONTRATO_ESCRITO`, `TRABAJA_JORNADA`, `S_SOCIAL_R_P`, `USUARIOLOG`) VALUES
+(1234567, 1, 'CeduladeCiudadania', 'Hugo', 'Varon', 'Varon', 'Femenino', '2016-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Os', NULL, NULL, NULL, NULL, NULL, NULL, 'Ninguna', NULL, NULL, NULL, 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0),
+(12345678, 1, 'CeduladeCiudadania', 'Luz', 'Varon', 'Varon', 'Femenino', '2016-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Os', NULL, NULL, NULL, NULL, NULL, NULL, 'Ninguna', NULL, NULL, NULL, 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0),
+(123456780, 1, 'CeduladeCiudadania', 'Luz', 'Varon', 'Varon', 'Femenino', '1916-03-01', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'Si', 'Si', 'Visual', 'Ninguna', 'Si', 'Si', 'Os', NULL, NULL, NULL, NULL, NULL, NULL, 'Ninguna', NULL, NULL, NULL, 'Si', 'Contributivo', 'Policia', 'Si', 'Si', 'Si', 'Si', 'Todas', 'Si', 'Ninguna', 4, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Industria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 0);
 
 -- --------------------------------------------------------
 
@@ -289,6 +293,13 @@ CREATE TABLE `desplazados_reparacion` (
   `MIEMBROH_BENEFICIARIO` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `desplazados_reparacion`
+--
+
+INSERT INTO `desplazados_reparacion` (`DOCUMENTO_DESPLAZADO`, `ESTADO_INFORMADO`, `MIEMBROH_INDEMNIZADO`, `ESTADO_GARANTIAS`, `MIEMBROH_RESTITUCION`, `ENTIDAD_RESTITUCION`, `ESTADO_RESTITUIDO`, `ESTADO_INDEMNIZACION`, `MIEMBROH_INDEMNIZACION`, `FAMILIA_REHABILITACION`, `MIEMBROH_BENEFICIARIO`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -316,6 +327,13 @@ CREATE TABLE `desplazados_vivienda` (
   `NO_FAMILI_CASA` int(11) DEFAULT NULL,
   `RECIBI_SUBSIDIO` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `desplazados_vivienda`
+--
+
+INSERT INTO `desplazados_vivienda` (`DOCUMENTO_DESPLAZADO`, `ACTUAL_VIVIENDA`, `TENENCIA`, `TIPO_CONTRATO`, `ZONA_VIVIENDA`, `ZONA_ALTORIESGO`, `PAREDES`, `PISO`, `TECHO`, `S_ACUEDUCTO`, `S_TELEFONO`, `S_ENERGIA_ELECTRICA`, `S_ALCANTARILLADO`, `S_GAS`, `S_REBASURAS`, `NO_HABIT_ANTES`, `NO_HABIT_ACTUAL`, `NO_FAMILI_CASA`, `RECIBI_SUBSIDIO`) VALUES
+(1, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

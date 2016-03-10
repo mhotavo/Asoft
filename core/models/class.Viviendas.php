@@ -1,96 +1,106 @@
 <?php 
 
-class Estabilizaciones {
+class Viviendas {
 
     private $db;
     private $Documento;
-    private $Nombre;
-    private $Primer_Apellido;
-    private $Segundo_Apellido;
-    private $Tipo_de_Documento;
-    private $Fecha_de_Victimizacion ;
-    private $Codigo_RUPV;
-    private $Departamento;
-    private $Municipio;
-    private $Zona ;
-    private $Localidad;
-    private $Direccion;
-    private $Telefono ;
-    private $Estado_Civil; 
-    private $Parentesco ;
-    private $Es_Jefe_de_Hogar;
-    private $Territorio;
+    private $ActualVivienda;
+    private $Tenencia;
+    private $TipoContrato;
+    private $ZonaVivienda;
+    private $ZonaAltoRiesgo ;
+    private $Paredes;
+    private $Piso;
+    private $Techo;
+    private $Acueducto ;
+    private $Telefono;
+    private $EnergiaElectrica;
+    private $Alcantarillado ;
+    private $Gas; 
+    private $Basuras ;
+    private $NoHabAntes;
+    private $NoHabActual;
+    private $NoFamiliaCasa;
+    private $RecibiSubsidio;
 
     public function __construct (){
-        $this->db = new Conexion();
+        $this->db = new ConeTelefonoion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->Nombre= isset($_POST['']) ? $_POST[''] : null;
-        $this->Primer_Apellido= isset($_POST['']) ? $_POST[''] : null;
-        $this->Segundo_Apellido= isset($_POST['']) ? $_POST[''] : null;
-        $this->Tipo_de_Documento= isset($_POST['']) ? $_POST[''] : null;
-        $this->Fecha_de_Victimizacion= isset($_POST['']) ? $_POST[''] : null;
-        $this->Codigo_RUPV= isset($_POST['']) ? $_POST[''] : null;
-        $this->Departamento= isset($_POST['']) ? $_POST[''] : null;
-        $this->Municipio= isset($_POST['']) ? $_POST[''] : null;
-        $this->Zona= isset($_POST['']) ? $_POST[''] : null;
-        $this->Localidad= isset($_POST['']) ? $_POST[''] : null;
-        $this->Direccion= isset($_POST['']) ? $_POST[''] : null;
-        $this->Telefono=  isset($_POST['']) ? $_POST[''] : null;
-        $this->Estado_Civil= isset($_POST['']) ? $_POST[''] : null;
-        $this->Parentesco= isset($_POST['']) ? $_POST[''] : null;
-        $this->Es_Jefe_de_Hogar= isset($_POST['']) ? $_POST[''] : null;
-        $this->Territorio= isset($_POST['']) ? $_POST[''] : null;
+        $this->ActualVivienda= isset($_POST['']) ? $_POST[''] : null;
+        $this->Tenencia= isset($_POST['']) ? $_POST[''] : null;
+        $this->TipoContrato= isset($_POST['']) ? $_POST[''] : null;
+        $this->ZonaVivienda= isset($_POST['']) ? $_POST[''] : null;
+        $this->ZonaAltoRiesgo= isset($_POST['']) ? $_POST[''] : null;
+        $this->Paredes= isset($_POST['']) ? $_POST[''] : null;
+        $this->Piso= isset($_POST['']) ? $_POST[''] : null;
+        $this->Techo= isset($_POST['']) ? $_POST[''] : null;
+        $this->Acueducto= isset($_POST['']) ? $_POST[''] : null;
+        $this->Telefono= isset($_POST['']) ? $_POST[''] : null;
+        $this->EnergiaElectrica= isset($_POST['']) ? $_POST[''] : null;
+        $this->Alcantarillado=  isset($_POST['']) ? $_POST[''] : null;
+        $this->Gas= isset($_POST['']) ? $_POST[''] : null;
+        $this->Basuras= isset($_POST['']) ? $_POST[''] : null;
+        $this->NoHabAntes= isset($_POST['']) ? $_POST[''] : null;
+        $this->NoHabActual= isset($_POST['']) ? $_POST[''] : null;
+        $this->NoFamiliaCasa= isset($_POST['']) ? $_POST[''] : null;
+        $this->RecibiSubsidio= isset($_POST['']) ? $_POST[''] : null;
 
     }
 
 
   public function Add() {
 
-        $this->db->query(" INSERT INTO desplazados_datos
-                        (DOCUMENTO_DESPLAZADO, NOMBRE_COMPLETO, PRIMER_APELLIDO, 
-                        SEGUNDO_APELLIDO, TIPO_DE_DOCUMENTO, FECHA_DE_VICTIMIZACION,
-                        CODIGO_RUPV, DEPARTAMENTO, MUNICIPIO, ZONA, LOCALIDAD, DIRECCION, 
-                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO) 
+        $this->db->query(" INSERT INTO desplazados_vivienda
+                        (DOCUMENTO_DESPLAZADO, ACTUAL_VIVIENDA, TENENCIA, TIPO_CONTRATO,
+                         ZONA_VIVIENDA, ZONA_ALTORIESGO, PAREDES, PISO, TECHO, S_ACUEDUCTO,
+                         S_TELEFONO, S_ENERGIA_ELECTRICA, S_ALCANTARILLADO, S_GAS, S_REBASURAS,
+                         NO_HABIT_ANTES, NO_HABIT_ACTUAL, NO_FAMILI_CASA, RECIBI_SUBSIDIO)
                         VALUES (
                         '$this->Documento',
-                        '$this->Nombre',
-                        '$this->Primer_Apellido',
-                        '$this->Segundo_Apellido', 
-                        '$this->Tipo_de_Documento',
-                        '$this->Fecha_de_Victimizacion',
-                        '$this->Codigo_RUPV',
-                        '$this->Departamento', 
-                        '$this->Municipio',
-                        '$this->Zona', 
-                        '$this->Localidad',
-                        '$this->Direccion',
+                        '$this->ActualVivienda',
+                        '$this->Tenencia',
+                        '$this->TipoContrato', 
+                        '$this->ZonaVivienda',
+                        '$this->ZonaAltoRiesgo',
+                        '$this->Paredes',
+                        '$this->Piso', 
+                        '$this->Techo',
+                        '$this->Acueducto', 
                         '$this->Telefono',
-                        '$this->Estado_Civil',
-                        '$this->Parentesco',
-                        '$this->Es_Jefe_de_Hogar',
-                        '$this->Territorio');");
+                        '$this->EnergiaElectrica',
+                        '$this->Alcantarillado',
+                        '$this->Gas',
+                        '$this->Basuras',
+                        '$this->NoHabAntes',
+                        '$this->NoHabActual',
+                        '$this->NoFamiliaCasa',
+                        '$this->RecibiSubsidio'
+                        );");
 
   } 
 
   public function Edit() {
+
       $this->db->query("UPDATE desplazados_datos SET 
-            NOMBRE_COMPLETO='$this->Nombre',
-            PRIMER_APELLIDO ='$this->Primer_Apellido',
-            SEGUNDO_APELLIDO ='$this->Segundo_Apellido',
-            TIPO_DE_DOCUMENTO ='$this->Tipo_de_Documento',
-            FECHA_DE_VICTIMIZACION ='$this->Fecha_de_Victimizacion',
-            CODIGO_RUPV ='$this->Codigo_RUPV',
-            DEPARTAMENTO ='$this->Departamento',
-            MUNICIPIO ='$this->Municipio',
-            ZONA ='$this->Zona',
-            LOCALIDAD ='$this->Localidad',
-            DIRECCION ='$this->Direccion',
-            TELEFONO ='$this->Telefono',
-            ESTADO_CIVIL ='$this->Estado_Civil',
-            PARENTESCO ='$this->Parentesco',
-            ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
-            TERRITORIO ='$this->Territorio'
-            WHERE Documento='$this->Documento';"); 
+            ACTUAL_VIVIENDA='$this->ActualVivienda',
+            TENENCIA ='$this->Tenencia',
+            TIPO_CONTRATO ='$this->TipoContrato',
+            ZONA_VIVIENDA ='$this->ZonaVivienda',
+            ZONA_ALTORIESGO ='$this->ZonaAltoRiesgo',
+            PAREDES ='$this->Paredes',
+            PISO ='$this->Piso',
+            TECHO ='$this->Techo',
+            S_ACUEDUCTO ='$this->Acueducto',
+            S_TELEFONO ='$this->Telefono',
+            S_ENERGIA_ELECTRICA ='$this->EnergiaElectrica',
+            S_ALCANTARILLADO ='$this->Alcantarillado',
+            S_GAS ='$this->Gas',
+            S_REBASURAS ='$this->Basuras',
+            NO_HABIT_ANTES ='$this->NoHabAntes',
+            NO_HABIT_ACTUAL ='$this->NoHabActual',
+            NO_FAMILI_CASA ='$this->NoFamiliaCasa',
+            RECIBI_SUBSIDIO ='$this->RecibiSubsidio'
+            WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }
 

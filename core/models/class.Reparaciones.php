@@ -1,96 +1,75 @@
 <?php 
 
-class Estabilizaciones {
+class Reparaciones {
 
     private $db;
     private $Documento;
-    private $Nombre;
-    private $Primer_Apellido;
-    private $Segundo_Apellido;
-    private $Tipo_de_Documento;
-    private $Fecha_de_Victimizacion ;
-    private $Codigo_RUPV;
-    private $Departamento;
-    private $Municipio;
-    private $Zona ;
-    private $Localidad;
-    private $Direccion;
-    private $Telefono ;
-    private $Estado_Civil; 
-    private $Parentesco ;
-    private $Es_Jefe_de_Hogar;
-    private $Territorio;
+    private $EstadoInformado;
+    private $MiembroIndemnizado;
+    private $EstadoGarantias;
+    private $MiembroRestitucion ;
+    private $EntidadRestitucion;
+    private $EstadoRestituido;
+    private $EstadoIndemnizacion;
+    private $MiembroIndemnizacion ;
+    private $FamiliarRehabilitacion;
+    private $MiembroBenificiario;
+
 
     public function __construct (){
         $this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->Nombre= isset($_POST['']) ? $_POST[''] : null;
-        $this->Primer_Apellido= isset($_POST['']) ? $_POST[''] : null;
-        $this->Segundo_Apellido= isset($_POST['']) ? $_POST[''] : null;
-        $this->Tipo_de_Documento= isset($_POST['']) ? $_POST[''] : null;
-        $this->Fecha_de_Victimizacion= isset($_POST['']) ? $_POST[''] : null;
-        $this->Codigo_RUPV= isset($_POST['']) ? $_POST[''] : null;
-        $this->Departamento= isset($_POST['']) ? $_POST[''] : null;
-        $this->Municipio= isset($_POST['']) ? $_POST[''] : null;
-        $this->Zona= isset($_POST['']) ? $_POST[''] : null;
-        $this->Localidad= isset($_POST['']) ? $_POST[''] : null;
-        $this->Direccion= isset($_POST['']) ? $_POST[''] : null;
-        $this->Telefono=  isset($_POST['']) ? $_POST[''] : null;
-        $this->Estado_Civil= isset($_POST['']) ? $_POST[''] : null;
-        $this->Parentesco= isset($_POST['']) ? $_POST[''] : null;
-        $this->Es_Jefe_de_Hogar= isset($_POST['']) ? $_POST[''] : null;
-        $this->Territorio= isset($_POST['']) ? $_POST[''] : null;
+        $this->EstadoInformado= isset($_POST['']) ? $_POST[''] : null;
+        $this->MiembroIndemnizado= isset($_POST['']) ? $_POST[''] : null;
+        $this->EstadoGarantias= isset($_POST['']) ? $_POST[''] : null;
+        $this->MiembroRestitucion= isset($_POST['']) ? $_POST[''] : null;
+        $this->EntidadRestitucion= isset($_POST['']) ? $_POST[''] : null;
+        $this->EstadoRestituido= isset($_POST['']) ? $_POST[''] : null;
+        $this->EstadoIndemnizacion= isset($_POST['']) ? $_POST[''] : null;
+        $this->MiembroIndemnizacion= isset($_POST['']) ? $_POST[''] : null;
+        $this->FamiliarRehabilitacion= isset($_POST['']) ? $_POST[''] : null;
+        $this->MiembroBenificiario= isset($_POST['']) ? $_POST[''] : null;
+
 
     }
 
 
   public function Add() {
 
-        $this->db->query(" INSERT INTO desplazados_datos
-                        (DOCUMENTO_DESPLAZADO, NOMBRE_COMPLETO, PRIMER_APELLIDO, 
-                        SEGUNDO_APELLIDO, TIPO_DE_DOCUMENTO, FECHA_DE_VICTIMIZACION,
-                        CODIGO_RUPV, DEPARTAMENTO, MUNICIPIO, ZONA, LOCALIDAD, DIRECCION, 
-                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO) 
+        $this->db->query(" INSERT INTO desplazados_reparacion
+                        (DOCUMENTO_DESPLAZADO, ESTADO_INFORMADO, MIEMBROH_INDEMNIZADO, ESTADO_GARANTIAS, 
+                        MIEMBROH_RESTITUCION, ENTIDAD_RESTITUCION, ESTADO_RESTITUIDO, ESTADO_INDEMNIZACION, 
+                        EMBROH_INDEMNIZACION, FAMILIA_REHABILITACION, MIEMBROH_BENEFICIARIO)
                         VALUES (
                         '$this->Documento',
-                        '$this->Nombre',
-                        '$this->Primer_Apellido',
-                        '$this->Segundo_Apellido', 
-                        '$this->Tipo_de_Documento',
-                        '$this->Fecha_de_Victimizacion',
-                        '$this->Codigo_RUPV',
-                        '$this->Departamento', 
-                        '$this->Municipio',
-                        '$this->Zona', 
-                        '$this->Localidad',
-                        '$this->Direccion',
-                        '$this->Telefono',
-                        '$this->Estado_Civil',
-                        '$this->Parentesco',
-                        '$this->Es_Jefe_de_Hogar',
-                        '$this->Territorio');");
+                        '$this->EstadoInformado',
+                        '$this->MiembroIndemnizado',
+                        '$this->EstadoGarantias',
+                        '$this->MiembroRestitucion',
+                        '$this->EntidadRestitucion',
+                        '$this->EstadoRestituido', 
+                        '$this->EstadoIndemnizacion',
+                        '$this->MiembroIndemnizacion', 
+                        '$this->FamiliarRehabilitacion',
+                        '$this->MiembroBenificiario'
+                        );");
 
   } 
 
   public function Edit() {
-      $this->db->query("UPDATE desplazados_datos SET 
-            NOMBRE_COMPLETO='$this->Nombre',
-            PRIMER_APELLIDO ='$this->Primer_Apellido',
-            SEGUNDO_APELLIDO ='$this->Segundo_Apellido',
-            TIPO_DE_DOCUMENTO ='$this->Tipo_de_Documento',
-            FECHA_DE_VICTIMIZACION ='$this->Fecha_de_Victimizacion',
-            CODIGO_RUPV ='$this->Codigo_RUPV',
-            DEPARTAMENTO ='$this->Departamento',
-            MUNICIPIO ='$this->Municipio',
-            ZONA ='$this->Zona',
-            LOCALIDAD ='$this->Localidad',
-            DIRECCION ='$this->Direccion',
-            TELEFONO ='$this->Telefono',
-            ESTADO_CIVIL ='$this->Estado_Civil',
-            PARENTESCO ='$this->Parentesco',
-            ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
-            TERRITORIO ='$this->Territorio'
-            WHERE Documento='$this->Documento';"); 
+      $this->db->query("UPDATE desplazados_reparacion SET 
+            DOCUMENTO_DESPLAZADO='$this->EstadoInformado',
+            ESTADO_INFORMADO ='$this->MiembroIndemnizado',
+            MIEMBROH_INDEMNIZADO ='$this->Segundo_Apellido',
+            ESTADO_GARANTIAS ='$this->EstadoGarantias',
+            MIEMBROH_RESTITUCION ='$this->MiembroRestitucion',
+            ENTIDAD_RESTITUCION ='$this->EntidadRestitucion',
+            ESTADO_RESTITUIDO ='$this->EstadoRestituido',
+            ESTADO_INDEMNIZACION ='$this->EstadoIndemnizacion',
+            EMBROH_INDEMNIZACION ='$this->MiembroIndemnizacion',
+            FAMILIA_REHABILITACION ='$this->FamiliarRehabilitacion',
+            MIEMBROH_BENEFICIARIO ='$this->MiembroBenificiario'
+            WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }
 

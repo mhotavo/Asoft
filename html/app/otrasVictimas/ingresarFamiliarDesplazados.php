@@ -195,9 +195,9 @@
                             <tr>
                                 <td>En cuanto a indemnizacion por Concepto de victimizacion por Minas-Antipersonal se le otorgo:</td>
                                 <td>
-                                    <a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizacion HI">Indemnizacion ayuda humanitaria inmediata</a></li>
-                                    <a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.l.Q.N.I.P">Indemnizaciones Administrativa por lesiones que no
-                                    <a><input type="checkbox" name="checkboxIndemnizacionD" value="Indemnizaciones A.P.I.P">Indemnizacion Administrativa por incapacidad permanente</a>
+                                    <a><input type="checkbox" name="IndAyudaHumanitaria" value="1">Indemnizacion ayuda humanitaria inmediata</a></li>
+                                    <a><input type="checkbox" name="IndLesiones" value="1">Indemnizaciones Administrativa por lesiones 
+                                    <a><input type="checkbox" name="IndIncapacidad" value="1">Indemnizacion Administrativa por incapacidad permanente</a>
                                 </td>
                             </tr> 
                             <tr>

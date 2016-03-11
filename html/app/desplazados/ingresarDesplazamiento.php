@@ -17,7 +17,7 @@
 
                 <div >
                     <h1> Agregar Desplazamiento</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=desplazamiento&id=".$_GET['id'] : "?view=validardesplazados";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
                                 <td class="right" width="45%">Durante los ultimos años cuantas veces ha sido desplazado:</td>
@@ -31,252 +31,181 @@
                                 </div>
                                 </td>
                             </tr>
-                            <!-- Se muestra cuando cuando ha sido victimizado 1 vez -->
-                            <tr>
-                                <td class="right" >Año:</td>
-                                <td  class="left">
-                                <div class="col-md-3" id="anoDesplazamiento1">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento1"  placeholder="Año 1">
-                                </div>
-                                 <div class="col-md-3" style="display: none;" id="anoDesplazamiento2">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento2"  placeholder="Año 2">
-                                </div>
-                                 <div class="col-md-3" style="display: none;" id="anoDesplazamiento3">    
-                                    <input  required class="form-control" type="text" name="anoDesplazamiento3"   placeholder="Año 3">
-                                </div>
-                                </td>
-                            </tr>
-                          <tr>
-                                <td class="right" >Municipio:</td>
-                                <td  class="left">
-                                <div class="col-md-3"  id="MunicipioDesplazamiento1">  
-                                <select  required name="MunicipioDesplazamiento1" class="  form-control "  data-show-subtext="true"  data-live-search="true">
-                                    <option value="">[...]</option>
-                                      <?php 
-                                     if(false != $_municipios) {
-                                        foreach($_municipios as $id__municipios => $contenido) {  ?>
-                                        <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
-                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
-                                        </option>
+                            <!-- Informacion cada desplazamiento
+                                 Primer Desplazamiento
+                            -->
+                            <div>
+                                <tr id="Anodesplazamiento1" >
+                                    <td class="right" >Año Primer Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9" >    
+                                        <input  required class="form-control" type="text" name="anoDesplazamiento1"  placeholder="Primer Desplazamiento">
+                                    </div>
 
-                                       <?php  } 
-                                     } ?>
-                                 </select>  
-                                </div>
-                                <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento2">    
-                                <select  required name="MunicipioDesplazamiento2" class="  form-control "  data-show-subtext="true"  data-live-search="true">
-                                    <option value="">[...]</option>
-                                      <?php 
-                                     if(false != $_municipios) {
-                                        foreach($_municipios as $id__municipios => $contenido) {  ?>
-                                        <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
-                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
-                                        </option>
+                                    </td>
+                                </tr>
+                              <tr id="MunicipioDesplazamiento1">
+                                    <td class="right" >Municipio Primer Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9" >  
+                                    <select  required name="MunicipioDesplazamiento1" class="  form-control "  data-show-subtext="true"  data-live-search="true">
+                                        <option value="">[...]</option>
+                                          <?php 
+                                         if(false != $_municipios) {
+                                            foreach($_municipios as $id__municipios => $contenido) {  ?>
+                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                              <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
+                                            </option>
 
-                                       <?php  } 
-                                     } ?>
-                                 </select>                                 
-                                 </div>
-                                <div class="col-md-3" style="display: none;" id="MunicipioDesplazamiento3">    
-                                <select  required name="MunicipioDesplazamiento3" class="  form-control "  data-show-subtext="true"  data-live-search="true">
-                                    <option value="">[...]</option>
-                                      <?php 
-                                     if(false != $_municipios) {
-                                        foreach($_municipios as $id__municipios => $contenido) {  ?>
-                                        <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
-                                          <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
-                                        </option>
+                                           <?php  } 
+                                         } ?>
+                                     </select>  
+                                    </div>                                                               
+                                    </td>
+                                </tr>                            
+                                <tr id="localidadDesplazamiento1">
+                                    <td class="right" >Localidad Primer Desplazamiento:</td>
+                                    <td  class="left" >
+                                    <div class="col-md-9"   >    
+                                        <input  required class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Primer Desplazamiento">
+                                    </div>
+                           
+                                    </td>
+                                </tr>
+                                <tr id="CausaDesplazamiento1">
+                                    <td  class="right" >A Que Causa Le Atribuye Su Primer Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9"  style="text-align: left;">
+                                        <input type="radio" name="CausaDesplazamiento1" value="ConfrontacionArmada"> Confrontacion Armada<br>
+                                        <input type="radio" name="CausaDesplazamiento1" value="AmenazaIndirecta"> Amenaza Indirecta<br>
+                                        <input type="radio" name="CausaDesplazamiento1" value="CamposMinados"> Campos Minados<br>
+                                        <input type="radio" name="CausaDesplazamiento1" value="AsesinatoFamilia"> Asesinato Familia<br>
+                                        <input type="radio" name="CausaDesplazamiento1" value="AmenazaDirecta"> Amenaza Directa<br>
+                                        <input type="radio" name="CausaDesplazamiento1" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
+                                        <input type="radio" name="CausaDesplazamiento1" value="AusenciaGobierno"> Ausencia del Gobierno<br>
+                                        <input type="radio" name="CausaDesplazamiento1" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
+                                    </div>
+                                    </td>
+                                </tr>
+                            </div>
+                            <!-- Segundo desplazamiento -->
+                            <div  >
+                                <tr id="Anodesplazamiento2"  style="display: none;">
+                                    <td class="right" >Año Segundo Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9">    
+                                        <input   class="form-control" type="text" name="anoDesplazamiento2"  placeholder="Segundo Desplazamiento">
+                                    </div>
 
-                                       <?php  } 
-                                     } ?>
-                                 </select>                                
-                                 </div>                                                                
-                                </td>
-                            </tr>                            
-                            <tr>
-                                <td class="right" >Localidad:</td>
-                                <td  class="left" >
-                                <div class="col-md-3"  id="localidadDesplazamiento1">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Localidad 1">
-                                </div>
-                                <div class="col-md-3" style="display: none;" id="localidadDesplazamiento2">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento2"  placeholder="Localidad 2">
-                                </div>
-                                <div class="col-md-3" style="display: none;" id="localidadDesplazamiento3">    
-                                    <input  required class="form-control" type="text"  name="localidadDesplazamiento3"  placeholder="Localidad 3">
-                                </div>
-                                </td>
-                            </tr>
-  
-                            <!-- Se muestra cuando cuando ha sido victimizado 1 y 2 veces
-                            <tr>
-                                <td class="right">Año:</td>
-                                <td  class="left">
-                                <div class="col-md-9">    
-                                    <input  required class="form-control" type="text" id="anoVictimizacion" name="txtAnoVictimizacion2D" >
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="right">Localidad:</td>
-                                <td  class="left">
-                                <div class="col-md-9">    
-                                    <input  required class="form-control" type="text"  name="txtLocalidadVictimizacion2D" >
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="right">Municipio:</td>
-                                <td  class="left">
-                                <div class="col-md-9">    
-                                    <input  required class="form-control" type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion2D">
-                                </div>
-                                </td>
-                            </tr> -->
-                            <!-- Se muestra cuando cuando ha sido victimizado 1  2 y 3 veces 
-                            <tr>
-                                <td class="right">Año:</td>
-                                <td  class="left">
-                                <div class="col-md-9">    
-                                    <input  required class="form-control" type="text" id="anoVictimizacion" name="txtAnoVictimizacion3D" >
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="right">Localidad:</td>
-                                <td  class="left">
-                                <div class="col-md-9">    
-                                    <input  required class="form-control" type="text"  name="txtLocalidadVictimizacion3D">
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="right">Municipio:</td>
-                                <td  class="left">
-                                <div class="col-md-9">    
-                                    <input  required class="form-control" type="text" id="municipioVictimizacion" name="txtMunicipioVictimizacion3D">
-                                </div>
-                                </td>
-                            </tr>-->
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td class="right">A Cuales Causas Le Atribuye Su Desplazamiento:</td>
-                                <td  class="left">
-                                <div class="col-md-9">    
-                                    <input type="text" id="CausaDesplazamiento" name="CausaDesplazamiento" required class="form-control">
-                                </div>
-                                </td>
-                            </tr>
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td  class="right" >Confrontacion Armada:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="confrontacionArmada" name="cboConfrontacionArmadaD" required class="form-control">
+                                    </td>
+                                </tr>
+                              <tr id="MunicipioDesplazamiento2" style="display: none;">
+                                    <td class="right" >Municipio Segundo Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9">  
+                                    <select   name="MunicipioDesplazamiento2" class="  form-control "  data-show-subtext="true"  data-live-search="true">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td class="right">Amenaza Indirecta:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="amenazaIndirecta" name="amenazaIndirectaD" required class="form-control">
+                                          <?php 
+                                         if(false != $_municipios) {
+                                            foreach($_municipios as $id__municipios => $contenido) {  ?>
+                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                              <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
+                                            </option>
+
+                                           <?php  } 
+                                         } ?>
+                                     </select>  
+                                    </div>                                                               
+                                    </td>
+                                </tr>                            
+                                <tr id="localidadDesplazamiento2" style="display: none;">
+                                    <td class="right" >Localidad Segundo Desplazamiento:</td>
+                                    <td  class="left" >
+                                    <div class="col-md-9"  >    
+                                        <input   class="form-control" type="text"  name="localidadDesplazamiento2" placeholder="Segundo Desplazamiento">
+                                    </div>
+                           
+                                    </td>
+                                </tr>
+                                <tr id="CausaDesplazamiento2" style="display: none;">
+                                    <td  class="right" >A Que Causa Le Atribuye Su Segundo Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9" style="text-align: left;">
+                                        <input type="radio" name="CausaDesplazamiento2" value="ConfrontacionArmada"> Confrontacion Armada<br>
+                                        <input type="radio" name="CausaDesplazamiento2" value="AmenazaIndirecta"> Amenaza Indirecta<br>
+                                        <input type="radio" name="CausaDesplazamiento2" value="CamposMinados"> Campos Minados<br>
+                                        <input type="radio" name="CausaDesplazamiento2" value="AsesinatoFamilia"> Asesinato Familia<br>
+                                        <input type="radio" name="CausaDesplazamiento2" value="AmenazaDirecta"> Amenaza Directa<br>
+                                        <input type="radio" name="CausaDesplazamiento2" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
+                                        <input type="radio" name="CausaDesplazamiento2" value="AusenciaGobierno"> Ausencia del Gobierno<br>
+                                        <input type="radio" name="CausaDesplazamiento2" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
+                                    </div>
+                                    </td>
+                                </tr>
+                            </div>
+                            <!-- tercer desplazamiento -->
+                            <div >
+                                <tr  id="Anodesplazamiento3" style="display: none;">
+                                    <td class="right" >Año Tercer Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9">    
+                                        <input   class="form-control" type="text" name="anoDesplazamiento1"  placeholder="Tercer Desplazamiento">
+                                    </div>
+
+                                    </td>
+                                </tr>
+                              <tr  id="MunicipioDesplazamiento3" style="display: none;">
+                                    <td class="right" >Municipio Tercer Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9">  
+                                    <select   name="MunicipioDesplazamiento1" class="  form-control "  data-show-subtext="true"  data-live-search="true">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td  class="right" >Campos Minados:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="camposMinados" name="cboCamposMinadosD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td class="right">Asesinato Familia:</td>
-                                <td class="left">
-                                <div class="col-md-9">
-                                <select id="asesinatoFamilia" name="cboAsesinatoFamiliaD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                                </td>
-                            </tr>
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td class="right">Amenaza Directa:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="amenazaDirecta" name="cboAmenazaDirectaD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td  class="right">Reclutamiento de Menores:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="recluMenores" name="cboRecluMenoresD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td class="right">Ausencia del Gobierno:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="ausenGobierno" name="cboAusenGobiernoD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr> 
-                            <!-- Se muestra siempre cuantas veces ha sido victimizado -->
-                            <tr>
-                                <td  class="right">Desplazamiento Masivo:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="desplaMasivo" name="cboDesplaMasivoD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
+                                          <?php 
+                                         if(false != $_municipios) {
+                                            foreach($_municipios as $id__municipios => $contenido) {  ?>
+                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                              <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
+                                            </option>
+
+                                           <?php  } 
+                                         } ?>
+                                     </select>  
+                                    </div>                                                               
+                                    </td>
+                                </tr>                            
+                                <tr  id="localidadDesplazamiento3" style="display: none;">
+                                    <td class="right" >Localidad Tercer Desplazamiento:</td>
+                                    <td  class="left" >
+                                    <div class="col-md-9"  >    
+                                        <input   class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Tercer Desplazamiento">
+                                    </div>
+                           
+                                    </td>
+                                </tr>
+                                <tr  id="CausaDesplazamiento3" style="display: none;">
+                                    <td  class="right" >A Que Causa Le Atribuye Su Tercer Desplazamiento:</td>
+                                    <td  class="left">
+                                    <div class="col-md-9" style="text-align: left;">
+                                        <input type="radio" name="CausaDesplazamiento3" value="ConfrontacionArmada"> Confrontacion Armada<br>
+                                        <input type="radio" name="CausaDesplazamiento3" value="AmenazaIndirecta"> Amenaza Indirecta<br>
+                                        <input type="radio" name="CausaDesplazamiento3" value="CamposMinados"> Campos Minados<br>
+                                        <input type="radio" name="CausaDesplazamiento3" value="AsesinatoFamilia"> Asesinato Familia<br>
+                                        <input type="radio" name="CausaDesplazamiento3" value="AmenazaDirecta"> Amenaza Directa<br>
+                                        <input type="radio" name="CausaDesplazamiento3" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
+                                        <input type="radio" name="CausaDesplazamiento3" value="AusenciaGobierno"> Ausencia del Gobierno<br>
+                                        <input type="radio" name="CausaDesplazamiento3" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
+                                    </div>
+                                    </td>
+                                </tr>
+                            </div>                                                        
+                            <!--  Fin Informacion cada desplazamiento -->
+
+
                             <tr>
                                 <td  class="right">N° de Personas que Conformaban su hogar en ese momento:</td>
                                 <td  class="left">
                                 <div class="col-md-9">    
-                                    <input  required class="form-control" type="text" id="nPersonas" name="txtNPersonasD" >
+                                    <input   class="form-control" type="text" id="nPersonas" name="txtNPersonasD" >
                                 </div>
                                 </td>
                             </tr>

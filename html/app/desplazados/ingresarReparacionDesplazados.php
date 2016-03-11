@@ -17,7 +17,7 @@
 
                 <div >
                     <h1> Agregar Reparacion</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=reparacion&id=".$_GET['id'] : "?view=validardesplazados";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
                                 <td class="right" width="75%">El estado le ha informado sobre la verdad de la violacion de los D.H y del D.I.H cometidos contra el (ella), y/o los miembros de su hogar en relacion a los hechos ocurridos con su Victimizacion?:</td>

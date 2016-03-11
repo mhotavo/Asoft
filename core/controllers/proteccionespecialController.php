@@ -21,7 +21,7 @@ switch (isset($mode) ?  $mode : null ) {
 	case 'add':
 		if ($_POST) {
 			$familiares->Add();
-			  header('location: ?view=listarfamiliares&id='.$id);
+			  header('location: ?view=reparacion&id='.$id);
 		}else {	
 			include(HTML_DIR . 'app/desplazados/ingresarEspecialProteccionDesplazados.php');
 		}
@@ -33,7 +33,7 @@ switch (isset($mode) ?  $mode : null ) {
 		if (  isset($id) and !empty($id) ) {
 				if ($_POST) {
 					$familiares->edit();
-					header('location: ?view=listarfamiliares&id='.$id);
+					header('location: ?view=reparacion&id='.$id);
 				} else {
 					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
 					//include(HTML_DIR . 'app/desplazados/ingresarEspecialProteccionDesplazados.php');

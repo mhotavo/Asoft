@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-03-2016 a las 23:42:15
+-- Tiempo de generación: 11-03-2016 a las 22:35:50
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -293,13 +293,6 @@ CREATE TABLE `desplazados_reparacion` (
   `MIEMBROH_BENEFICIARIO` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `desplazados_reparacion`
---
-
-INSERT INTO `desplazados_reparacion` (`DOCUMENTO_DESPLAZADO`, `ESTADO_INFORMADO`, `MIEMBROH_INDEMNIZADO`, `ESTADO_GARANTIAS`, `MIEMBROH_RESTITUCION`, `ENTIDAD_RESTITUCION`, `ESTADO_RESTITUIDO`, `ESTADO_INDEMNIZACION`, `MIEMBROH_INDEMNIZACION`, `FAMILIA_REHABILITACION`, `MIEMBROH_BENEFICIARIO`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -327,13 +320,6 @@ CREATE TABLE `desplazados_vivienda` (
   `NO_FAMILI_CASA` int(11) DEFAULT NULL,
   `RECIBI_SUBSIDIO` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `desplazados_vivienda`
---
-
-INSERT INTO `desplazados_vivienda` (`DOCUMENTO_DESPLAZADO`, `ACTUAL_VIVIENDA`, `TENENCIA`, `TIPO_CONTRATO`, `ZONA_VIVIENDA`, `ZONA_ALTORIESGO`, `PAREDES`, `PISO`, `TECHO`, `S_ACUEDUCTO`, `S_TELEFONO`, `S_ENERGIA_ELECTRICA`, `S_ALCANTARILLADO`, `S_GAS`, `S_REBASURAS`, `NO_HABIT_ANTES`, `NO_HABIT_ACTUAL`, `NO_FAMILI_CASA`, `RECIBI_SUBSIDIO`) VALUES
-(1, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -371,20 +357,15 @@ CREATE TABLE `desplazamiento` (
   `ANO1` int(11) DEFAULT NULL,
   `LOCALIDAD1` varchar(20) DEFAULT NULL,
   `MUNICIPIO1` varchar(25) DEFAULT NULL,
+  `CAUSA1` varchar(200) DEFAULT NULL,
   `ANO2` int(11) DEFAULT NULL,
   `LOCALIDAD2` varchar(4) DEFAULT NULL,
   `MUNICIPIO2` varchar(20) DEFAULT NULL,
+  `CAUSA2` varchar(200) DEFAULT NULL,
   `ANO3` int(11) DEFAULT NULL,
   `LOCALIDAD3` varchar(4) DEFAULT NULL,
   `MUNICIPIO3` varchar(20) DEFAULT NULL,
-  `CONFRONTACION_ARMADA` varchar(3) DEFAULT NULL,
-  `AMENAZA_INDIRECTA` varchar(3) DEFAULT NULL,
-  `CAMPOS_MINADOS_` varchar(3) DEFAULT NULL,
-  `ASESINATO_FAMILIA` varchar(3) DEFAULT NULL,
-  `AMENAZA_DIRECTA` varchar(3) DEFAULT NULL,
-  `RECLUTAMIENTO_MENORES` varchar(3) DEFAULT NULL,
-  `AUSENCIA_GOBIERNO` varchar(3) DEFAULT NULL,
-  `DESPLAZAMIENTO_MASIVO` varchar(3) DEFAULT NULL,
+  `CAUSA3` varchar(200) DEFAULT NULL,
   `NO_PERSONAS_H` int(11) DEFAULT NULL,
   `FAMILIA_SEPARO` varchar(3) DEFAULT NULL,
   `S_AYUDA_ESTATAL` varchar(3) DEFAULT NULL,

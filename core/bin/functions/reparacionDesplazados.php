@@ -1,6 +1,6 @@
 <?php 
 
-function reparacion() {
+function Reparaciones() {
 	$db = New Conexion();
 	 $sql = $db->query("SELECT * FROM desplazados_reparacion;");
 	if ($db->rows($sql)>0) {

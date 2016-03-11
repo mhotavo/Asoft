@@ -17,7 +17,7 @@
 
                 <div >
                     <h1> Agregar Vivienda</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=vivienda&id=".$_GET['id'] : "?view=validardesplazados";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
                                 <td class="right" width="45%">Actualmente la vivienda que habita es:</td>

@@ -1,8 +1,8 @@
 <?php 
 
-function ayudasayudasDesplazados() {
+function ayudasDesplazados() {
 	$db = New Conexion();
-	 $sql = $db->query("SELECT * FROM ayudasDesplazados_ayudasrecibidas;");
+	 $sql = $db->query("SELECT * FROM desplazados_ayudasrecibidas;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
 			$ayudasDesplazados[$d['DOCUMENTO_DESPLAZADO']]= array(

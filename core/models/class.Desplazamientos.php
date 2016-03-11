@@ -8,11 +8,14 @@ class Desplazamientos {
     private $Anio1;
     private $Localidad1;
     private $Municipio1;
+    private $Causa1;
     private $Anio2 ;
     private $Localidad2;
     private $Municipio2;
+    private $Causa2;
     private $Anio3;
     private $Localidad3;
+    private $Causa3;
     private $Municipio3;
     private $ConfrontacionArmada;
     private $AmenazaIndireta;
@@ -50,13 +53,15 @@ class Desplazamientos {
         $this->Anio1= isset($_POST['anoDesplazamiento1']) ? $_POST['anoDesplazamiento1'] : null;
         $this->Localidad1= isset($_POST['localidadDesplazamiento1']) ? $_POST['localidadDesplazamiento1'] : null;
         $this->Municipio1= isset($_POST['MunicipioDesplazamiento1']) ? $_POST['MunicipioDesplazamiento1'] : null;
+        $this->Causa1= isset($_POST['CausaDesplazamiento1']) ? $_POST['CausaDesplazamiento1'] : null;
         $this->Anio2= isset($_POST['anoDesplazamiento2']) ? $_POST['anoDesplazamiento2'] : null;
         $this->Localidad2= isset($_POST['localidadDesplazamiento2']) ? $_POST['localidadDesplazamiento2'] : null;
         $this->Municipio2= isset($_POST['MunicipioDesplazamiento2']) ? $_POST['MunicipioDesplazamiento2'] : null;
+        $this->Causa2= isset($_POST['CausaDesplazamiento2']) ? $_POST['CausaDesplazamiento2'] : null;
         $this->Anio3= isset($_POST['anoDesplazamiento3']) ? $_POST['anoDesplazamiento3'] : null;
         $this->Localidad3= isset($_POST['localidadDesplazamiento3']) ? $_POST['localidadDesplazamiento3'] : null;
         $this->Municipio3= isset($_POST['MunicipioDesplazamiento3']) ? $_POST['MunicipioDesplazamiento3'] : null;
-        $this->Causas= isset($_POST['CausaDesplazamiento']) ? $_POST['CausaDesplazamiento'] : null;
+        $this->Causa3= isset($_POST['CausaDesplazamiento3']) ? $_POST['CausaDesplazamiento3'] : null;
         $this->ConfrontacionArmada= isset($_POST['cboConfrontacionArmadaD']) ? $_POST['cboConfrontacionArmadaD'] : null;
         $this->AmenazaIndireta= isset($_POST['amenazaIndirectaD']) ? $_POST['amenazaIndirectaD'] : null;
         $this->CamposMinados= isset($_POST['cboCamposMinadosD']) ? $_POST['cboCamposMinadosD'] : null;
@@ -88,10 +93,10 @@ class Desplazamientos {
 
 
   public function Add() {
-
+ 
         $this->db->query(" INSERT INTO desplazamiento
-                        (DOCUMENTO_DESPLAZADO, VECES_DESPLAZADO, ANO1, LOCALIDAD1, MUNICIPIO1, ANO2, 
-                         LOCALIDAD2, MUNICIPIO2, ANO3, LOCALIDAD3, MUNICIPIO3, CAUSAS, CONFRONTACION_ARMADA, 
+                        (DOCUMENTO_DESPLAZADO, VECES_DESPLAZADO, ANO1, LOCALIDAD1, MUNICIPIO1, CAUSA1, ANO2, 
+                         LOCALIDAD2, MUNICIPIO2, CAUSA2, ANO3, LOCALIDAD3, MUNICIPIO3, CAUSA3, CONFRONTACION_ARMADA, 
                          AMENAZA_INDIRECTA, CAMPOS_MINADOS_, ASESINATO_FAMILIA, AMENAZA_DIRECTA, 
                          RECLUTAMIENTO_MENORES, AUSENCIA_GOBIERNO, DESPLAZAMIENTO_MASIVO, NO_PERSONAS_H,
                          FAMILIA_SEPARO, S_AYUDA_ESTATAL, NUCLEO_UNIFICAR, R_AYUDA_ESTATL, FAMILIA_VIVOS, 
@@ -104,13 +109,15 @@ class Desplazamientos {
                         '$this->Anio1',
                         '$this->Localidad1', 
                         '$this->Municipio1',
+                        '$this->Causa1',
                         '$this->Anio2',
                         '$this->Localidad2',
                         '$this->Municipio2', 
+                        '$this->Causa2',
                         '$this->Anio3',
                         '$this->Localidad3',
                         '$this->Municipio3',
-                        '$this->Causas',
+                        '$this->Causa3',
                         '$this->ConfrontacionArmada',
                         '$this->AmenazaIndireta',
                         '$this->CamposMinados',
@@ -137,7 +144,7 @@ class Desplazamientos {
                         '$this->DepaPros',
                         '$this->Personeria',
                         '$this->UAO',
-                        '$this->OTRA');");
+                        '$this->OTRA');");  
  
 
   } 
@@ -148,13 +155,15 @@ class Desplazamientos {
                       ANO1 ='$this->Anio1',
                       LOCALIDAD1 ='$this->Localidad1',
                       MUNICIPIO1 ='$this->Municipio1',
+                      CAUSA1 ='$this->Causa1',
                       ANO2 ='$this->Anio2',
                       LOCALIDAD2 ='$this->Localidad2',
                       MUNICIPIO2 ='$this->Municipio2',
+                      CAUSA2 ='$this->Causa2',
                       ANO3 ='$this->Anio3',
                       LOCALIDAD3 ='$this->Localidad3',
                       MUNICIPIO3 ='$this->Municipio3',
-                      CAUSAS ='$this->Causas',
+                      CAUSA3 ='$this->Causa3',
                       CONFRONTACION_ARMADA ='$this->ConfrontacionArmada',
                       AMENAZA_INDIRECTA ='$this->AmenazaIndireta',
                       CAMPOS_MINADOS_ ='$this->CamposMinados',

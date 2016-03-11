@@ -51,6 +51,12 @@
                              ?>
                             </tbody>
                         </table>
+                           <tr>
+                                <td colspan="2">
+                                <br><br>                      
+                                    <a href="?view=desplazamiento&id=<?php echo $_GET['id']; ?>" class="btn btn-primary">Guardar y continuar</a>     
+                                </td>
+                            </tr>    
                         </div>
                     </div>  
                     <div class="col-md-1">&nbsp;</div>       

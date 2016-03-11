@@ -5,7 +5,7 @@ function Departamentos() {
 	 $sql = $db->query("SELECT * FROM departamento;");
 	if ($db->rows($sql)>0) {
 		while ($d=$db->recorrer($sql)) {
-			$departamentos[$d['Documento']]= array(
+			$departamentos[$d['ID_DEPARTAMENTO']]= array(
 				'ID_DEPARTAMENTO' => $d['ID_DEPARTAMENTO'],
 				'NOMBRE_DEPARTAMENTO' => $d['NOMBRE_DEPARTAMENTO']
 				);

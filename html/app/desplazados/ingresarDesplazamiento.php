@@ -273,7 +273,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td  class="right">No de Personas que Conformaban su hogar en ese momento:</td>
+                                <td  class="right">N° de Personas que Conformaban su hogar en ese momento:</td>
                                 <td  class="left">
                                 <div class="col-md-9">    
                                     <input  required class="form-control" type="text" id="nPersonas" name="txtNPersonasD" >

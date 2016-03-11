@@ -26,24 +26,24 @@ class Viviendas {
     public function __construct (){
         $this->db = new ConeTelefonoion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->ActualVivienda= isset($_POST['']) ? $_POST[''] : null;
-        $this->Tenencia= isset($_POST['']) ? $_POST[''] : null;
-        $this->TipoContrato= isset($_POST['']) ? $_POST[''] : null;
-        $this->ZonaVivienda= isset($_POST['']) ? $_POST[''] : null;
-        $this->ZonaAltoRiesgo= isset($_POST['']) ? $_POST[''] : null;
-        $this->Paredes= isset($_POST['']) ? $_POST[''] : null;
-        $this->Piso= isset($_POST['']) ? $_POST[''] : null;
-        $this->Techo= isset($_POST['']) ? $_POST[''] : null;
-        $this->Acueducto= isset($_POST['']) ? $_POST[''] : null;
-        $this->Telefono= isset($_POST['']) ? $_POST[''] : null;
-        $this->EnergiaElectrica= isset($_POST['']) ? $_POST[''] : null;
-        $this->Alcantarillado=  isset($_POST['']) ? $_POST[''] : null;
-        $this->Gas= isset($_POST['']) ? $_POST[''] : null;
-        $this->Basuras= isset($_POST['']) ? $_POST[''] : null;
-        $this->NoHabAntes= isset($_POST['']) ? $_POST[''] : null;
-        $this->NoHabActual= isset($_POST['']) ? $_POST[''] : null;
-        $this->NoFamiliaCasa= isset($_POST['']) ? $_POST[''] : null;
-        $this->RecibiSubsidio= isset($_POST['']) ? $_POST[''] : null;
+        $this->ActualVivienda= isset($_POST['cboActualViviendaD'] ) ? $_POST['cboActualViviendaD'] : null;
+        $this->Tenencia= isset($_POST['cboTenenciaD'] ) ? $_POST['cboTenenciaD'] : null;
+        $this->TipoContrato= isset($_POST['cboTipoContraD'] ) ? $_POST['cboTipoContraD'] : null;
+        $this->ZonaVivienda= isset($_POST['cboZonaViviendaD'] ) ? $_POST['cboZonaViviendaD'] : null;
+        $this->ZonaAltoRiesgo= isset($_POST['cboZonaAltoRD'] ) ? $_POST['cboZonaAltoRD'] : null;
+        $this->Paredes= isset($_POST['cboParedesD'] ) ? $_POST['cboParedesD'] : null;
+        $this->Piso= isset($_POST['cboPisoD'] ) ? $_POST['cboPisoD'] : null;
+        $this->Techo= isset($_POST['cboTechoD'] ) ? $_POST['cboTechoD'] : null;
+        $this->Acueducto= isset($_POST['cboAcueductoD'] ) ? $_POST['cboAcueductoD'] : null;
+        $this->Telefono= isset($_POST['cboTelefonoD'] ) ? $_POST['cboTelefonoD'] : null;
+        $this->EnergiaElectrica= isset($_POST['cboEElectricaD'] ) ? $_POST['cboEElectricaD'] : null;
+        $this->Alcantarillado=  isset($_POST['cboAlcantarilladoD'] ) ? $_POST['cboAlcantarilladoD'] : null;
+        $this->Gas= isset($_POST['cboGasDomiciliarioD'] ) ? $_POST['cboGasDomiciliarioD'] : null;
+        $this->Basuras= isset($_POST['cboReBasurasD'] ) ? $_POST['cboReBasurasD'] : null;
+        $this->NoHabAntes= isset($_POST['txtNHabiAnteD'] ) ? $_POST['txtNHabiAnteD'] : null;
+        $this->NoHabActual= isset($_POST['txtNHAbiActuD'] ) ? $_POST[''] : null;
+        $this->NoFamiliaCasa= isset($_POST['txtNFamiliasD'] ) ? $_POST['txtNFamiliasD'] : null;
+        $this->RecibiSubsidio= isset($_POST['cboSubsViviendaD'] ) ? $_POST['cboSubsViviendaD'] : null;
 
     }
 

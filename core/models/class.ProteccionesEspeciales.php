@@ -18,15 +18,15 @@ class ProteccionesEspeciales {
     public function __construct (){
         $this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->AyudaCultura= isset($_POST['']) ? $_POST[''] : null;
-        $this->Ayuda18Cultura= isset($_POST['']) ? $_POST[''] : null;
-        $this->FuncionarioTrato= isset($_POST['']) ? $_POST[''] : null;
-        $this->PuebloIndigena= isset($_POST['']) ? $_POST[''] : null;
-        $this->IndigenasViointra= isset($_POST['']) ? $_POST[''] : null;
-        $this->Denunciado= isset($_POST['']) ? $_POST[''] : null;
-        $this->CualEntidad= isset($_POST['']) ? $_POST[''] : null;
-        $this->TipoViolencia= isset($_POST['']) ? $_POST[''] : null;
-        $this->PromuevenDerechos= isset($_POST['']) ? $_POST[''] : null;
+        $this->AyudaCultura= isset($_POST['cboEsProteccionD'] ) ? $_POST['cboEsProteccionD'] : null;
+        $this->Ayuda18Cultura= isset($_POST['cboEducaCulturaD'] ) ? $_POST['cboEducaCulturaD'] : null;
+        $this->FuncionarioTrato= isset($_POST['cboTratoD'] ) ? $_POST['cboTratoD'] : null;
+        $this->PuebloIndigena= isset($_POST['cboPuebloIndiD'] ) ? $_POST['cboPuebloIndiD'] : null;
+        $this->IndigenasViointra= isset($_POST['cboViolenciaD'] ) ? $_POST['cboViolenciaD'] : null;
+        $this->Denunciado= isset($_POST['cboDenunciadoD'] ) ? $_POST['cboDenunciadoD'] : null;
+        $this->CualEntidad= isset($_POST['txtCualEntidadD'] ) ? $_POST['txtCualEntidadD'] : null;
+        $this->TipoViolencia= isset($_POST['cboTipoViolenciaD'] ) ? $_POST['cboTipoViolenciaD'] : null;
+        $this->PromuevenDerechos= isset($_POST['cboPromuevenDereD'] ) ? $_POST['cboPromuevenDereD'] : null;
 
     }
 

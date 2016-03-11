@@ -25,12 +25,12 @@
                                 <div class="col-md-7">
                                     <select id="ingreMensuales" name="cboIngreMensualesD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Un Salario Minimo">Un Salario Minimo</option>
-                                            <option value="Inferior a Un Salario Minimo">Inferior a Un Salario Minimo</option>
-                                            <option value="Entre uno(1) y dos(2) Salarios Minimos">Entre uno(1) y dos(2) Salarios Minimos</option>
-                                            <option value="Entre dos(2) y tres(3) Salarios Minimos">Entre dos(2) y tres(3) Salarios Minimos</option>                                            
-                                            <option value="Mas de tres(3) Salarios Minimos">Mas de tres(3) Salarios Minimos</option>
-                                            <option value="No Devengan">No Devengan</option>                                           
+                                            <option value="UnSalarioMinimo">Un Salario Minimo</option>
+                                            <option value="InferiorSalarioMinimo">Inferior a Un Salario Minimo</option>
+                                            <option value="UnoaDosSalariosMinimos">Entre uno(1) y dos(2) Salarios Minimos</option>
+                                            <option value="DosaTresSalariosMinimos">Entre dos(2) y tres(3) Salarios Minimos</option>                                            
+                                            <option value="MasTresSalarios Minimos">Mas de tres(3) Salarios Minimos</option>
+                                            <option value="NoDevengan">No Devengan</option>                                           
                                     </select>
                                 </div>
                                 </td>
@@ -105,7 +105,6 @@
                                 <td class="right">Cuales son los alimentos que consumen las personas del hogar:</td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                    <input type="text"  required value="" class="form-control" name="txtNombre" id="txtNombre" >
                                 </div>
                                 </td>
                             </tr>

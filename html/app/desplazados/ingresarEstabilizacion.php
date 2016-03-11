@@ -23,15 +23,15 @@
                                 <td  class="right" width="45%">Razones para elegir este lugar:</td>
                                 <td  class="left" width="55%">
                                 <div class="col-md-7" style="text-align: left;">
-                                    <input type="checkbox" name="checkboxRazones" value="Por la vivienda"> Por la vivienda <br>
-                                    <input type="checkbox" name="checkboxRazones" value="Accesibilidad a salud"> Accesibilidad a salud <br>
-                                    <input type="checkbox" name="checkboxRazones" value="Mayor Seguridad Personal"> Mayor Seguridad Personal <br>
-                                    <input type="checkbox" name="checkboxRazones" value="Tenia Parientes o amigos"> Tenia Parientes o amigos <br>
-                                    <input type="checkbox" name="checkboxRazones" value="Acceso a Ayudas de Gobierno"> Acceso a Ayudas de Gobierno <br> 
-                                    <input type="checkbox" name="checkboxRazones" value="Mayores Posibilidades de Trabajo"> Mayores Posibilidades de Trabajo <br>                                
-                                    <input type="checkbox" name="checkboxRazones" value="Fueron Reubicados en esta Ciduad"> Fueron Reubicados en esta Ciduad <br>
-                                    <input type="checkbox" name="checkboxRazones" value="Cercania al lugar de residencia"> Cercania al lugar de residencia <br>
-                                    <input type="checkbox" name="checkboxRazones" value="Por sugerencia de un servidor publico"> Por sugerencia de un servidor publico <br>
+                                    <input type="radio" name="Razones" value="PorLaVivienda"> Por la vivienda <br>
+                                    <input type="radio" name="Razones" value="AccesibilidadSalud"> Accesibilidad a salud <br>
+                                    <input type="radio" name="Razones" value="MayorSeguridadPersonal"> Mayor Seguridad Personal <br>
+                                    <input type="radio" name="Razones" value="TeniaParientesAmigos"> Tenia Parientes o amigos <br>
+                                    <input type="radio" name="Razones" value="AyudasGobierno"> Acceso a Ayudas de Gobierno <br> 
+                                    <input type="radio" name="Razones" value="PosibilidadesTrabajo"> Mayores Posibilidades de Trabajo <br>                                
+                                    <input type="radio" name="Razones" value="FueronReubicados"> Fueron Reubicados en esta Ciduad <br>
+                                    <input type="radio" name="Razones" value="CercaniaResidencia"> Cercania al lugar de residencia <br>
+                                    <input type="radio" name="Razones" value="SugerenciaServidorSublico"> Por sugerencia de un servidor publico <br>
                                 </div>
                                 </td>
                             </tr>
@@ -96,13 +96,13 @@
                                 <td class="right">¿Por qué Razones el hogar quiere reubicarse?</td>
                                 <td class="left">
                                 <div class="col-md-7" style="text-align: left;">
-                                    <input type="checkbox" name="checkboxRazonesReu" value="Motivo Familiar"> Motivo Familiar <br>
-                                    <input type="checkbox" name="checkboxRazonesReu" value="La ciudad es insegura"> La ciudad es insegura <br>
-                                    <input type="checkbox" name="checkboxRazonesReu" value="Se siente Discriminado"> Se siente Discriminado <br>
-                                    <input type="checkbox" name="checkboxRazonesReu" value="Prefiere donde vivia antes"> Prefiere donde vivia antes <br>
-                                    <input type="checkbox" name="checkboxRazonesReu" value="No ha recibido ayuda estatal"> No ha recibido ayuda estatal <br>
-                                    <input type="checkbox" name="checkboxRazonesReu" value="Por oportunidades de trabajo"> Por oportunidades de trabajo   <br>                               
-                                    <input type="checkbox" name="checkboxRazonesReu" value="No hay oportunidades de trabajo"> No hay oportunidades de trabajo <br>
+                                    <input type="radio" name="RazonesReu" value="MotivoFamiliar"> Motivo Familiar <br>
+                                    <input type="radio" name="RazonesReu" value="CiudadInsegura"> La ciudad es insegura <br>
+                                    <input type="radio" name="RazonesReu" value="Discriminado"> Se siente Discriminado <br>
+                                    <input type="radio" name="RazonesReu" value="PrefiereDondeViviaAntes"> Prefiere donde vivia antes <br>
+                                    <input type="radio" name="RazonesReu" value="NoAyudaEstatal"> No ha recibido ayuda estatal <br>
+                                    <input type="radio" name="RazonesReu" value="OportunidadesTrabajo"> Por oportunidades de trabajo   <br>                               
+                                    <input type="radio" name="RazonesReu" value="NoHayOportunidadesTrabajo"> No hay oportunidades de trabajo <br>
                                 </div>
                                 </td>
                             </tr>
@@ -110,11 +110,11 @@
                                 <td class="right">¿Por qué Razones el hogar no desea retornar?</td>
                                 <td class="left">
                                  <div class="col-md-8" style="text-align: left;">
-                                    <input type="checkbox" name="checkboxRazonesNoRetor" value="Logro Estabilizarse"> Logro Estabilizarse <br>
-                                    <input type="checkbox" name="checkboxRazonesNoRetor" value="No tiene a donde llegar"> No tiene a donde llegar <br>
-                                    <input type="checkbox" name="checkboxRazonesNoRetor" value="No hay oportunidades de trabajo"> No hay oportunidades de trabajo <br>
-                                    <input type="checkbox" name="checkboxRazonesNoRetor" value="Se mantiene las condiciones que causaron el desplazamiento"> Se mantiene las condiciones que causaron el desplazamiento <br>
-                                    <input type="checkbox" name="checkboxRazonesNoRetor" value="Son malas las condicines de vida (servicios, salud, educacion)"> Son malas las condicines de vida (servicios, salud, educacion) <br>
+                                    <input type="radio" name="RazonesNoRetor" value="LogroEstabilizarse"> Logro Estabilizarse <br>
+                                    <input type="radio" name="RazonesNoRetor" value="NoTieneDondeLlegar"> No tiene a donde llegar <br>
+                                    <input type="radio" name="RazonesNoRetor" value="OportunidadesTrabajo"> No hay oportunidades de trabajo <br>
+                                    <input type="radio" name="RazonesNoRetor" value="RazonesCausaronDesplazamiento"> Se mantiene las condiciones que causaron el desplazamiento <br>
+                                    <input type="radio" name="RazonesNoRetor" value="MalasCondicionesDeVida"> Son malas las condicines de vida (servicios, salud, educacion) <br>
                                 </div>
                                 </td>
                             </tr>

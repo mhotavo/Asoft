@@ -221,10 +221,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">No de Habitaciones para dormir que cuenta Actualmente:</td>
+                                <td class="right">N° de Habitaciones para dormir que cuenta Actualmente:</td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                <input type="text" id="nHabiActu" name="txtNHAbiActuD" required class="form-control">
+                                <input type="number" id="nHabiActu" name="txtNHAbiActuD" required class="form-control">
                                 </div>
                                 </td>
                             </tr>
@@ -232,7 +232,7 @@
                                 <td class="right">Cuantas Familias comparten la casa donde habita el hogar Actualmente: </td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                <input type="text" id="nFamilias" name="txtNFamiliasD" required class="form-control">
+                                <input type="number" id="nFamilias" name="txtNFamiliasD" required class="form-control">
                                 </div>
                                 </td>
                             </tr>

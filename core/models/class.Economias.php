@@ -17,29 +17,24 @@ class Economias {
     private $AlimentacionAdecuada;
     private $Fuente1 ;
     private $Fuente2; 
-    private $Fuente3 ;
-    private $Es_Jefe_de_Hogar;
-    private $Territorio;
 
 	public function __construct (){
 		$this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->IngresosMensuales= isset($_POST['']) ? $_POST[''] : null;
-        $this->GastosMensuales= isset($_POST['']) ? $_POST[''] : null;
-        $this->Gasto1= isset($_POST['']) ? $_POST[''] : null;
-        $this->Gasto2= isset($_POST['']) ? $_POST[''] : null;
-        $this->Gasto3= isset($_POST['']) ? $_POST[''] : null;
-        $this->NoComidasDia= isset($_POST['']) ? $_POST[''] : null;
-        $this->Adultos= isset($_POST['']) ? $_POST[''] : null;
-        $this->Ninos= isset($_POST['']) ? $_POST[''] : null;
-        $this->Menores2Años= isset($_POST['']) ? $_POST[''] : null;
-        $this->AlimentacionCultura= isset($_POST['']) ? $_POST[''] : null;
-        $this->AlimentacionAdecuada= isset($_POST['']) ? $_POST[''] : null;
-        $this->Fuente1= isset($_POST['']) ? $_POST[''] : null;
-        $this->Fuente2= isset($_POST['']) ? $_POST[''] : null;
-        $this->Fuente3= isset($_POST['']) ? $_POST[''] : null;
-        $this->Es_Jefe_de_Hogar= isset($_POST['']) ? $_POST[''] : null;
-        $this->Territorio= isset($_POST['']) ? $_POST[''] : null;
+        $this->IngresosMensuales= isset($_POST['cboIngreMensualesD'] ) ? $_POST['cboIngreMensualesD'] : null;
+        $this->GastosMensuales= isset($_POST['cboGastosMensualesD'] ) ? $_POST['cboGastosMensualesD'] : null;
+        $this->Gasto1= isset($_POST['cboOrdenGastosD'] ) ? $_POST['cboOrdenGastosD'] : null;
+        $this->Gasto2= isset($_POST['cboOrdenGastos2D'] ) ? $_POST['cboOrdenGastos2D'] : null;
+        $this->Gasto3= isset($_POST['cboOrdenGastos3D'] ) ? $_POST['cboOrdenGastos3D'] : null;
+        $this->NoComidasDia= isset($_POST['cboComidasDiaD'] ) ? $_POST['cboComidasDiaD'] : null;
+        $this->Adultos= isset($_POST['cboAlimConsumenAdulD'] ) ? $_POST['cboAlimConsumenAdulD'] : null;
+        $this->Ninos= isset($_POST['cboAlimConsumenNinosD'] ) ? $_POST['cboAlimConsumenNinosD'] : null;
+        $this->Menores2Años= isset($_POST['cboAlimConsumenMe2D'] ) ? $_POST['cboAlimConsumenMe2D'] : null;
+        $this->AlimentacionCultura= isset($_POST['cboAlimAcordeD'] ) ? $_POST['cboAlimAcordeD'] : null;
+        $this->AlimentacionAdecuada= isset($_POST['cboAlimAdecuadaD'] ) ? $_POST['cboAlimAdecuadaD'] : null;
+        $this->Fuente1= isset($_POST['cboFuente1D'] ) ? $_POST['cboFuente1D'] : null;
+        $this->Fuente2= isset($_POST['cboFuente2D'] ) ? $_POST['cboFuente2D'] : null;
+        $this->Fuente3= isset($_POST['cboFuente3D'] ) ? $_POST['cboFuente3D'] : null;
 
 	}
 

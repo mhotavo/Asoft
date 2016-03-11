@@ -27,7 +27,7 @@
                                         <option value="">[...]</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
-                                        <option value="No">No Aplica</option>
+                                        <option value="NoAplica">No Aplica</option>
                                     </select>
                                 </div>
                                 </td>
@@ -124,7 +124,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">Las personas con discapacidad mental estas cuenta con algun subsidio:</td>
+                                <td class="right">Las personas con discapacidad mental estan cuenta con algun subsidio:</td>
                                 <td  class="left">
                                 <div class="col-md-7">
                                     <select id="selectDiscapacidad" name="cboDiscaAntesDesplaD" required class="form-control">

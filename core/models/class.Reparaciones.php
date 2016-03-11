@@ -19,16 +19,16 @@ class Reparaciones {
     public function __construct (){
         $this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->EstadoInformado= isset($_POST['']) ? $_POST[''] : null;
-        $this->MiembroIndemnizado= isset($_POST['']) ? $_POST[''] : null;
-        $this->EstadoGarantias= isset($_POST['']) ? $_POST[''] : null;
-        $this->MiembroRestitucion= isset($_POST['']) ? $_POST[''] : null;
-        $this->EntidadRestitucion= isset($_POST['']) ? $_POST[''] : null;
-        $this->EstadoRestituido= isset($_POST['']) ? $_POST[''] : null;
-        $this->EstadoIndemnizacion= isset($_POST['']) ? $_POST[''] : null;
-        $this->MiembroIndemnizacion= isset($_POST['']) ? $_POST[''] : null;
-        $this->FamiliarRehabilitacion= isset($_POST['']) ? $_POST[''] : null;
-        $this->MiembroBenificiario= isset($_POST['']) ? $_POST[''] : null;
+        $this->EstadoInformado= isset($_POST['cboViolaDHD'] ) ? $_POST['cboViolaDHD'] : null;
+        $this->MiembroIndemnizado= isset($_POST['cboRepaIndemnizadoD'] ) ? $_POST['cboRepaIndemnizadoD'] : null;
+        $this->EstadoGarantias= isset($_POST['cboGarantiasD'] ) ? $_POST['cboGarantiasD'] : null;
+        $this->MiembroRestitucion= isset($_POST['cboSoliRestitucionT'] ) ? $_POST['cboSoliRestitucionT'] : null;
+        $this->EntidadRestitucion= isset($_POST['txtQueEntidad'] ) ? $_POST['txtQueEntidad'] : null;
+        $this->EstadoRestituido= isset($_POST['cboRestitucionBienes'] ) ? $_POST['cboRestitucionBienes'] : null;
+        $this->EstadoIndemnizacion= isset($_POST['cboSoliEstadoD'] ) ? $_POST['cboSoliEstadoD'] : null;
+        $this->MiembroIndemnizacion= isset($_POST['cboReciEstadoD'] ) ? $_POST['cboReciEstadoD'] : null;
+        $this->FamiliarRehabilitacion= isset($_POST['cboRehabilitacionD'] ) ? $_POST['cboRehabilitacionD'] : null;
+        $this->MiembroBenificiario= isset($_POST['cboSancionD'] ) ? $_POST['cboSancionD'] : null;
 
 
     }

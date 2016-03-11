@@ -19,17 +19,17 @@ class Estabilizaciones {
 	public function __construct (){
 		$this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->RazonesLugar= isset($_POST['']) ? $_POST[''] : null;
-        $this->FamiliaRetorno= isset($_POST['']) ? $_POST[''] : null;
-        $this->EstuvoEstaRetorno= isset($_POST['']) ? $_POST[''] : null;
-        $this->ResidenciaDesearia= isset($_POST['']) ? $_POST[''] : null;
-        $this->DondeReubicar= isset($_POST['']) ? $_POST[''] : null;
-        $this->ZonaRetorno= isset($_POST['']) ? $_POST[''] : null;
-        $this->RazonesReubicar= isset($_POST['']) ? $_POST[''] : null;
-        $this->RazonesRetornar= isset($_POST['']) ? $_POST[''] : null;
-        $this->RaicesAbandonadas= isset($_POST['']) ? $_POST[''] : null;
-        $this->AlgunosDespojados= isset($_POST['']) ? $_POST[''] : null;
-        $this->SolicitoProteccion= isset($_POST['']) ? $_POST[''] : null;
+        $this->RazonesLugar= isset($_POST['Razones'] ) ? $_POST['Razones'] : null;
+        $this->FamiliaRetorno= isset($_POST['cboRetorno'] ) ? $_POST['cboRetorno'] : null;
+        $this->EstuvoEstaRetorno= isset($_POST['cboEstuEstaRetorno'] ) ? $_POST['cboEstuEstaRetorno'] : null;
+        $this->ResidenciaDesearia= isset($_POST['cboDesearia'] ) ? $_POST['cboDesearia'] : null;
+        $this->DondeReubicar= isset($_POST['txtDondeRetornar'] ) ? $_POST['txtDondeRetornar'] : null;
+        $this->ZonaRetorno= isset($_POST['cboZonaRetorno'] ) ? $_POST['cboZonaRetorno'] : null;
+        $this->RazonesReubicar= isset($_POST['RazonesReu'] ) ? $_POST['RazonesReu'] : null;
+        $this->RazonesRetornar= isset($_POST['RazonesNoRetor'] ) ? $_POST['RazonesNoRetor'] : null;
+        $this->RaicesAbandonadas= isset($_POST['cboBienesAbandonadas'] ) ? $_POST['cboBienesAbandonadas'] : null;
+        $this->AlgunosDespojados= isset($_POST['cboDespojados'] ) ? $_POST['cboDespojados'] : null;
+        $this->SolicitoProteccion= isset($_POST['cboProteccion'] ) ? $_POST['cboProteccion'] : null;
 	}
 
 

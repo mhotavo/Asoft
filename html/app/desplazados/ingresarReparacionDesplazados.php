@@ -36,7 +36,8 @@
                                 u otros delitos?:</td>
                             
                              <td class="left">
-                                <div class="col-md-8">    <select id="selectReparacion" name="cboRepaIndemnizadoD" required class="form-control">
+                                <div class="col-md-8">    
+                                <select id="selectReparacion" name="cboRepaIndemnizadoD" required class="form-control">
                                             <option value="">[...]</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>

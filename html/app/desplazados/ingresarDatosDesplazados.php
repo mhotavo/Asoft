@@ -20,8 +20,8 @@
                         <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                          <tr>
-                            <td class="right">Numero de Documento: </td>
-                            <td class="left">
+                            <td class="right" width="40%">Numero de Documento: </td>
+                            <td class="left" width="60%">
                               <div class="col-md-8">
                                  <input type="text"  required value="<?php echo isset($_GET['id']) ? $_desplazados[$_GET['id']]['Documento'] : $_GET['newDoc']   ?>"  <?php echo isset($_GET['id']) ?  "disabled" : null ; ?> class="form-control" name="Documento" id="Documento" >
                              </div>

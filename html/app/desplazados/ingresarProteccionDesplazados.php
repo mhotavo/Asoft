@@ -23,13 +23,13 @@
                                 <td class="right" width="45%">Ha Acudido a alguna entidad para solicitar Proteccion:</td>
                                  <td  class="left" width="55%">
                                   <div class="col-md-9" style="text-align: left;">
-                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Fiscalia"> Fiscalia<br>
-                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Emabajadas"> Emabajadas<br>
-                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Fuerzas Armadas"> Fuerzas Armadas<br>
-                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Ministerio del Interior"> Ministerio del Interior<br>
-                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Defensoria O Procuraduria"> Defensoria O Procuraduria<br>
-                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Organismo Nacional de Derechos Humanos"> Organismo Nacional de Derechos Humanos<br>                               
-                                   <input type="checkbox" name="checkboxSolicitudProteD" requirerd value="Ninguno"> Ninguno<br>
+                                   <input type="radio" name="SolicitudProteD" requirerd value="Fiscalia"> Fiscalia<br>
+                                   <input type="radio" name="SolicitudProteD" requirerd value="Emabajadas"> Emabajadas<br>
+                                   <input type="radio" name="SolicitudProteD" requirerd value="FuerzasArmadas"> Fuerzas Armadas<br>
+                                   <input type="radio" name="SolicitudProteD" requirerd value="MinisterioInterior"> Ministerio del Interior<br>
+                                   <input type="radio" name="SolicitudProteD" requirerd value="DefensoriaOProcuraduria"> Defensoria O Procuraduria<br>
+                                   <input type="radio" name="SolicitudProteD" requirerd value="OrganismoNacionalDerechosHumanos"> Organismo Nacional de Derechos Humanos<br>                               
+                                   <input type="radio" name="SolicitudProteD" requirerd value="Ninguno"> Ninguno<br>
                                 </div>
                                 </td>
                             </tr>

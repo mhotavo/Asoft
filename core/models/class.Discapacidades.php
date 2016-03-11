@@ -22,20 +22,20 @@ class Discapacidades {
 	public function __construct (){
 		$this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
-        $this->AntesDesplazamiento= isset($_POST['']) ? $_POST[''] : null;
-        $this->IgualCondiciones= isset($_POST['']) ? $_POST[''] : null;
-        $this->EntidadRehabilitacion= isset($_POST['']) ? $_POST[''] : null;
-        $this->ReubicacionLaboral= isset($_POST['']) ? $_POST[''] : null;
-        $this->MarginadoDiscriminado= isset($_POST['']) ? $_POST[''] : null;
-        $this->EncuentraPP= isset($_POST['']) ? $_POST[''] : null;
-        $this->Excluido= isset($_POST['']) ? $_POST[''] : null;
-        $this->Rehabilitacion= isset($_POST['']) ? $_POST[''] : null;
-        $this->SubsidioDiscapacidad= isset($_POST['']) ? $_POST[''] : null;
-        $this->CapacidadEconomica= isset($_POST['']) ? $_POST[''] : null;
-        $this->Menores18= isset($_POST['']) ? $_POST[''] : null;
-        $this->RecibidoAyudaHum= isset($_POST['']) ? $_POST[''] : null;
-        $this->OrganizacionDespla= isset($_POST['']) ? $_POST[''] : null;
-        $this->ParticipacionOPDS= isset($_POST['']) ? $_POST[''] : null;
+        $this->AntesDesplazamiento= isset($_POST['cboDiscaAntesDesplaD'] ) ? $_POST['cboDiscaAntesDesplaD'] : null;
+        $this->IgualCondiciones= isset($_POST['cboIguCondicionesD'] ) ? $_POST['cboIguCondicionesD'] : null;
+        $this->EntidadRehabilitacion= isset($_POST['cboEntiApoyoD'] ) ? $_POST['cboEntiApoyoD'] : null;
+        $this->ReubicacionLaboral= isset($_POST['cboRehuLaboraD'] ) ? $_POST['cboRehuLaboraD'] : null;
+        $this->MarginadoDiscriminado= isset($_POST['cboDiscriDiscapaD'] ) ? $_POST['cboDiscriDiscapaD'] : null;
+        $this->EncuentraPP= isset($_POST['cboPubliPrivaD'] ) ? $_POST['cboPubliPrivaD'] : null;
+        $this->Excluido= isset($_POST['cboExcluidoD'] ) ? $_POST['cboExcluidoD'] : null;
+        $this->Rehabilitacion= isset($_POST['cboRehabilitacionD'] ) ? $_POST['cboRehabilitacionD'] : null;
+        $this->SubsidioDiscapacidad= isset($_POST['cboDiscaAntesDesplaD'] ) ? $_POST['cboDiscaAntesDesplaD'] : null;
+        $this->CapacidadEconomica= isset($_POST['cboCapaEconomicaD'] ) ? $_POST['cboCapaEconomicaD'] : null;
+        $this->Menores18= isset($_POST['cboDiscaEstudianD'] ) ? $_POST['cboDiscaEstudianD'] : null;
+        $this->RecibidoAyudaHum= isset($_POST['cboProrroAutoD'] ) ? $_POST['cboProrroAutoD'] : null;
+        $this->OrganizacionDespla= isset($_POST['cboOrganiDesplaD'] ) ? $_POST['cboOrganiDesplaD'] : null;
+        $this->ParticipacionOPDS= isset($_POST['cboOPDSD'] ) ? $_POST['cboOPDSD'] : null;
 
 
 	}

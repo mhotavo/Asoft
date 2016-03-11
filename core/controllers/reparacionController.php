@@ -23,7 +23,7 @@ switch (isset($mode) ?  $mode : null ) {
 			$familiares->Add();
 			  header('location: ?view=listarfamiliares&id='.$id);
 		}else {	
-			include(HTML_DIR . 'app/desplazados/ingresarProteccionDesplazados.php');
+			include(HTML_DIR . 'app/desplazados/ingresarReparacionDesplazados.php');
 		}
 		break;	
 
@@ -36,7 +36,7 @@ switch (isset($mode) ?  $mode : null ) {
 					header('location: ?view=listarfamiliares&id='.$id);
 				} else {
 					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
-					//include(HTML_DIR . 'app/desplazados/ingresarProteccionDesplazados.php');
+					//include(HTML_DIR . 'app/desplazados/ingresarReparacionDesplazados.php');
 				}
 				
 			}

@@ -20,6 +20,7 @@ class Desplazados {
     private $Parentesco ;
     private $Es_Jefe_de_Hogar;
     private $Territorio;
+    private $Usuario
 
 	public function __construct (){
 		$this->db = new Conexion();
@@ -40,6 +41,7 @@ class Desplazados {
         $this->Parentesco= isset($_POST['Parentesco']) ? $_POST['Parentesco'] : null;
         $this->Es_Jefe_de_Hogar= isset($_POST['JefeDeHogar']) ? $_POST['JefeDeHogar'] : null;
         $this->Territorio= isset($_POST['txtTerritorioD']) ? $_POST['txtTerritorioD'] : null;
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;
 
 	}
 
@@ -50,7 +52,7 @@ class Desplazados {
                         (DOCUMENTO_DESPLAZADO, NOMBRE_COMPLETO, PRIMER_APELLIDO, 
                         SEGUNDO_APELLIDO, TIPO_DE_DOCUMENTO, FECHA_DE_VICTIMIZACION,
                         CODIGO_RUPV, DEPARTAMENTO, MUNICIPIO, ZONA, LOCALIDAD, DIRECCION, 
-                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO) 
+                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO, USUARIOLOG) 
                         VALUES (
                         '$this->Documento',
                         '$this->Nombre',
@@ -67,7 +69,10 @@ class Desplazados {
                         '$this->Estado_Civil',
                         '$this->Parentesco',
                         '$this->Es_Jefe_de_Hogar',
-                        '$this->Territorio');");
+                        '$this->Territorio',
+                        '$this->Usuario'
+
+                        );");
  
     //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
  
@@ -90,7 +95,8 @@ class Desplazados {
             ESTADO_CIVIL ='$this->Estado_Civil',
             PARENTESCO ='$this->Parentesco',
             ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
-            TERRITORIO ='$this->Territorio'
+            TERRITORIO ='$this->Territorio',
+            LAST_EDIT ='$this->Usuario',
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';" );  
             //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
       

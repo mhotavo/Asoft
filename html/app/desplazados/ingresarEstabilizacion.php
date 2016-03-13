@@ -17,21 +17,21 @@
 
                 <div >
                     <h1> Agregar Estabilizacion</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=estabilidad&id=".$_GET['id'] : "?view=validardesplazados";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=estabilizacion&id=".$_GET['id'] : "?view=validardesplazados";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                             <tr>
                                 <td  class="right" width="45%">Razones para elegir este lugar:</td>
                                 <td  class="left" width="55%">
                                 <div class="col-md-7" style="text-align: left;">
-                                    <input type="radio" name="Razones" value="PorLaVivienda"> Por la vivienda <br>
-                                    <input type="radio" name="Razones" value="AccesibilidadSalud"> Accesibilidad a salud <br>
-                                    <input type="radio" name="Razones" value="MayorSeguridadPersonal"> Mayor Seguridad Personal <br>
-                                    <input type="radio" name="Razones" value="TeniaParientesAmigos"> Tenia Parientes o amigos <br>
-                                    <input type="radio" name="Razones" value="AyudasGobierno"> Acceso a Ayudas de Gobierno <br> 
-                                    <input type="radio" name="Razones" value="PosibilidadesTrabajo"> Mayores Posibilidades de Trabajo <br>                                
-                                    <input type="radio" name="Razones" value="FueronReubicados"> Fueron Reubicados en esta Ciduad <br>
-                                    <input type="radio" name="Razones" value="CercaniaResidencia"> Cercania al lugar de residencia <br>
-                                    <input type="radio" name="Razones" value="SugerenciaServidorSublico"> Por sugerencia de un servidor publico <br>
+                                    <input type="radio" name="Razones" required value="PorLaVivienda"> Por la vivienda <br>
+                                    <input type="radio" name="Razones" required value="AccesibilidadSalud"> Accesibilidad a salud <br>
+                                    <input type="radio" name="Razones" required value="MayorSeguridadPersonal"> Mayor Seguridad Personal <br>
+                                    <input type="radio" name="Razones" required value="TeniaParientesAmigos"> Tenia Parientes o amigos <br>
+                                    <input type="radio" name="Razones" required value="AyudasGobierno"> Acceso a Ayudas de Gobierno <br> 
+                                    <input type="radio" name="Razones" required value="PosibilidadesTrabajo"> Mayores Posibilidades de Trabajo <br>                                
+                                    <input type="radio" name="Razones" required value="FueronReubicados"> Fueron Reubicados en esta Ciduad <br>
+                                    <input type="radio" name="Razones" required value="CercaniaResidencia"> Cercania al lugar de residencia <br>
+                                    <input type="radio" name="Razones" required value="SugerenciaServidorSublico"> Por sugerencia de un servidor publico <br>
                                 </div>
                                 </td>
                             </tr>
@@ -96,13 +96,13 @@
                                 <td class="right">¿Por qué Razones el hogar quiere reubicarse?</td>
                                 <td class="left">
                                 <div class="col-md-7" style="text-align: left;">
-                                    <input type="radio" name="RazonesReu" value="MotivoFamiliar"> Motivo Familiar <br>
-                                    <input type="radio" name="RazonesReu" value="CiudadInsegura"> La ciudad es insegura <br>
-                                    <input type="radio" name="RazonesReu" value="Discriminado"> Se siente Discriminado <br>
-                                    <input type="radio" name="RazonesReu" value="PrefiereDondeViviaAntes"> Prefiere donde vivia antes <br>
-                                    <input type="radio" name="RazonesReu" value="NoAyudaEstatal"> No ha recibido ayuda estatal <br>
-                                    <input type="radio" name="RazonesReu" value="OportunidadesTrabajo"> Por oportunidades de trabajo   <br>                               
-                                    <input type="radio" name="RazonesReu" value="NoHayOportunidadesTrabajo"> No hay oportunidades de trabajo <br>
+                                    <input type="radio" name="RazonesReu" required value="MotivoFamiliar"> Motivo Familiar <br>
+                                    <input type="radio" name="RazonesReu" required value="CiudadInsegura"> La ciudad es insegura <br>
+                                    <input type="radio" name="RazonesReu" required value="Discriminado"> Se siente Discriminado <br>
+                                    <input type="radio" name="RazonesReu" required value="PrefiereDondeViviaAntes"> Prefiere donde vivia antes <br>
+                                    <input type="radio" name="RazonesReu" required value="NoAyudaEstatal"> No ha recibido ayuda estatal <br>
+                                    <input type="radio" name="RazonesReu" required value="OportunidadesTrabajo"> Por oportunidades de trabajo   <br>                               
+                                    <input type="radio" name="RazonesReu" required value="NoHayOportunidadesTrabajo"> No hay oportunidades de trabajo <br>
                                 </div>
                                 </td>
                             </tr>
@@ -110,11 +110,11 @@
                                 <td class="right">¿Por qué Razones el hogar no desea retornar?</td>
                                 <td class="left">
                                  <div class="col-md-8" style="text-align: left;">
-                                    <input type="radio" name="RazonesNoRetor" value="LogroEstabilizarse"> Logro Estabilizarse <br>
-                                    <input type="radio" name="RazonesNoRetor" value="NoTieneDondeLlegar"> No tiene a donde llegar <br>
-                                    <input type="radio" name="RazonesNoRetor" value="OportunidadesTrabajo"> No hay oportunidades de trabajo <br>
-                                    <input type="radio" name="RazonesNoRetor" value="RazonesCausaronDesplazamiento"> Se mantiene las condiciones que causaron el desplazamiento <br>
-                                    <input type="radio" name="RazonesNoRetor" value="MalasCondicionesDeVida"> Son malas las condicines de vida (servicios, salud, educacion) <br>
+                                    <input type="radio" name="RazonesNoRetor" required value="LogroEstabilizarse"> Logro Estabilizarse <br>
+                                    <input type="radio" name="RazonesNoRetor" required value="NoTieneDondeLlegar"> No tiene a donde llegar <br>
+                                    <input type="radio" name="RazonesNoRetor" required value="OportunidadesTrabajo"> No hay oportunidades de trabajo <br>
+                                    <input type="radio" name="RazonesNoRetor" required value="RazonesCausaronDesplazamiento"> Se mantiene las condiciones que causaron el desplazamiento <br>
+                                    <input type="radio" name="RazonesNoRetor" required value="MalasCondicionesDeVida"> Son malas las condicines de vida (servicios, salud, educacion) <br>
                                 </div>
                                 </td>
                             </tr>

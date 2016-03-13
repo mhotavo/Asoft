@@ -3,9 +3,9 @@
 $id= isset($_GET['id']) ? $_GET['id'] : null;  #Identificacion del desplazado
 
 if (isset($_SESSION['app_id']) and !empty($id) ) {
-//require('core/models/class.Desplazamiento.php');
+require('core/models/class.Economias.php');
 
-//$desplazamiento = new Desplazamiento();
+$economia = new Economias();
 
 #Comprobamos si ya se registro el desplazamiento
     $db = new Conexion();
@@ -20,7 +20,7 @@ switch (isset($mode) ?  $mode : null ) {
 
 	case 'add':
 		if ($_POST) {
-			$familiares->Add();
+			$economia->Add();
 			  header('location: ?view=proteccion&id='.$id);
 		}else {	
 			include(HTML_DIR . 'app/desplazados/ingresarEconomiaFamiliarDesplazados.php');
@@ -32,11 +32,10 @@ switch (isset($mode) ?  $mode : null ) {
 
 		if (  isset($id) and !empty($id) ) {
 				if ($_POST) {
-					$familiares->edit();
+					$economia->edit();
 					header('location: ?view=proteccion&id='.$id);
 				} else {
-					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
-					//include(HTML_DIR . 'app/desplazados/ingresarEconomiaFamiliarDesplazados.php');
+					include(HTML_DIR . 'app/desplazados/ingresarEconomiaFamiliarDesplazados.php');
 				}
 				
 			}

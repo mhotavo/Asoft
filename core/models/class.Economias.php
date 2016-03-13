@@ -17,6 +17,7 @@ class Economias {
     private $AlimentacionAdecuada;
     private $Fuente1 ;
     private $Fuente2; 
+    private $Usuario;
 
 	public function __construct (){
 		$this->db = new Conexion();
@@ -35,6 +36,8 @@ class Economias {
         $this->Fuente1= isset($_POST['cboFuente1D'] ) ? $_POST['cboFuente1D'] : null;
         $this->Fuente2= isset($_POST['cboFuente2D'] ) ? $_POST['cboFuente2D'] : null;
         $this->Fuente3= isset($_POST['cboFuente3D'] ) ? $_POST['cboFuente3D'] : null;
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;
+
 
 	}
 
@@ -44,7 +47,7 @@ class Economias {
         $this->db->query(" INSERT INTO desplazados_economiafamiliar
                         (DOCUMENTO_DESPLAZADO, INGRESOS_MENSUALES, GASTOS_MENSUALES, 1_GASTO,
                          2_GASTO, 3_GASTO, NO_COMIDAS_DIA, ADULTOS, NINOS, MENORES_2ANOS,
-                         ALIMENTACION_CULTURA, ALIMENTACION_ADECUADA, FUENTE_1, FUENTE_2, FUENTE_3)
+                         ALIMENTACION_CULTURA, ALIMENTACION_ADECUADA, FUENTE_1, FUENTE_2, FUENTE_3, USUARIOLOG)
                         VALUES (
                         '$this->Documento',
                         '$this->IngresosMensuales',
@@ -60,7 +63,9 @@ class Economias {
                         '$this->AlimentacionAdecuada',
                         '$this->Fuente1',
                         '$this->Fuente2',
-                        '$this->Fuente3');
+                        '$this->Fuente3',
+                        '$this->Usuario'
+                        );
                         ");
 
   } 
@@ -80,7 +85,8 @@ class Economias {
             ALIMENTACION_ADECUADA ='$this->AlimentacionAdecuada',
             FUENTE_1 ='$this->Fuente1',
             FUENTE_2 ='$this->Fuente2',
-            FUENTE_3 ='$this->Fuente3' 
+            FUENTE_3 ='$this->Fuente3',
+            LAST_EDIT ='$this->Usuario' 
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }

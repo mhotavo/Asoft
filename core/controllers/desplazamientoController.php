@@ -35,7 +35,7 @@ switch (isset($mode) ?  $mode : null ) {
 					$desplazamientos->edit();
 					header('location: ?view=estabilizacion&id='.$id);
 				} else {
-					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
+					include(HTML_DIR . 'app/desplazados/ingresarDesplazamiento.php');
 				}
 				
 			}

@@ -15,6 +15,7 @@ class Estabilizaciones {
     private $RaicesAbandonadas;
     private $AlgunosDespojados ;
     private $SolicitoProteccion; 
+    private $Usuario;
 
 	public function __construct (){
 		$this->db = new Conexion();
@@ -30,6 +31,7 @@ class Estabilizaciones {
         $this->RaicesAbandonadas= isset($_POST['cboBienesAbandonadas'] ) ? $_POST['cboBienesAbandonadas'] : null;
         $this->AlgunosDespojados= isset($_POST['cboDespojados'] ) ? $_POST['cboDespojados'] : null;
         $this->SolicitoProteccion= isset($_POST['cboProteccion'] ) ? $_POST['cboProteccion'] : null;
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;
 	}
 
 
@@ -38,7 +40,7 @@ class Estabilizaciones {
         $this->db->query(" INSERT INTO estabilizacion
                          (DOCUMENTO_DESPLAZADO, RAZONES_LUGAR, FAMILIA_RETORNO, ESTUVOESTA_RETORNO,
                           RESIDENCIA_DESEARIA, DONDEQUIERE_REUBICARSE, ZONA_RETORNO, RAZONES_REUBICARSE,
-                          RAZONES_RETORNAR, RAICES_ABANDONADAS, ALGUNOS_DESPOJADOS, SOLICITO_PROTECCION)
+                          RAZONES_RETORNAR, RAICES_ABANDONADAS, ALGUNOS_DESPOJADOS, SOLICITO_PROTECCION, USUARIOLOG)
                         VALUES (
                         '$this->Documento',
                         '$this->RazonesLugar',
@@ -51,7 +53,8 @@ class Estabilizaciones {
                         '$this->RazonesRetornar',
                         '$this->RaicesAbandonadas',
                         '$this->AlgunosDespojados',
-                        '$this->SolicitoProteccion'
+                        '$this->SolicitoProteccion',
+                        '$this->Usuario'
                          );");
 
   } 
@@ -68,7 +71,8 @@ class Estabilizaciones {
                 RAZONES_RETORNAR ='$this->RazonesRetornar',
                 RAICES_ABANDONADAS ='$this->RaicesAbandonadas',
                 ALGUNOS_DESPOJADOS ='$this->AlgunosDespojados',
-                SOLICITO_PROTECCION ='$this->SolicitoProteccion'
+                SOLICITO_PROTECCION ='$this->SolicitoProteccion',
+                LAST_EDIT ='$this->Usuario'
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }

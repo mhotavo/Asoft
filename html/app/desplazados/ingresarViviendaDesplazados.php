@@ -213,10 +213,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="right">No de Habitaciones para dormir que tenia Anteriormente:</td>
+                                <td class="right">N° de Habitaciones para dormir que tenia Anteriormente:</td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                <input type="text" id="nHabiAnte" name="txtNHabiAnteD" required class="form-control">
+                                <input type="number" id="nHabiAnte" name="txtNHabiAnteD" required class="form-control">
                                 </div>
                                 </td>
                             </tr>

@@ -53,7 +53,7 @@
                                           <?php 
                                          if(false != $_municipios) {
                                             foreach($_municipios as $id__municipios => $contenido) {  ?>
-                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['MUNICIPIO1']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
                                               <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                             </option>
 
@@ -76,14 +76,14 @@
                                     <td  class="right" >A Que Causa Le Atribuye Su Primer Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9"  style="text-align: left;">
-                                        <input type="radio" name="CausaDesplazamiento1" value="ConfrontacionArmada"> Confrontacion Armada<br>
-                                        <input type="radio" name="CausaDesplazamiento1" value="AmenazaIndirecta"> Amenaza Indirecta<br>
-                                        <input type="radio" name="CausaDesplazamiento1" value="CamposMinados"> Campos Minados<br>
-                                        <input type="radio" name="CausaDesplazamiento1" value="AsesinatoFamilia"> Asesinato Familia<br>
-                                        <input type="radio" name="CausaDesplazamiento1" value="AmenazaDirecta"> Amenaza Directa<br>
-                                        <input type="radio" name="CausaDesplazamiento1" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
-                                        <input type="radio" name="CausaDesplazamiento1" value="AusenciaGobierno"> Ausencia del Gobierno<br>
-                                        <input type="radio" name="CausaDesplazamiento1" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="ConfrontacionArmada"> Confrontacion Armada<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="AmenazaIndirecta"> Amenaza Indirecta<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="CamposMinados"> Campos Minados<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="AsesinatoFamilia"> Asesinato Familia<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="AmenazaDirecta"> Amenaza Directa<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="AusenciaGobierno"> Ausencia del Gobierno<br>
+                                        <input type="radio" required name="CausaDesplazamiento1" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
                                     </div>
                                     </td>
                                 </tr>
@@ -108,7 +108,7 @@
                                           <?php 
                                          if(false != $_municipios) {
                                             foreach($_municipios as $id__municipios => $contenido) {  ?>
-                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['MUNICIPIO2']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
                                               <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                             </option>
 
@@ -149,7 +149,7 @@
                                     <td class="right" >Año Tercer Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9">    
-                                        <input   class="form-control" type="text" name="anoDesplazamiento1"  placeholder="Tercer Desplazamiento">
+                                        <input   class="form-control" type="text" name="anoDesplazamiento3"  placeholder="Tercer Desplazamiento">
                                     </div>
 
                                     </td>
@@ -158,12 +158,12 @@
                                     <td class="right" >Municipio Tercer Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9">  
-                                    <select   name="MunicipioDesplazamiento1" class="  form-control "  data-show-subtext="true"  data-live-search="true">
+                                    <select   name="MunicipioDesplazamiento3" class="  form-control "  data-show-subtext="true"  data-live-search="true">
                                         <option value="">[...]</option>
                                           <?php 
                                          if(false != $_municipios) {
                                             foreach($_municipios as $id__municipios => $contenido) {  ?>
-                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazados[$_GET['id']]['Municipio']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['MUNICIPIO3']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
                                               <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                             </option>
 
@@ -177,7 +177,7 @@
                                     <td class="right" >Localidad Tercer Desplazamiento:</td>
                                     <td  class="left" >
                                     <div class="col-md-9"  >    
-                                        <input   class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Tercer Desplazamiento">
+                                        <input   class="form-control" type="text"  name="localidadDesplazamiento3" placeholder="Tercer Desplazamiento">
                                     </div>
                            
                                     </td>
@@ -356,85 +356,21 @@
                             <tr>
                                 <td  class="right">En El Momento de los desplazamientos su Nucleo Familiar Declaro Ante:</td>
                                <td  class="left">
-                                <div class="col-md-9">
-                                  <input  required class="form-control" type="text" id="" name="" >
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  class="right">Defensoria:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="selectVicti" name="cboDefensoriaD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <td  class="right">Procuraduria:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="selectVicti" name="cboProcuraduriaD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  class="right">Departamento para la prosperidad social:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="selectVicti" name="cboProspeD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <td  class="right">Personeria:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="selectVicti" name="cboPersoneriaD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  class="right">UAO:</td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="selectVicti" name="cboUAOD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  class="right">Otra: </td>
-                                <td  class="left">
-                                <div class="col-md-9">
-                                    <select id="selectVicti" name="cboOtraD" required class="form-control">
-                                        <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
-                                </div>
-                                </td>
-                            </tr>                                                 
-                            
+                                <div class="col-md-9" style="text-align: left">
+                                 
+                                        <input type="radio" name="DeclaroAnte" value="Defensoria" required> Defensoria<br>
+                                        <input type="radio" name="DeclaroAnte" value="Procuraduria" required> Procuraduria<br>
+                                        <input type="radio" name="DeclaroAnte" value="DepartamentoProsperidad" required> Departamento para la prosperidad social<br>
+                                        <input type="radio" name="DeclaroAnte" value="Personeria" required> Personeria<br>
+                                        <input type="radio" name="DeclaroAnte" value="UAO" required> UAO<br>
+                                        <input type="radio" name="DeclaroAnte" value="Otra" required> Otra<br>
 
+
+                                </div>
+                                </td>
+                            </tr>
+
+                        
                             <tr>
                                 <td colspan="2">
                                 <br><br>                      

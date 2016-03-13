@@ -22,9 +22,10 @@ class Viviendas {
     private $NoHabActual;
     private $NoFamiliaCasa;
     private $RecibiSubsidio;
+    private $Usuario;
 
     public function __construct (){
-        $this->db = new ConeTelefonoion();
+        $this->db = new Conexion();
         $this->Documento= isset($_GET['id']) ? intval($_GET['id']) : null;
         $this->ActualVivienda= isset($_POST['cboActualViviendaD'] ) ? $_POST['cboActualViviendaD'] : null;
         $this->Tenencia= isset($_POST['cboTenenciaD'] ) ? $_POST['cboTenenciaD'] : null;
@@ -41,9 +42,10 @@ class Viviendas {
         $this->Gas= isset($_POST['cboGasDomiciliarioD'] ) ? $_POST['cboGasDomiciliarioD'] : null;
         $this->Basuras= isset($_POST['cboReBasurasD'] ) ? $_POST['cboReBasurasD'] : null;
         $this->NoHabAntes= isset($_POST['txtNHabiAnteD'] ) ? $_POST['txtNHabiAnteD'] : null;
-        $this->NoHabActual= isset($_POST['txtNHAbiActuD'] ) ? $_POST[''] : null;
+        $this->NoHabActual= isset($_POST['txtNHAbiActuD'] ) ? $_POST['txtNHAbiActuD'] : null;
         $this->NoFamiliaCasa= isset($_POST['txtNFamiliasD'] ) ? $_POST['txtNFamiliasD'] : null;
         $this->RecibiSubsidio= isset($_POST['cboSubsViviendaD'] ) ? $_POST['cboSubsViviendaD'] : null;
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;        
 
     }
 
@@ -54,7 +56,7 @@ class Viviendas {
                         (DOCUMENTO_DESPLAZADO, ACTUAL_VIVIENDA, TENENCIA, TIPO_CONTRATO,
                          ZONA_VIVIENDA, ZONA_ALTORIESGO, PAREDES, PISO, TECHO, S_ACUEDUCTO,
                          S_TELEFONO, S_ENERGIA_ELECTRICA, S_ALCANTARILLADO, S_GAS, S_REBASURAS,
-                         NO_HABIT_ANTES, NO_HABIT_ACTUAL, NO_FAMILI_CASA, RECIBI_SUBSIDIO)
+                         NO_HABIT_ANTES, NO_HABIT_ACTUAL, NO_FAMILI_CASA, RECIBI_SUBSIDIO, USUARIOLOG)
                         VALUES (
                         '$this->Documento',
                         '$this->ActualVivienda',
@@ -74,7 +76,8 @@ class Viviendas {
                         '$this->NoHabAntes',
                         '$this->NoHabActual',
                         '$this->NoFamiliaCasa',
-                        '$this->RecibiSubsidio'
+                        '$this->RecibiSubsidio',
+                        '$this->Usuario'
                         );");
 
   } 
@@ -99,7 +102,8 @@ class Viviendas {
             NO_HABIT_ANTES ='$this->NoHabAntes',
             NO_HABIT_ACTUAL ='$this->NoHabActual',
             NO_FAMILI_CASA ='$this->NoFamiliaCasa',
-            RECIBI_SUBSIDIO ='$this->RecibiSubsidio'
+            RECIBI_SUBSIDIO ='$this->RecibiSubsidio',
+            LAST_EDIT ='$this->Usuario'
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }

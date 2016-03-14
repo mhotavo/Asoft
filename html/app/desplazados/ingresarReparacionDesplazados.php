@@ -24,9 +24,9 @@
                                  <td class="left" width="25%">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboViolaDHD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_INFORMADO']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_INFORMADO']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -38,9 +38,9 @@
                              <td class="left">
                                 <div class="col-md-8">    
                                 <select id="selectReparacion" name="cboRepaIndemnizadoD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_INDEMNIZADO']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_INDEMNIZADO']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -50,9 +50,9 @@
                                  <td class="left">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboGarantiasD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_GARANTIAS']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_GARANTIAS']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -62,9 +62,9 @@
                                  <td class="left">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboSoliRestitucionT" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_RESTITUCION']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_RESTITUCION']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -73,7 +73,7 @@
                                 <td class="right">Ante que entidad solicitaron la restitucion de vivienda o tierras?:</td>
                                  <td class="left">
                                 <div class="col-md-8">
-                                 <input id="selectReparacion" type="text" name="txtQueEntidad" required class="form-control">
+                                 <input id="selectReparacion" type="text" name="txtQueEntidad" required class="form-control" value="<?php echo isset($_GET['id']) ? $_reparaciones[$_GET['id']]['ENTIDAD_RESTITUCION'] : null   ?>">
                                 </div>
                                 </td>
                             </tr>
@@ -82,9 +82,9 @@
                                  <td class="left">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboRestitucionBienes" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_RESTITUIDO']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_RESTITUIDO']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -94,9 +94,9 @@
                                  <td class="left">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboSoliEstadoD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_INDEMNIZACION']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['ESTADO_INDEMNIZACION']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -106,9 +106,9 @@
                                  <td class="left">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboReciEstadoD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_INDEMNIZACION']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_INDEMNIZACION']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -118,9 +118,9 @@
                                  <td class="left">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboRehabilitacionD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['FAMILIA_REHABILITACION']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['FAMILIA_REHABILITACION']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -130,9 +130,9 @@
                                  <td class="left">
                                 <div class="col-md-8">
                                     <select id="selectReparacion" name="cboSancionD" required class="form-control">
-                                            <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option   value="">[...]</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_BENEFICIARIO']=='Si') ?  "selected": null; ?>  value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_reparaciones[$_GET['id']]['MIEMBROH_BENEFICIARIO']=='No') ?  "selected": null; ?>  value="No">No</option>
                                     </select>
                                 </div>
                                 </td>

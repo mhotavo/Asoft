@@ -89,7 +89,7 @@ class Protecciones {
                       AFILIADO_OPD ='$this->AfiliadoOPD',
                       CUAL_OPD ='$this->CualOPD',
                       PARTICIPA_E_P_P ='$this->ParticipaEPP',
-                      CONFRONTACION_ARMADA ='$this->CualEPP',
+                      CUAL_E_P_P ='$this->CualEPP',
                       PRIORIDAD_1 ='$this->Prioridad1',
                       PRIORIDAD_2 ='$this->Prioridad2',
                       PRIORIDAD_3 ='$this->Prioridad3',

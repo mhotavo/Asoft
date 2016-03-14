@@ -58,20 +58,19 @@ class Reparaciones {
   } 
 
   public function Edit() {
-      $this->db->query("UPDATE desplazados_reparacion SET 
-            DOCUMENTO_DESPLAZADO='$this->EstadoInformado',
-            ESTADO_INFORMADO ='$this->MiembroIndemnizado',
-            MIEMBROH_INDEMNIZADO ='$this->Segundo_Apellido',
+    $this->db->query("UPDATE desplazados_reparacion SET 
+            ESTADO_INFORMADO ='$this->EstadoInformado',
+            MIEMBROH_INDEMNIZADO ='$this->MiembroIndemnizado',
             ESTADO_GARANTIAS ='$this->EstadoGarantias',
             MIEMBROH_RESTITUCION ='$this->MiembroRestitucion',
             ENTIDAD_RESTITUCION ='$this->EntidadRestitucion',
             ESTADO_RESTITUIDO ='$this->EstadoRestituido',
             ESTADO_INDEMNIZACION ='$this->EstadoIndemnizacion',
-            EMBROH_INDEMNIZACION ='$this->MiembroIndemnizacion',
+            MIEMBROH_INDEMNIZACION ='$this->MiembroIndemnizacion',
             FAMILIA_REHABILITACION ='$this->FamiliarRehabilitacion',
             MIEMBROH_BENEFICIARIO ='$this->MiembroBenificiario',
             LAST_EDIT ='$this->Usuario'
-            WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
+            WHERE DOCUMENTO_DESPLAZADO='$this->Documento';");
 
   }
 

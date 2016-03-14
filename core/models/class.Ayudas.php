@@ -74,8 +74,7 @@ class Ayudas {
             AYUDA_ALOJAMIENTO ='$this->AyudaAlojamiento',
             AYUDA_ALIMENTARIA ='$this->AyudaAlimentaria',
             AYUDA_AGUA ='$this->AyudaAgua',
-            LAST_EDIT ='$this->Usuario',
-
+            LAST_EDIT ='$this->Usuario'
             ;"); 
 
   }

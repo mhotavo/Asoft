@@ -84,7 +84,7 @@ class Viviendas {
 
   public function Edit() {
 
-      $this->db->query("UPDATE desplazados_datos SET 
+      $this->db->query("UPDATE desplazados_vivienda SET 
             ACTUAL_VIVIENDA='$this->ActualVivienda',
             TENENCIA ='$this->Tenencia',
             TIPO_CONTRATO ='$this->TipoContrato',

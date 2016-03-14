@@ -25,8 +25,8 @@
                                 <div class="col-md-8">
                                     <select id="selectAyudas" name="cboPrograMenorD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['ATENCION_MENOR']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['ATENCION_MENOR']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -37,8 +37,8 @@
                                 <div class="col-md-8">
                                     <select id="selectAyudas" name="cboPrograCuInfantilD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['CUIDADO_INFANTIL']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['CUIDADO_INFANTIL']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -49,8 +49,8 @@
                                 <div class="col-md-8">
                                     <select id="selectAyudas" name="cboPrograAlimentaD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['PRO_ALIMENTACION']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['PRO_ALIMENTACION']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -61,8 +61,8 @@
                                 <div class="col-md-8">
                                     <select id="selectAyudas" name="cboHambreD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['HAMBRE_FALTAA']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['HAMBRE_FALTAA']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -73,8 +73,8 @@
                                 <div class="col-md-8">
                                     <select id="selectAyudas" name="cboRetornoD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['SEGURIDAD_AI']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['SEGURIDAD_AI']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -85,8 +85,8 @@
                                 <div class="col-md-8">
                                     <select id="selectAyudas" name="cboCompleAlimenD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['COMPLE_ALIMENTICIO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['COMPLE_ALIMENTICIO']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </td>
                             </tr>
@@ -96,8 +96,8 @@
                                 <div class="col-md-8">
                                     <select id="selectAyudas" name="cboDesayunosD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['BENEFI_DESAYUNO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['BENEFI_DESAYUNO']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -110,10 +110,10 @@
                                 <td class="right">En el momento de los desplazamientos su nucleo familiar recibio ayuda de:</td>
                                 <td class="left">
                                 <div class="col-md8" style="text-align: left;">
-                                   <input type="checkbox" required name="AyudaSalud" value="Si" > Salud<br>
-                                   <input type="checkbox" required name="AyudaAlojamiento" value="Si"> Alojamiento<br>
-                                   <input type="checkbox" required name="AyudaRacionAlimentaria" value="Si"> Racion Alimentaria<br>
-                                   <input type="checkbox" required name="AyudaAguaPotable" value="Si"> Agua Potable<br>
+                                   <input type="checkbox" <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['AYUDA_SALUD']=='Si') ?  "checked": null; ?>  name="AyudaSalud" value="Si" > Salud<br>
+                                   <input type="checkbox" <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['AYUDA_ALOJAMIENTO']=='Si') ?  "checked": null; ?>  name="AyudaAlojamiento" value="Si"> Alojamiento<br>
+                                   <input type="checkbox" <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['AYUDA_ALIMENTARIA']=='Si') ?  "checked": null; ?>  name="AyudaRacionAlimentaria" value="Si"> Racion Alimentaria<br>
+                                   <input type="checkbox" <?php echo ( isset($_GET['id']) and $_ayudas[$_GET['id']]['AYUDA_AGUA']=='Si') ?  "checked": null; ?>  name="AyudaAguaPotable" value="Si"> Agua Potable<br>
                                 </div>
                                 </td>
                             </tr>

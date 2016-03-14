@@ -40,6 +40,7 @@ require('core/bin/functions/proteccionDesplazados.php');
 require('core/bin/functions/proteccionEspecialDesplazados.php');
 require('core/bin/functions/reparacionDesplazados.php');
 require('core/bin/functions/viviendaDesplazados.php');
+require('core/bin/functions/pueblosIndigenas.php');
 
 $users=users();
 $_desplazados=desplazados();
@@ -54,5 +55,6 @@ $_protecciones=Proteccion();
 $_especiales=ProteccionEspecial();
 $_reparaciones=Reparaciones();
 $_viviendas=Viviendas();
+$_pueblosIndigenas=PueblosIndigenas();
 
  ?>

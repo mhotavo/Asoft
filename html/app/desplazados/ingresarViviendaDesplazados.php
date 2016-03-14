@@ -158,8 +158,8 @@
                                 <div class="col-md-7">
                                     <select id="telefono" name="cboTelefonoD" required class="form-control">
                                              <option  value="">[...]</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="Si">Si</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="No">No</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_TELEFONO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_TELEFONO']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -170,9 +170,9 @@
                                 <div class="col-md-7">
                                     <select id="eElectrica" name="cboEElectricaD" required class="form-control">
                                              <option  value="">[...]</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="Si">Si</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="No">No</option>
-                                    </select>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_ENERGIA_ELECTRICA']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_ENERGIA_ELECTRICA']=='No') ?  "selected": null; ?> value="No">No</option>
+                                    </selecNo
                                 </div>
                                 </td>
                             </tr>
@@ -182,8 +182,8 @@
                                 <div class="col-md-7">
                                     <select id="alcantarillado" name="cboAlcantarilladoD" required class="form-control">
                                              <option  value="">[...]</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="Si">Si</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="No">No</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_ALCANTARILLADO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_ALCANTARILLADO']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -194,8 +194,8 @@
                                 <div class="col-md-7">
                                     <select id="gasDomiciliario" name="cboGasDomiciliarioD" required class="form-control">
                                              <option  value="">[...]</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="Si">Si</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="No">No</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_GAS']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_GAS']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -206,9 +206,9 @@
                                 <div class="col-md-7">
                                      <select id="reBasuras" name="cboReBasurasD" required class="form-control">
                                              <option  value="">[...]</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="Si">Si</option>
-                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="No">No</option>
-                                    </select>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_REBASURAS']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['S_REBASURAS']=='No') ?  "selected": null; ?> value="No">No</option>
+                                    </selecNo
                                 </div>
                                 </td>
                             </tr>
@@ -216,7 +216,7 @@
                                 <td class="right">N° de Habitaciones para dormir que tenia Anteriormente:</td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                <input type="number" id="nHabiAnte" name="txtNHabiAnteD" required class="form-control">
+                                <input type="number" id="nHabiAnte" name="txtNHabiAnteD" required class="form-control" value="<?php echo isset($_GET['id']) ? $_viviendas[$_GET['id']]['NO_HABIT_ANTES'] : null   ?>" >
                                 </div>
                                 </td>
                             </tr>
@@ -224,7 +224,7 @@
                                 <td class="right">N° de Habitaciones para dormir que cuenta Actualmente:</td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                <input type="number" id="nHabiActu" name="txtNHAbiActuD" required class="form-control">
+                                <input type="number" id="nHabiActu" name="txtNHAbiActuD" required class="form-control" value="<?php echo isset($_GET['id']) ? $_viviendas[$_GET['id']]['NO_HABIT_ACTUAL'] : null   ?>">
                                 </div>
                                 </td>
                             </tr>
@@ -232,7 +232,7 @@
                                 <td class="right">Cuantas Familias comparten la casa donde habita el hogar Actualmente: </td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                <input type="number" id="nFamilias" name="txtNFamiliasD" required class="form-control">
+                                <input type="number" id="nFamilias" name="txtNFamiliasD" required class="form-control" value="<?php echo isset($_GET['id']) ? $_viviendas[$_GET['id']]['NO_FAMILI_CASA'] : null   ?>">
                                 </div>
                                 </td>
                             </tr>
@@ -243,8 +243,8 @@
 
                                     <select id="subsVivienda" name="cboSubsViviendaD" required class="form-control">
                                         <option  value="">[...]</option>
-                                        <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="Si">Si</option>
-                                        <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['']=='') ?  "selected": null; ?> value="No">No</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['RECIBI_SUBSIDIO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_viviendas[$_GET['id']]['RECIBI_SUBSIDIO']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>    
                                 </td>
                             </tr>

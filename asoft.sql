@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 14-03-2016 a las 05:03:31
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 14-03-2016 a las 23:21:27
 -- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -99,7 +99,7 @@ CREATE TABLE `desplazados_ayudasrecibidas` (
 --
 
 INSERT INTO `desplazados_ayudasrecibidas` (`DOCUMENTO_DESPLAZADO`, `ATENCION_MENOR`, `CUIDADO_INFANTIL`, `PRO_ALIMENTACION`, `HAMBRE_FALTAA`, `SEGURIDAD_AI`, `COMPLE_ALIMENTICIO`, `BENEFI_DESAYUNO`, `AYUDA_SALUD`, `AYUDA_ALOJAMIENTO`, `AYUDA_ALIMENTARIA`, `AYUDA_AGUA`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 1, NULL, '2016-03-13 16:39:31');
+(1, 'No', 'Si', 'Si', 'Si', 'Si', 'Si', 'No', 'Si', '', '', 'Si', 1, 1, '2016-03-14 20:03:33');
 
 -- --------------------------------------------------------
 
@@ -127,15 +127,16 @@ CREATE TABLE `desplazados_datos` (
   `TERRITORIO` varchar(25) DEFAULT NULL,
   `USUARIOLOG` bigint(255) NOT NULL,
   `LAST_EDIT` bigint(255) DEFAULT NULL,
-  `FECHALOG` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `FECHALOG` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `FECHA_REGISTRO` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `desplazados_datos`
 --
 
-INSERT INTO `desplazados_datos` (`DOCUMENTO_DESPLAZADO`, `NOMBRE_COMPLETO`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `TIPO_DE_DOCUMENTO`, `FECHA_DE_VICTIMIZACION`, `CODIGO_RUPV`, `DEPARTAMENTO`, `MUNICIPIO`, `ZONA`, `LOCALIDAD`, `DIRECCION`, `TELEFONO`, `ESTADO_CIVIL`, `PARENTESCO`, `ES_JEFE_DE_HOGAR`, `TERRITORIO`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'Hugo Ferney', 'Otavo', 'Varon ', 'TarjetadeIdentidad', '2016-03-03', '3243535', 5, 73001, 'Urbana', 'Protecho', 'Mz 33 casa 21', 234566, 'Separado(a)', 'Hermano(a)', 'NO', '1', 1, 1, '2016-03-13 22:30:10');
+INSERT INTO `desplazados_datos` (`DOCUMENTO_DESPLAZADO`, `NOMBRE_COMPLETO`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `TIPO_DE_DOCUMENTO`, `FECHA_DE_VICTIMIZACION`, `CODIGO_RUPV`, `DEPARTAMENTO`, `MUNICIPIO`, `ZONA`, `LOCALIDAD`, `DIRECCION`, `TELEFONO`, `ESTADO_CIVIL`, `PARENTESCO`, `ES_JEFE_DE_HOGAR`, `TERRITORIO`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`, `FECHA_REGISTRO`) VALUES
+(1, 'Hugo Ferney', 'Otavo', 'Varon ', 'TarjetadeIdentidad', '2016-03-03', '3243535', 5, 73001, 'Urbana', 'Protecho', 'Mz 33 casa 21', 234566, 'Separado(a)', 'Hermano(a)', 'NO', '1', 1, 1, '2016-03-14 21:55:18', '2016-03-29 05:00:00');
 
 -- --------------------------------------------------------
 
@@ -169,7 +170,7 @@ CREATE TABLE `desplazados_economiafamiliar` (
 --
 
 INSERT INTO `desplazados_economiafamiliar` (`DOCUMENTO_DESPLAZADO`, `INGRESOS_MENSUALES`, `GASTOS_MENSUALES`, `1_GASTO`, `2_GASTO`, `3_GASTO`, `NO_COMIDAS_DIA`, `ADULTOS`, `NINOS`, `MENORES_2ANOS`, `ALIMENTACION_CULTURA`, `ALIMENTACION_ADECUADA`, `FUENTE_1`, `FUENTE_2`, `FUENTE_3`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'InferiorSalarioMinimo', 'Un Salario Minimo', 'Arriendo', 'Transporte', 'Servicios Publicos', 'Dos (2)', 'Frutas', 'Frutas', 'Frutas', 'Si', 'Si', 'No', 'Si', 'Si', 1, NULL, '2016-03-13 04:04:53');
+(1, 'InferiorSalarioMinimo', 'UnSalarioMinimo', 'Arriendo', 'Educacion', 'Salud', '1', 'Sopas,Caldos,Cremas', 'ComplementosAlimenticios', 'Carnes', 'Si', 'Si', 'Compran', 'IntercambioOtrosHogares', 'DonacionesFamiliares', 1, 1, '2016-03-14 16:50:10');
 
 -- --------------------------------------------------------
 
@@ -182,7 +183,7 @@ CREATE TABLE `desplazados_especialproteccion` (
   `AYUDA_CULTURA` varchar(3) DEFAULT NULL,
   `AYUDA_18_CULTURA` varchar(3) DEFAULT NULL,
   `FUNCIONARIO_TRATO` varchar(3) DEFAULT NULL,
-  `PUEBLO_INDIGENA` varchar(45) DEFAULT NULL,
+  `PUEBLO_INDIGENA` int(10) DEFAULT NULL,
   `INDIGENAS_VIOINTRA` varchar(3) DEFAULT NULL,
   `DENUNCIADO` varchar(3) DEFAULT NULL,
   `CUALENTIDAD_DENUN` varchar(40) DEFAULT NULL,
@@ -198,7 +199,7 @@ CREATE TABLE `desplazados_especialproteccion` (
 --
 
 INSERT INTO `desplazados_especialproteccion` (`DOCUMENTO_DESPLAZADO`, `AYUDA_CULTURA`, `AYUDA_18_CULTURA`, `FUNCIONARIO_TRATO`, `PUEBLO_INDIGENA`, `INDIGENAS_VIOINTRA`, `DENUNCIADO`, `CUALENTIDAD_DENUN`, `TIPO_VIOLENCIA`, `PROMUEVEN_DERECHOS`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'Si', 'Si', 'Si', 'Achagua', 'Si', 'Si', 'otraa', 'Psicologica', 'Si', 1, NULL, '2016-03-13 19:28:48');
+(1, 'Si', 'Si', 'Si', 1, 'Si', 'Si', 'otraa', 'Fisica', 'No', 1, 1, '2016-03-14 21:09:32');
 
 -- --------------------------------------------------------
 
@@ -307,7 +308,7 @@ CREATE TABLE `desplazados_proteccion` (
 --
 
 INSERT INTO `desplazados_proteccion` (`DOCUMENTO_DESPLAZADO`, `SOLICITAR_PROTECCION`, `OTRA_ENTIDAD`, `AYUDAPOBLAC_DESPLAZA`, `MUJER`, `ADULTO_MAYOR`, `JOVENES`, `DISCAPACIDAD`, `AFILIADO_OPD`, `CUAL_OPD`, `PARTICIPA_E_P_P`, `CUAL_E_P_P`, `PRIORIDAD_1`, `PRIORIDAD_2`, `PRIORIDAD_3`, `PRIORIDAD_4`, `PRIORIDAD_5`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'FuerzasArmadas', 'otra', 'Si', 'Si', 'Si', 'Si', 'Si', 'No', 'opd', 'Si', 'politca x', 'Salud', 'Empleo', 'Vivienda', 'Educacion', 'Capacitacion', 1, NULL, '2016-03-13 15:04:59');
+(1, 'FuerzasArmadas', 'otra', 'Si', 'Si', '', 'Si', 'Si', 'No', 'opd', 'Si', 'politca x', 'Salud', 'Empleo', 'Vivienda', 'Educacion', 'Empleo', 1, 1, '2016-03-14 19:57:12');
 
 -- --------------------------------------------------------
 
@@ -337,7 +338,7 @@ CREATE TABLE `desplazados_reparacion` (
 --
 
 INSERT INTO `desplazados_reparacion` (`DOCUMENTO_DESPLAZADO`, `ESTADO_INFORMADO`, `MIEMBROH_INDEMNIZADO`, `ESTADO_GARANTIAS`, `MIEMBROH_RESTITUCION`, `ENTIDAD_RESTITUCION`, `ESTADO_RESTITUIDO`, `ESTADO_INDEMNIZACION`, `MIEMBROH_INDEMNIZACION`, `FAMILIA_REHABILITACION`, `MIEMBROH_BENEFICIARIO`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'Si', 'Si', 'Si', 'Si', '1', 'Si', 'Si', 'Si', 'Si', 'Si', 1, NULL, '2016-03-13 19:41:23');
+(1, 'Si', 'Si', 'Si', 'Si', '1', 'Si', 'Si', 'No', 'No', 'No', 1, 1, '2016-03-14 21:39:00');
 
 -- --------------------------------------------------------
 
@@ -375,7 +376,7 @@ CREATE TABLE `desplazados_vivienda` (
 --
 
 INSERT INTO `desplazados_vivienda` (`DOCUMENTO_DESPLAZADO`, `ACTUAL_VIVIENDA`, `TENENCIA`, `TIPO_CONTRATO`, `ZONA_VIVIENDA`, `ZONA_ALTORIESGO`, `PAREDES`, `PISO`, `TECHO`, `S_ACUEDUCTO`, `S_TELEFONO`, `S_ENERGIA_ELECTRICA`, `S_ALCANTARILLADO`, `S_GAS`, `S_REBASURAS`, `NO_HABIT_ANTES`, `NO_HABIT_ACTUAL`, `NO_FAMILI_CASA`, `RECIBI_SUBSIDIO`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'Albergue', 'Propia', 'Ninguno', 'Rural', 'Si', 'Bloque', 'Arena', 'Carton', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 4, 4, 4, 'Si', 1, NULL, '2016-03-13 03:42:16');
+(1, 'Albergue', 'Propia', 'Ninguno', 'Rural', 'Si', 'Bloque', 'Arena', 'Carton', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 5, 5, 5, 'Si', 1, 1, '2016-03-14 16:20:42');
 
 -- --------------------------------------------------------
 
@@ -385,20 +386,20 @@ INSERT INTO `desplazados_vivienda` (`DOCUMENTO_DESPLAZADO`, `ACTUAL_VIVIENDA`, `
 
 CREATE TABLE `desplazado_discapacidad` (
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
-  `ANTES_DESPLAZAMIENTO` varchar(3) DEFAULT NULL,
-  `IGUAL_CONDICIONES` varchar(3) DEFAULT NULL,
+  `ANTES_DESPLAZAMIENTO` varchar(10) DEFAULT NULL,
+  `IGUAL_CONDICIONES` varchar(10) DEFAULT NULL,
   `ENTIDAD_REHABILITACION` varchar(15) DEFAULT NULL,
-  `REHUBICACION_LABORAL` varchar(3) DEFAULT NULL,
-  `MARGINADO_DISCRIMINADO` varchar(3) DEFAULT NULL,
-  `ENCUENTRA_P_P` varchar(3) DEFAULT NULL,
-  `EXCLUIDO` varchar(3) DEFAULT NULL,
-  `REHABILITACION` varchar(3) DEFAULT NULL,
-  `SUBSIDIO_DISCAPACIDAD` varchar(3) DEFAULT NULL,
-  `CAPACIDAD_ECONO` varchar(3) DEFAULT NULL,
-  `MENORES_18` varchar(3) DEFAULT NULL,
-  `RECIBIO_AYU_HUMA` varchar(3) DEFAULT NULL,
-  `ORGANIZACION_DESPLA` varchar(3) DEFAULT NULL,
-  `PARTICIPACION_OPDS` varchar(3) DEFAULT NULL,
+  `REHUBICACION_LABORAL` varchar(10) DEFAULT NULL,
+  `MARGINADO_DISCRIMINADO` varchar(10) DEFAULT NULL,
+  `ENCUENTRA_P_P` varchar(10) DEFAULT NULL,
+  `EXCLUIDO` varchar(10) DEFAULT NULL,
+  `REHABILITACION` varchar(10) DEFAULT NULL,
+  `SUBSIDIO_DISCAPACIDAD` varchar(10) DEFAULT NULL,
+  `CAPACIDAD_ECONO` varchar(10) DEFAULT NULL,
+  `MENORES_18` varchar(10) DEFAULT NULL,
+  `RECIBIO_AYU_HUMA` varchar(10) DEFAULT NULL,
+  `ORGANIZACION_DESPLA` varchar(10) DEFAULT NULL,
+  `PARTICIPACION_OPDS` varchar(10) DEFAULT NULL,
   `USUARIOLOG` bigint(255) NOT NULL,
   `LAST_EDIT` bigint(255) DEFAULT NULL,
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -409,7 +410,7 @@ CREATE TABLE `desplazado_discapacidad` (
 --
 
 INSERT INTO `desplazado_discapacidad` (`DOCUMENTO_DESPLAZADO`, `ANTES_DESPLAZAMIENTO`, `IGUAL_CONDICIONES`, `ENTIDAD_REHABILITACION`, `REHUBICACION_LABORAL`, `MARGINADO_DISCRIMINADO`, `ENCUENTRA_P_P`, `EXCLUIDO`, `REHABILITACION`, `SUBSIDIO_DISCAPACIDAD`, `CAPACIDAD_ECONO`, `MENORES_18`, `RECIBIO_AYU_HUMA`, `ORGANIZACION_DESPLA`, `PARTICIPACION_OPDS`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
-(1, 'Si', 'Si', 'Privada', 'Si', 'No', 'Si', 'Si', 'Si', 'Si', 'Si', 'No', 'Si', 'Si', 'Si', 1, 1, '2016-03-13 17:19:22');
+(1, 'Si', 'Si', 'Publica', 'Si', 'No', 'Si', 'Si', 'Si', 'Si', 'Si', 'No', 'Si', 'Si', 'NoAplica', 1, 1, '2016-03-14 20:09:59');
 
 -- --------------------------------------------------------
 
@@ -1923,6 +1924,25 @@ CREATE TABLE `ovictimas_vivienda` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `pueblo_indigena`
+--
+
+CREATE TABLE `pueblo_indigena` (
+  `ID_PUEBLO` int(11) NOT NULL,
+  `NOM_PUEBLO` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `pueblo_indigena`
+--
+
+INSERT INTO `pueblo_indigena` (`ID_PUEBLO`, `NOM_PUEBLO`) VALUES
+(0, 'Ninguna'),
+(1, 'Achagua');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -1990,7 +2010,8 @@ ALTER TABLE `desplazados_especialproteccion`
   ADD PRIMARY KEY (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `FK_RELATIONSHIP_3` (`DOCUMENTO_DESPLAZADO`),
   ADD KEY `USUARIOLOG` (`USUARIOLOG`,`LAST_EDIT`),
-  ADD KEY `FK_ESPECIAL_EDIT` (`LAST_EDIT`);
+  ADD KEY `FK_ESPECIAL_EDIT` (`LAST_EDIT`),
+  ADD KEY `PUEBLO_INDIGENA` (`PUEBLO_INDIGENA`);
 
 --
 -- Indices de la tabla `desplazados_familiar`
@@ -2128,6 +2149,12 @@ ALTER TABLE `ovictimas_vivienda`
   ADD KEY `FK_RELATIONSHIP_19` (`DOCUMENTO_VICTIMA`);
 
 --
+-- Indices de la tabla `pueblo_indigena`
+--
+ALTER TABLE `pueblo_indigena`
+  ADD PRIMARY KEY (`ID_PUEBLO`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -2173,6 +2200,11 @@ ALTER TABLE `ovictimas_victimizacion`
 ALTER TABLE `ovictimas_vivienda`
   MODIFY `ID_VIVIENDAO` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `pueblo_indigena`
+--
+ALTER TABLE `pueblo_indigena`
+  MODIFY `ID_PUEBLO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -2208,6 +2240,7 @@ ALTER TABLE `desplazados_economiafamiliar`
 ALTER TABLE `desplazados_especialproteccion`
   ADD CONSTRAINT `FK_ESPECIAL_EDIT` FOREIGN KEY (`LAST_EDIT`) REFERENCES `usuarios` (`ID`),
   ADD CONSTRAINT `FK_ESPECIAL_USUARIO` FOREIGN KEY (`USUARIOLOG`) REFERENCES `usuarios` (`ID`),
+  ADD CONSTRAINT `FK_PROTECCION_PUEBLO` FOREIGN KEY (`PUEBLO_INDIGENA`) REFERENCES `pueblo_indigena` (`ID_PUEBLO`),
   ADD CONSTRAINT `FK_RELATIONSHIP_3` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
 
 --

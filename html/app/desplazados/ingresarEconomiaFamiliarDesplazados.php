@@ -25,12 +25,12 @@
                                 <div class="col-md-7">
                                     <select id="ingreMensuales" name="cboIngreMensualesD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="UnSalarioMinimo">Un Salario Minimo</option>
-                                            <option value="InferiorSalarioMinimo">Inferior a Un Salario Minimo</option>
-                                            <option value="UnoaDosSalariosMinimos">Entre uno(1) y dos(2) Salarios Minimos</option>
-                                            <option value="DosaTresSalariosMinimos">Entre dos(2) y tres(3) Salarios Minimos</option>                                            
-                                            <option value="MasTresSalarios Minimos">Mas de tres(3) Salarios Minimos</option>
-                                            <option value="NoDevengan">No Devengan</option>                                           
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['INGRESOS_MENSUALES']=='UnSalarioMinimo') ?  "selected": null; ?> value="UnSalarioMinimo">Un Salario Minimo</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['INGRESOS_MENSUALES']=='InferiorSalarioMinimo') ?  "selected": null; ?> value="InferiorSalarioMinimo">Inferior a Un Salario Minimo</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['INGRESOS_MENSUALES']=='UnoaDosSalariosMinimos') ?  "selected": null; ?> value="UnoaDosSalariosMinimos">Entre uno(1) y dos(2) Salarios Minimos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['INGRESOS_MENSUALES']=='DosaTresSalariosMinimos') ?  "selected": null; ?> value="DosaTresSalariosMinimos">Entre dos(2) y tres(3) Salarios Minimos</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['INGRESOS_MENSUALES']=='MasTresSalariosMinimos') ?  "selected": null; ?> value="MasTresSalariosMinimos">Mas de tres(3) Salarios Minimos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['INGRESOS_MENSUALES']=='NoDevengan') ?  "selected": null; ?> value="NoDevengan">No Devengan</option>                                           
                                     </select>
                                 </div>
                                 </td>
@@ -41,11 +41,11 @@
                                 <div class="col-md-7">
                                     <select id="gastosMensuales" name="cboGastosMensualesD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Un Salario Minimo">Un Salario Minimo</option>
-                                            <option value="Inferior a Un Salario Minimo">Inferior a Un Salario Minimo</option>
-                                            <option value="Entre uno(1) y dos(2) Salarios Minimos">Entre uno(1) y dos(2) Salarios Minimos</option>
-                                            <option value="Entre dos(2) y tres(3) Salarios Minimos">Entre dos(2) y tres(3) Salarios Minimos</option>                                            
-                                            <option value="Mas de tres(3) Salarios Minimos">Mas de tres(3) Salarios Minimos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['GASTOS_MENSUALES']=='UnSalarioMinimo') ?  "selected": null; ?> value="UnSalarioMinimo">Un Salario Minimo</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['GASTOS_MENSUALES']=='InferiorSalarioMinimo') ?  "selected": null; ?> value="InferiorSalarioMinimo">Inferior a Un Salario Minimo</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['GASTOS_MENSUALES']=='UnoaDosSalariosMinimos') ?  "selected": null; ?> value="UnoaDosSalariosMinimos">Entre uno(1) y dos(2) Salarios Minimos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['GASTOS_MENSUALES']=='DosaTresSalariosMinimos') ?  "selected": null; ?> value="DosaTresSalariosMinimos">Entre dos(2) y tres(3) Salarios Minimos</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['GASTOS_MENSUALES']=='MasTresSalariosMinimos') ?  "selected": null; ?> value="MasTresSalariosMinimos">Mas de tres(3) Salarios Minimos</option>
                                     </select>
                                 </div>
                                 </td>
@@ -53,37 +53,36 @@
                             <tr>
                                 <td class="right">En Orden de Importancia, <br> clasifique los gastos en los cuales el hogar invierte sus ingresos:</td>
                                 <td class="left">
-                                <div class="col-md-7" style="">
+                                <div class="col-md-4" style="">
                                     <select id="ordenGastos" name="cboOrdenGastosD" required class="form-control">
-                                            <option value="">  Gasto 1  </option>
-                                            <option value="Arriendo">Arriendo</option>
-                                            <option value="Transporte">Transporte</option>
-                                            <option value="Servicios Publicos">Servicios Publicos</option>
-                                            <option value="Alimentacion">Alimentacion</option>                                            
-                                            <option value="Educacion">Educacion</option>
-                                            <option value="Mas de tres(3) Salarios Minimos">Salud</option>
-                                            <option value="Mas de tres(3) Salarios Minimos">Otro</option>
-                                    </select>
+                                            <option  value="">  Gasto 1  </option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['1_GASTO']=='Arriendo') ?  "selected": null; ?> value="Arriendo">Arriendo</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['1_GASTO']=='Transporte') ?  "selected": null; ?> value="Transporte">Transporte</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['1_GASTO']=='ServiciosPublicos') ?  "selected": null; ?> value="ServiciosPublicos">Servicios Publicos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['1_GASTO']=='Alimentacion') ?  "selected": null; ?> value="Alimentacion">Alimentacion</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['1_GASTO']=='Educacion') ?  "selected": null; ?> value="Educacion">Educacion</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['1_GASTO']=='Salud') ?  "selected": null; ?> value="Salud">Salud</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['1_GASTO']=='Otro') ?  "selected": null; ?> value="Otro">Otro</option>
+                                    </select> 
+
                                       <select id="ordenGastos" name="cboOrdenGastos2D" required class="form-control">
-                                            <option value="">  Gasto 2  </option>
-                                            <option value="Arriendo">Arriendo</option>
-                                            <option value="Transporte">Transporte</option>
-                                            <option value="Servicios Publicos">Servicios Publicos</option>
-                                            <option value="Alimentacion">Alimentacion</option>                                            
-                                            <option value="Educacion">Educacion</option>
-                                            <option value="Mas de tres(3) Salarios Minimos">Salud</option>
-                                            <option value="Mas de tres(3) Salarios Minimos">Otro</option>
-                                    </select>
+                                            <option  value="">  Gasto 2  </option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['2_GASTO']=='Arriendo') ?  "selected": null; ?> value="Arriendo">Arriendo</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['2_GASTO']=='Transporte') ?  "selected": null; ?> value="Transporte">Transporte</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['2_GASTO']=='ServiciosPublicos') ?  "selected": null; ?> value="ServiciosPublicos">Servicios Publicos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['2_GASTO']=='Alimentacion') ?  "selected": null; ?> value="Alimentacion">Alimentacion</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['2_GASTO']=='Educacion') ?  "selected": null; ?> value="Educacion">Educacion</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['2_GASTO']=='Salud') ?  "selected": null; ?> value="Salud">Salud</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['2_GASTO']=='Otro') ?  "selected": null; ?> value="Otro">Otro</option>                                    </select>
                                     <select id="ordenGastos" name="cboOrdenGastos3D" required class="form-control">
-                                            <option value="">  Gasto 3  </option>
-                                            <option value="Arriendo">Arriendo</option>
-                                            <option value="Transporte">Transporte</option>
-                                            <option value="Servicios Publicos">Servicios Publicos</option>
-                                            <option value="Alimentacion">Alimentacion</option>                                            
-                                            <option value="Educacion">Educacion</option>
-                                            <option value="Mas de tres(3) Salarios Minimos">Salud</option>
-                                            <option value="Mas de tres(3) Salarios Minimos">Otro</option>
-                                    </select>
+                                            <option  value="">  Gasto 3  </option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['3_GASTO']=='Arriendo') ?  "selected": null; ?> value="Arriendo">Arriendo</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['3_GASTO']=='Transporte') ?  "selected": null; ?> value="Transporte">Transporte</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['3_GASTO']=='ServiciosPublicos') ?  "selected": null; ?> value="ServiciosPublicos">Servicios Publicos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['3_GASTO']=='Alimentacion') ?  "selected": null; ?> value="Alimentacion">Alimentacion</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['3_GASTO']=='Educacion') ?  "selected": null; ?> value="Educacion">Educacion</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['3_GASTO']=='Salud') ?  "selected": null; ?> value="Salud">Salud</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['3_GASTO']=='Otro') ?  "selected": null; ?> value="Otro">Otro</option>                                    </select>
                                 </div>
                                 </td>
                             </tr>
@@ -94,9 +93,9 @@
                                 <div class="col-md-7">
                                     <select id="comidasDia" name="cboComidasDiaD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Una(1)">Una(1)</option>
-                                            <option value="Dos (2)">Dos(2)</option>
-                                            <option value="Tres (3) o mas">Tres(3) o mas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NO_COMIDAS_DIA']=='1') ?  "selected": null; ?> value="1">Una(1)</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NO_COMIDAS_DIA']=='2') ?  "selected": null; ?> value="2">Dos(2)</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NO_COMIDAS_DIA']=='+3') ?  "selected": null; ?> value="+3">Tres(3) o mas</option>
                                     </select>
                                 </div>
                                 </td>
@@ -111,19 +110,19 @@
                             <tr>
                                 <td class="right">Adultos:</td>
                                  <td class="left">
-                                <div class="col-md-7">
+                                <div class="col-md-4">
                                     <select id="alimConsumen" name="cboAlimConsumenAdulD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Frutas">Frutas</option>
-                                            <option value="Carnes">Carnes</option>
-                                            <option value="Granos">Granos</option>
-                                            <option value="Harinas">Harinas</option>
-                                            <option value="Verduras">Verduras</option>
-                                            <option value="Tuberculos">Tuberculos</option>
-                                            <option value="Bienestarina">Bienestarina</option>
-                                            <option value="Sopas, Caldos, Cremas">Sopas, Caldos, Cremas</option>
-                                            <option value="Complementos Alimenticios">Complementos Alimenticios</option>
-                                            <option value="Otros">Otros</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Frutas') ?  "selected": null; ?> value="Frutas">Frutas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Carnes') ?  "selected": null; ?> value="Carnes">Carnes</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Granos') ?  "selected": null; ?> value="Granos">Granos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Harinas') ?  "selected": null; ?> value="Harinas">Harinas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Verduras') ?  "selected": null; ?> value="Verduras">Verduras</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Tuberculos') ?  "selected": null; ?> value="Tuberculos">Tuberculos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Bienestarina') ?  "selected": null; ?> value="Bienestarina">Bienestarina</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Sopas,Caldos,Cremas') ?  "selected": null; ?> value="Sopas,Caldos,Cremas">Sopas, Caldos, Cremas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='ComplementosAlimenticios') ?  "selected": null; ?> value="ComplementosAlimenticios">Complementos Alimenticios</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ADULTOS']=='Otros') ?  "selected": null; ?> value="Otros">Otros</option>
                                     </select>
                                 </div>
                                 </td>
@@ -131,40 +130,38 @@
                             <tr>
                                 <td class="right">Niños: </td>
                                  <td class="left">
-                                <div class="col-md-7">
+                                <div class="col-md-4">
                                     <select id="alimConsumen" name="cboAlimConsumenNinosD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Frutas">Frutas</option>
-                                            <option value="Carnes">Carnes</option>
-                                            <option value="Granos">Granos</option>
-                                            <option value="Harinas">Harinas</option>
-                                            <option value="Verduras">Verduras</option>
-                                            <option value="Tuberculos">Tuberculos</option>
-                                            <option value="Bienestarina">Bienestarina</option>
-                                            <option value="Sopas, Caldos, Cremas">Sopas, Caldos, Cremas</option>
-                                            <option value="Complementos Alimenticios">Complementos Alimenticios</option>
-                                            <option value="Otros">Otros</option>
-                                    </select>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Frutas') ?  "selected": null; ?> value="Frutas">Frutas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Carnes') ?  "selected": null; ?> value="Carnes">Carnes</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Granos') ?  "selected": null; ?> value="Granos">Granos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Harinas') ?  "selected": null; ?> value="Harinas">Harinas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Verduras') ?  "selected": null; ?> value="Verduras">Verduras</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Tuberculos') ?  "selected": null; ?> value="Tuberculos">Tuberculos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Bienestarina') ?  "selected": null; ?> value="Bienestarina">Bienestarina</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Sopas,Caldos,Cremas') ?  "selected": null; ?> value="Sopas,Caldos,Cremas">Sopas, Caldos, Cremas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='ComplementosAlimenticios') ?  "selected": null; ?> value="ComplementosAlimenticios">Complementos Alimenticios</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['NINOS']=='Otros') ?  "selected": null; ?> value="Otros">Otros</option>                                    </select>
                                 </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="right">Menores de dos(2) años:</td>
                                  <td class="left">
-                                <div class="col-md-7">
+                                <div class="col-md-4">
                                     <select id="alimConsumen" name="cboAlimConsumenMe2D" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Frutas">Frutas</option>
-                                            <option value="Carnes">Carnes</option>
-                                            <option value="Granos">Granos</option>
-                                            <option value="Harinas">Harinas</option>
-                                            <option value="Verduras">Verduras</option>
-                                            <option value="Tuberculos">Tuberculos</option>
-                                            <option value="Bienestarina">Bienestarina</option>
-                                            <option value="Sopas, Caldos, Cremas">Sopas, Caldos, Cremas</option>
-                                            <option value="Complementos Alimenticios">Complementos Alimenticios</option>
-                                            <option value="Otros">Otros</option>
-                                    </select>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Frutas') ?  "selected": null; ?> value="Frutas">Frutas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Carnes') ?  "selected": null; ?> value="Carnes">Carnes</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Granos') ?  "selected": null; ?> value="Granos">Granos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Harinas') ?  "selected": null; ?> value="Harinas">Harinas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Verduras') ?  "selected": null; ?> value="Verduras">Verduras</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Tuberculos') ?  "selected": null; ?> value="Tuberculos">Tuberculos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Bienestarina') ?  "selected": null; ?> value="Bienestarina">Bienestarina</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Sopas,Caldos,Cremas') ?  "selected": null; ?> value="Sopas,Caldos,Cremas">Sopas, Caldos, Cremas</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='ComplementosAlimenticios') ?  "selected": null; ?> value="ComplementosAlimenticios">Complementos Alimenticios</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['MENORES_2ANOS']=='Otros') ?  "selected": null; ?> value="Otros">Otros</option>                                    </select>
                                 </div>
                                 </td>
                             </tr>
@@ -174,9 +171,9 @@
                                 <div class="col-md-7">
                                     <select id="alimAcorde" name="cboAlimAcordeD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
-                                    </select>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ALIMENTACION_CULTURA']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ALIMENTACION_CULTURA']=='No') ?  "selected": null; ?> value="No">No</option>
+                                    </selecNo
                                 </div>
                                 </td>
                             </tr>
@@ -186,8 +183,8 @@
                                 <div class="col-md-7">
                                     <select id="alimAdecuada" name="cboAlimAdecuadaD" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ALIMENTACION_ADECUADA']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['ALIMENTACION_ADECUADA']=='No') ?  "selected": null; ?> value="No">No</option>
                                     </select>
                                 </div>
                                 </td>
@@ -198,13 +195,13 @@
                                 <div class="col-md-7">
                                     <select id="fuente" name="cboFuente1D" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Si">Compran</option>
-                                            <option value="No">Producen</option>
-                                            <option value="Si">Donaciones Vecinos</option>
-                                            <option value="No">Donaciones Familiares</option>
-                                            <option value="No">Donaciones de Entidades</option>
-                                            <option value="Si">Intercambio Otros Hogares</option>
-                                            <option value="No">Otros</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_1']=='Compran') ?  "selected": null; ?> value="Compran">Compran</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_1']=='Producen') ?  "selected": null; ?> value="Producen">Producen</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_1']=='DonacionesVecinos') ?  "selected": null; ?> value="DonacionesVecinos">Donaciones Vecinos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_1']=='DonacionesFamiliares') ?  "selected": null; ?> value="DonacionesFamiliares">Donaciones Familiares</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_1']=='DonacionesEntidades') ?  "selected": null; ?> value="DonacionesEntidades">Donaciones de Entidades</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_1']=='IntercambioOtrosHogares') ?  "selected": null; ?> value="IntercambioOtrosHogares">Intercambio Otros Hogares</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_1']=='Otros') ?  "selected": null; ?> value="Otros">Otros</option>
                                     </select>
                                 </div>
                                 </td>
@@ -215,14 +212,13 @@
                                 <div class="col-md-7">
                                     <select id="fuente" name="cboFuente2D" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Si">Compran</option>
-                                            <option value="No">Producen</option>
-                                            <option value="Si">Donaciones Vecinos</option>
-                                            <option value="No">Donaciones Familiares</option>
-                                            <option value="No">Donaciones de Entidades</option>
-                                            <option value="Si">Intercambio Otros Hogares</option>
-                                            <option value="No">Otros</option>
-                                    </select>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_2']=='Compran') ?  "selected": null; ?> value="Compran">Compran</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_2']=='Producen') ?  "selected": null; ?> value="Producen">Producen</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_2']=='DonacionesVecinos') ?  "selected": null; ?> value="DonacionesVecinos">Donaciones Vecinos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_2']=='DonacionesFamiliares') ?  "selected": null; ?> value="DonacionesFamiliares">Donaciones Familiares</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_2']=='DonacionesEntidades') ?  "selected": null; ?> value="DonacionesEntidades">Donaciones de Entidades</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_2']=='IntercambioOtrosHogares') ?  "selected": null; ?> value="IntercambioOtrosHogares">Intercambio Otros Hogares</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_2']=='Otros') ?  "selected": null; ?> value="Otros">Otros</option>                                    </select>
                                 </div>
                                 </td>
                             </tr>
@@ -232,14 +228,13 @@
                                 <div class="col-md-7">
                                     <select id="fuente" name="cboFuente3D" required class="form-control">
                                             <option value=""></option>
-                                            <option value="Si">Compran</option>
-                                            <option value="No">Producen</option>
-                                            <option value="Si">Donaciones Vecinos</option>
-                                            <option value="No">Donaciones Familiares</option>
-                                            <option value="No">Donaciones de Entidades</option>
-                                            <option value="Si">Intercambio Otros Hogares</option>
-                                            <option value="No">Otros</option>
-                                    </select>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_3']=='Compran') ?  "selected": null; ?> value="Compran">Compran</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_3']=='Producen') ?  "selected": null; ?> value="Producen">Producen</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_3']=='DonacionesVecinos') ?  "selected": null; ?> value="DonacionesVecinos">Donaciones Vecinos</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_3']=='DonacionesFamiliares') ?  "selected": null; ?> value="DonacionesFamiliares">Donaciones Familiares</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_3']=='DonacionesEntidades') ?  "selected": null; ?> value="DonacionesEntidades">Donaciones de Entidades</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_3']=='IntercambioOtrosHogares') ?  "selected": null; ?> value="IntercambioOtrosHogares">Intercambio Otros Hogares</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_economias[$_GET['id']]['FUENTE_3']=='Otros') ?  "selected": null; ?> value="Otros">Otros</option>                                    </select>
                                 </div>
                                 </td>
                             </tr>

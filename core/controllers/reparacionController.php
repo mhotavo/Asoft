@@ -21,7 +21,7 @@ switch (isset($mode) ?  $mode : null ) {
 	case 'add':
 		if ($_POST) {
 			$reparacion->Add(); 
-			  header('location: ?view=listadesplazados&id='.$id);
+			  header('location: ?view=listadesplazados');
 		}else {	
 			include(HTML_DIR . 'app/desplazados/ingresarReparacionDesplazados.php');
 		}
@@ -33,7 +33,7 @@ switch (isset($mode) ?  $mode : null ) {
 		if (  isset($id) and !empty($id) ) {
 				if ($_POST) {
 					$reparacion->edit();
-					header('location: ?view=listadesplazados&id='.$id);
+					header('location: ?view=listadesplazados');
 				} else {
 					include(HTML_DIR . 'app/desplazados/ingresarReparacionDesplazados.php');
 				}

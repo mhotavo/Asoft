@@ -68,7 +68,7 @@
                                             <option <?php echo ( isset($_GET['id']) and $_estabilizaciones[$_GET['id']]['RESIDENCIA_DESEARIA']=='Establecerse') ?  "selected": null; ?> value="Establecerse">Establecerse</option>
                                             <option <?php echo ( isset($_GET['id']) and $_estabilizaciones[$_GET['id']]['RESIDENCIA_DESEARIA']=='Residir') ?  "selected": null; ?> value="Residir">Residir</option>
                                             <option <?php echo ( isset($_GET['id']) and $_estabilizaciones[$_GET['id']]['RESIDENCIA_DESEARIA']=='Reubicarse') ?  "selected": null; ?> value="Reubicarse">Reubicarse</option>
-                                    </selecNot>
+                                    </select>
                                 </div>
                                 </td>
                             </tr>
@@ -76,7 +76,7 @@
                                 <td class="right">Donde quiere reubicarse o retornar:</td>
                                 <td class="left">
                                 <div class="col-md-7">
-                                <input id="dondeRetornar" type="text"value="<?php echo isset($_GET['id']) ? $_estabilizaciones[$_GET['id']]['DONDEQUIERE_REUBICARSE'] : null   ?>" name="txtDondeRetornar" required class="form-control" required class="form-control">
+                                <input id="dondeRetornar" type="text" value="<?php echo isset($_GET['id']) ? $_estabilizaciones[$_GET['id']]['DONDEQUIERE_REUBICARSE'] : null   ?>" name="txtDondeRetornar" required class="form-control" required class="form-control">
                                 </div>
                                 </td>
                             </tr>

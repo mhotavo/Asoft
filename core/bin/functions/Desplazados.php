@@ -10,6 +10,8 @@ function Desplazados() {
 				'Nombre_Completo' => $d['NOMBRE_COMPLETO'],
 				'Primer_Apellido' => $d['PRIMER_APELLIDO'],
 				'Segundo_Apellido' => $d['SEGUNDO_APELLIDO'],
+				'Nombre_Apellido' => $d['NOMBRE_COMPLETO'].' '.$d['PRIMER_APELLIDO'].' '.$d['SEGUNDO_APELLIDO'],
+
 				'Tipo_de_Documento' => $d['TIPO_DE_DOCUMENTO'],
 				'Fecha_de_Victimizacion' => $d['FECHA_DE_VICTIMIZACION'],
 				'Codigo_RUPV' => $d['CODIGO_RUPV'],
@@ -22,7 +24,8 @@ function Desplazados() {
 				'Estado_Civil' => $d['ESTADO_CIVIL'],
 				'Parentesco' => $d['PARENTESCO'],
 				'JefeDeHogar' => $d['ES_JEFE_DE_HOGAR'],
-				'Territorio' => $d['TERRITORIO']
+				'Territorio' => $d['TERRITORIO'],
+				'FechaRegistro' => $d['FECHA_REGISTRO']
 				);
 		}
 

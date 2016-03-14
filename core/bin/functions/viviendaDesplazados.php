@@ -23,7 +23,8 @@ function Viviendas() {
 				'S_REBASURAS' => $d['S_REBASURAS'],
 				'NO_HABIT_ANTES' => $d['NO_HABIT_ANTES'],
 				'NO_HABIT_ACTUAL' => $d['NO_HABIT_ACTUAL'],
-				'NO_FAMILI_CASA' => $d['NO_FAMILI_CASA']
+				'NO_FAMILI_CASA' => $d['NO_FAMILI_CASA'],
+				'RECIBI_SUBSIDIO' => $d['RECIBI_SUBSIDIO']
 				);
 		}
 

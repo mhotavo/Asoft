@@ -50,7 +50,8 @@ class Desplazados {
                         (DOCUMENTO_DESPLAZADO, NOMBRE_COMPLETO, PRIMER_APELLIDO, 
                         SEGUNDO_APELLIDO, TIPO_DE_DOCUMENTO, FECHA_DE_VICTIMIZACION,
                         CODIGO_RUPV, DEPARTAMENTO, MUNICIPIO, ZONA, LOCALIDAD, DIRECCION, 
-                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO, USUARIOLOG) 
+                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO, 
+                        USUARIOLOG, FECHA_REGISTRO) 
                         VALUES (
                         '$this->Documento',
                         '$this->Nombre',
@@ -68,7 +69,8 @@ class Desplazados {
                         '$this->Parentesco',
                         '$this->Es_Jefe_de_Hogar',
                         '$this->Territorio',
-                        '$this->Usuario'
+                        '$this->Usuario',
+                        'NOW()'
 
                         );");
  

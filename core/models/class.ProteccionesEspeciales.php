@@ -56,16 +56,16 @@ class ProteccionesEspeciales {
 
   public function Edit() {
       $this->db->query("UPDATE desplazados_especialproteccion SET 
-            AyudaCultura_COMPLETO='$this->AyudaCultura',
-            Ayuda18Cultura ='$this->Ayuda18Cultura',
-            FuncionarioTrato ='$this->FuncionarioTrato',
-            PuebloIndigena ='$this->PuebloIndigena',
-            IndigenasViointra ='$this->IndigenasViointra',
-            Denunciado ='$this->Denunciado',
-            CualEntidad ='$this->CualEntidad',
-            TipoViolencia ='$this->TipoViolencia',
-            PromuevenDerechos ='$this->PromuevenDerechos',
-            PromuevenDerechos ='$this->Usuario',
+            AYUDA_CULTURA='$this->AyudaCultura',
+            AYUDA_18_CULTURA ='$this->Ayuda18Cultura',
+            FUNCIONARIO_TRATO ='$this->FuncionarioTrato',
+            PUEBLO_INDIGENA ='$this->PuebloIndigena',
+            INDIGENAS_VIOINTRA ='$this->IndigenasViointra',
+            DENUNCIADO ='$this->Denunciado',
+            CUALENTIDAD_DENUN ='$this->CualEntidad',
+            TIPO_VIOLENCIA ='$this->TipoViolencia',
+            PROMUEVEN_DERECHOS ='$this->PromuevenDerechos',
+            LAST_EDIT ='$this->Usuario'
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }

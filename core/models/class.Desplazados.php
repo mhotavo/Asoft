@@ -10,7 +10,6 @@ class Desplazados {
     private $Tipo_de_Documento;
     private $Fecha_de_Victimizacion ;
     private $Codigo_RUPV;
-    #private $Departamento;
     private $Municipio;
     private $Zona ;
     private $Localidad;
@@ -20,7 +19,7 @@ class Desplazados {
     private $Parentesco ;
     private $Es_Jefe_de_Hogar;
     private $Territorio;
-    private $Usuario
+    private $Usuario;
 
 	public function __construct (){
 		$this->db = new Conexion();
@@ -31,7 +30,6 @@ class Desplazados {
         $this->Tipo_de_Documento= isset($_POST['cboTipoDocumentoD']) ? $_POST['cboTipoDocumentoD'] : null;
         $this->Fecha_de_Victimizacion= isset($_POST['txtFechaVictimizacionD']) ? $_POST['txtFechaVictimizacionD'] : null;
         $this->Codigo_RUPV= isset($_POST['txtCodigoRUPVD']) ? $_POST['txtCodigoRUPVD'] : null;
-        #$this->Departamento= isset($_POST['cboDepartamentoD']) ? $_POST['cboDepartamentoD'] : null;
         $this->Municipio= isset($_POST['cboMunicipioD']) ? $_POST['cboMunicipioD'] : null;
         $this->Zona= isset($_POST['cboZonaD']) ? $_POST['cboZonaD'] : null;
         $this->Localidad= isset($_POST['txtLocalidadD']) ? $_POST['txtLocalidadD'] : null;
@@ -96,15 +94,13 @@ class Desplazados {
             PARENTESCO ='$this->Parentesco',
             ES_JEFE_DE_HOGAR ='$this->Es_Jefe_de_Hogar',
             TERRITORIO ='$this->Territorio',
-            LAST_EDIT ='$this->Usuario',
+            LAST_EDIT ='$this->Usuario'
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';" );  
-            //header('location: ?view=datosdesplazado&mode=edit&id='.$this->Documento);
       
   }
   public function Delete() {
-    $this->id = intval($_GET['id']);
-    $this->db->query("DELETE FROM foros WHERE id='$this->id';");
-    header('location: ?view=datosdesplazado&success=true');
+    $this->db->query("DELETE FROM desplazados_datos WHERE id='$this->Documento';");
+
   }
 
   public function Buscar() {

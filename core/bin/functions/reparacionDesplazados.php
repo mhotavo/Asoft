@@ -7,7 +7,7 @@ function Reparaciones() {
 		while ($d=$db->recorrer($sql)) {
 			$reparacion[$d['DOCUMENTO_DESPLAZADO']]= array(
 				'DOCUMENTO_DESPLAZADO' => $d['DOCUMENTO_DESPLAZADO'],
-				'ESTADO_INFORMADO	' => $d['ESTADO_INFORMADO	'],
+				'ESTADO_INFORMADO	' => $d['ESTADO_INFORMADO'],
 				'MIEMBROH_INDEMNIZADO' => $d['MIEMBROH_INDEMNIZADO'],
 				'ESTADO_GARANTIAS' => $d['ESTADO_GARANTIAS'],
 				'MIEMBROH_RESTITUCION' => $d['MIEMBROH_RESTITUCION'],

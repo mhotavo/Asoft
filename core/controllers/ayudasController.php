@@ -3,9 +3,9 @@
 $id= isset($_GET['id']) ? $_GET['id'] : null;  #Identificacion del desplazado
 
 if (isset($_SESSION['app_id']) and !empty($id) ) {
-//require('core/models/class.Desplazamiento.php');
+require('core/models/class.Ayudas.php');
 
-//$desplazamiento = new Desplazamiento();
+$ayudas = new Ayudas();
 
 #Comprobamos si ya se registro el desplazamiento
     $db = new Conexion();
@@ -20,7 +20,7 @@ switch (isset($mode) ?  $mode : null ) {
 
 	case 'add':
 		if ($_POST) {
-			$familiares->Add();
+			$ayudas->Add();
 			  header('location: ?view=discapacidad&id='.$id);
 		}else {	
 			include(HTML_DIR . 'app/desplazados/ingresarAyudasRecibidasDesplazados.php');
@@ -32,11 +32,10 @@ switch (isset($mode) ?  $mode : null ) {
 
 		if (  isset($id) and !empty($id) ) {
 				if ($_POST) {
-					$familiares->edit();
+					$ayudas->edit();
 					header('location: ?view=discapacidad&id='.$id);
 				} else {
-					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
-					//include(HTML_DIR . 'app/desplazados/ingresarAyudasRecibidasDesplazados.php');
+					include(HTML_DIR . 'app/desplazados/ingresarAyudasRecibidasDesplazados.php');
 				}
 				
 			}

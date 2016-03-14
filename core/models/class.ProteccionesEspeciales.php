@@ -13,6 +13,7 @@ class ProteccionesEspeciales {
     private $CualEntidad;
     private $TipoViolencia;
     private $PromuevenDerechos ;
+    private $Usuario;
 
 
     public function __construct (){
@@ -27,17 +28,16 @@ class ProteccionesEspeciales {
         $this->CualEntidad= isset($_POST['txtCualEntidadD'] ) ? $_POST['txtCualEntidadD'] : null;
         $this->TipoViolencia= isset($_POST['cboTipoViolenciaD'] ) ? $_POST['cboTipoViolenciaD'] : null;
         $this->PromuevenDerechos= isset($_POST['cboPromuevenDereD'] ) ? $_POST['cboPromuevenDereD'] : null;
-
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;
     }
 
 
   public function Add() {
 
         $this->db->query(" INSERT INTO desplazados_especialproteccion
-                        (DOCUMENTO_DESPLAZADO, AyudaCultura_COMPLETO, Ayuda18Cultura, 
-                        FuncionarioTrato, PuebloIndigena, IndigenasViointra,
-                        Denunciado, CualEntidad, TipoViolencia, PromuevenDerechos, LOCALIDAD, DIRECCION, 
-                        TELEFONO, ESTADO_CIVIL, PARENTESCO, ES_JEFE_DE_HOGAR, TERRITORIO) 
+                        (DOCUMENTO_DESPLAZADO, AYUDA_CULTURA, AYUDA_18_CULTURA, FUNCIONARIO_TRATO,
+                        PUEBLO_INDIGENA, INDIGENAS_VIOINTRA, DENUNCIADO, CUALENTIDAD_DENUN, 
+                        TIPO_VIOLENCIA, PROMUEVEN_DERECHOS, USUARIOLOG) 
                         VALUES (
                         '$this->Documento',
                         '$this->AyudaCultura',
@@ -48,7 +48,8 @@ class ProteccionesEspeciales {
                         '$this->Denunciado',
                         '$this->CualEntidad', 
                         '$this->TipoViolencia',
-                        '$this->PromuevenDerechos'
+                        '$this->PromuevenDerechos',
+                        '$this->Usuario'
                          );");
 
   } 
@@ -63,7 +64,8 @@ class ProteccionesEspeciales {
             Denunciado ='$this->Denunciado',
             CualEntidad ='$this->CualEntidad',
             TipoViolencia ='$this->TipoViolencia',
-            PromuevenDerechos ='$this->PromuevenDerechos'
+            PromuevenDerechos ='$this->PromuevenDerechos',
+            PromuevenDerechos ='$this->Usuario',
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }

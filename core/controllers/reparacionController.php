@@ -3,9 +3,9 @@
 $id= isset($_GET['id']) ? $_GET['id'] : null;  #Identificacion del desplazado
 
 if (isset($_SESSION['app_id']) and !empty($id) ) {
-//require('core/models/class.Desplazamiento.php');
+require('core/models/class.Reparaciones.php');
 
-//$desplazamiento = new Desplazamiento();
+$reparacion = new Reparaciones();
 
 #Comprobamos si ya se registro el desplazamiento
     $db = new Conexion();
@@ -20,8 +20,8 @@ switch (isset($mode) ?  $mode : null ) {
 
 	case 'add':
 		if ($_POST) {
-			$familiares->Add();
-			  header('location: ?view=Listado&id='.$id);
+			$reparacion->Add(); 
+			  header('location: ?view=listadesplazados&id='.$id);
 		}else {	
 			include(HTML_DIR . 'app/desplazados/ingresarReparacionDesplazados.php');
 		}
@@ -32,11 +32,10 @@ switch (isset($mode) ?  $mode : null ) {
 
 		if (  isset($id) and !empty($id) ) {
 				if ($_POST) {
-					$familiares->edit();
-					header('location: ?view=Listado&id='.$id);
+					$reparacion->edit();
+					header('location: ?view=listadesplazados&id='.$id);
 				} else {
-					$_familiaresDesplazados=familiaresDesplazados($_GET['id']); 
-					//include(HTML_DIR . 'app/desplazados/ingresarReparacionDesplazados.php');
+					include(HTML_DIR . 'app/desplazados/ingresarReparacionDesplazados.php');
 				}
 				
 			}

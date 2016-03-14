@@ -17,7 +17,7 @@
 
                 <div >
                     <h1> Agregar Ayudas Recibidas</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded" >                    
+                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=ayudas&id=".$_GET['id'] : "?view=validardesplazados";  ?> " method="POST" enctype="application/x-www-form-urlencoded" >                    
                         <table width="100%">
                             <tr>
                                 <td class="right" width="45%">Los menores que no estan al cuidado de un adulto asisten a programa de Atencion al Menor:</td>
@@ -109,11 +109,11 @@
                             <tr>
                                 <td class="right">En el momento de los desplazamientos su nucleo familiar recibio ayuda de:</td>
                                 <td class="left">
-                                <div class="col-md79" style="text-align: left;">
-                                   <input type="checkbox" name="AyudaSalud" value="1" > Salud<br>
-                                   <input type="checkbox" name="AyudaAlojamiento" value="1"> Alojamiento<br>
-                                   <input type="checkbox" name="AyudaRacionAlimentaria" value="1"> Racion Alimentaria<br>
-                                   <input type="checkbox" name="AyudaAguaPotable" value="1"> Agua Potable<br>
+                                <div class="col-md8" style="text-align: left;">
+                                   <input type="checkbox" required name="AyudaSalud" value="Si" > Salud<br>
+                                   <input type="checkbox" required name="AyudaAlojamiento" value="Si"> Alojamiento<br>
+                                   <input type="checkbox" required name="AyudaRacionAlimentaria" value="Si"> Racion Alimentaria<br>
+                                   <input type="checkbox" required name="AyudaAguaPotable" value="Si"> Agua Potable<br>
                                 </div>
                                 </td>
                             </tr>

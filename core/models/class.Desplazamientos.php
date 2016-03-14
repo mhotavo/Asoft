@@ -111,7 +111,7 @@ class Desplazamientos {
   } 
 
   public function Edit() {
-      $this->db->query("UPDATE desplazados_ayudasrecibidas SET 
+      $this->db->query("UPDATE desplazamiento SET 
                       VECES_DESPLAZADO ='$this->vecesDesplazado',
                       ANO1 ='$this->Anio1',
                       LOCALIDAD1 ='$this->Localidad1',

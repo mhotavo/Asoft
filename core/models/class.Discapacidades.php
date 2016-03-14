@@ -18,6 +18,7 @@ class Discapacidades {
     private $RecibidoAyudaHum ;
     private $OrganizacionDespla; 
     private $ParticipacionOPDS ;
+    private $Usuario ;
 
 	public function __construct (){
 		$this->db = new Conexion();
@@ -36,7 +37,7 @@ class Discapacidades {
         $this->RecibidoAyudaHum= isset($_POST['cboProrroAutoD'] ) ? $_POST['cboProrroAutoD'] : null;
         $this->OrganizacionDespla= isset($_POST['cboOrganiDesplaD'] ) ? $_POST['cboOrganiDesplaD'] : null;
         $this->ParticipacionOPDS= isset($_POST['cboOPDSD'] ) ? $_POST['cboOPDSD'] : null;
-
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;
 
 	}
 
@@ -47,7 +48,7 @@ class Discapacidades {
                         (DOCUMENTO_DESPLAZADO, ANTES_DESPLAZAMIENTO, IGUAL_CONDICIONES, ENTIDAD_REHABILITACION,
                          REHUBICACION_LABORAL, MARGINADO_DISCRIMINADO, ENCUENTRA_P_P, EXCLUIDO, REHABILITACION,
                          SUBSIDIO_DISCAPACIDAD, CAPACIDAD_ECONO, MENORES_18, RECIBIO_AYU_HUMA, ORGANIZACION_DESPLA,
-                         PARTICIPACION_OPDS)
+                         PARTICIPACION_OPDS, USUARIOLOG)
                         VALUES (
                         '$this->Documento',
                         '$this->AntesDesplazamiento',
@@ -63,7 +64,8 @@ class Discapacidades {
                         '$this->Menores18',
                         '$this->RecibidoAyudaHum',
                         '$this->OrganizacionDespla',
-                        '$this->ParticipacionOPDS'
+                        '$this->ParticipacionOPDS',
+                        '$this->Usuario'
                         );");
   } 
 
@@ -82,7 +84,8 @@ class Discapacidades {
             MENORES_18 ='$this->Menores18',
             RECIBIO_AYU_HUMA ='$this->RecibidoAyudaHum',
             ORGANIZACION_DESPLA ='$this->OrganizacionDespla',
-            PARTICIPACION_OPDS ='$this->ParticipacionOPDS'
+            PARTICIPACION_OPDS ='$this->ParticipacionOPDS',
+            LAST_EDIT ='$this->Usuario'
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }

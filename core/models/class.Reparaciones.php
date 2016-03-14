@@ -14,7 +14,7 @@ class Reparaciones {
     private $MiembroIndemnizacion ;
     private $FamiliarRehabilitacion;
     private $MiembroBenificiario;
-
+    private $Usuario;
 
     public function __construct (){
         $this->db = new Conexion();
@@ -29,7 +29,7 @@ class Reparaciones {
         $this->MiembroIndemnizacion= isset($_POST['cboReciEstadoD'] ) ? $_POST['cboReciEstadoD'] : null;
         $this->FamiliarRehabilitacion= isset($_POST['cboRehabilitacionD'] ) ? $_POST['cboRehabilitacionD'] : null;
         $this->MiembroBenificiario= isset($_POST['cboSancionD'] ) ? $_POST['cboSancionD'] : null;
-
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;
 
     }
 
@@ -37,9 +37,9 @@ class Reparaciones {
   public function Add() {
 
         $this->db->query(" INSERT INTO desplazados_reparacion
-                        (DOCUMENTO_DESPLAZADO, ESTADO_INFORMADO, MIEMBROH_INDEMNIZADO, ESTADO_GARANTIAS, 
-                        MIEMBROH_RESTITUCION, ENTIDAD_RESTITUCION, ESTADO_RESTITUIDO, ESTADO_INDEMNIZACION, 
-                        EMBROH_INDEMNIZACION, FAMILIA_REHABILITACION, MIEMBROH_BENEFICIARIO)
+                        (DOCUMENTO_DESPLAZADO, ESTADO_INFORMADO, MIEMBROH_INDEMNIZADO, ESTADO_GARANTIAS,
+                         MIEMBROH_RESTITUCION, ENTIDAD_RESTITUCION, ESTADO_RESTITUIDO, ESTADO_INDEMNIZACION,
+                         MIEMBROH_INDEMNIZACION, FAMILIA_REHABILITACION, MIEMBROH_BENEFICIARIO, USUARIOLOG)
                         VALUES (
                         '$this->Documento',
                         '$this->EstadoInformado',
@@ -51,7 +51,8 @@ class Reparaciones {
                         '$this->EstadoIndemnizacion',
                         '$this->MiembroIndemnizacion', 
                         '$this->FamiliarRehabilitacion',
-                        '$this->MiembroBenificiario'
+                        '$this->MiembroBenificiario',
+                        '$this->Usuario'
                         );");
 
   } 
@@ -68,7 +69,8 @@ class Reparaciones {
             ESTADO_INDEMNIZACION ='$this->EstadoIndemnizacion',
             EMBROH_INDEMNIZACION ='$this->MiembroIndemnizacion',
             FAMILIA_REHABILITACION ='$this->FamiliarRehabilitacion',
-            MIEMBROH_BENEFICIARIO ='$this->MiembroBenificiario'
+            MIEMBROH_BENEFICIARIO ='$this->MiembroBenificiario',
+            LAST_EDIT ='$this->Usuario'
             WHERE DOCUMENTO_DESPLAZADO='$this->Documento';"); 
 
   }

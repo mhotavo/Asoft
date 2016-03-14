@@ -15,6 +15,7 @@ class Ayudas {
     private $AyudaAlojamiento;
     private $AyudaAlimentaria;
     private $AyudaAgua;
+    private $Usuario;
 
 	public function __construct (){
 
@@ -31,6 +32,7 @@ class Ayudas {
         $this->AyudaAlojamiento= isset($_POST['AyudaAlojamiento']) ? $_POST['AyudaAlojamiento'] : null;
         $this->AyudaAlimentaria= isset($_POST['AyudaRacionAlimentaria']) ? $_POST['AyudaRacionAlimentaria'] : null;
         $this->AyudaAgua= isset($_POST['AyudaAguaPotable']) ? $_POST['AyudaAguaPotable'] : null;
+        $this->Usuario= isset($_SESSION['app_id']) ? $_SESSION['app_id']: null;        
 
 	}
 
@@ -38,8 +40,9 @@ class Ayudas {
   public function Add() {
 
         $this->db->query(" INSERT INTO desplazados_ayudasrecibidas
-                        (DOCUMENTO_DESPLAZADO, ATENCION_MENOR, CUIDADO_INFANTIL, PRO_ALIMENTACION, 
-                         HAMBRE_FALTAA, SEGURIDAD_AI, COMPLE_ALIMENTICIO, BENEFI_DESAYUNO, AYUDA_MUNICIPIO) 
+                        (DOCUMENTO_DESPLAZADO, ATENCION_MENOR, CUIDADO_INFANTIL, PRO_ALIMENTACION,
+                         HAMBRE_FALTAA, SEGURIDAD_AI, COMPLE_ALIMENTICIO, BENEFI_DESAYUNO, AYUDA_SALUD,
+                         AYUDA_ALOJAMIENTO, AYUDA_ALIMENTARIA, AYUDA_AGUA, USUARIOLOG) 
                         VALUES (
                         '$this->Documento',
                         '$this->AtencionMenor',
@@ -52,7 +55,8 @@ class Ayudas {
                         '$this->AyudaSalud',
                         '$this->AyudaAlojamiento',
                         '$this->AyudaAlimentaria',
-                        '$this->AyudaAgua'
+                        '$this->AyudaAgua',
+                        '$this->Usuario'
                          );");
  
   } 
@@ -69,13 +73,12 @@ class Ayudas {
             AYUDA_SALUD ='$this->AyudaSalud',
             AYUDA_ALOJAMIENTO ='$this->AyudaAlojamiento',
             AYUDA_ALIMENTARIA ='$this->AyudaAlimentaria',
-            AYUDA_AGUA ='$this->AyudaAgua'
+            AYUDA_AGUA ='$this->AyudaAgua',
+            LAST_EDIT ='$this->Usuario',
 
             ;"); 
 
   }
-
-
 
 	public function __destruct (){
 		$this->db->close();

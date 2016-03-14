@@ -24,9 +24,9 @@
                                 <td  class="left" width="55%">
                                 <div class="col-md-9">
                                     <select id="victimizado" name="cboVictimizadoD" onChange="Desplazamiento(this.value)" required class="form-control">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['VECES_DESPLAZADO']=='1') ?  "selected": null; ?> value="1">1</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['VECES_DESPLAZADO']=='2') ?  "selected": null; ?> value="2">2</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['VECES_DESPLAZADO']=='3') ?  "selected": null; ?> value="3">3</option>
                                     </select>
                                 </div>
                                 </td>
@@ -39,7 +39,7 @@
                                     <td class="right" >Año Primer Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9" >    
-                                        <input  required class="form-control" type="text" name="anoDesplazamiento1"  placeholder="Primer Desplazamiento">
+                                        <input  required class="form-control" type="number" value="<?php echo isset($_GET['id']) ? $_desplazamientos[$_GET['id']]['ANO1'] : null   ?>" name="anoDesplazamiento1"  placeholder="Primer Desplazamiento">
                                     </div>
 
                                     </td>
@@ -53,7 +53,8 @@
                                           <?php 
                                          if(false != $_municipios) {
                                             foreach($_municipios as $id__municipios => $contenido) {  ?>
-                                            <option value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['MUNICIPIO1']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
+                                            <option 
+                                            value="<?php echo $_municipios[$id__municipios]['ID_MUNICIPIO']; ?>" data-subtext=" <?php echo $_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?> " <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['MUNICIPIO1']==$_municipios[$id__municipios]['ID_MUNICIPIO']) ?  "selected": null; ?>> 
                                               <?php echo $_municipios[$id__municipios]['NOMBRE_MUNICIPIO'].' - '.$_municipios[$id__municipios]['NOMBRE_DEPARTAMENTO']; ?>
                                             </option>
 
@@ -67,7 +68,7 @@
                                     <td class="right" >Localidad Primer Desplazamiento:</td>
                                     <td  class="left" >
                                     <div class="col-md-9"   >    
-                                        <input  required class="form-control" type="text"  name="localidadDesplazamiento1" placeholder="Primer Desplazamiento">
+                                        <input  required class="form-control" type="text" value="<?php echo isset($_GET['id']) ? $_desplazamientos[$_GET['id']]['LOCALIDAD1'] : null   ?>" name="localidadDesplazamiento1" placeholder="Primer Desplazamiento">
                                     </div>
                            
                                     </td>
@@ -76,14 +77,14 @@
                                     <td  class="right" >A Que Causa Le Atribuye Su Primer Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9"  style="text-align: left;">
-                                        <input type="radio" required name="CausaDesplazamiento1" value="ConfrontacionArmada"> Confrontacion Armada<br>
-                                        <input type="radio" required name="CausaDesplazamiento1" value="AmenazaIndirecta"> Amenaza Indirecta<br>
-                                        <input type="radio" required name="CausaDesplazamiento1" value="CamposMinados"> Campos Minados<br>
-                                        <input type="radio" required name="CausaDesplazamiento1" value="AsesinatoFamilia"> Asesinato Familia<br>
-                                        <input type="radio" required name="CausaDesplazamiento1" value="AmenazaDirecta"> Amenaza Directa<br>
-                                        <input type="radio" required name="CausaDesplazamiento1" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
-                                        <input type="radio" required name="CausaDesplazamiento1" value="AusenciaGobierno"> Ausencia del Gobierno<br>
-                                        <input type="radio" required name="CausaDesplazamiento1" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='ConfrontacionArmada') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="ConfrontacionArmada"> Confrontacion Armada<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='AmenazaIndirecta') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="AmenazaIndirecta"> Amenaza Indirecta<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='CamposMinados') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="CamposMinados"> Campos Minados<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='AsesinatoFamilia') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="AsesinatoFamilia"> Asesinato Familia<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='AmenazaDirecta') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="AmenazaDirecta"> Amenaza Directa<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='ReclutamientoMenores') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='AusenciaGobierno') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="AusenciaGobierno"> Ausencia del Gobierno<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA1']=='DesplazamientoMasivo') ?  "checked": null; ?> required name="CausaDesplazamiento1" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
                                     </div>
                                     </td>
                                 </tr>
@@ -94,7 +95,7 @@
                                     <td class="right" >Año Segundo Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9">    
-                                        <input   class="form-control" type="text" name="anoDesplazamiento2"  placeholder="Segundo Desplazamiento">
+                                        <input   class="form-control" type="number" value="<?php echo isset($_GET['id']) ? $_desplazamientos[$_GET['id']]['ANO2'] : null   ?>" name="anoDesplazamiento2"  placeholder="Segundo Desplazamiento">
                                     </div>
 
                                     </td>
@@ -122,7 +123,7 @@
                                     <td class="right" >Localidad Segundo Desplazamiento:</td>
                                     <td  class="left" >
                                     <div class="col-md-9"  >    
-                                        <input   class="form-control" type="text"  name="localidadDesplazamiento2" placeholder="Segundo Desplazamiento">
+                                        <input   class="form-control" type="text" value="<?php echo isset($_GET['id']) ? $_desplazamientos[$_GET['id']]['LOCALIDAD2'] : null   ?>" name="localidadDesplazamiento2" placeholder="Segundo Desplazamiento">
                                     </div>
                            
                                     </td>
@@ -131,15 +132,15 @@
                                     <td  class="right" >A Que Causa Le Atribuye Su Segundo Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9" style="text-align: left;">
-                                        <input type="radio" name="CausaDesplazamiento2" value="ConfrontacionArmada"> Confrontacion Armada<br>
-                                        <input type="radio" name="CausaDesplazamiento2" value="AmenazaIndirecta"> Amenaza Indirecta<br>
-                                        <input type="radio" name="CausaDesplazamiento2" value="CamposMinados"> Campos Minados<br>
-                                        <input type="radio" name="CausaDesplazamiento2" value="AsesinatoFamilia"> Asesinato Familia<br>
-                                        <input type="radio" name="CausaDesplazamiento2" value="AmenazaDirecta"> Amenaza Directa<br>
-                                        <input type="radio" name="CausaDesplazamiento2" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
-                                        <input type="radio" name="CausaDesplazamiento2" value="AusenciaGobierno"> Ausencia del Gobierno<br>
-                                        <input type="radio" name="CausaDesplazamiento2" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
-                                    </div>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='ConfrontacionArmada') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="ConfrontacionArmada"> Confrontacion Armada<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='AmenazaIndirecta') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="AmenazaIndirecta"> Amenaza Indirecta<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='CamposMinados') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="CamposMinados"> Campos Minados<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='AsesinatoFamilia') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="AsesinatoFamilia"> Asesinato Familia<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='AmenazaDirecta') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="AmenazaDirecta"> Amenaza Directa<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='ReclutamientoMenores') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='AusenciaGobierno') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="AusenciaGobierno"> Ausencia del Gobierno<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA2']=='DesplazamientoMasivo') ?  "checked": null; ?>  name="CausaDesplazamiento2" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
+                                 </div>
                                     </td>
                                 </tr>
                             </div>
@@ -149,7 +150,7 @@
                                     <td class="right" >Año Tercer Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9">    
-                                        <input   class="form-control" type="text" name="anoDesplazamiento3"  placeholder="Tercer Desplazamiento">
+                                        <input   class="form-control" type="number" value="<?php echo isset($_GET['id']) ? $_desplazamientos[$_GET['id']]['ANO3'] : null   ?>" name="anoDesplazamiento3"  placeholder="Tercer Desplazamiento">
                                     </div>
 
                                     </td>
@@ -177,7 +178,7 @@
                                     <td class="right" >Localidad Tercer Desplazamiento:</td>
                                     <td  class="left" >
                                     <div class="col-md-9"  >    
-                                        <input   class="form-control" type="text"  name="localidadDesplazamiento3" placeholder="Tercer Desplazamiento">
+                                        <input   class="form-control" type="text" value="<?php echo isset($_GET['id']) ? $_desplazamientos[$_GET['id']]['LOCALIDAD3'] : null   ?>" name="localidadDesplazamiento3" placeholder="Tercer Desplazamiento">
                                     </div>
                            
                                     </td>
@@ -186,15 +187,15 @@
                                     <td  class="right" >A Que Causa Le Atribuye Su Tercer Desplazamiento:</td>
                                     <td  class="left">
                                     <div class="col-md-9" style="text-align: left;">
-                                        <input type="radio" name="CausaDesplazamiento3" value="ConfrontacionArmada"> Confrontacion Armada<br>
-                                        <input type="radio" name="CausaDesplazamiento3" value="AmenazaIndirecta"> Amenaza Indirecta<br>
-                                        <input type="radio" name="CausaDesplazamiento3" value="CamposMinados"> Campos Minados<br>
-                                        <input type="radio" name="CausaDesplazamiento3" value="AsesinatoFamilia"> Asesinato Familia<br>
-                                        <input type="radio" name="CausaDesplazamiento3" value="AmenazaDirecta"> Amenaza Directa<br>
-                                        <input type="radio" name="CausaDesplazamiento3" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
-                                        <input type="radio" name="CausaDesplazamiento3" value="AusenciaGobierno"> Ausencia del Gobierno<br>
-                                        <input type="radio" name="CausaDesplazamiento3" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
-                                    </div>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='ConfrontacionArmada') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="ConfrontacionArmada"> Confrontacion Armada<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='AmenazaIndirecta') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="AmenazaIndirecta"> Amenaza Indirecta<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='CamposMinados') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="CamposMinados"> Campos Minados<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='AsesinatoFamilia') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="AsesinatoFamilia"> Asesinato Familia<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='AmenazaDirecta') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="AmenazaDirecta"> Amenaza Directa<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='ReclutamientoMenores') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="ReclutamientoMenores"> Reclutamiento de Menores<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='AusenciaGobierno') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="AusenciaGobierno"> Ausencia del Gobierno<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['CAUSA3']=='DesplazamientoMasivo') ?  "checked": null; ?>  name="CausaDesplazamiento3" value="DesplazamientoMasivo"> Desplazamiento Masivo<br>
+                            </div>
                                     </td>
                                 </tr>
                             </div>                                                        
@@ -205,7 +206,7 @@
                                 <td  class="right">N° de Personas que Conformaban su hogar en ese momento:</td>
                                 <td  class="left">
                                 <div class="col-md-9">    
-                                    <input   class="form-control" type="text" id="nPersonas" name="txtNPersonasD" >
+                                    <input   class="form-control" type="number" id="nPersonas" name="txtNPersonasD" value="<?php echo isset($_GET['id']) ? $_desplazamientos[$_GET['id']]['NO_PERSONAS_H'] : null   ?>">
                                 </div>
                                 </td>
                             </tr>
@@ -215,8 +216,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliaSeparoD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIA_SEPARO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIA_SEPARO']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -227,9 +228,9 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboReunificacionD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
-                                    </select>
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['S_AYUDA_ESTATAL']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['S_AYUDA_ESTATAL']=='No') ?  "selected": null; ?> value="No">No</option>                                            
+                                    </selecNo
                                 </div>
                                 </td>
                             </tr>
@@ -239,8 +240,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboUnificarD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['NUCLEO_UNIFICAR']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['NUCLEO_UNIFICAR']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -251,8 +252,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboUnificarEstatalD" required class="form-control">
                                         <option value="">[...]</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>                                            
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['R_AYUDA_ESTATL']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                        <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['R_AYUDA_ESTATL']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -263,8 +264,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliaVivoD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIA_VIVOS']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIA_VIVOS']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -275,8 +276,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliarDeteD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_DETENIDO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_DETENIDO']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -287,8 +288,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliarVPD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_V_P']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_V_P']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -299,8 +300,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliarAseD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_ASESINADO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_ASESINADO']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -311,8 +312,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliarRecluD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_RECLUTADO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_RECLUTADO']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -323,8 +324,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliarSecuesD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_SECUESTRO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_SECUESTRO']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -335,8 +336,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboDemandaVictiD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DEMANDA_DESPLAZAMIENTO']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DEMANDA_DESPLAZAMIENTO']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -347,8 +348,8 @@
                                 <div class="col-md-9">
                                     <select id="selectVicti" name="cboFamiliarMinaD" required class="form-control">
                                             <option value="">[...]</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>                                            
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_VIC_M_A']=='Si') ?  "selected": null; ?> value="Si">Si</option>
+                                            <option <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['FAMILIAR_VIC_M_A']=='No') ?  "selected": null; ?> value="No">No</option>                                            
                                     </select>
                                 </div>
                                 </td>
@@ -358,12 +359,12 @@
                                <td  class="left">
                                 <div class="col-md-9" style="text-align: left">
                                  
-                                        <input type="radio" name="DeclaroAnte" value="Defensoria" required> Defensoria<br>
-                                        <input type="radio" name="DeclaroAnte" value="Procuraduria" required> Procuraduria<br>
-                                        <input type="radio" name="DeclaroAnte" value="DepartamentoProsperidad" required> Departamento para la prosperidad social<br>
-                                        <input type="radio" name="DeclaroAnte" value="Personeria" required> Personeria<br>
-                                        <input type="radio" name="DeclaroAnte" value="UAO" required> UAO<br>
-                                        <input type="radio" name="DeclaroAnte" value="Otra" required> Otra<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DECLARO_ANTE']=='Defensoria') ?  "checked": null; ?>  name="DeclaroAnte" value="Defensoria" required> Defensoria<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DECLARO_ANTE']=='Procuraduria') ?  "checked": null; ?>  name="DeclaroAnte" value="Procuraduria" required> Procuraduria<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DECLARO_ANTE']=='DepartamentoProsperidad') ?  "checked": null; ?>  name="DeclaroAnte" value="DepartamentoProsperidad" required> Departamento para la prosperidad social<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DECLARO_ANTE']=='Personeria') ?  "checked": null; ?>  name="DeclaroAnte" value="Personeria" required> Personeria<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DECLARO_ANTE']=='UAO') ?  "checked": null; ?>  name="DeclaroAnte" value="UAO" required> UAO<br>
+                                        <input type="radio" <?php echo ( isset($_GET['id']) and $_desplazamientos[$_GET['id']]['DECLARO_ANTE']=='Otra') ?  "checked": null; ?>  name="DeclaroAnte" value="Otra" required> Otra<br>
 
 
                                 </div>

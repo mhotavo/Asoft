@@ -14,7 +14,10 @@ function ayudasDesplazados() {
 				'SEGURIDAD_AI' => $d['SEGURIDAD_AI'],
 				'COMPLE_ALIMENTICIO' => $d['COMPLE_ALIMENTICIO'],
 				'BENEFI_DESAYUNO' => $d['BENEFI_DESAYUNO'],
-				'AYUDA_MUNICIPIO' => $d['AYUDA_MUNICIPIO']
+				'AYUDA_SALUD' => $d['AYUDA_SALUD'],
+				'AYUDA_ALOJAMIENTO' => $d['AYUDA_ALOJAMIENTO'],
+				'AYUDA_ALIMENTARIA' => $d['AYUDA_ALIMENTARIA'],
+				'AYUDA_AGUA' => $d['AYUDA_AGUA']
 				);
 		}
 

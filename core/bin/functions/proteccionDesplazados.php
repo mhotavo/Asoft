@@ -18,16 +18,11 @@ function Proteccion() {
 				'CUAL_OPD' => $d['CUAL_OPD'],
 				'PARTICIPA_E_P_P' => $d['PARTICIPA_E_P_P'],
 				'CUAL_E_P_P' => $d['CUAL_E_P_P'],
-				'AYUDA_HUMANITARIA' => $d['AYUDA_HUMANITARIA'],
-				'SALUD' => $d['SALUD'],
-				'GENERACION_INGRESOS' => $d['GENERACION_INGRESOS'],
-				'ATENCION_VIVIENDA' => $d['ATENCION_VIVIENDA'],
-				'EDUCACION_OTRA' => $d['EDUCACION_OTRA'],
 				'PRIORIDAD_1' => $d['PRIORIDAD_1'],
 				'PRIORIDAD_2' => $d['PRIORIDAD_2'],
 				'PRIORIDAD_3' => $d['PRIORIDAD_3'],
 				'PRIORIDAD_4' => $d['PRIORIDAD_4'],
-				'PRIORIDAD_5' => $d['EDUCACION_OTRA']
+				'PRIORIDAD_5' => $d['PRIORIDAD_5']
 				);
 		}
 

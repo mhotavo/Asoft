@@ -8,15 +8,15 @@
                                 <li ><a href="#">Listar</a></li>
                             </ul> -->
                         </li>
-                        <li id="MD"><a href="?view=desplazamiento&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Desplazamiento</a></li>
-                        <li id="MD"><a href="?view=estabilizacion&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Estabilizacion</a></li>
-                        <li id="MD"><a href="?view=vivienda&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Vivienda</a></li>
-                        <li id="MD"><a href="?view=economia&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Economia</a></li>
-                        <li id="MD"><a href="?view=proteccion&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Protección</a></li>
-                        <li id="MD"><a href="?view=ayudas&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Ayudas</a></li>
-                        <li id="MD"><a href="?view=discapacidad&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Discapacidad</a></li>
-                        <li id="MD"><a href="?view=proteccionespecial&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Protección Especial</a></li>
-                        <li id="MD"><a href="?view=reparacion&mode=<?php echo isset($_GET['id']) ? "edit&id=".$_GET['id'] : "add" ?>"><span></span>Reparacion</a></li>
+                        <li id="MD"><a href="?view=desplazamiento<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Desplazamiento</a></li>
+                        <li id="MD"><a href="?view=estabilizacion<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Estabilizacion</a></li>
+                        <li id="MD"><a href="?view=vivienda<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Vivienda</a></li>
+                        <li id="MD"><a href="?view=economia<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Economia</a></li>
+                        <li id="MD"><a href="?view=proteccion<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Protección</a></li>
+                        <li id="MD"><a href="?view=ayudas<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Ayudas</a></li>
+                        <li id="MD"><a href="?view=discapacidad<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Discapacidad</a></li>
+                        <li id="MD"><a href="?view=proteccionespecial<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Protección Especial</a></li>
+                        <li id="MD"><a href="?view=reparacion<?php echo isset($_GET['id']) ? "&id=".$_GET['id'] : "? null; " ?>"><span></span>Reparacion</a></li>
                     </ul>
                     
                     <div class="clearfix"></div>

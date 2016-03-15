@@ -29,7 +29,6 @@ class Familiares {
     private $Ortesis;
     private $Terapias;
     private $OtraAyudaMedica;
-
     private $IndAyudaHumanitaria;
     private $IndLesiones;
     private $IndIncapacidad;
@@ -79,8 +78,8 @@ class Familiares {
         $this->Parentesco= isset($_POST['cboParentescoD']) ? $_POST['cboParentescoD'] : null;
         $this->Separado= isset($_POST['cboSeparadoD']) ? $_POST['cboSeparadoD'] : null;
         $this->Discapacitado= isset($_POST['cboDiscapacitadoD']) ? $_POST['cboDiscapacitadoD'] : null;
-        $this->Discapacidad= isset($_POST['cboDiscapacidadD']) ? $_POST['cboDiscapacidadD'] : null;
-        $this->CualDiscapacidad= isset($_POST['txtOtraDiscapacidadD']) ? $_POST['txtOtraDiscapacidadD'] : null;
+        $this->Discapacidad= isset($_POST['cboDiscapacidadD']) ? $_POST['cboDiscapacidadD'] : 'Ninguna';
+        $this->CualDiscapacidad= isset($_POST['txtOtraDiscapacidadD']) ? $_POST['txtOtraDiscapacidadD'] : 'Ninguna';
         $this->VictimaMina= isset($_POST['cboVictimaMinaD']) ? $_POST['cboVictimaMinaD'] : null;
         $this->AuxilioTransporte= isset($_POST['auxilioTransporteD']) ? $_POST['auxilioTransporteD'] : null;
         $this->Medicamentos= isset($_POST['Medicamentos']) ? $_POST['Medicamentos'] : null;
@@ -89,7 +88,8 @@ class Familiares {
         $this->Osteoporosis= isset($_POST['Osteosintesis']) ? $_POST['Osteosintesis'] : null;
         $this->Protesis= isset($_POST['Protesis']) ? $_POST['Protesis'] : null;
         $this->Ortesis= isset($_POST['Ortesis']) ? $_POST['Ortesis'] : null;
-        $this->Terapias= isset($_POST['Terapias']) ? $_POST['Terapias'] : null;        
+        $this->Terapias= isset($_POST['Terapias']) ? $_POST['Terapias'] : 'Ninguna';        
+        $this->OtraAyudaMedica= isset($_POST['txtOtraAyudaD']) ? $_POST['txtOtraAyudaD'] : null;        
         $this->IndAyudaHumanitaria= isset($_POST['IndAyudaHumanitaria']) ? $_POST['IndAyudaHumanitaria'] : null;
         $this->IndLesiones= isset($_POST['IndLesiones']) ? $_POST['IndLesiones'] : null;
         $this->IndIncapacidad= isset($_POST['IndIncapacidad']) ? $_POST['IndIncapacidad'] : null;
@@ -209,6 +209,7 @@ print        $query= (" INSERT INTO desplazados_familiar (
                         '$this->Protesis',
                         '$this->Ortesis',
                         '$this->Terapias',
+                        '$this->OtraAyudaMedica',
                         '$this->IndAyudaHumanitaria',
                         '$this->IndLesiones',
                         '$this->IndIncapacidad',

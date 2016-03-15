@@ -3,7 +3,7 @@
 if (isset($_SESSION['app_id'])) {
 require('core/models/class.Desplazados.php');
 $id= isset($_GET['id']) ? $_GET['id'] : null; 
-$newDoc= isset($_GET['newDoc']) ? $_GET['newDoc'] : null; 
+
 $desplazados = new Desplazados();
 
 switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
@@ -11,12 +11,12 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 	case 'add':
 		if ($_POST) {
 			$desplazados->Add();
-  		   header('location: ?view=listarfamiliares&mode=add&id='.$id);
+  		    header('location: ?view=listarfamiliares&mode=add&id='.$id);
 		}else {	
-			if (isset($id)) {
-				header('location: ?view=datosdesplazado&mode=add');
-			} else {
+			if (isset($id) and !empty($id) ) {
 				include(HTML_DIR.'app/desplazados/ingresarDatosDesplazados.php');
+			} else {
+				header('location: ?view=validardesplazados');
 			}
 			
 		}
@@ -39,9 +39,10 @@ switch (isset($_GET['mode']) ?  $_GET['mode'] : null ) {
 		break;	
 
 	case 'delete':
-		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0) {
+		if (!empty($_desplazados) and $_desplazados[$id]['Documento']>0 and isset($id)) {
 
-			$desplazados->Delete();
+			$desplazados->Delete($id);
+			header('location: ?view=listardesplazados');
 		}
 		break;
 	

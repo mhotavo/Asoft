@@ -17,13 +17,13 @@
 
                 <div >
                     <h1> Agregar Datos</h1> 
-                        <form class="form-horizontal" action="<?php echo isset($_GET['id']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add";  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
+                        <form class="form-horizontal" action="<?php echo isset($_desplazados[$_GET['id']]['Documento']) ?  "?view=datosdesplazado&mode=edit&id=".$_GET['id'] : "?view=datosdesplazado&mode=add&id=".$_GET['id'] ;  ?> " method="POST" enctype="application/x-www-form-urlencoded">                    
                         <table width="100%">
                          <tr>
                             <td class="right" width="40%">Numero de Documento: </td>
                             <td class="left" width="60%">
                               <div class="col-md-8">
-                                 <input type="text"  required value="<?php echo isset($_GET['id']) ? $_desplazados[$_GET['id']]['Documento'] : $_GET['newDoc']   ?>"  <?php echo isset($_GET['id']) ?  "disabled" : null ; ?> class="form-control" name="Documento" id="Documento" >
+                                 <input type="text"  required value="<?php echo isset($_GET['id']) ? $_GET['id']: null  ?>"  <?php echo isset($_GET['id']) ?  "readonly" : null ; ?> class="form-control" name="Documento" id="Documento" >
                              </div>
                             </td>
                         </tr>
@@ -72,7 +72,7 @@
                             <td class="right">Fecha de Victimización: </td>
                             <td class="left">
                              <div class="col-md-8"> 
-                                <input type="text" required class="form-control" name="txtFechaVictimizacionD" value="<?php echo isset($_GET['id'])   ? $_desplazados[$_GET['id']]['Fecha_de_Victimizacion'] : date("Y-m-d"); ?>">
+                                <input type="text" required class="form-control" name="txtFechaVictimizacionD" readonly value="<?php echo isset($_desplazados[$_GET['id']]['Fecha_de_Victimizacion'])   ? $_desplazados[$_GET['id']]['Fecha_de_Victimizacion'] : date("Y-m-d"); ?>">
                             </div>
                              </td>
                         </tr>

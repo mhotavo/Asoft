@@ -43,7 +43,7 @@
                             <div class="alert alert-warning col-lg-8">
                             <button type="button" class="close" data-dismiss="alert">x</button>
                                 La persona identificada con ese documento no se encuentra registrada en el sistema.
-                                <button type="button" class="btn btn-warning" onclick="window.location='?view=datosdesplazado&mode=add&newDoc=<?php echo $_GET['id']; ?>';">Registrar</button>
+                                <button type="button" class="btn btn-warning" onclick="window.location='?view=datosdesplazado&mode=add&id=<?php echo $_GET['id']; ?>';">Registrar</button>
                             </div>
                             <?php 
                             } elseif(isset($_GET['success']) && $_GET['success']=='true') {

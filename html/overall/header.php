@@ -45,19 +45,21 @@ td {
  */
           "order": [[ 1, "desc" ]],
           "sPaginationType": "full_numbers",
-           'bPaginate': false
+/*           'bPaginate': false*/
 
 	});
 } );
 
-              $(document).ready(function () {
-                $('.fechas').datepicker({
-                    format: "dd-mm-yyyy",
-                    autoclose: true
-                });  
-            
-            });
-        </script>
+    $(document).ready(function () {
+      $('.fechas').datepicker({
+          format: "dd-mm-yyyy"
+      });  
+  
+  });
+
+$('.fechas').on('changeDate', function(ev){
+    $(this).datepicker('hide');
+});
 </script>
 
 </head>

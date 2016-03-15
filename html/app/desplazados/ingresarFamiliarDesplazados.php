@@ -86,7 +86,7 @@
                                 <td class="right">Fecha de Nacimiento:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtFechaNacimientoD" data-date-format="dd-mm-aaaa" required class="form-control fechas" placeholder="DD-MM-AAAA" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['FECHA_NACIMIENTO'] : null   ?>">
+                                    <input type="date" name="txtFechaNacimientoD"  required class="form-control"  maxlength="10" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['FECHA_NACIMIENTO'] : null   ?>">
                                 </div>    
                                 </td>
                             </tr>
@@ -132,9 +132,9 @@
                                         <option  value="">[...]</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Padre/Padrastro' ) ?  "selected": null; ?> value="Padre/Padrastro">Padre/Padrastro</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Madre/Madrastra' ) ?  "selected": null; ?> value="Madre/Madrastra">Madre/Madrastra</option>
-                                        <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Hijo(a)/HIjastro(a)' ) ?  "selected": null; ?> value="Hijo(a)/HIjastro(a)">Hijo(a)/Hojastro(a)</option>
+                                        <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Hijo/Hijastro' ) ?  "selected": null; ?> value="Hijo/Hijastro">Hijo(a)/Hojastro(a)</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Compañero(a)' ) ?  "selected": null; ?> value="Compañero(a)">Compañero(a)</option>
-                                        <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Hermano(a)' ) ?  "selected": null; ?> value="Hermano(a)">Hermano(a)</option>
+                                        <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Hermanos' ) ?  "selected": null; ?> value="Hermanos">Hermano(a)</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Suegro(a)' ) ?  "selected": null; ?> value="Suegro(a)">Suegro(a)</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='Otro' ) ?  "selected": null; ?> value="Otro">Otro</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PARENTESCO']=='NoParientes' ) ?  "selected": null; ?> value="NoParientes">No Parientes</option>                                
@@ -160,7 +160,7 @@
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="discapacitado" name="cboDiscapacitadoD" onChange="discapacitadoMostrarSi(this)" required class="form-control">
+                                    <select  name="cboDiscapacitadoD" onChange="discapacitadoMostrarSi(this)" required class="form-control">
                                         <option value="">[...]</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['DISCAPACITADO']=='Si' ) ?  "selected": null; ?> value="Si">Si</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['DISCAPACITADO']=='No' ) ?  "selected": null; ?> value="No">No</option> 
@@ -169,12 +169,12 @@
                                 </td>
                             </tr>
                             <!-- (Discapacidad) que se muestra o se oculta si es dicapacitado -->
-                            <tr>
+                            <tr id="discapacitadoSi" style="display: none" >
                                 <td class="right">Discapacidad:</td>
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="discapacidad" name="cboDiscapacidadD" onChange="discapacidadMostrarSi(this)" required class="form-control">
+                                    <select  name="cboDiscapacidadD" onChange="discapacidadMostrarSi(this)"   class="form-control">
                                         <option value="">[...]</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['DISCAPACIDAD']=='Visual' ) ?  "selected": null; ?> value="Visual">Visual</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['DISCAPACIDAD']=='Autismo' ) ?  "selected": null; ?> value="Autismo">Autismo</option> 
@@ -193,11 +193,11 @@
                                 </td>
                             </tr>
                             <!-- (Cual) que se muestra o se oculta si es dicapacitado -->
-                            <tr>
+                            <tr id="OtraDiscapacidad" style="display: none" >
                                 <td class="right">Cual:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtOtraDiscapacidadD" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUAL_D'] : null   ?>">
+                                    <input type="text" name="txtOtraDiscapacidadD"  class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUAL_D'] : null   ?>">
                                 </div>
                                     </td>
                             </tr>
@@ -214,12 +214,12 @@
                                 </td>
                             </tr>
                             <!-- (Recibio Auxilio de Transporte) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->
-                            <tr>
+                            <tr id="victimaMinaSi" style="display:none">
                                 <td class="right">Recibio Auxilio de Transporte de Emergencia al Centro Asistencial?:</td>
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select name="auxilioTransporteD" required class="form-control">
+                                    <select name="auxilioTransporteD"  class="form-control">
                                         <option value="">[...]</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['RECIBIO_AUXILIO_T_E_C_A']=='Si' ) ?  "selected": null; ?> value="Si">Si</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['RECIBIO_AUXILIO_T_E_C_A']=='No' ) ?  "selected": null; ?> value="No">No</option> 
@@ -244,7 +244,7 @@
                             </tr>
                             <!-- (Otra:) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->
                             <tr>
-                                <td class="right">Otra:</td>
+                                <td class="right">Otra Ayuda Medica:</td>
                                 <td class="left">
                                 <div class="col-md-8">
                                      <input  type="text" name="txtOtraAyudaD" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['OTRA_A_M'] : null   ?>">
@@ -276,12 +276,12 @@
                                 </td>
                             </tr>
                             <!-- (Regimen) que se muestra o se oculta si es Afiliado a Salud: -->
-                            <tr>
+                            <tr id="afiliadoSaludSi" style="display:none">
                                 <td class="right">Regimen:</td>
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="regimen" name="cboRegimenD" onChange="regimenMostrarSi(this)" required class="form-control">
+                                    <select id="regimen" name="cboRegimenD"   class="form-control">
                                         <option value="">[...]</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['REGIMEN']=='Contributivo' ) ?  "selected": null; ?> value="Contributivo">Contributivo</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['REGIMEN']=='Subsidiado' ) ?  "selected": null; ?> value="Subsidiado">Subsidiado</option> 
@@ -293,11 +293,11 @@
                                 </td>
                             </tr>
                             <!-- (Cual:) que se muestra o se oculta si es Afiliado a Salud: --> 
-                            <tr>
-                                <td class="right">Cual:</td>
+                            <tr id="cualRegimen" style="display:none">
+                                <td class="right">Cual :</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" id="cualRegimen" name="txtCualRegimenD" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUAL_R'] : null   ?>">
+                                    <input type="text"  name="txtCualRegimenD"  class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUAL_R'] : null   ?>">
                                 </div>
                                 </td>
                             </tr> 
@@ -353,11 +353,11 @@
                                 </td>
                             </tr>
                             <!-- (Cuales Vacunas:) que se muestra o se oculta si tiene vacunas --> 
-                            <tr>
+                            <tr id="cualesVacunasSi" style="display:none">
                                 <td class="right">Cuales Vacunas:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" id="cualesVacunas" name="txtCualesVacunasD" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUALES_VACUNAS'] : null   ?>">
+                                    <input type="text" id="cualesVacunas" name="txtCualesVacunasD"  class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUALES_VACUNAS'] : null   ?>">
                                 </div>
                                 </td>
                             </tr> 
@@ -375,11 +375,11 @@
                                 </td>
                             </tr> 
                             <!-- (Cual Enfermedad:) que se muestra o se oculta si Le han Diagnosticado una Enfermedad Cronica: -->  
-                            <tr>
+                            <tr id="cualEnfCronicasSi"  style="display:none">
                                 <td class="right">Cual Enfermedad:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                    <input type="text" id="cualEnfCronica" name="txtCualEnfCronicaD" required class="form-control"  value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUAL_ENFERMEDAD_'] : null   ?>">
+                                    <input type="text" id="cualEnfCronica" name="txtCualEnfCronicaD"  class="form-control"  value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['CUAL_ENFERMEDAD_'] : null   ?>">
                                 </div>
                                 </td>
                             </tr>  
@@ -427,12 +427,12 @@
                                 </td>
                             </tr>
                             <!-- (Programa de Acom) que se muestra o se oculta si Estudia Actualmente: -->  
-                            <tr>
+                            <tr id="programaEscolar" style="display:none">
                                 <td class="right">Programa de Acompañamiento Escolar:</td>
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="proEscolar" name="cboProEscolarD" required class="form-control">
+                                    <select id="proEscolar" name="cboProEscolarD"  class="form-control">
                                         <option value="">[...]</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PROGRAMA_A_E']=='Si' ) ?  "selected": null; ?> value="Si">Si</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PROGRAMA_A_E']=='No' ) ?  "selected": null; ?> value="No">No</option> 
@@ -441,12 +441,12 @@
                                 </td>
                             </tr>
                             <!-- (Cancela Algun Costo ) que se muestra o se oculta si Estudia Actualmente: -->  
-                            <tr>
+                           <tr id="CancelaEducativo" style="display:none">
                                 <td class="right">Cancela Algun Costo Educativo:</td>
                                 <td class="left">
                                 <div class="col-md-8">
 
-                                    <select id="costoEdu" name="cboCostoEduD" required class="form-control">
+                                    <select id="costoEdu" name="cboCostoEduD"  class="form-control">
                                         <option value="">[...]</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['CANCELA_COSTO_E']=='Si' ) ?  "selected": null; ?> value="Si">Si</option>
                                         <option <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['CANCELA_COSTO_E']=='No' ) ?  "selected": null; ?> value="No">No</option> 

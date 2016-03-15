@@ -4,25 +4,6 @@
  * and open the template in the editor.
  */
 
-function discapacitadoMostrarSi(get) {
-      if (get.value=="Si")
-      {
-          document.getElementById("discapacitadoSi").style.display = "";
-      }else
-      {
-          document.getElementById("discapacitadoSi").style.display = "none";          
-      }
-}
-
-function discapacidadMostrarSi(get) {
-      if (get.value=="Otra Discapacidad")
-      {
-          document.getElementById("otraDiscapacidadSi").style.display = "";
-      }else
-      {
-          document.getElementById("otraDiscapacidadSi").style.display = "none";          
-      }
-}
 
 function victimaMinaMostrarSi(get) {
       if (get.value=="Si")

@@ -67,9 +67,84 @@ function Desplazamiento (value){
 	}
 }
 
+
+function discapacitadoMostrarSi(get) {
+      if (get.value=="Si")
+      {
+          document.getElementById("discapacitadoSi").style.display = "";
+      }else
+      {
+          document.getElementById("discapacitadoSi").style.display = "none";        
+          document.getElementById("OtraDiscapacidad").style.display = "none";      
+      }
+}
+
+function discapacidadMostrarSi(get) {
+      if (get.value=="OtraDiscapacidad")
+      {
+          document.getElementById("OtraDiscapacidad").style.display = "";
+      }else
+      {
+          document.getElementById("OtraDiscapacidad").style.display = "none";          
+      }
+}
+
+function victimaMinaMostrarSi(get) {
+      if (get.value=="Si")
+      {
+          document.getElementById("victimaMinaSi").style.display = "";
+      }else
+      {
+          document.getElementById("victimaMinaSi").style.display = "none";          
+      }
+}
  
 
- 
+
+function afiliadoSaludMostrarSi(get) {
+      if (get.value=="Si")
+      {
+          document.getElementById("afiliadoSaludSi").style.display = "";
+          document.getElementById("cualRegimen").style.display = "";  
+      }else
+      {
+          document.getElementById("afiliadoSaludSi").style.display = "none";  
+          document.getElementById("cualRegimen").style.display = "none";        
+      }
+}
+
+
+function vacunasMostrarSi(get) {
+      if (get.value=="Si")
+      {
+          document.getElementById("cualesVacunasSi").style.display = "";
+      }else
+      {
+          document.getElementById("cualesVacunasSi").style.display = "none";          
+      }
+}
+
+function enfCronicaMostrarSi(get) {
+      if (get.value=="Si")
+      {
+          document.getElementById("cualEnfCronicasSi").style.display = "";
+      }else
+      {
+          document.getElementById("cualEnfCronicasSi").style.display = "none";          
+      }
+}
+
+function estudiaAMostrarSi(get) {
+      if (get.value=="Si")
+      {
+          document.getElementById("programaEscolar").style.display = "";
+          document.getElementById("CancelaEducativo").style.display = "";
+      }else 
+      {
+          document.getElementById("programaEscolar").style.display = "none";          
+          document.getElementById("CancelaEducativo").style.display = "none";          
+      }
+}
 
 
 

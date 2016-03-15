@@ -40,7 +40,7 @@
                                         <td><?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?></td>
                                         <td><?php echo $_desplazados[$id_familiaresDesplazados]['Nombre_Apellido']; ?></td>
                                         <td><?php echo $_desplazados[$id_familiaresDesplazados]['FechaRegistro']; ?></td>
-                                        <td>Completo</td>
+                                        <td><?php echo $desplazados->Estado($_desplazados[$id_familiaresDesplazados]['Documento']);  ?></td>
                                         <td><a href="?view=datosdesplazado&mode=edit&id=<?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?>" class="btn btn-primary">Editar</a></td>
                                         <td><a onclick="DeleteItem('¿Está seguro de eliminar este desplazado?','?view=datosdesplazado&mode=delete&id=<?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?>')" class="btn btn-danger">Eliminar</a></td>
                                     </tr>

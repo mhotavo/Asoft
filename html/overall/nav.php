@@ -4,7 +4,7 @@
                     <li><a href=""><span class="iconic plus-alt"></span>Ingresar</a>                    
                         <ul>
                             <li><a href="?view=validardesplazados">Desplazados</a></li>
-                            <li><a href="?view=validarvictimas">Otras Victimas</a></li>
+                           <!-- <li><a href="?view=validarvictimas">Otras Victimas</a></li>-->
                         </ul>
                     </li>
 
@@ -15,12 +15,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="#"><span class="iconic mail"></span>Contact</a>
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Directions</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="?view=listardesplazados"><span style="vertical-align: top;" class="fa fa-list-alt fa-2x"></span> Listado Desplazados</a></li>
 
                     <li><a href="#"><i class="fa fa-user fa-lg"></i> <?php echo $users[$_SESSION['app_id']]['NOM_COMPLETO']  ?>, <?php echo $users[$_SESSION['app_id']]['DOC']  ?></a>
                         <ul style="width:100%;">

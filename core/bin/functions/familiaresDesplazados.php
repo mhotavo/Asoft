@@ -16,7 +16,7 @@ function familiaresDesplazados($DocumentoDesplazado) {
 				'SEGUNDO_APELLIDO' => $d['SEGUNDO_APELLIDO'],
 				'NOMBRE_COMPLETO' => $d['NOMBRES']. ' ' .$d['PRIMER_APELLIDO']. ' ' .$d['SEGUNDO_APELLIDO'],
 				'GENERO' => $d['GENERO'],
-				'FECHA_NACIMIENTO' => $d['FECHA_NACIMIENTO2'],
+				'FECHA_NACIMIENTO' => $d['FECHA_NACIMIENTO'],
 				'EDAD' => $d['EDAD_ACTUAL'],
 				'ENFOQUE_DIFERENCIAL' => $d['ENFOQUE_DIFERENCIAL'],
 				'ESTADO_CIVIL' => $d['ESTADO_CIVIL'],

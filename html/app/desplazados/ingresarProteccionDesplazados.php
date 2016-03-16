@@ -37,7 +37,7 @@
                                 <td class="right">Otra:</td>
                                 <td class="left">
                                 <div class="col-md-9">
-                                    <input id="otraSolicitudProte" type="text" value="<?php echo isset($_GET['id']) ? $_protecciones[$_GET['id']]['OTRA_ENTIDAD'] : null   ?>"  name="txtSolicitudProteD" required class="form-control">
+                                    <input id="otraSolicitudProte" type="text" value="<?php echo isset($_GET['id']) ? $_protecciones[$_GET['id']]['OTRA_ENTIDAD'] : null   ?>"  name="txtSolicitudProteD"  class="form-control">
                                 </div>
                                 </td>
                             </tr>
@@ -93,7 +93,7 @@
                                 <td class="right">Cual OPD:</td>
                                 <td class="left">
                                 <div class="col-md-9">
-                                    <input id="inputProteccion" type="text" value="<?php echo isset($_GET['id']) ? $_protecciones[$_GET['id']]['CUAL_OPD'] : null   ?>"  name="txtCualOPDD" required class="form-control" >
+                                    <input id="inputProteccion" type="text" value="<?php echo isset($_GET['id']) ? $_protecciones[$_GET['id']]['CUAL_OPD'] : null   ?>"  name="txtCualOPDD"  class="form-control" >
                                 </div>
                                 </td>
                             </tr>

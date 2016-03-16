@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 16-03-2016 a las 04:55:35
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 16-03-2016 a las 23:19:06
 -- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -94,6 +94,13 @@ CREATE TABLE `desplazados_ayudasrecibidas` (
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `desplazados_ayudasrecibidas`
+--
+
+INSERT INTO `desplazados_ayudasrecibidas` (`DOCUMENTO_DESPLAZADO`, `ATENCION_MENOR`, `CUIDADO_INFANTIL`, `PRO_ALIMENTACION`, `HAMBRE_FALTAA`, `SEGURIDAD_AI`, `COMPLE_ALIMENTICIO`, `BENEFI_DESAYUNO`, `AYUDA_SALUD`, `AYUDA_ALOJAMIENTO`, `AYUDA_ALIMENTARIA`, `AYUDA_AGUA`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'No', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', '', '', 'Si', 1, NULL, '2016-03-16 21:36:05');
+
 -- --------------------------------------------------------
 
 --
@@ -158,6 +165,13 @@ CREATE TABLE `desplazados_economiafamiliar` (
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `desplazados_economiafamiliar`
+--
+
+INSERT INTO `desplazados_economiafamiliar` (`DOCUMENTO_DESPLAZADO`, `INGRESOS_MENSUALES`, `GASTOS_MENSUALES`, `1_GASTO`, `2_GASTO`, `3_GASTO`, `NO_COMIDAS_DIA`, `ADULTOS`, `NINOS`, `MENORES_2ANOS`, `ALIMENTACION_CULTURA`, `ALIMENTACION_ADECUADA`, `FUENTE_1`, `FUENTE_2`, `FUENTE_3`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'UnSalarioMinimo', 'UnSalarioMinimo', 'Arriendo', 'Transporte', 'ServiciosPublicos', '1', 'Frutas', 'Carnes', 'Granos', 'Si', 'Si', 'DonacionesVecinos', 'DonacionesFamiliares', 'DonacionesEntidades', 1, NULL, '2016-03-16 21:32:02');
+
 -- --------------------------------------------------------
 
 --
@@ -180,6 +194,13 @@ CREATE TABLE `desplazados_especialproteccion` (
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `desplazados_especialproteccion`
+--
+
+INSERT INTO `desplazados_especialproteccion` (`DOCUMENTO_DESPLAZADO`, `AYUDA_CULTURA`, `AYUDA_18_CULTURA`, `FUNCIONARIO_TRATO`, `PUEBLO_INDIGENA`, `INDIGENAS_VIOINTRA`, `DENUNCIADO`, `CUALENTIDAD_DENUN`, `TIPO_VIOLENCIA`, `PROMUEVEN_DERECHOS`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'No', 'Si', 'Si', 0, 'Si', 'Si', 'otra', 'Psicologica', 'Si', 1, NULL, '2016-03-16 21:37:08');
+
 -- --------------------------------------------------------
 
 --
@@ -187,7 +208,7 @@ CREATE TABLE `desplazados_especialproteccion` (
 --
 
 CREATE TABLE `desplazados_familiar` (
-  `IDENTIFICACION_FAMILIAR` int(11) NOT NULL,
+  `IDENTIFICACION_FAMILIAR` bigint(255) NOT NULL,
   `DOCUMENTO_DESPLAZADO` int(11) NOT NULL,
   `TIPO_IDENTIFICACION` varchar(50) DEFAULT NULL,
   `NOMBRES` varchar(25) DEFAULT NULL,
@@ -205,16 +226,16 @@ CREATE TABLE `desplazados_familiar` (
   `HA_SIDO_VICTIMA_M_A_` varchar(3) DEFAULT NULL,
   `RECIBIO_AUXILIO_T_E_C_A` varchar(3) DEFAULT NULL,
   `AYUDA_MEDICAMENTOS` varchar(2) DEFAULT NULL,
-  `CIRUGIA_PLASTICA` int(1) DEFAULT NULL,
-  `CIRUGIA_VASCULAR` int(1) DEFAULT NULL,
-  `OSTEOPOROSIS` int(1) DEFAULT NULL,
-  `PROTESIS` int(1) DEFAULT NULL,
-  `ORTESIS` int(1) DEFAULT NULL,
-  `TERAPIAS` int(1) DEFAULT NULL,
+  `CIRUGIA_PLASTICA` varchar(3) DEFAULT NULL,
+  `CIRUGIA_VASCULAR` varchar(3) DEFAULT NULL,
+  `OSTEOPOROSIS` varchar(3) DEFAULT NULL,
+  `PROTESIS` varchar(3) DEFAULT NULL,
+  `ORTESIS` varchar(3) DEFAULT NULL,
+  `TERAPIAS` varchar(3) DEFAULT NULL,
   `OTRA_A_M` varchar(25) DEFAULT NULL,
-  `IND_AYUDA_HUMANITARIA` int(1) DEFAULT NULL,
-  `IND_LESIONES` int(1) DEFAULT NULL,
-  `IND_INCAPACIDAD_PERMANENTE` int(1) DEFAULT NULL,
+  `IND_AYUDA_HUMANITARIA` varchar(20) DEFAULT NULL,
+  `IND_LESIONES` varchar(20) DEFAULT NULL,
+  `IND_INCAPACIDAD_PERMANENTE` varchar(20) DEFAULT NULL,
   `AFILIADO_SALUD` varchar(3) DEFAULT NULL,
   `REGIMEN` varchar(20) DEFAULT NULL,
   `CUAL_R` varchar(20) DEFAULT NULL,
@@ -241,8 +262,17 @@ CREATE TABLE `desplazados_familiar` (
   `CONTRATO_ESCRITO` varchar(3) DEFAULT NULL,
   `TRABAJA_JORNADA` varchar(7) DEFAULT NULL,
   `S_SOCIAL_R_P` varchar(3) DEFAULT NULL,
-  `USUARIOLOG` int(11) NOT NULL
+  `USUARIOLOG` bigint(255) NOT NULL,
+  `LAST_EDIT` bigint(255) DEFAULT NULL,
+  `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `desplazados_familiar`
+--
+
+INSERT INTO `desplazados_familiar` (`IDENTIFICACION_FAMILIAR`, `DOCUMENTO_DESPLAZADO`, `TIPO_IDENTIFICACION`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `GENERO`, `FECHA_NACIMIENTO`, `ENFOQUE_DIFERENCIAL`, `ESTADO_CIVIL`, `PARENTESCO`, `ESTUVO_SEPARADO`, `DISCAPACITADO`, `DISCAPACIDAD`, `CUAL_D`, `HA_SIDO_VICTIMA_M_A_`, `RECIBIO_AUXILIO_T_E_C_A`, `AYUDA_MEDICAMENTOS`, `CIRUGIA_PLASTICA`, `CIRUGIA_VASCULAR`, `OSTEOPOROSIS`, `PROTESIS`, `ORTESIS`, `TERAPIAS`, `OTRA_A_M`, `IND_AYUDA_HUMANITARIA`, `IND_LESIONES`, `IND_INCAPACIDAD_PERMANENTE`, `AFILIADO_SALUD`, `REGIMEN`, `CUAL_R`, `RECIBIO_ATENCION_S_M`, `RECIBIO_APOYO_PSICOSOCIAL`, `ASISTIO_PROGRAMA_S_R`, `VACUNAS`, `CUALES_VACUNAS`, `DIAGNOSTICADO_E_C`, `CUAL_ENFERMEDAD_`, `CALIFIQUE_E_S`, `ESTUDIABA_ANTES_V`, `ESTUDIA_ACTUALMENTE`, `PROGRAMA_A_E`, `CANCELA_COSTO_E`, `SABE_LEER`, `NIVEL_ALCANZADO`, `COMPETENCIA_LABORAL`, `COMPETENCIA_CERTIFICADA`, `GUSTARIA__CAPACITARSE_`, `HORARIO_CAPACITACION_`, `ACTIVIDAD_LABORAL_ACTUAL`, `RAMA_ACTIVIDAD_ACTUAL`, `CONTRATO_ESCRITO`, `TRABAJA_JORNADA`, `S_SOCIAL_R_P`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(98083171561, 1110540682, 'TarjetadeIdentidad', 'Hugo', 'Ferney', 'Otavo', 'Femenino', '1998-08-31', 'Ninguno', 'Soltero', 'Padre/Padrastro', 'No', 'No', 'Ninguna', 'Ninguna', 'No', 'No', 'Si', 'No', 'No', 'No', 'No', 'No', 'Si', 'nada', 'Si', 'Si', 'Si', 'No', 'Ninguno', 'Ninguno', 'No', 'Si', 'Si', 'No', 'Ninguna', 'No', 'Ninguna', 2, 'Si', 'Si', 'Si', 'Si', 'Si', 'Preescolar', 'Mineria', 'Si', 'Mineria', 'Diurno', 'Trabajando', 'Mineria', 'Si', 'Legal', 'Si', 1, 1, '2016-03-16 21:28:49');
 
 -- --------------------------------------------------------
 
@@ -273,6 +303,13 @@ CREATE TABLE `desplazados_proteccion` (
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `desplazados_proteccion`
+--
+
+INSERT INTO `desplazados_proteccion` (`DOCUMENTO_DESPLAZADO`, `SOLICITAR_PROTECCION`, `OTRA_ENTIDAD`, `AYUDAPOBLAC_DESPLAZA`, `MUJER`, `ADULTO_MAYOR`, `JOVENES`, `DISCAPACIDAD`, `AFILIADO_OPD`, `CUAL_OPD`, `PARTICIPA_E_P_P`, `CUAL_E_P_P`, `PRIORIDAD_1`, `PRIORIDAD_2`, `PRIORIDAD_3`, `PRIORIDAD_4`, `PRIORIDAD_5`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'Fiscalia', 'otra', 'Si', 'Si', '', '', 'Si', 'No', 'otra', 'No', '', 'Salud', 'Salud', 'Salud', 'Salud', 'Salud', 1, NULL, '2016-03-16 21:35:56');
+
 -- --------------------------------------------------------
 
 --
@@ -295,6 +332,13 @@ CREATE TABLE `desplazados_reparacion` (
   `LAST_EDIT` bigint(255) DEFAULT NULL,
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `desplazados_reparacion`
+--
+
+INSERT INTO `desplazados_reparacion` (`DOCUMENTO_DESPLAZADO`, `ESTADO_INFORMADO`, `MIEMBROH_INDEMNIZADO`, `ESTADO_GARANTIAS`, `MIEMBROH_RESTITUCION`, `ENTIDAD_RESTITUCION`, `ESTADO_RESTITUIDO`, `ESTADO_INDEMNIZACION`, `MIEMBROH_INDEMNIZACION`, `FAMILIA_REHABILITACION`, `MIEMBROH_BENEFICIARIO`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'Si', 'Si', 'Si', 'Si', 'Otra', 'No', 'Si', 'Si', 'Si', 'Si', 1, NULL, '2016-03-16 21:38:21');
 
 -- --------------------------------------------------------
 
@@ -327,6 +371,13 @@ CREATE TABLE `desplazados_vivienda` (
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `desplazados_vivienda`
+--
+
+INSERT INTO `desplazados_vivienda` (`DOCUMENTO_DESPLAZADO`, `ACTUAL_VIVIENDA`, `TENENCIA`, `TIPO_CONTRATO`, `ZONA_VIVIENDA`, `ZONA_ALTORIESGO`, `PAREDES`, `PISO`, `TECHO`, `S_ACUEDUCTO`, `S_TELEFONO`, `S_ENERGIA_ELECTRICA`, `S_ALCANTARILLADO`, `S_GAS`, `S_REBASURAS`, `NO_HABIT_ANTES`, `NO_HABIT_ACTUAL`, `NO_FAMILI_CASA`, `RECIBI_SUBSIDIO`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'Rancho', 'Arriendo', 'Ninguno', 'Rural', 'Si', 'Piedra', 'Arena', 'Carton', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 1, 2, 2, 'Si', 1, NULL, '2016-03-16 21:31:35');
+
 -- --------------------------------------------------------
 
 --
@@ -353,6 +404,13 @@ CREATE TABLE `desplazado_discapacidad` (
   `LAST_EDIT` bigint(255) DEFAULT NULL,
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `desplazado_discapacidad`
+--
+
+INSERT INTO `desplazado_discapacidad` (`DOCUMENTO_DESPLAZADO`, `ANTES_DESPLAZAMIENTO`, `IGUAL_CONDICIONES`, `ENTIDAD_REHABILITACION`, `REHUBICACION_LABORAL`, `MARGINADO_DISCRIMINADO`, `ENCUENTRA_P_P`, `EXCLUIDO`, `REHABILITACION`, `SUBSIDIO_DISCAPACIDAD`, `CAPACIDAD_ECONO`, `MENORES_18`, `RECIBIO_AYU_HUMA`, `ORGANIZACION_DESPLA`, `PARTICIPACION_OPDS`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'Si', 'Si', 'Privada', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'NoAplica', 'No', 'NoAplica', 'Si', 'Si', 1, NULL, '2016-03-16 21:36:37');
 
 -- --------------------------------------------------------
 
@@ -394,6 +452,13 @@ CREATE TABLE `desplazamiento` (
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `desplazamiento`
+--
+
+INSERT INTO `desplazamiento` (`DOCUMENTO_DESPLAZADO`, `VECES_DESPLAZADO`, `ANO1`, `LOCALIDAD1`, `MUNICIPIO1`, `CAUSA1`, `ANO2`, `LOCALIDAD2`, `MUNICIPIO2`, `CAUSA2`, `ANO3`, `LOCALIDAD3`, `MUNICIPIO3`, `CAUSA3`, `NO_PERSONAS_H`, `FAMILIA_SEPARO`, `S_AYUDA_ESTATAL`, `NUCLEO_UNIFICAR`, `R_AYUDA_ESTATL`, `FAMILIA_VIVOS`, `FAMILIAR_DETENIDO`, `FAMILIAR_V_P`, `FAMILIAR_ASESINADO`, `FAMILIAR_RECLUTADO`, `FAMILIAR_SECUESTRO`, `DEMANDA_DESPLAZAMIENTO`, `FAMILIAR_VIC_M_A`, `DECLARO_ANTE`, `LAST_EDIT`, `USUARIOLOG`, `FECHALOG`) VALUES
+(1110540682, 1, 2015, 'ninguno', '8296', 'CamposMinados', 0, '', '', '', 0, '', '', '', 2, 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Si', 'Defensoria', 1, 1, '2016-03-16 21:30:32');
+
 -- --------------------------------------------------------
 
 --
@@ -417,6 +482,13 @@ CREATE TABLE `estabilizacion` (
   `LAST_EDIT` bigint(255) DEFAULT NULL,
   `FECHALOG` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `estabilizacion`
+--
+
+INSERT INTO `estabilizacion` (`DOCUMENTO_DESPLAZADO`, `RAZONES_LUGAR`, `FAMILIA_RETORNO`, `ESTUVOESTA_RETORNO`, `RESIDENCIA_DESEARIA`, `DONDEQUIERE_REUBICARSE`, `ZONA_RETORNO`, `RAZONES_REUBICARSE`, `RAZONES_RETORNAR`, `RAICES_ABANDONADAS`, `ALGUNOS_DESPOJADOS`, `SOLICITO_PROTECCION`, `USUARIOLOG`, `LAST_EDIT`, `FECHALOG`) VALUES
+(1110540682, 'PorLaVivienda', 'No', 'No', 'Residir', 'Ibague', 'Urbana', 'MotivoFamiliar', 'LogroEstabilizarse', 'Si', 'Si', 'Si', 1, NULL, '2016-03-16 21:31:08');
 
 -- --------------------------------------------------------
 
@@ -2052,7 +2124,9 @@ ALTER TABLE `desplazados_especialproteccion`
 --
 ALTER TABLE `desplazados_familiar`
   ADD PRIMARY KEY (`IDENTIFICACION_FAMILIAR`),
-  ADD KEY `FK_RELATIONSHIP_4` (`DOCUMENTO_DESPLAZADO`);
+  ADD KEY `FK_RELATIONSHIP_4` (`DOCUMENTO_DESPLAZADO`),
+  ADD KEY `USUARIOLOG` (`USUARIOLOG`,`LAST_EDIT`),
+  ADD KEY `FK_FAMILIAR_EDIT` (`LAST_EDIT`);
 
 --
 -- Indices de la tabla `desplazados_proteccion`
@@ -2281,6 +2355,8 @@ ALTER TABLE `desplazados_especialproteccion`
 -- Filtros para la tabla `desplazados_familiar`
 --
 ALTER TABLE `desplazados_familiar`
+  ADD CONSTRAINT `FK_FAMILIAR_EDIT` FOREIGN KEY (`LAST_EDIT`) REFERENCES `usuarios` (`ID`),
+  ADD CONSTRAINT `FK_FAMILIAR_USUARIO` FOREIGN KEY (`USUARIOLOG`) REFERENCES `usuarios` (`ID`),
   ADD CONSTRAINT `FK_RELATIONSHIP_4` FOREIGN KEY (`DOCUMENTO_DESPLAZADO`) REFERENCES `desplazados_datos` (`DOCUMENTO_DESPLAZADO`);
 
 --

@@ -23,7 +23,7 @@
                                 <td class="right" width="40%">Identificacion:</td>
                                 <td class="left" width="60%">
                                 <div class="col-md-8">
-                                    <input type="text" name="txtIdentificacionD" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['IDENTIFICACION_FAMILIAR'] : null   ?>"  <?php echo isset($_GET['familiar']) ?  "disabled" : null ; ?>  >
+                                    <input type="text" name="txtIdentificacionD" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['IDENTIFICACION_FAMILIAR'] : null   ?>"  <?php echo isset($_GET['familiar']) ?  "readonly" : null ; ?>  >
                                 </div>
                                 </td>
                             </tr>
@@ -233,13 +233,13 @@
                                 <td class="left">
                                 <div class="col-md-10" style="text-align: left;">
 
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Medicamentos" value="1"> Medicamentos <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="CirugiaPlastica" value="1"> Cirugia Plastica <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="CirugiaVascular" value="1"> Cirugia Vascular <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Osteosintesis" value="1"> Osteosintesis <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Protesis" value="1"> Protesis <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Ortesis" value="1"> Ortesis  <br>                   
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['SE_OTORGO_AYUDA_M']=='1' ) ?  "checked": null; ?> name="Terapias" value="1"> Terapias <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['AYUDA_MEDICAMENTOS']=='Si' ) ?  "checked": null; ?> name="Medicamentos" value="Si"> Medicamentos <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['CIRUGIA_PLASTICA']=='Si' ) ?  "checked": null; ?> name="CirugiaPlastica" value="Si"> Cirugia Plastica <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['CIRUGIA_VASCULAR']=='Si' ) ?  "checked": null; ?> name="CirugiaVascular" value="Si"> Cirugia Vascular <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['OSTEOPOROSIS']=='Si' ) ?  "checked": null; ?> name="Osteosintesis" value="Si"> Osteosintesis <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['PROTESIS']=='Si' ) ?  "checked": null; ?> name="Protesis" value="Si"> Protesis <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['ORTESIS']=='Si' ) ?  "checked": null; ?> name="Ortesis" value="Si"> Ortesis  <br>                   
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['TERAPIAS']=='Si' ) ?  "checked": null; ?> name="Terapias" value="Si"> Terapias <br>
                                 </td>
                             </tr>
                             <!-- (Otra:) que se muestra o se oculta si Ha Sido Victima de Mina-Antipersonal -->
@@ -247,7 +247,7 @@
                                 <td class="right">Otra Ayuda Medica:</td>
                                 <td class="left">
                                 <div class="col-md-8">
-                                     <input  type="text" name="txtOtraAyudaD" required class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['OTRA_A_M'] : null   ?>">
+                                     <input  type="text" name="txtOtraAyudaD"  class="form-control" value="<?php echo isset($_GET['familiar']) ? $_familiaresDesplazados[$_GET['familiar']]['OTRA_A_M'] : null   ?>">
                                 </div>
                                 </td>
                             </tr>
@@ -257,9 +257,9 @@
                                 <td class="left">
                                 <div class="col-md-10" style="text-align: left;">
 
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['EN_CUANTO_INDEMNIZACION']=='HumanitariaInmediata' ) ?  "checked": null; ?> name="checkboxIndemnizacionD" value="HumanitariaInmediata"> Indemnizacion ayuda humanitaria inmediata <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['EN_CUANTO_INDEMNIZACION']=='PorLesiones' ) ?  "checked": null; ?> name="checkboxIndemnizacionD" value="PorLesiones"> Indemnizaciones Administrativa por lesiones que no  <br>
-                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['EN_CUANTO_INDEMNIZACION']=='IncapacidadPermanente' ) ?  "checked": null; ?> name="checkboxIndemnizacionD" value="IncapacidadPermanente"> Indemnizacion Administrativa por incapacidad permanente
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['IND_AYUDA_HUMANITARIA']=='Si' ) ?  "checked": null; ?> name="IndAyudaHumanitaria" value="Si"> Indemnizacion ayuda humanitaria inmediata <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['IND_LESIONES']=='Si' ) ?  "checked": null; ?> name="IndLesiones" value="Si"> Indemnizaciones Administrativa por lesiones que no  <br>
+                                    <input type="checkbox" <?php echo ( isset($_GET['familiar']) and $_familiaresDesplazados[$_GET['familiar']]['IND_INCAPACIDAD_PERMANENTE']=='Si' ) ?  "checked": null; ?> name="IndIncapacidad" value="Si"> Indemnizacion Administrativa por incapacidad permanente
                                 </td>
                             </tr> 
                             <tr>

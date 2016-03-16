@@ -23,7 +23,7 @@ class Desplazados {
 
 	public function __construct (){
 		$this->db = new Conexion();
-        $this->Documento= isset($_POST['Documento']) ? intval($_POST['Documento']) : null;
+        $this->Documento= isset($_POST['Documento']) ? $_POST['Documento'] : null;
         $this->Nombre= isset($_POST['txtNombre']) ? $_POST['txtNombre'] : null;
         $this->Primer_Apellido= isset($_POST['txtPrimerApellido']) ? $_POST['txtPrimerApellido'] : null;
         $this->Segundo_Apellido= isset($_POST['txtSegundoApellido']) ? $_POST['txtSegundoApellido'] : null;
@@ -34,7 +34,7 @@ class Desplazados {
         $this->Zona= isset($_POST['cboZonaD']) ? $_POST['cboZonaD'] : null;
         $this->Localidad= isset($_POST['txtLocalidadD']) ? $_POST['txtLocalidadD'] : null;
         $this->Direccion= isset($_POST['txtDireccionD']) ? $_POST['txtDireccionD'] : null;
-        $this->Telefono= isset($_POST['txtTelefonoD']) ? intval($_POST['txtTelefonoD']) : null;
+        $this->Telefono= isset($_POST['txtTelefonoD']) ? $_POST['txtTelefonoD'] : null;
         $this->Estado_Civil= isset($_POST['estaCivil']) ? $_POST['estaCivil'] : null;
         $this->Parentesco= isset($_POST['Parentesco']) ? $_POST['Parentesco'] : null;
         $this->Es_Jefe_de_Hogar= isset($_POST['JefeDeHogar']) ? $_POST['JefeDeHogar'] : null;
@@ -116,7 +116,7 @@ class Desplazados {
   }
 
   public function Buscar() {
-    $this->id = intval($_POST['numDocumento']); 
+    $this->id = $_POST['numDocumento']; 
     $sql= $this->db->query("SELECT * FROM  desplazados_datos  WHERE DOCUMENTO_DESPLAZADO='$this->id';");
     if ($this->db->rows($sql)>0) {
     	return 1;

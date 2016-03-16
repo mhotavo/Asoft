@@ -103,7 +103,7 @@
                                 <td class="right">Ante Cual Entidad: </td>
                                 <td class="left">
                               <div class="col-md-8">                                
-                                    <input id="cualEntidad" type="text" value="<?php echo  isset($_GET['id']) ? $_especiales[$_GET['id']]['CUALENTIDAD_DENUN'] : null ?>" name="txtCualEntidadD" required class="form-control">
+                                    <input id="cualEntidad" type="text" value="<?php echo  isset($_GET['id']) ? $_especiales[$_GET['id']]['CUALENTIDAD_DENUN'] : null ?>" name="txtCualEntidadD"  class="form-control">
                                 </div>
                                 </td>
                             </tr>

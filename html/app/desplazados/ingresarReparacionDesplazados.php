@@ -73,7 +73,7 @@
                                 <td class="right">Ante que entidad solicitaron la restitucion de vivienda o tierras?:</td>
                                  <td class="left">
                                 <div class="col-md-8">
-                                 <input id="selectReparacion" type="text" name="txtQueEntidad" required class="form-control" value="<?php echo isset($_GET['id']) ? $_reparaciones[$_GET['id']]['ENTIDAD_RESTITUCION'] : null   ?>">
+                                 <input id="selectReparacion" type="text" name="txtQueEntidad"  class="form-control" value="<?php echo isset($_GET['id']) ? $_reparaciones[$_GET['id']]['ENTIDAD_RESTITUCION'] : null   ?>">
                                 </div>
                                 </td>
                             </tr>

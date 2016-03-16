@@ -52,8 +52,17 @@
                             <div class="col-lg-2"></div>
                             <div class="alert alert-success col-lg-8">
                             <button type="button" class="close" data-dismiss="alert">x</button>
-                               <b><?php echo  ucwords($_desplazados[$_GET['id']]['Nombre_Completo']); ?></b> ya se encuentra registrado(a) en el sistema.
+                               <b><?php echo  ucwords($_desplazados[$_GET['id']]['Nombre_Apellido']); ?></b> ya se encuentra registrado(a) en el sistema.
                                 <button type="button" class="btn btn-success" onclick="window.location='?view=datosdesplazado&mode=edit&id=<?php echo $_GET['id']; ?>  ';">Editar</button>
+                            </div>
+                             <?php 
+                            } elseif(isset($_GET['familiar']) && !empty($_GET['familiar'])) {
+                             ?>
+                            <!-- Mensajes  Es familiar-->
+                            <div class="col-lg-2"></div>
+                            <div class="alert alert-danger col-lg-8">
+                            <button type="button" class="close" data-dismiss="alert">x</button>
+                               Ya se encuentra registrado(a) en el sistema como familiar de <b> <?php echo  ucwords($_desplazados[$_GET['familiar']]['Nombre_Apellido']). '</b> con documento<b> ' .($_desplazados[$_GET['familiar']]['Documento']) ; ?> </b>
                             </div>
                             <?php } ?>
                             </td>

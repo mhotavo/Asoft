@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2016 a las 22:37:58
+-- Servidor: localhost
+-- Tiempo de generación: 16-03-2016 a las 04:55:35
 -- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -1866,7 +1866,113 @@ CREATE TABLE `pueblo_indigena` (
 
 INSERT INTO `pueblo_indigena` (`ID_PUEBLO`, `NOM_PUEBLO`) VALUES
 (0, 'Ninguna'),
-(1, 'Achagua');
+(1, 'Achagua'),
+(2, 'Andaqui'),
+(3, 'Andoque'),
+(4, 'Arhuaco'),
+(5, 'Awa'),
+(6, 'Bara (indigenas)'),
+(7, 'Barasana'),
+(8, 'Betoye'),
+(9, 'Cacique Bitagüi'),
+(10, 'Camsa'),
+(11, 'Carijona'),
+(12, 'Catios'),
+(13, 'Cañamomo'),
+(14, 'Chamies'),
+(15, 'Chimila'),
+(16, 'Chitareros'),
+(17, 'Cocama'),
+(18, 'Cocamilla'),
+(19, 'Cofan'),
+(20, 'Coreguaje'),
+(21, 'Cubeo'),
+(22, 'Cuiba'),
+(23, 'Desano'),
+(24, 'Dujo'),
+(25, 'Embera'),
+(26, 'Embera-Katio'),
+(27, 'Embera-Chami'),
+(28, 'Embera-Dobida'),
+(29, 'Guahibo'),
+(30, 'Guambiano'),
+(31, 'Guanano'),
+(32, 'Guando'),
+(33, 'Guanes'),
+(34, 'Guayabero'),
+(35, 'Guayupe'),
+(36, 'Hitnü'),
+(37, 'Huitoto'),
+(38, 'Inga (etnia)'),
+(39, 'Jupda'),
+(40, 'Kabiyari'),
+(41, 'Kamentza'),
+(42, 'Kankuamos'),
+(43, 'Karapana'),
+(44, 'Kichwa'),
+(45, 'Kogui'),
+(46, 'Kofan'),
+(47, 'Koreguaje'),
+(48, 'Kuiva'),
+(49, 'Kuna (etnia)'),
+(50, 'Macuna'),
+(51, 'Matapi'),
+(52, 'Mirañas'),
+(53, 'Misak'),
+(54, 'Mochila arhuaca'),
+(55, 'Mokana'),
+(56, 'Mucura'),
+(57, 'Nasa'),
+(58, 'Nonuyas'),
+(59, 'Nukak-Maku'),
+(60, 'Nutabes'),
+(61, 'Panche'),
+(62, 'Pastos'),
+(63, 'Pijaos'),
+(64, 'Piratapuyo'),
+(65, 'Poblacion indigena de Colombia'),
+(66, 'Pubenenses'),
+(67, 'Pueblo bari'),
+(68, 'Pueblo bora'),
+(69, 'Pueblo kurripako'),
+(70, 'Pueblo nasa'),
+(71, 'Pueblo saliba'),
+(72, 'Pueblo wenaiwika'),
+(73, 'Pueblo Yanacona'),
+(74, 'Pueblo yukpa'),
+(75, 'Pueblo puinave'),
+(76, 'Raizal'),
+(77, 'Siona'),
+(78, 'Sikuani'),
+(79, 'Siriano'),
+(80, 'Sutagaos'),
+(81, 'Tahamies'),
+(82, 'Taironas'),
+(83, 'Taiwano'),
+(84, 'Tamas (tribu)'),
+(85, 'Tanimuca'),
+(86, 'Tatuyo'),
+(87, 'Tikuna'),
+(88, 'Timanaes'),
+(89, 'Tinigua'),
+(90, 'Totoro'),
+(91, 'Tucano'),
+(92, 'Tupe'),
+(93, 'Tuyuca'),
+(94, 'U''wa'),
+(95, 'Uitoto'),
+(96, 'Umbra'),
+(97, 'Waunana'),
+(98, 'Wayuu'),
+(99, 'Wiwa'),
+(100, 'Yagua (pueblo)'),
+(101, 'Yalcon'),
+(102, 'Yariguies'),
+(103, 'Yucuna'),
+(104, 'Yukpa de Colombia y Venezuela'),
+(105, 'Yuri (etnia)'),
+(106, 'Zenu'),
+(107, '                         ');
 
 -- --------------------------------------------------------
 
@@ -2131,7 +2237,7 @@ ALTER TABLE `ovictimas_vivienda`
 -- AUTO_INCREMENT de la tabla `pueblo_indigena`
 --
 ALTER TABLE `pueblo_indigena`
-  MODIFY `ID_PUEBLO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_PUEBLO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --

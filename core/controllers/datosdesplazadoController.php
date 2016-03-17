@@ -1,6 +1,7 @@
 <?php 
 
 if (isset($_SESSION['app_id'])) {
+ 
 require('core/models/class.Desplazados.php');
 $id= isset($_GET['id']) ? $_GET['id'] : null; 
 

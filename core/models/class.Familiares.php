@@ -299,7 +299,7 @@ class Familiares {
 
   }
   public function Delete() {
-    $this->id = intval($_GET['familiar']);
+    $this->id = $_GET['familiar'];
     $this->db->query("DELETE FROM desplazados_familiar WHERE IDENTIFICACION_FAMILIAR='$this->id';");
   }
 

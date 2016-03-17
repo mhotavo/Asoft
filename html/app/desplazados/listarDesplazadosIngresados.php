@@ -37,12 +37,12 @@
                          if(false != $_desplazados) {
                                 foreach($_desplazados as $id_familiaresDesplazados => $contenido) {  ?>                                 
                                  <tr>
-                                        <td><?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?></td>
-                                        <td><?php echo $_desplazados[$id_familiaresDesplazados]['Nombre_Apellido']; ?></td>
-                                        <td><?php echo $_desplazados[$id_familiaresDesplazados]['FechaRegistro']; ?></td>
-                                        <td><?php echo $desplazados->Estado($_desplazados[$id_familiaresDesplazados]['Documento']);  ?></td>
-                                        <td><a href="?view=datosdesplazado&mode=edit&id=<?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?>" class="btn btn-primary">Editar</a></td>
-                                        <td><a onclick="DeleteItem('¿Está seguro de eliminar este desplazado?','?view=datosdesplazado&mode=delete&id=<?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?>')" class="btn btn-danger">Eliminar</a></td>
+                                        <td style="vertical-align: middle"><?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?></td>
+                                        <td style="vertical-align: middle"><?php echo $_desplazados[$id_familiaresDesplazados]['Nombre_Apellido']; ?></td>
+                                        <td style="vertical-align: middle" ><?php echo $_desplazados[$id_familiaresDesplazados]['FechaRegistro']; ?></td>
+                                        <td style="vertical-align: middle"><?php echo $desplazados->Estado($_desplazados[$id_familiaresDesplazados]['Documento']);  ?></td>
+                                        <td style="vertical-align: middle"><a href="?view=datosdesplazado&mode=edit&id=<?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?>" class="btn btn-primary">Editar</a></td>
+                                        <td style="vertical-align: middle"><a onclick="DeleteItem('¿Está seguro de eliminar este desplazado?','?view=datosdesplazado&mode=delete&id=<?php echo $_desplazados[$id_familiaresDesplazados]['Documento']; ?>')" class="btn btn-danger">Eliminar</a></td>
                                     </tr>
                                 <?php }
                             }

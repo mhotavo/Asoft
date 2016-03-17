@@ -153,9 +153,9 @@ class Desplazados {
                         datos.DOCUMENTO_DESPLAZADO='$id'
                         GROUP BY datos.DOCUMENTO_DESPLAZADO");
         if ($this->db->rows($sql)>0) {
-            return '<b style="color:#00B200;">Terminado</b>';
+            return '<b style="color:#00B200;">Terminado <i class="fa fa-check-square"></i> </b>';
         } else {
-            return '<b style="color:red;">Incompleto</b>';
+            return '<b style="color:red;">Incompleto <i class="fa fa-times"></i> </b>';
         }
     
 
